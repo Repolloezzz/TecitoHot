@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="assets/Icon/te-verde.png">
+    <title>TÉ cito - Materias Hots🥵👌</title>
+    <link rel="stylesheet" href="css/main_menu.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+<body class="windows" onload="responsive()" onresize="responsive()">
+    <header>
+        <a class="logo" href="#">s
+            <img src="assets/Icon/logo.png" alt="Logo de Té cito">
+        </a>
+        <div class="menu__button">
+            <span class="btn__burger_1"></span>
+            <span class="btn__burger_2"></span>z
+            <span class="btn__burger_3"></span>
+        </div>
+        <nav class="main-menu">
+            <ul class="main-menu__items">
+                <li class="menu-item">
+                    <a href="#" class="item_link">
+                        <span class="material-symbols-outlined">home</span> Inicio
+                    </a>
+                    <ul>
+
+                    </ul>
+                </li>
+                <li class="menu-item">
+                    <a class="item_link menu-item_submenu">
+                        <span class="material-symbols-outlined">more_vert</span> Materias <span class="material-symbols-outlined arrow">chevron_right</span>
+                    </a>
+                    <ul class="submenu">
+                        <li class="submenu-item"><a href="#matematicas" class="item_link">Matemática</a></li>
+                        <li class="submenu-item"><a href="#fisica" class="item_link">Física</a></li>
+                        <li class="submenu-item"><a href="#informatica" class="item_link">Informática</a></li>
+                        <li class="submenu-item"><a href="#programacion" class="item_link">Programación</a></li>
+                        <li class="submenu-item"><a href="#desweb" class="item_link">Desarrollo Web</a></li>
+                    </ul>
+                </li>
+                <li class="menu-item">
+                    <a href="#" class="item_link">
+                        <span class="material-symbols-outlined">grade</span> Prácticas
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="#" class="item_link">
+                        <span class="material-symbols-outlined">collections_bookmark</span> Bibliografía
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <div class="main-menu__block"></div>
+    <section class="about">
+        <div class="about__container">
+            <div class="character">
+                <img src="assets/img/character_locutor.png">
+            </div>
+            <div class="character_text">
+                <h1>Un personaje random que describe la página.</h1>
+                <div class="about_text">
+                    Que tal, solo te explicare que es esto y para que sirve segun el papel que tengo aquí
+                </div>
+            </div>
+        </div>
+    </section>
+    <div id="materia" class="ref"></div>
+    <h1 class="separador">📚Materias</h1>
+    <div id="matematicas" class="ref"></div>
+    <section class="back-red-dark-p1">
+        <div class="theme-present__menu">
+            <div class="desc">
+                <h2>Matemática</h2>
+                <div class="definicion">
+                    <h2>Definición formal</h2>
+                    Ciencia deductiva que estudia las propiedades de los entes abstractos, como números, figuras geométricas o símbolos, y sus relaciones.
+                </div>
+                <p>
+                    La matemática tiene como objetivo buscar patrones comunes que pueden luego derivar en una teoría y, eventualmente, en
+                    una ley. Pensemos, por ejemplo, en el teorema de Pitágoras. Este nos indica que, en un triángulo rectángulo, la suma
+                    de cada uno de los catetos al cuadrado nos da igual a la hipotenusa al cuadrado.
+                </p>
+            </div>
+            <div class="vw-50">
+                <h1 class="option_title back-red_dark">Temas</h1>
+                <div class="option_container">
+                    <div class="option">
+                        <a href="Materias/matematicas/calculo1.html" class="card_option">
+                            <h2>Calculo 1</h2>
+                            <img src="assets/img/calculo1_icon.jpg">
+                            <p>
+                                El cálculo es una rama de las matemáticas que se ocupa del estudio de la variación y del movimiento. Permite observar y describir la
+                                 realidad en términos dinámicos y se emplea en diversos campos tales como la física, la ingeniería, la economía o la estadística.
+                            </p>
+                        </a>
+                        <a class="card_option">
+                            <h2>Calculo 2</h2>
+                            <img src="assets/img/calculo2_icon.jpg">
+                            <p>
+                                El cálculo multivariable te enseña a analizar, mediante los números, cómo se afectan distintas variables mutuamente.
+                                El cálculo multivariable se utiliza en el control óptimo de sistemas dinámicos en tiempo continuo. Se utiliza en análisis de la regresión para derivar fórmulas para estimar relaciones entre varios conjuntos de conocimientos empíricos.
+                            </p>
+                        </a>
+                        <a class="card_option">
+                            <h2>Matematicas discretas 1</h2>
+                            <img src="assets/img/mat-dis1_icon.jpg">
+                            <p>
+                                Las matemáticas discretas son un área de las matemáticas que tienen como objetivo el estudio de elementos finitos o infinitos, siempre que estos sean numerables.
+                                Por tanto, su ámbito es el de aquello que se puede contar como números enteros, sentencias lógicas o grafos. Este tipo de matemáticas son fundamentales para, entre otras, las ciencias de la computación, ya que usan conjuntos numerables.
+                            </p>
+                        </a>
+                        <a class="card_option" href="Materias/matematicas/matdis1.html">
+                            <h2>Matematicas discretas 2</h2>
+                            <img src="assets/img/mat-dis2_icon.jpg">
+                            <p>
+                                La Combinatoria es una herramienta que nos permite contar el número de situaciones que se pueden dar al someter a un conjunto finito a las acciones de ordenar y/o elegir entre sus elementos. (se lee “factorial de n”) .
+                                La combinatoria estudia los métodos para contar las distintas configuraciones de los elementos de un conjunto que cumplan ciertos criterios especificados.
+                            </p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="separador"></div>
+    <div id="fisica" class="ref"></div>
+    <section class="back-bluelight-p1">
+        <div class="theme-present__menu">
+            <div class="desc">
+                <h2>Física</h2>
+                <div class="definicion">
+                    <h2>Definicion formal</h2>
+                    Ciencia que estudia las propiedades de la materia y de la energía y establece las leyes que explican los fenómenos naturales,
+                     excluyendo los que modifican la estructura molecular de los cuerpos.
+                </div>
+                <p class="fisica_desc">
+                    La física se caracteriza por usar el método científico, que partiendo de la observación de los fenómenos de la naturaleza
+                    , permite verificar hipótesis y dar respuesta a muchas incógnitas. Los físicos se valen de modelos para representar fenómenos
+                     difíciles de observar directamente, como los modelos atómicos.
+                </p>
+            </div>
+            <div class="vw-50">
+                <h1 class="option_title back-blue">Temas</h1>
+                <div class="option_container">
+                    <div class="option">
+                        <a href="Materias/fisica/fisica1.html" class="card_option">
+                            <h2>Física 1</h2>
+                            <img src="assets/img/fisica1_icon.jpg">
+                            <p>
+                                Es una ciencia fundamental que estudia y describe el comportamiento de los fenómenos naturales que ocurren en nuestro universo. 
+                                Es una ciencia basada en observaciones experimentales y en mediciones.
+                            </p>
+                        </a>
+                        <a class="card_option">
+                            <h2>Física 2</h2>
+                            <img src="assets/Icon/te-verde.png">
+                            <p>
+                                el electromagnetismo. Un buen número de fenómenos de la naturaleza, están
+                                relacionados con estos temas y su comprensión es de vital importancia en el desempeño como docentes
+                                en la cátedra de física en cursos de la educación media
+                            </p>
+                        </a>
+                        <a class="card_option">
+                            <h2>Física-Química</h2>
+                            <img src="assets/Icon/te-verde.png">
+                            <p>
+                                Que es el calculo
+                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat delectus perferendis ducimus assumenda impedit iusto doloribus exercitationem repellendus hic eligendi, expedita, dolorem quibusdam numquam saepe necessitatibus ipsa reprehenderit quis porro.
+                            </p>
+                        </a>
+                        <a class="card_option">
+                            <h2>Física Cuántica</h2>
+                            <img src="assets/Icon/te-verde.png">
+                            <p>
+                                Que es el calculo
+                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat delectus perferendis ducimus assumenda impedit iusto doloribus exercitationem repellendus hic eligendi, expedita, dolorem quibusdam numquam saepe necessitatibus ipsa reprehenderit quis porro.
+                            </p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="separador"></div>
+    <div id="informatica" class="ref"></div>
+    <section class="back-purplelight-p1">
+        <div class="theme-present__menu">
+            <div class="desc">
+                <h2>Informática</h2>
+                <div class="definicion">
+                    <h2>Definicion formal</h2>
+                    Ciencia que estudia las propiedades de la materia y de la energía y establece las leyes que explican los fenómenos naturales,
+                     excluyendo los que modifican la estructura molecular de los cuerpos.
+                </div>
+                <p class="fisica_desc">
+                    La física se caracteriza por usar el método científico, que partiendo de la observación de los fenómenos de la naturaleza
+                    , permite verificar hipótesis y dar respuesta a muchas incógnitas. Los físicos se valen de modelos para representar fenómenos
+                     difíciles de observar directamente, como los modelos atómicos.
+                </p>
+            </div>
+            <div class="vw-50">
+                <h1 class="option_title back-purple">Temas</h1>
+                <div class="option_container">
+                    <div class="option">
+                        <a class="card_option">
+                            <h2>Historia de Informática</h2>
+                            <img src="assets/Icon/te-verde.png">
+                            <p>
+                                Que es el calculo
+                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat delectus perferendis ducimus assumenda impedit iusto doloribus exercitationem repellendus hic eligendi, expedita, dolorem quibusdam numquam saepe necessitatibus ipsa reprehenderit quis porro.
+                            </p>
+                        </a>
+                        <a class="card_option">
+                            <h2>Sistemas Numéricos</h2>
+                            <img src="assets/Icon/te-verde.png">
+                            <p>
+                                Que es el calculo
+                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat delectus perferendis ducimus assumenda impedit iusto doloribus exercitationem repellendus hic eligendi, expedita, dolorem quibusdam numquam saepe necessitatibus ipsa reprehenderit quis porro.
+                            </p>
+                        </a>
+                        <a class="card_option">
+                            <h2>Codificación</h2>
+                            <img src="assets/Icon/te-verde.png">
+                            <p>
+                                Que es el calculo
+                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat delectus perferendis ducimus assumenda impedit iusto doloribus exercitationem repellendus hic eligendi, expedita, dolorem quibusdam numquam saepe necessitatibus ipsa reprehenderit quis porro.
+                            </p>
+                        </a>
+                        <a class="card_option">
+                            <h2>Algebra de boole</h2>
+                            <img src="assets/Icon/te-verde.png">
+                            <p>
+                                Que es el calculo
+                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat delectus perferendis ducimus assumenda impedit iusto doloribus exercitationem repellendus hic eligendi, expedita, dolorem quibusdam numquam saepe necessitatibus ipsa reprehenderit quis porro.
+                            </p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="separador"></div>
+    <div id="programacion" class="ref"></div>
+    <section class="back-white_black-p1">
+        <div class="theme-present__menu">
+            <div class="desc">
+                <h2>Programación</h2>
+                <div class="definicion">
+                    <h2>Definicion formal</h2>
+                    Ciencia que estudia las propiedades de la materia y de la energía y establece las leyes que explican los fenómenos naturales,
+                     excluyendo los que modifican la estructura molecular de los cuerpos.
+                </div>
+                <p class="fisica_desc">
+                    La física se caracteriza por usar el método científico, que partiendo de la observación de los fenómenos de la naturaleza
+                    , permite verificar hipótesis y dar respuesta a muchas incógnitas. Los físicos se valen de modelos para representar fenómenos
+                     difíciles de observar directamente, como los modelos atómicos.
+                </p>
+            </div>
+            <div class="vw-50">
+                <h1 class="option_title back-black">Temas</h1>
+                <div class="option_container">
+                    <div class="option">
+                        <a class="card_option">
+                            <h2>Lógica teórica de la programación</h2>
+                            <img src="assets/Icon/te-verde.png">
+                            <p>
+                                Que es el calculo
+                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat delectus perferendis ducimus assumenda impedit iusto doloribus exercitationem repellendus hic eligendi, expedita, dolorem quibusdam numquam saepe necessitatibus ipsa reprehenderit quis porro.
+                            </p>
+                        </a>
+                        <a class="card_option">
+                            <h2>Programación Estructurada</h2>
+                            <img src="assets/Icon/te-verde.png">
+                            <p>
+                                Que es el calculo
+                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat delectus perferendis ducimus assumenda impedit iusto doloribus exercitationem repellendus hic eligendi, expedita, dolorem quibusdam numquam saepe necessitatibus ipsa reprehenderit quis porro.
+                            </p>
+                        </a>
+                        <a class="card_option">
+                            <h2>Programación Funcional o Modular</h2>
+                            <img src="assets/Icon/te-verde.png">
+                            <p>
+                                Que es el calculo
+                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat delectus perferendis ducimus assumenda impedit iusto doloribus exercitationem repellendus hic eligendi, expedita, dolorem quibusdam numquam saepe necessitatibus ipsa reprehenderit quis porro.
+                            </p>
+                        </a>
+                        <a class="card_option">
+                            <h2>Programación Orientada a Objetos</h2>
+                            <img src="assets/Icon/te-verde.png">
+                            <p>
+                                Que es el calculo
+                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat delectus perferendis ducimus assumenda impedit iusto doloribus exercitationem repellendus hic eligendi, expedita, dolorem quibusdam numquam saepe necessitatibus ipsa reprehenderit quis porro.
+                            </p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="separador"></div>
+    <div id="desweb" class="ref"></div>
+    <section class="back-orangeyellow-p1">
+        <div class="theme-present__menu">
+            <div class="desc">
+                <h2>Desarrollo Web</h2>
+                <div class="definicion">
+                    <h2>Definicion formal</h2>
+                    Ciencia que estudia las propiedades de la materia y de la energía y establece las leyes que explican los fenómenos naturales,
+                     excluyendo los que modifican la estructura molecular de los cuerpos.
+                </div>
+                <p class="fisica_desc">
+                    La física se caracteriza por usar el método científico, que partiendo de la observación de los fenómenos de la naturaleza
+                    , permite verificar hipótesis y dar respuesta a muchas incógnitas. Los físicos se valen de modelos para representar fenómenos
+                     difíciles de observar directamente, como los modelos atómicos.
+                </p>
+            </div>
+            <div class="vw-50">
+                <h1 class="option_title back-orange">Temas</h1>
+                <div class="option_container">
+                    <div class="option">
+                        <a class="card_option">
+                            <h2>HTML 5</h2>
+                            <img src="assets/Icon/te-verde.png">
+                            <p>
+                                Que es el calculo
+                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat delectus perferendis ducimus assumenda impedit iusto doloribus exercitationem repellendus hic eligendi, expedita, dolorem quibusdam numquam saepe necessitatibus ipsa reprehenderit quis porro.
+                            </p>
+                        </a>
+                        <a class="card_option">
+                            <h2>CSS3</h2>
+                            <img src="assets/Icon/te-verde.png">
+                            <p>
+                                Que es el calculo
+                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat delectus perferendis ducimus assumenda impedit iusto doloribus exercitationem repellendus hic eligendi, expedita, dolorem quibusdam numquam saepe necessitatibus ipsa reprehenderit quis porro.
+                            </p>
+                        </a>
+                        <a class="card_option">
+                            <h2>JavaScript</h2>
+                            <img src="assets/Icon/te-verde.png">
+                            <p>
+                                Que es el calculo
+                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat delectus perferendis ducimus assumenda impedit iusto doloribus exercitationem repellendus hic eligendi, expedita, dolorem quibusdam numquam saepe necessitatibus ipsa reprehenderit quis porro.
+                            </p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <a href="https://www.flaticon.es/iconos-gratis/te-verde" title="té verde iconos">Té verde iconos creados por Freepik - Flaticon</a>
+        <a href="https://www.flaticon.com/free-icons/idea" title="idea icons">Idea icons created by Vectors Market - Flaticon</a>
+    </footer>
+    <script src="js/index.js"></script>
+    <script src="js/mat-menu.js"></script>
+</body>
+</html>

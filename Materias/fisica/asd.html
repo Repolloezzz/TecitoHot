@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/assets/Icon/te-verde.png">
+    <title>TÉ cito - Física 1🤪💅</title>
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/main_menu.css">
+    <link rel="stylesheet" href="/css/fis_fisica1.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js"></script>
+</head>
+<body class="windows" onload="responsive()" onresize="responsive()">
+    <header>
+        <a class="logo" href="/index.html">
+            <img src="/assets/Icon/logo.png" alt="Logo de Té cito">
+        </a>
+        <div class="menu__button">
+            <span class="btn__burger_1"></span>
+            <span class="btn__burger_2"></span>
+            <span class="btn__burger_3"></span>
+        </div>
+        <nav class="main-menu">
+            <ul class="main-menu__items">
+                <li class="menu-item">
+                    <a href="#" class="item_link">
+                        <span class="material-symbols-outlined">home</span> Inicio
+                    </a>
+                    <ul>
+
+                    </ul>
+                </li>
+                <li class="menu-item">
+                    <a class="item_link menu-item_submenu">
+                        <span class="material-symbols-outlined">more_vert</span> Materias <span class="material-symbols-outlined arrow">chevron_right</span>
+                    </a>
+                    <ul class="submenu">
+                        <li class="submenu-item"><a href="/index.html#matematicas" class="item_link">Matemática</a></li>
+                        <li class="submenu-item"><a href="/index.html#fisica" class="item_link">Física</a></li>
+                        <li class="submenu-item"><a href="/index.html#informatica" class="item_link">Informática</a></li>
+                        <li class="submenu-item"><a href="/index.html#programacion" class="item_link">Programación</a></li>
+                        <li class="submenu-item"><a href="/index.html#desweb" class="item_link">Desarrollo Web</a></li>
+                    </ul>
+                </li>
+                <li class="menu-item">
+                    <a href="#" class="item_link">
+                        <span class="material-symbols-outlined">grade</span> Prácticas
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="#" class="item_link">
+                        <span class="material-symbols-outlined">collections_bookmark</span> Bibliografía
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <div class="main-menu__block"></div>
+    <div class="main-menu__block"></div>
+    <div class="theme-menu">
+        <div class="theme__options back-purplelight-p1">
+            <button class="theme__option-opt">Cinemática</button>
+            <button class="theme__option-opt">Dinámica</button>
+            <button class="theme__option-opt">Trabajo - Energía y conservación de la energía</button>
+            <button class="theme__option-opt">Sistema de particulas y conservación del momento lineal</button>
+            <button class="theme__option-opt">Mecánica de fluidos</button>
+            <button class="theme__option-opt">Termodinámica</button>
+        </div>
+        <button class="theme-menu__button"><span class="material-symbols-outlined theme-menu__button-icon">arrow_drop_down</span></button>
+    </div>
+    <section id="cinematica" class="theme-container">
+        <nav class="theme-menu">
+            <div class="theme-menu__active">
+                <span class="theme-menu__actite-bar"></span>
+                <span class="theme-menu__actite-bar"></span>
+                <span class="theme-menu__actite-bar"></span>
+            </div>
+            <div class="theme__option">
+                <span class="theme-bar"></span>
+                <a href="#cin_1" class="theme__button">
+                    <div class="theme_index"></div>
+                    <p class="theme__button_p">Definición del tema</p>
+                </a>
+                <a href="#cin_2" class="theme__button">
+                    <div class="theme_index"></div>
+                    <p class="theme__button_p">Posicion</p>
+                </a>
+                <a href="#cin_3" class="theme__button">
+                    <div class="theme_index"></div>
+                    <p class="theme__button_p">Velocidad</p>
+                </a>
+                <a href="#cin_4" class="theme__button">
+                    <div class="theme_index"></div>
+                    <p class="theme__button_p">Aceleración</p>
+                </a>
+            </div>
+        </nav>
+        <div id="cin_1" class="ref_mat"></div>
+        <div class="cin-section">
+            <div class="img_text present">
+                <img src="/assets/img/cinematica.jpg" alt="">
+                <div>
+                    <div class="definicion">
+                        <h1>¿Qué es Cinemática?</h1>
+                    <p>
+                        Es una rama de la "Mecánica" que estudia el movimiento de particulo (cuerpos) sin considerar las causas de su movimiento, limitandose
+                        a estudiar la trayectoria en función del tiempo, donde se usan principalmente velocidades y aceleraciones.
+                    </p>
+                    </div>
+                    <p class="text">
+                        Practicamente en esta seccion veremos temas referentes simplemente al movimiento ya sea continuo o variado, movimiento
+                        en 1, 2 y 3 dimensiones. Lo necesario para poder comprender el tema sera saber el concepto de vector, Cálculo I
+                        y Cálculo vectorial (Cálculo II). <br>
+                        Me deseo suerte y a ti también xd, comenzaremos con nuestro viaje rápido pero lo más preciso posible sobre todos los conceptos
+                        y metedos que hay en este capítulo.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div id="cin_2" class="ref_mat"></div>
+        <div class="cin-section">
+            <h1 class="subtitle back-orange">Posición</h1>
+            <p>
+                "En física, la posición de una partícula indica su localización en el espacio o en el espacio-tiempo.
+                Se representa mediante sistemas de coordenadas". Mismamente dicho es un lugar en el espacio que ocupa un
+                objeto en el caso. Ahora bien, para el caso debemos reconocer los tipos de cambio de posición que veremos:
+                 El <b>Desplazamiento</b> y la <b>Distancia</b>. Ambos tipos si bien cumplen con un mismo objetivo lo hacen
+                 de una manera diferente. <br>
+                Pero antes debemos saber algo fundamental que nos ayudara a identificar la diferencia que hay entre el
+                Desplazamiento y la Distancia que es un <b>Sistema de referencia</b> como su nombre lo dice es un sistema
+                muy parecido a los ejes de un plano cartesiano la cual nos da un referente del espacio en el que estamos
+                o vamos a realizar alguna operacion. Con esto dicho, veamos la diferencia entre Desplazamiento y Distancia.
+            </p>
+            <div class="column">
+                <div class="column-element">
+                    <h2>Desplazamiento</h2>
+                    <p>
+                        También conocido como variación de posición, donde el mismo es de tipo <b>Vector</b> y que usa
+                        puntos del <b>Sistema de referencia</b> como principal dato. Veamos un ejemplo para calcular el
+                        movimiento de la partícula <b class="text-orange">A</b> hasta la partícula <b class="text-green">B</b>
+                        con una separacion de 2[m] entre ambas partículas.
+                    </p>
+                    <div class="gif">
+                        <img src="/assets/gifs/caso1.gif">
+                        <img src="/assets/gifs/caso1.jpg" alt="">
+                    </div>
+                    <p>
+                        <b>Vectorialmente</b> <b class="text-orange">A</b> parte desde el punto 0 hasta <b class="text-green">B</b>
+                        que está en el punto 2, de esta forma para calcular el movimiento tomamos en cuenta lo siguiente:
+                        posicion final y posicion inicial: <br>
+                        <div class="formula">
+                            \(\vec{x}_{inicial} = 0[m]\) <br>
+                            \(\vec{x}_{final} = 2[m]\) <br>
+                            Calculamos su desplazamiento con: <br>
+                            \(\bigtriangleup\vec{x}_{A \to B} = \vec{x}_{f} - \vec{x}_{i}\) <br>
+                            \(\bigtriangleup\vec{x}_{A \to B} = 2[m] - [0]\) <br>
+                            \(\bigtriangleup\vec{x}_{A \to B} = 2[m]\) <br>
+                        </div>
+                    </p>
+                    <p>
+                        Ahora veamos algo que nos hará ver esto muy distinto, <b>qué pasaria si</b> la Particulas
+                        <b class="text-orange">A</b> va hasta <b class="text-green">B</b> y vuelve hasta su punto
+                        inicial.
+                    </p>
+                    <div class="gif">
+                        <img src="/assets/gifs/caso2.gif">
+                        <img src="/assets/gifs/caso2_1.gif">
+                    </div>
+                    <p>
+                        Notemos que el <b>vector de desplazamiento</b> va hasta <b class="text-green">B</b> y luego
+                        vuelve hasta su punto inicial, vectorialmente su movimiento es 0, pues comprobemoslo.
+                        <div class="formula">
+                            \(\vec{x}_{inicial} = 0[m]\) <br>
+                            \(\vec{x}_{final} = 0[m]\) <br>
+                            Evidentemente sabemos que pasa: <br>
+                            \(\vec{x}_{A \to B} = 0[m]\)
+                        </div>
+                    </p>
+                    <p>
+                        Por lo que vemos si la particula va de ida y de vuelta entonces <b>Vectorialmente</b> no se ha movido
+                        pues va de 0 y llega hasta 0.
+                    </p>
+                </div>
+                <div class="column-element">
+                    <h2>Distancia</h2>
+                    <p>
+                        La misma es una medida de longitud lo que implica que es un <b>Escalar</b>, a diferencia del Desplazamiento
+                        <b>la distancia es un número a secas</b>, veamos como se comporta y como podemos calcular el movimiento con el
+                        mismo ejemplo, <b class="text-orange">A</b> de mueve hasta <b class="text-green">B</b> con una separacion de 2[m].
+                    </p>
+                    <div class="gif">
+                        <img src="/assets/gifs/caso1.gif">
+                        <img src="/assets/gifs/caso1.jpg">
+                    </div>
+                    <p>
+                        <b>Escalarmente</b> <b class="text-orange">A</b> este parte y va 2[m] hasta <b class="text-green">B</b>, notemos que
+                        no nos referimos a "puntos", ya que directamente la distancia lo que hace es medir por lo que siempre su
+                        posicion inicial será 0: <br>
+                        <div class="formula">
+                            \(x_{inicial} = 0[m]\) <br>
+                            \(x_{final} = 2[m]\) <br>
+                            Calculamos su distancia con: <br>
+                            \(x_{A \to B} = x_{f}\) <br>
+                            \(x_{A \to B} = 2[m]\) <br> <br>
+                        </div>
+                        <p id="#caca">
+                            Ahora veamos algo que nos hará ver esto muy distinto, <b>qué pasaria si</b> la Particulas
+                            <b class="text-orange">A</b> va hasta <b class="text-green">B</b> y vuelve hasta su punto
+                            inicial.
+                        </p>
+                        <div class="gif">
+                            <img src="/assets/gifs/caso2.gif">
+                            <img src="/assets/gifs/caso2_2.gif">
+                        </div>
+                        <p>
+                            Notemos que el <b>Escalar</b> va en aumento pese a que la particula vuelve a su punto inicial
+                            ya que se va 2[m] hasta <b class="text-green">B</b> y vuelve 2[m] hasta su punto inicial
+                            lo que nos daria como resultado 4[m].
+                            <div class="formula">
+                                \(x_{inicial} = 0[m]\) <br>
+                                \(x_{final} = 4[m]\) <br>
+                                Teniendo esto nos da: <br>
+                                \(x_{A \to B} = 4[m]\) <br> <br>
+                            </div>
+                        </p>
+                        <p>
+                            Vemos que la distancia no le importa la <b>Posición</b> de la particula si no
+                            todo el recorrido que dió.
+                        </p>
+                    </p>
+                </div>
+            </div>
+            <p>
+                En conclusion, el <b>Desplazamiento</b> es un <b>vector</b> que usa las posiciones de la particula según el sistema de referencia
+                para poder calcular su movimiento, la <b>Distancia</b> es un <b>escalar</b> o sea un numero o constante si lo quieres llamar así,
+                que solo le intereza el recorrido que tuvo la particula.
+            </p>
+        </div>
+        <div id="cin_3" class="ref_mat"></div>
+        <div class="cin-section">
+            <h1 class="subtitle back-red">Velocidad</h1>
+            <p>
+                La velocidad puede definirse como <b>el cambio de posicion de un objeto en un determinado tiempo</b>
+                la misma es de tipo <b>vector</b> y se expresa por unidades de \([\tfrac{longitud}{tiempo}]\). La velocidad está
+                determinada por dos tipos de velociadades: Media e Instantanea, y rapideces. <br>
+            </p>
+            <div class="img_text column-element">
+                <div>
+                    <img src="/assets/img/velocidad.jpg">
+                    <img src="/assets/img/velocidad_op.jpg">
+                </div>
+                <div>
+                    <p>
+                        La velocidad puede expresarse de forma matemática simplemente teniendo dos posiciones en diferentes
+                        tiempos, que estos serian: una posición inicial y una final.
+                    </p>
+                    <div class="formula padding">
+                        \(\vec{v} = \tfrac{\triangle \vec{x}}{t} = \tfrac{\vec{x}_{f} - \vec{x}_{i}}{t_{f} - t_{i}}\) <br>
+                        Notemos que <b>la velocidad es la pendiente</b> <br>
+                        \(\vec{v} = \tfrac{\vec{x}_{f} - \vec{x}_{i}}{t_{f} - t_{i}}\) <br>
+                        \(\downarrow\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\downarrow\thinspace\thinspace\downarrow\) <br>
+                        \( m = \tfrac{y_{2} - y_{1}}{x_{2} - x_{1}}\) <br> <br>
+                        \(\vec{v} = m = \tan\theta\)
+                    </div>
+                    <p>
+                        Con esto dicho también podemos definir a la velocidad como la <b>pendiente</b> de la posición final
+                        en un determinado tiempo, <b>osea una recta</b>. Demos un ejemplo con los siguientes datos:
+                    </p>
+                    <div class="formula">
+                        Una particula se mueve desde 3[m] con una velocidad \(\vec{v}\) durante un tiempo \(t\), ¿Cuál será su posición final? <br>
+                        Datos: <br>
+                        \(\vec{x}_{i} = 3[m]\) ;
+                        \(\vec{v} = 1[\tfrac{m}{s}]\) ;
+                        \(t = 2[s]\) <br>
+                        Ahora bien tenemos la siguiente función <br>
+                        \(\vec{x}_{f} = \vec{x}_{i} + \vec{v}\cdot t\) <br>
+                        Notemos que esto es una recta <br>
+                        \(\vec{x}_{f} = \vec{x}_{i} + \vec{v}\cdot t\) <br>
+                        \(\downarrow \thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace \downarrow \thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\downarrow\thinspace\downarrow\) <br>
+                        \(y \thinspace\thinspace\thinspace = a \thinspace\thinspace + m \cdot x\) <br>
+                        Sabiendo esto continuamos <br>
+                        \(\vec{x}_{f} = 3[m] + 1[\tfrac{m}{s}]\cdot 2[s]\) <br>
+                        \(\vec{x}_{f} = 5[m]\)
+                    </div>
+                </div>
+            </div>
+            <p>
+                En resumen, ya definimos y demostramos que <b>la velocidad es la pendiente</b> de la recta expresada por
+                la función "posición final" que depende del tiempo. Por otro lado ahora si podemos ver que es
+                <b>Velocidad media</b> y <b>Velocidad instantanea</b>.
+            </p>
+            <div class="column">
+                <div class="column-element">
+                    <h2>Velocidad Media</h2>
+                    <p>
+                        De tipo <b>vector</b>, es una velocidad por asi decirlo general, que solo tomamos
+                        como datos la posición inicial y la posición final para definir la velocidad media,
+                        en consecuencia aunque su posición varie mucho en varios puntos, no lo tomara
+                        en cuenta.
+                        <div class="gif">
+                            <img src="/assets/img/velocidad_op2.jpg" alt="">
+                            <img src="/assets/img/velocidad_m.jpg" alt="">
+                        </div>
+                    </p>
+                    <p>
+                        Como podemos apreciar la velocidad media solamente toma en cuenta la posición inicial
+                        y la posición final. Anque su posición varíe mucho con respecto al tiempo no tomamos en
+                        cuenta esos puntos de variación, sino su inicio y fin.
+                        <div class="formula">
+                            la velocidad media está definida como: <br>
+                            \(\vec{v}_{media} = \tfrac{\vec{x}_{f} - \vec{x}_{i}}{t_{f} - t_{i}}\) <br>
+                        </div>
+                    </p>
+                    <p>
+                        Por esto mismo a esta velocidad se lo conoce como <b>velocidad constante</b>
+                        ya que no varia en ningun momento como vimos en el gráfico específicamente en
+                        la recta de color verde, donde su pendiente representa la velocidad media.
+                    </p>
+                </div>
+                <div class="column-element">
+                    <h2>Velocidad Instantanea</h2>
+                    <p>
+                        De tipo <b>vector</b>, es una velocidad que nos dice cual es su valor
+                        en un tiempo y posición específica, tomando en cuenta todos los puntos
+                        sin importar que la misma varie mucho o no. siendo mucho más exacto
+                        que la velocidad media.
+                        <div class="gif">
+                            <img src="/assets/img/velocidad_op2.jpg" alt="">
+                            <img src="/assets/img/velocidad_i.gif" alt="">
+                        </div>
+                    </p>
+                    <p>
+                        Vemos la velocidad en cada punto del movimiento
+                        de la particula. A parte de tomar la posición inicial y final,
+                        podemos tomar cualquier punto de su desplazamiento, donde en ese punto \(x_{n}\) sacamos
+                        la pendiente de la recta <b>tangente</b> al punto \(x_{n}\)
+                        <div class="formula">
+                            La velocidad media está definida como: <br>
+                            \(\vec{v}_{instantane} = \underset{\triangle t \to 0}{\lim}(\tfrac{\triangle \vec{x}}{\triangle t})\) <br>
+                            Que es lo mismo que la derivada de \(\vec{x}\) con respecto a \(t\) : <br>
+                            \(\vec{v}_{instantanea} = \tfrac{d\vec{x}}{dt}\)
+                        </div>
+                    </p>
+                </div>
+            </div>
+            <p>
+                En resumen, <b>la velocidad media</b> es una velocidad constante y que generaliza una velocidad
+                del desplazamiento de una punto inicial a un punto final, <b>la velocidad instantanea</b> es una
+                velocidad en un "instante" específico. <br>
+                Ahora bien, ya sabiendo la diferencia de velocidad media e instantanea podemos adentrarnos en lo que
+                es la <b>Rapidez</b>, siendo que es un concepto muy parecido a la velocidad con excepciones.
+            </p>
+            <div class="column_1">
+                <div class="column-element">
+                    <h1>Definición de Rapidez</h1>
+                    <p>
+                        La rapidez <b>es un cambio de distancia</b>, esto implica que la misma es un
+                        <b>escalar</b> o un número fijo (o contante) que en realidad es el <b>módulo del vector velocidad</b>
+                        (tamaño de vector), la misma solamente trabaja con <b>distancia</b>
+                        <div class="formula">
+                            la rapidez está definida como: <br>
+                            \(v = \tfrac{x}{t}\)
+                        </div>
+                    </p>
+                    <p>
+                        Hacer notar que como la diferencia de desplazamiento y distancia, la rapidez se representa
+                        por \(v\) que hace referencia que es un escalar a diferencia de la velocidad que se
+                        representa por \(\vec{v}\) que dice que es un vector.
+                    </p>
+                </div>
+                <div class="column-element">
+                    <h1>Rapidez media</h1>
+                    <p>
+                        Al decir esto nos referimos que la Velocidad media tiene un equivalente
+                        en rapidez, pues veamos, <b>si existe rapidez media</b> ya que la misma
+                        perfectamente cumple lo siguiente:
+                        <div class="formula">
+                            Si la velocidad media (\(\vec{v}_{media}\)) es igual a la rapidez
+                            media (\(v_{media}\)) se cumple que: <br>
+                            \(\vec{v}_{media} = v_{media}\) <br>
+                            \(\tfrac{\vec{x}_{f} - \vec{x}_{i}}{t_{f} - t_{i}} = \tfrac{x_{f} - x_{i}}{t_{f} - t_{i}}\) <br>
+                        </div>
+                    </p>
+                    <p>
+                        Esto se cumple, entonces consideramos a la <b>rapidez media igual que la velocidad media</b>.
+                    </p>
+                </div>
+                <div class="column-element">
+                    <h1>Rapidez instantanea</h1>
+                    <p>
+                        Al decir esto nos referimos que Velocidad instantanea tienen un equivalente
+                        en rapidez, pues veamos, <b>no existe rapidez instantanea</b> por que
+                        tendria que cumplirse lo siguiente:
+                        <div class="formula">
+                            Si Velocidad instantanea (\(\vec{v}_{inst}\)) es igual a rapidez instantanea (\(v_{inst}\))
+                            se cumple que: <br>
+                            \(\vec{v}_{inst} = v_{inst}\) <br>
+                            \(\tfrac{d \vec{x}}{dt} = \tfrac{dx}{dt}\) <br>
+                            Pero sabemos que <b>Rapidez es un escalar</b> lo que equivale que sea una <b>constante</b>
+                            e implica que <b>su derivada sea 0</b>. <br>
+                            \(\tfrac{d \vec{x}}{dt} \neq 0\) <br>
+                        </div>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div id="cin_4" class="ref_mat"></div>
+        <div class="cin-section">
+            <h1 class="subtitle back-blue">Aceleración</h1>
+            <p>
+                La aceleración es <b>el cambio de velocidad con respecto al tiempo</b>, practicamente es el mismo caso que
+                pasaba con la velocidad. La aceleración es un <b>vector</b> que se expresa en unidades de
+                \([\tfrac{velocidad}{tiempo}]\) o también por \([\tfrac{longitud}{tiempo^2}]\).
+                Veamos como se define la aceleración y que relación tiene con la velocidad y el tiempo
+            </p>
+            <div class="img_text column-element">
+                <div>
+                    <img src="/assets/img/aceleracion.jpg" alt="">
+                    <img src="/assets/img/aceleracion_op.jpg" alt="">
+                </div>
+                <div>
+                    <p>
+                        La aceleración también puede expresarse de forma matemática, siendo que la aceleración nos es
+                        más que la <b>pendiente de una recta</b> que pasa por una <b>velocidad incial y final</b> con
+                        respecto al tiempo.
+                        <div class="formula">
+                            \(\vec{a} = \tfrac{\triangle \vec{v}}{t} = \tfrac{\vec{v}_{f} - \vec{v}_{i}}{t_{f} - t_{i}}\) <br>
+                            Y pues tenemos una similitud: <br>
+                            \(\vec{a} = \tfrac{\vec{v}_{f} - \vec{v}_{i}}{t_{f} - t_{i}}\) <br>
+                            \(\downarrow\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\downarrow\thinspace\thinspace\downarrow\) <br>
+                            \( m = \tfrac{y_{2} - y_{1}}{x_{2} - x_{1}}\) <br> <br>
+                            \(\vec{a} = m = \tan{\theta}\)
+                        </div>
+                    </p>
+                    <p>
+                        Ahora veamos un pequeño ejemplo de como podemos interpretar la aceleración como una pendiente
+                        de una recta.
+                        <div class="formula">
+                            Una particula se parte con una velocidad de \(3[\tfrac{m}{s}]\) y una aceleración de
+                            \(\tfrac{1}{2}[\tfrac{m}{s^2}]\) durante 10 segundo, ¿cuál será su velocidad final? <br>
+                            Datos: <br>
+                            \(\vec{v}_{i} = 3[\tfrac{m}{s}]\); \(\vec{a} = \tfrac{1}{2}[\tfrac{m}{s^2}]\); \(t = 10 [s]\) <br>
+                            Tenemos la siguiente función: <br>
+                            \(\vec{v}_{f} = \vec{v}_{i} + \vec{a}\cdot t\) <br>
+                            \(\downarrow \thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace \downarrow \thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\downarrow\thinspace\downarrow\) <br>
+                            \(y \thinspace\thinspace\thinspace = a \thinspace\thinspace + m \cdot x\) <br>
+                            Hacer notar que \(\vec{a}\) es la pendiente de esta recta <br>
+                            \(\vec{v}_{f} = 3[\tfrac{m}{s}] + \tfrac{1}{2}[\tfrac{m}{s^2}] \cdot 10[s]\) <br>
+                            \(\vec{v}_{f} = 8[\tfrac{m}{s}]\)
+                        </div>
+                    </p>
+                </div>
+            </div>
+            <p>
+                En resumen, la aceleración es un vector, el mismo es la pendiente de la recta que une a la velocidad inicial
+                con la velocidad final. Por otro lado al igual que la velocidad, la aceleración viene en dos tipos:
+                <b>aceleración media</b> y <b>aceleración instantanea</b>.
+            </p>
+            <div class="column">
+                <div class="column-element">
+                    <h2>Aceleración Media</h2>
+                    <p>
+                        De tipo <b>vector</b>, es la aceleración general de una velocidad inicial y una velocidad final.
+                        Este tipo de aceleración no toma en cuenta si hay gran variación de velocidades.
+                    </p>
+                    <div class="gif">
+                        <img src="/assets/img/velocidad_op2.jpg" alt="">
+                        <img src="/assets/img/velocidad_m.jpg" alt="">
+                    </div>
+                    <p>
+                        Como se puede ver, esto es exactamente como pasaba con la velocidad media
+                        y el desplazamiento donde la <b>aceleración media</b> se expresa como:
+                        <div class="formula">
+                            \(\vec{a}_{media} = \tfrac{\vec{v}_{f} - \vec{v}_{i}}{t_{f} - t_{i}}\)
+                        </div>
+                    </p>
+                    <p>
+                        La aceleración prácticamente es la pendiente, y al igual que la velocidad media
+                        <b>la aceleración media es constante</b> por lo que no llega a cambiar.
+                    </p>
+                </div>
+                <div class="column-element">
+                    <h2>Aceleración Instantanea</h2>
+                    <p>
+                        De tipo <b>vector</b>, es la aceleración en un punto específico, este punto puede ser
+                        cualquiera velocidad del recorrido. Esta aceleración es una aceleración específica.
+                    </p>
+                    <div class="gif">
+                        <img src="/assets/img/velocidad_op2.jpg" alt="">
+                        <img src="/assets/img/velocidad_i.gif" alt="">
+                    </div>
+                    <p>
+                        Como se llega a ver, esto es exactamente como pasaba con la velocidad instantanea y el
+                        desplazamiento donde la <b>aceleración instantanea</b> se expresa como:
+                        <div class="formula">
+                            \(\vec{a}_{instantanea} = \underset{\triangle t \to 0} \lim (\tfrac{\triangle \vec{v}}{\triangle t})\) <br>
+                            Que es lo mismo que decir que: <br>
+                            \(\vec{a}_{instantanea} = \tfrac{d \vec{v}}{d \vec{t}}\)
+                        </div>
+                    </p>
+                </div>
+            </div>
+            <p>
+                Con eso dicho llega la pregunta ¿Hay un equivalente de <b>rapidez</b> en la aceleración? La respuesta es que no
+                o bueno <b>físicamente no existe el módulo de la aceleración</b> pero obviamente matemáticamente es posible.
+            </p>
+        </div>
+    </section>
+    <section class="theme-container prueba back-red"></section>
+    <section class="theme-container prueba back-blue"></section>
+    <section class="theme-container prueba back-green"></section>
+    <section class="theme-container prueba back-purple"></section>
+    <section class="theme-container prueba back-yellow"></section>
+    <section class="theme-container prueba back-brown"></section>
+    <script src="/js/mat-menu.js"></script>
+</body>
+</html>

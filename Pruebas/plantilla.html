@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Té cito - Física 1😜💅</title>
+    <link rel="icon" href="/assets/Icon/te-verde.png">
+    <link rel="stylesheet" href="/css/main_menu.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js"></script>
+</head>
+<body class="windows" onload="responsive()" onresize="responsive()">
+    <header>
+        <a class="logo" href="/index.html">
+            <img src="/assets/Icon/logo.png" alt="Logo de Té cito">
+        </a>
+        <div class="menu__button">
+            <span class="btn__burger_1"></span>
+            <span class="btn__burger_2"></span>
+            <span class="btn__burger_3"></span>
+        </div>
+        <nav class="main-menu">
+            <ul class="main-menu__items">
+                <li class="menu-item">
+                    <a href="#" class="item_link">
+                        <span class="material-symbols-outlined">home</span> Inicio
+                    </a>
+                    <ul>
+
+                    </ul>
+                </li>
+                <li class="menu-item">
+                    <a class="item_link menu-item_submenu">
+                        <span class="material-symbols-outlined">more_vert</span> Materias <span class="material-symbols-outlined arrow">chevron_right</span>
+                    </a>
+                    <ul class="submenu">
+                        <li class="submenu-item"><a href="/index.html#matematicas" class="item_link">Matemática</a></li>
+                        <li class="submenu-item"><a href="/index.html#fisica" class="item_link">Física</a></li>
+                        <li class="submenu-item"><a href="/index.html#informatica" class="item_link">Informática</a></li>
+                        <li class="submenu-item"><a href="/index.html#programacion" class="item_link">Programación</a></li>
+                        <li class="submenu-item"><a href="/index.html#desweb" class="item_link">Desarrollo Web</a></li>
+                    </ul>
+                </li>
+                <li class="menu-item">
+                    <a href="#" class="item_link">
+                        <span class="material-symbols-outlined">grade</span> Prácticas
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="#" class="item_link">
+                        <span class="material-symbols-outlined">collections_bookmark</span> Bibliografía
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <div class="main-menu__block"></div>
+    <div class="theme-menu">
+        <div class="theme__options back-purplelight-p1">
+            <button class="theme__option-opt">Cinemática</button>
+            <button class="theme__option-opt">Dinámica</button>
+            <button class="theme__option-opt">Trabajo - Energía y conservación de la energía</button>
+            <button class="theme__option-opt">Sistema de particulas y conservación del momento lineal</button>
+            <button class="theme__option-opt">Mecánica de fluidos</button>
+            <button class="theme__option-opt">Termodinámica</button>
+        </div>
+        <button class="theme-menu__button"><span class="material-symbols-outlined theme-menu__button-icon">arrow_drop_down</span></button>
+    </div>
+    <section class="theme-container back-red">
+        <nav class="subtheme-menu back-greenlight-p5">
+            <button class="subtheme-menu__button">
+                <span class="material-symbols-outlined">menu_open</span>
+            </button>
+            <div class="subtheme-menu__container">
+                <div id="subtheme_indicator" class="subtheme_indicator"></div>
+                <a href="#">
+                    <div class="subtheme_index"></div>
+                    <p>Presentación</p>
+                </a>
+                <a href="#">
+                    <div class="subtheme_index"></div>
+                    <p>Posición</p>
+                </a>
+                <a href="#">
+                    <div class="subtheme_index"></div>
+                    <p>Velocidad</p>
+                </a>
+                <a href="#">
+                    <div class="subtheme_index"></div>
+                    <p>Aceleración</p>
+                </a>
+                <a href="#">
+                    <div class="subtheme_index"></div>
+                    <p>Aceleración</p>
+                </a>
+                <a href="#">
+                    <div class="subtheme_index"></div>
+                    <p>Caida</p>
+                </a>
+            </div>
+        </nav>
+        <div class="subtheme-menu__aux"></div>
+        <div class="subtheme__idea-button subtheme__idea__button--active">
+            <img src="/assets/Icon/idea.png" alt="idea_icon">
+        </div>
+        <div class="subtheme__idea">
+            <h2 class="back-brownlight-p1">Notas 📦 ayudas</h2>
+            <button class="subtheme__idea-close subtheme__idea__button--active">
+                <span class="material-symbols-outlined">close</span>
+            </button>
+            <div class="subtheme__idea__container">
+                <div class="button_left">
+                    <button onclick="scrollL()">
+                        <span class="material-symbols-outlined">arrow_left</span>
+                    </button>
+                </div>
+                <div class="cover">
+                    <div class="element-scroll">
+                        <div class="idea_note back-black"></div>
+                        <div class="idea_note back-blue"></div>
+                        <div class="idea_note back-red"></div>
+                        <div class="idea_note back-yellow"></div>
+                        <div class="idea_note prueba2"></div>
+                        <div class="idea_note prueba2"></div>
+                        <div class="idea_note prueba2"></div>
+                        <div class="idea_note prueba2"></div>
+                        <div class="idea_note prueba2"></div>
+                    </div>
+                </div>
+                <div class="button_right">
+                    <button onclick="scrollR()">
+                        <span class="material-symbols-outlined">arrow_right</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h1 class="separador back-bluelight-p1">Presentación</h1>
+            <div class="subtheme-container">
+                <h1 class="text-black">HOLa1</h1>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, quos atque magni pariatur saepe dolorem praesentium odio, at quae corrupti quaerat delectus nesciunt ut? Suscipit placeat exercitationem adipisci aspernatur quis.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, quos atque magni pariatur saepe dolorem praesentium odio, at quae corrupti quaerat delectus nesciunt ut? Suscipit placeat exercitationem adipisci aspernatur quis.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, quos atque magni pariatur saepe dolorem praesentium odio, at quae corrupti quaerat delectus nesciunt ut? Suscipit placeat exercitationem adipisci aspernatur quis.
+                </p>
+            </div>
+            <div class="prueba subtheme-container">
+                <h1>HOLa2</h1>
+            </div>
+            <div class="prueba subtheme-container">
+                <h1>HOLa3</h1>
+            </div>
+            <div class="prueba subtheme-container">
+                <h1>HOLa4</h1>
+            </div>
+            <div class="prueba subtheme-container">
+                <h1>HOLa5</h1>
+            </div>
+            <div class="prueba subtheme-container">
+                <h1>HOLa6</h1>
+            </div>
+        </div>
+    </section>
+    <section class="theme-container prueba back-blue"></section>
+    <section class="theme-container prueba back-green"></section>
+    <section class="theme-container prueba back-purple"></section>
+    <section class="theme-container prueba back-yellow"></section>
+    <section class="theme-container prueba back-brown"></section>
+    <script src="/js/mat-menu.js"></script>
+</body>
+</html>

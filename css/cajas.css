@@ -1,0 +1,303 @@
+@import url(colores.css);
+/*-----------------------------------------GENERICO-------------------------------------*/
+.prueba{
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+}
+
+
+
+.w-ocultar{
+  width: 0;
+}
+.h-ocultar{
+  height: 0;
+}
+
+.flex {
+  display: flex;
+}
+.flex-top {
+  margin-bottom: auto;
+}
+.flex-bottom {
+  margin-top: auto;
+}
+.flex-right {
+  margin-left: auto;
+}
+.flex-left {
+  margin-right: auto;
+}
+
+
+.vw-50{
+    width: 50%;
+}
+.vw-100{
+  width: 100%;
+}
+.vh-50{
+    height: 50%;
+}
+.vh-100{
+    height: 100%;
+}
+
+.text-center{
+  text-align: center;
+}
+/*-------------------------------------Columnas------------------------------------------*/
+.column{
+  display: grid;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0;
+}
+.column-2{
+  grid-template-columns: 50% 50%;
+}
+
+.column-element{
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+  padding: 3px;
+  border-radius: 5px;
+  margin: 2px;
+}
+.column-element p{
+  padding: 5px;
+  font-size: 4vw;
+  text-align: justify;
+}
+.element-h2{
+  padding: 0;
+  text-align: center;
+  font-size: unset;
+}
+
+.column-element .gif{
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  border-radius: 0px;
+  border: 0px solid var(--wgb-1-2);
+}
+.column-element .gif img{
+  width: 50%;
+}
+
+.formula{
+  padding: 10px;
+  border-left: 5px solid var(--color-4);
+  background: rgba(255, 255, 255, .4);
+  font-size: 3vw;
+}
+@media only screen and (min-width: 800px){
+  .column{
+    padding: 20px;
+  }
+  .column-element{
+    margin: 10px;
+    box-shadow: 0px 5px 10px;
+    padding: 20px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+  }
+  .column-element p{
+    font-size: 1.5vw;
+  }
+  .element-h2{
+    font-size: 40px;
+    padding: 10px;
+  }
+  .formula{
+    font-size: 1.4vw;
+  }
+  .column-element .gif{
+    gap: 10px;
+    border-radius: 30px;
+    border: 3px solid var(--wgb-1-2);
+    margin: 10px 0px;
+  }
+}
+/*--------------------------------REFERANCIAS A UNA SECCION------------------------------*/
+.ref {
+  background-color: #007fb5;
+  position: absolute;
+  transform: translateY(-100px);
+}
+
+
+/*---------------------------CAJAS INDEX TEMAS PRESENTACIÓN--------------------------------*/
+.theme-present__menu {
+  display: flex;
+  width: 90%;
+  height: 60vh;
+  margin: auto;
+}
+
+.theme-present__menu .desc {
+  background-color: white;
+  width: 50%;
+  padding: 20px;
+}
+
+.theme-present__menu .desc h2 {
+  font-size: 3.5vw;
+}
+
+.theme-present__menu .desc p {
+  padding: 20px;
+  text-align: justify;
+  border-left: 5px solid;
+  font-size: 1.5vw;
+}
+
+/*---------CONTENEDOR DE OPCIONES------------*/
+.option_container {
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+}
+.option_container::-webkit-scrollbar {
+  background-color: var(--wgb-1-2);
+  width: 10px;
+}
+.option_container::-webkit-scrollbar-thumb {
+  background-color: var(--wgb-1-1);
+}
+
+.option_title {
+  color: white;
+  margin: 0;
+  text-align: center;
+  padding: 5px;
+}
+
+.option {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 15px;
+  padding-bottom: 50px;
+  width: 100%;
+}
+
+/*---------CARTAS DE OPCIONES----------------------*/
+.card_option{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    overflow: hidden;
+    text-decoration: none;
+    color: black;
+}
+.card_option:hover{
+    position: relative;
+    transform: translate(0px, -10px) rotate(1deg);
+}
+.card_option h2{
+    text-align: center;
+    color: white;
+    padding: 5px;
+    background-color: #3f3f3f;
+}
+.card_option img{
+    display: block;
+    width: 60%;
+    height: max-content;
+    border-radius: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5px;
+}
+.card_option p{
+    padding: 10px 20px;
+    text-align: justify;
+    font-size: 1vw;
+}
+
+/*------------------------Contenedor de los temas-------------------------------*/
+.separador{
+  display: block;
+  text-align: center;
+  padding: 10px;
+  font-size: 8vw;
+  margin: 0;
+}
+.subtheme-container{
+  padding: 5px;
+  width: 100%;
+}
+
+@media only screen and (min-width: 800px){
+  .separador{
+    font-size: 4vw;
+  }
+  .subtheme-container{
+    padding: 10px;
+  }
+}
+
+
+
+.present{
+  width: 100%;
+  height: 100%;
+  padding: 5px;
+}
+.present__coment{
+  display: block;
+  grid-template-columns: 350px auto;
+  align-items: center;
+}
+.present h1{
+  text-align: center;
+}
+.present__img{
+  display: flex;
+  padding: 5px;
+  justify-content: center;
+}
+.present__img img{
+  border-radius: 20px;
+  object-fit: cover;
+  width: 70vw;
+}
+.present p{
+  padding: 0px 5px 5px 5px;
+  margin: 5px 0px 0px 5px;
+  border-left: 5px solid var(--color-2);
+  font-size: 4vw;
+  height: min-content;
+}
+
+.parrafo{
+  text-align: justify;
+  font-size: 4vw;
+  padding: 10px;
+}
+@media only screen and (min-width: 800px){
+  .present{
+    padding: 15px;
+  }
+  .present__coment{
+    display: grid;
+  }
+  .present p{
+    font-size: 1.8vw;
+    padding: 0px 20px 5px 5px;
+    text-align: justify;
+  }
+  .parrafo{
+    font-size: 1.4vw;
+    padding: 20px;
+  }
+}
