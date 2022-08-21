@@ -264,6 +264,7 @@ footer a {
   position: fixed;
   top: 70px;
   transition: all .2s;
+  overflow: hidden;
   background: rgb(241,91,181);
   background: linear-gradient(111deg,
           rgba(241,91,181,1) 10%,
