@@ -271,12 +271,283 @@
                         </p>
                     </div>
                 </div>
+                <p class="parrafo">
+                    En conclusion, el <b>Desplazamiento</b> es un <b>vector</b> que usa las posiciones de la particula según el sistema de referencia
+                    para poder calcular su movimiento, la <b>Distancia</b> es un <b>escalar</b> o sea un numero o constante si lo quieres llamar así,
+                    que solo le intereza el recorrido que tuvo la particula.
+                </p>
             </div>
-            <div class="prueba subtheme-container">
-                <h1>HOLa3</h1>
+            <div id="cin_3" class="ref"></div>
+            <h1 class="separador back-orangeyellow-p1">Velocidad</h1>
+            <div class="subtheme-container back-white-1">
+                <p class="parrafo">
+                    La velocidad puede definirse como <b>el cambio de posicion de un objeto en un determinado tiempo</b>
+                    la misma es de tipo <b>vector</b> y se expresa por unidades de \([\tfrac{longitud}{tiempo}]\). <br>
+                    La velocidad está determinada por dos tipos de velociadades: Media e Instantanea, y rapideces. <br>
+                </p>
+                <div class="example-with-img">
+                    <div class="img-ejem_large text-center">
+                        <img src="../../assets/img/velocidad.jpg" class="img-ejem_large-item">
+                        <img src="../../assets/img/velocidad_op.jpg" class="img-ejem_large-item">
+                    </div>
+                    <div>
+                        <p class="parrafo">
+                            La velocidad puede expresarse de forma matemática simplemente teniendo dos posiciones en diferentes
+                            tiempos, que estos serian: una posición inicial y una final.
+                        </p>
+                        <div class="center">
+                            <img src="../../assets/img/velocidad.jpg" class="img-ejem">
+                        </div>
+                        <div class="formula padding">
+                            \(\vec{v} = \tfrac{\triangle \vec{x}}{t} = \tfrac{\vec{x}_{f} - \vec{x}_{i}}{t_{f} - t_{i}}\) <br>
+                            Notemos que <b>la velocidad es la pendiente</b> <br>
+                            \(\vec{v} = \tfrac{\vec{x}_{f} - \vec{x}_{i}}{t_{f} - t_{i}}\) <br>
+                            \(\downarrow\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\downarrow\thinspace\thinspace\downarrow\) <br>
+                            \( m = \tfrac{y_{2} - y_{1}}{x_{2} - x_{1}}\) <br> <br>
+                            \(\vec{v} = m = \tan\theta\)
+                        </div>
+                        <p class="parrafo">
+                            Con esto dicho también podemos definir a la velocidad como la <b>pendiente</b> de la posición final
+                            en un determinado tiempo, <b>osea una recta</b>. Demos un ejemplo con los siguientes datos:
+                        </p>
+                        <div class="center">
+                            <img src="../../assets/img/velocidad_op.jpg" class="img-ejem">
+                        </div>
+                        <div class="formula">
+                            Una particula se mueve desde 3[m] con una velocidad \(\vec{v}\) durante un tiempo \(t\), ¿Cuál será su posición final? <br>
+                            Datos: <br>
+                            \(\vec{x}_{i} = 3[m]\) ;
+                            \(\vec{v} = 1[\tfrac{m}{s}]\) ;
+                            \(t = 2[s]\) <br>
+                            Ahora bien tenemos la siguiente función <br>
+                            \(\vec{x}_{f} = \vec{x}_{i} + \vec{v}\cdot t\) <br>
+                            Notemos que esto es una recta <br>
+                            \(\vec{x}_{f} = \vec{x}_{i} + \vec{v}\cdot t\) <br>
+                            \(\downarrow \thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace \downarrow \thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\downarrow\thinspace\downarrow\) <br>
+                            \(y \thinspace\thinspace\thinspace = a \thinspace\thinspace + m \cdot x\) <br>
+                            Sabiendo esto continuamos <br>
+                            \(\vec{x}_{f} = 3[m] + 1[\tfrac{m}{s}]\cdot 2[s]\) <br>
+                            \(\vec{x}_{f} = 5[m]\)
+                        </div>
+                    </div>
+                </div>
+                <p class="parrafo">
+                    En resumen, ya definimos y demostramos que <b>la velocidad es la pendiente</b> de la recta expresada por
+                    la función "posición final" que depende del tiempo. Por otro lado ahora si podemos ver que es
+                    <b>Velocidad media</b> y <b>Velocidad instantanea</b>.
+                </p>
+                <div class="column column-2">
+                    <div class="column-element">
+                        <h2 class="element-h2">Velocidad Media</h2>
+                        <p>
+                            De tipo <b>vector</b>, es una velocidad por asi decirlo general, que solo tomamos
+                            como datos la posición inicial y la posición final para definir la velocidad media,
+                            en consecuencia aunque su posición varie mucho en varios puntos, no lo tomara
+                            en cuenta.
+                            <div class="gif">
+                                <img src="../../assets/img/velocidad_op2.jpg" alt="">
+                                <img src="../../assets/img/velocidad_m.jpg" alt="">
+                            </div>
+                        </p>
+                        <p>
+                            Como podemos apreciar la velocidad media solamente toma en cuenta la posición inicial
+                            y la posición final. Anque su posición varíe mucho con respecto al tiempo no tomamos en
+                            cuenta esos puntos de variación, sino su inicio y fin.
+                            <div class="formula">
+                                la velocidad media está definida como: <br>
+                                \(\vec{v}_{media} = \tfrac{\vec{x}_{f} - \vec{x}_{i}}{t_{f} - t_{i}}\) <br>
+                                A esto se lo considera como velocidad constante por el hecho de que consideramos que
+                                no cambia en ningun momento
+                            </div>
+                        </p>
+                    </div>
+                    <div class="column-element">
+                        <h2 class="element-h2">Velocidad Instantanea</h2>
+                        <p>
+                            De tipo <b>vector</b>, es una velocidad que nos dice cual es su valor
+                            en un tiempo y posición específica, tomando en cuenta todos los puntos
+                            sin importar que la misma varie mucho o no. siendo mucho más exacto
+                            que la velocidad media.
+                            <div class="gif">
+                                <img src="../../assets/img/velocidad_op2.jpg" alt="">
+                                <img src="../../assets/img/velocidad_i.gif" alt="">
+                            </div>
+                        </p>
+                        <p>
+                            Vemos la velocidad en cada punto del movimiento
+                            de la particula. A parte de tomar la posición inicial y final,
+                            podemos tomar cualquier punto de su desplazamiento, donde en ese punto \(x_{n}\) sacamos
+                            la pendiente de la recta <b>tangente</b> al punto \(x_{n}\)
+                            <div class="formula">
+                                La velocidad media está definida como: <br>
+                                \(\vec{v}_{instantane} = \underset{\triangle t \to 0}{\lim}(\tfrac{\triangle \vec{x}}{\triangle t})\) <br>
+                                Que es lo mismo que la derivada de \(\vec{x}\) con respecto a \(t\) : <br>
+                                \(\vec{v}_{instantanea} = \tfrac{d\vec{x}}{dt}\)
+                            </div>
+                        </p>
+                    </div>
+                </div>
+                <p class="parrafo">
+                    En resumen, <b>la velocidad media</b> es una velocidad constante y que generaliza una velocidad
+                    del desplazamiento de una punto inicial a un punto final, <b>la velocidad instantanea</b> es una
+                    velocidad en un "instante" específico. Ahora bien, ya sabiendo la diferencia de velocidad
+                    media e instantanea podemos adentrarnos en lo que es la <b>Rapidez</b>, siendo que es un concepto
+                    muy parecido a la velocidad con excepciones.
+                </p>
+                <div class="column">
+                    <div class="column-element">
+                        <h2>Definición de Rapidez</h2>
+                        <p>
+                            La rapidez <b>es un cambio de distancia</b>, esto implica que la misma es un
+                            <b>escalar</b> o un número fijo (o contante) que en realidad es el <b>módulo del vector velocidad</b>
+                            (tamaño de vector), la misma solamente trabaja con <b>distancia</b>
+                            <div class="formula">
+                                la rapidez está definida como: <br>
+                                \(v = \tfrac{x}{t}\)
+                            </div>
+                        </p>
+                        <p>
+                            Hacer notar que como la diferencia de desplazamiento y distancia, la rapidez se representa
+                            por \(v\) que hace referencia que es un escalar a diferencia de la velocidad que se
+                            representa por \(\vec{v}\) que dice que es un vector.
+                        </p>
+                    </div>
+                    <div class="column-element">
+                        <h2>Rapidez media</h1>
+                        <p>
+                            Al decir esto nos referimos que la Velocidad media tiene un equivalente
+                            en rapidez, pues veamos, <b>si existe rapidez media</b> ya que la misma
+                            perfectamente cumple lo siguiente:
+                            <div class="formula">
+                                Si la velocidad media (\(\vec{v}_{media}\)) es igual a la rapidez
+                                media (\(v_{media}\)) se cumple que: <br>
+                                \(\vec{v}_{media} = v_{media}\) <br>
+                                \(\tfrac{\vec{x}_{f} - \vec{x}_{i}}{t_{f} - t_{i}} = \tfrac{x_{f} - x_{i}}{t_{f} - t_{i}}\) <br>
+                            </div>
+                        </p>
+                        <p>
+                            Esto se cumple, entonces consideramos a la <b>rapidez media igual que la velocidad media</b>.
+                        </p>
+                    </div>
+                    <div class="column-element">
+                        <h2>Rapidez instantanea</h2>
+                        <p>
+                            Al decir esto nos referimos que Velocidad instantanea tienen un equivalente
+                            en rapidez, pues veamos, <b>no existe rapidez instantanea</b> por que
+                            tendria que cumplirse lo siguiente:
+                            <div class="formula">
+                                Si Velocidad instantanea (\(\vec{v}_{inst}\)) es igual a rapidez instantanea (\(v_{inst}\))
+                                se cumple que: <br>
+                                \(\vec{v}_{inst} = v_{inst}\) <br>
+                                \(\tfrac{d \vec{x}}{dt} = \tfrac{dx}{dt}\) <br>
+                                Pero sabemos que <b>Rapidez es un escalar</b> lo que equivale que sea una <b>constante</b>
+                                e implica que <b>su derivada sea 0</b>. <br>
+                                \(\tfrac{d \vec{x}}{dt} \neq 0\) <br>
+                            </div>
+                        </p>
+                    </div>
+                </div>
             </div>
-            <div class="prueba subtheme-container">
-                <h1>HOLa4</h1>
+            <div id="cin_4" class="ref"></div>
+            <h1 class="separador back-brownlight-p1">Aceleración</h1>
+            <div class="subtheme-container back-white-1">
+                <p class="parrafo">
+                    La aceleración es <b>el cambio de velocidad con respecto al tiempo</b>, practicamente es el mismo caso que
+                    pasaba con la velocidad. La aceleración es un <b>vector</b> que se expresa en unidades de
+                    \([\tfrac{velocidad}{tiempo}]\) o también por \([\tfrac{longitud}{tiempo^2}]\).
+                    Veamos como se define la aceleración y que relación tiene con la velocidad y el tiempo
+                </p>
+                <div class="example-with-img">
+                    <div class="img-ejem_large text-center">
+                        <img src="/assets/img/aceleracion.jpg" class="img-ejem_large-item">
+                        <img src="/assets/img/aceleracion_op.jpg" class="img-ejem_large-item">
+                    </div>
+                    <div>
+                        <p class="parrafo">
+                            La aceleración también puede expresarse de forma matemática, siendo que la aceleración nos es
+                            más que la <b>pendiente de una recta</b> que pasa por una <b>velocidad incial y final</b> con
+                            respecto al tiempo.
+                            <div class="center">
+                                <img src="/assets/img/aceleracion.jpg" class="img-ejem">
+                            </div>
+                            <div class="formula">
+                                \(\vec{a} = \tfrac{\triangle \vec{v}}{t} = \tfrac{\vec{v}_{f} - \vec{v}_{i}}{t_{f} - t_{i}}\) <br>
+                                Y pues tenemos una similitud: <br>
+                                \(\vec{a} = \tfrac{\vec{v}_{f} - \vec{v}_{i}}{t_{f} - t_{i}}\) <br>
+                                \(\downarrow\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\downarrow\thinspace\thinspace\downarrow\) <br>
+                                \( m = \tfrac{y_{2} - y_{1}}{x_{2} - x_{1}}\) <br> <br>
+                                \(\vec{a} = m = \tan{\theta}\)
+                            </div>
+                        </p>
+                        <p class="parrafo">
+                            Ahora veamos un pequeño ejemplo de como podemos interpretar la aceleración como una pendiente
+                            de una recta.
+                            <div class="center">
+                                <img src="/assets/img/aceleracion_op.jpg" class="img-ejem">
+                            </div>
+                            <div class="formula">
+                                Una particula se parte con una velocidad de \(3[\tfrac{m}{s}]\) y una aceleración de
+                                \(\tfrac{1}{2}[\tfrac{m}{s^2}]\) durante 10 segundo, ¿cuál será su velocidad final? <br>
+                                Datos: <br>
+                                \(\vec{v}_{i} = 3[\tfrac{m}{s}]\); \(\vec{a} = \tfrac{1}{2}[\tfrac{m}{s^2}]\); \(t = 10 [s]\) <br>
+                                Tenemos la siguiente función: <br>
+                                \(\vec{v}_{f} = \vec{v}_{i} + \vec{a}\cdot t\) <br>
+                                \(\downarrow \thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace \downarrow \thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\thinspace\downarrow\thinspace\downarrow\) <br>
+                                \(y \thinspace\thinspace\thinspace = a \thinspace\thinspace + m \cdot x\) <br>
+                                Hacer notar que \(\vec{a}\) es la pendiente de esta recta <br>
+                                \(\vec{v}_{f} = 3[\tfrac{m}{s}] + \tfrac{1}{2}[\tfrac{m}{s^2}] \cdot 10[s]\) <br>
+                                \(\vec{v}_{f} = 8[\tfrac{m}{s}]\)
+                            </div>
+                        </p>
+                    </div>
+                </div>
+                <p class="parrafo">
+                    En resumen, la aceleración es un vector, el mismo es la pendiente de la recta que une a la velocidad inicial
+                    con la velocidad final. Por otro lado al igual que la velocidad, la aceleración viene en dos tipos:
+                    <b>aceleración media</b> y <b>aceleración instantanea</b>.
+                </p>
+                <div class="column column-2">
+                    <div class="column-element">
+                        <h2 class="element-h2">Aceleración Media</h2>
+                        <p>
+                            De tipo <b>vector</b>, es la aceleración general de una velocidad inicial y una velocidad final.
+                            Este tipo de aceleración no toma en cuenta si hay gran variación de velocidades.
+                        </p>
+                        <div class="gif">
+                            <img src="/assets/img/velocidad_op2.jpg" alt="">
+                            <img src="/assets/img/velocidad_m.jpg" alt="">
+                        </div>
+                        <p>
+                            Como se puede ver, esto es exactamente como pasaba con la velocidad media
+                            y el desplazamiento donde la <b>aceleración media</b> se expresa como:
+                            <div class="formula">
+                                \(\vec{a}_{media} = \tfrac{\vec{v}_{f} - \vec{v}_{i}}{t_{f} - t_{i}}\) <br>
+                                Al igual que la velocidad media, se considera a la aceleración media como
+                                una aceleración constante.
+                            </div>
+                        </p>
+                    </div>
+                    <div class="column-element">
+                        <h2 class="element-h2">Aceleración Instantanea</h2>
+                        <p>
+                            De tipo <b>vector</b>, es la aceleración en un punto específico, este punto puede ser
+                            cualquiera velocidad del recorrido. Esta aceleración es una aceleración específica.
+                        </p>
+                        <div class="gif">
+                            <img src="/assets/img/velocidad_op2.jpg" alt="">
+                            <img src="/assets/img/velocidad_i.gif" alt="">
+                        </div>
+                        <p>
+                            Como se llega a ver, esto es exactamente como pasaba con la velocidad instantanea y el
+                            desplazamiento donde la <b>aceleración instantanea</b> se expresa como:
+                            <div class="formula">
+                                \(\vec{a}_{instantanea} = \underset{\triangle t \to 0} \lim (\tfrac{\triangle \vec{v}}{\triangle t})\) <br>
+                                Que es lo mismo que decir que: <br>
+                                \(\vec{a}_{instantanea} = \tfrac{d \vec{v}}{d \vec{t}}\)
+                            </div>
+                        </p>
+                    </div>
+                </div>
             </div>
             <div class="prueba subtheme-container">
                 <h1>HOLa5</h1>

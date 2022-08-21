@@ -7,7 +7,11 @@
   height: 100vh;
 }
 
-
+.center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 .w-ocultar{
   width: 0;
@@ -123,6 +127,30 @@
     border-radius: 30px;
     border: 3px solid var(--wgb-1-2);
     margin: 10px 0px;
+  }
+}
+
+/*-----------------------------IMAGENES-----------------------------------*/
+.img-ejem{
+  width: 50vw;
+  margin: 5px;
+  border: 2px solid #3f3f3f;
+}
+.img-ejem_large{
+  display: none;
+}
+@media only screen and (min-width: 800px){
+  .img-ejem{
+    display: none;
+  }
+  .img-ejem_large{
+    display: block;
+  }
+  .img-ejem_large-item{
+    width: 25vw;
+  }
+  .example-with-img{
+    display: flex;
   }
 }
 /*--------------------------------REFERANCIAS A UNA SECCION------------------------------*/
