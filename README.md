@@ -16,11 +16,11 @@ se utilizó parte de JavaScript y CSS.
 Recurosos de tipo 🎶audio, 🎴imagenes, 🎞video, 📝tipografia que se
 usó para la creación de la página web.
 
-[🎶 Fantasy RPG music](https://alkakrab.itch.io/free-25-fantasy-rpg-game-tracks-no-copyright-vol-2)
-[🎴 PixelArt icons](https://pixelarticons.com/free/)
-[🎴 Mountain Background Parallax](https://ansimuz.itch.io/mountain-dusk-parallax-background)
-[📝 Press Start 2P](https://fonts.google.com/specimen/Press+Start+2P?query=press+star)
-[📝 Silkscreen](https://fonts.google.com/specimen/Silkscreen?query=silk)
+[🎶 Fantasy RPG music](https://alkakrab.itch.io/free-25-fantasy-rpg-game-tracks-no-copyright-vol-2)\
+[🎴 PixelArt icons](https://pixelarticons.com/free/)\
+[🎴 Mountain Background Parallax](https://ansimuz.itch.io/mountain-dusk-parallax-background)\
+[📝 Press Start 2P](https://fonts.google.com/specimen/Press+Start+2P?query=press+star)\
+[📝 Silkscreen](https://fonts.google.com/specimen/Silkscreen?query=silk)\
 [📝 VT323](https://fonts.google.com/specimen/VT323?query=vt323)
 
 ## Authors
