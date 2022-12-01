@@ -6,10 +6,10 @@ temas en general como matemáticas, física, informática, etc.
 ## Tecnologias y modulos utilizados
 
 Mencionando las tecnologias de programacion o de estilizacion que
-se utilizó parte de JavaScript y CSS.
-[NextJS](https://nextjs.org/)
-[Talwind](https://tailwindcss.com/)
-[React-scroll](https://www.npmjs.com/package/react-scroll)
+se utilizó parte de JavaScript y CSS. \
+[NextJS](https://nextjs.org/)\
+[Talwind](https://tailwindcss.com/)\
+[React-scroll](https://www.npmjs.com/package/react-scroll)\
 
 ## 📦 Recursos utilizados
 
