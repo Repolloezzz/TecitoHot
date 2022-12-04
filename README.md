@@ -9,7 +9,8 @@ Mencionando las tecnologias de programacion o de estilizacion que
 se utilizó parte de JavaScript y CSS. \
 [NextJS](https://nextjs.org/)\
 [Talwind](https://tailwindcss.com/)\
-[React-scroll](https://www.npmjs.com/package/react-scroll)\
+[react-scroll](https://www.npmjs.com/package/react-scroll)\
+[react-svg](https://www.npmjs.com/package/react-svg)
 
 ## 📦 Recursos utilizados
 
@@ -19,6 +20,7 @@ usó para la creación de la página web.
 [🎶 Fantasy RPG music](https://alkakrab.itch.io/free-25-fantasy-rpg-game-tracks-no-copyright-vol-2)\
 [🎴 PixelArt icons](https://pixelarticons.com/free/)\
 [🎴 Mountain Background Parallax](https://ansimuz.itch.io/mountain-dusk-parallax-background)\
+[🎴 Gui and options](https://mounirtohami.itch.io/pixel-art-gui-elements)\
 [📝 Press Start 2P](https://fonts.google.com/specimen/Press+Start+2P?query=press+star)\
 [📝 Silkscreen](https://fonts.google.com/specimen/Silkscreen?query=silk)\
 [📝 VT323](https://fonts.google.com/specimen/VT323?query=vt323)

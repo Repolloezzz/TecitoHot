@@ -12,8 +12,11 @@
     "eslint": "8.28.0",
     "eslint-config-next": "13.0.5",
     "next": "13.0.5",
+    "pixelarticons": "^1.7.0",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-scroll": "^1.8.8",
+    "react-svg": "^15.1.14"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.13",

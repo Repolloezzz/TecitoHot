@@ -1,0 +1,32 @@
+
+.Hamburger_active > li:nth-child(1) {
+    transform: translateY(200%) rotate(135deg);
+}
+.Hamburger_active > li:nth-child(2) {
+    width: 0;
+}
+.Hamburger_active > li:nth-child(3) {
+    transform: translateY(-200%) rotate(-135deg);
+}
+
+.V_active {
+    width: calc(2 * 60%);
+}
+
+@media (min-width: 640px) {
+    .V_active {
+        width: 40%;
+    }
+}
+
+@media (min-width: 1024px) {
+    .V_active {
+        width: 30%;
+    }
+}
+
+@media (min-width: 1536px) {
+    .V_active {
+        width: 20%;
+    }
+}

@@ -68,7 +68,7 @@ export default function Test() {
               icon: "downasaur",
               to: "./About",
               especial: true,
-              className: "bg-cgreen-200 hover:bg-cgreen-300",
+              className: "bg-cgreen-200 hover:bg-cgreen-600",
             },
           ]}
         ></HeroNavV>

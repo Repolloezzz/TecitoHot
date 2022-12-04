@@ -6,3 +6,6 @@
 @tailwind utilities;
 
 
+body {
+    font-family: "VT323", "monospace";
+}
