@@ -25,6 +25,7 @@ usó para la creación de la página web.
 [📝 Silkscreen](https://fonts.google.com/specimen/Silkscreen?query=silk)\
 [📝 VT323](https://fonts.google.com/specimen/VT323?query=vt323)
 
+
 ## Authors
 
 - [@RepolloEzzz](https://github.com/Repolloezzz)

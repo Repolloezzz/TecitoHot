@@ -1,5 +1,5 @@
+import { HeroBackground } from "../components/Background";
 import { HeroNavV } from "../components/HeroNav";
-
 
 export default function Test() {
   return (
@@ -74,11 +74,9 @@ export default function Test() {
         ></HeroNavV>
         <div
           id="contentContainer"
-          className="w-full h-screen overflow-y-scroll"
+          className="w-full h-screen overflow-x-hidden overflow-y-scroll"
         >
-          <div id="heroback" className="w-full h-full bg-sky-400">
-            Background
-          </div>
+          <HeroBackground id="heroback" className="bg-sky-400" />
           <div id="materias" className="w-full h-full bg-sky-400">
             <div id="mat_mat" className="w-full h-full bg-red-400">
               Massss

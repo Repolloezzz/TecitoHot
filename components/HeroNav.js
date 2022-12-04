@@ -103,13 +103,13 @@ export function HeroNavV({
         <div
           className={`flex justify-center w-full border-red-800 ${
             !sw
-              ? "bg-red-600 border-b-8 hover:bg-red-700 hover:border-b-2 hover:mt-6 sm:hover:mt-3.5"
+              ? "bg-red-600 border-b-8 hover:bg-red-700 hover:border-b-2 hover:mt-3.5 sm:hover:mt-3.5"
               : ""
-          } mt-5 p-1 sm:p-0 mb-5 sm:mt-2 sm:mb-2 box-content transition-all duration-300 cursor-pointer`}
+          } mt-2 p-1 sm:p-0 mb-2 sm:mt-2 sm:mb-2 box-content transition-all duration-300 cursor-pointer`}
           onClick={HamburgerActive}
         >
           <ul
-            className={`flex flex-col overflow-hidden gap-1.5 w-10 h-10 justify-center cursor-pointer transition-all duration-500 ${hamburger} `}
+            className={`flex flex-col overflow-hidden gap-1.5 w-8 sm:w-10 h-10 justify-center cursor-pointer transition-all duration-500 ${hamburger} `}
           >
             <li
               className={`bg-tropical-100 w-full h-1.5 block transition-all duration-500`}
@@ -126,12 +126,12 @@ export function HeroNavV({
         {/* validando si poner una imagen de user.img */}
         {user.img != undefined ? (
           <picture
-            className={`flex justify-center w-full h-34 sm:h-40 select-none ${
+            className={`flex justify-center w-full h-28 sm:h-40 select-none ${
               !sw ? "bg-blue-500" : ""
             } transition-all duration-500 box-content`}
           >
             <img
-              className={`top-0 object-cover object-top rounded-full transition-all duration-300 cursor-pointer ${
+              className={`top-0 object-cover object-top rounded-full transition-all duration-300 cursor-pointer border-4 border-dotted ${
                 !sw
                   ? "w-24 h-24 sm:h-36 sm:w-36 m-2 hover:rotate-12 hover:scale-105"
                   : "w-8 h-8 m-0 sm:h-10 sm:w-10"
@@ -174,7 +174,11 @@ export function HeroNavV({
                   containerId={element.containerId}
                   name={element.name}
                   icon={element.icon}
-                  className={`block min-w-max box-content select-none ${!sw ? "pl-2" : ""} pt-1 pb-1 ${element.className} text-slate-200 hover:bg-tropical-100 hover:text-black transition-all duration-300 hover:scale-105 hover:pl-1`}
+                  className={`block min-w-max box-content select-none ${
+                    !sw ? "pl-2" : ""
+                  } pt-1 pb-1 ${
+                    element.className
+                  } text-slate-200 hover:bg-tropical-100 hover:text-black transition-all duration-300 hover:scale-105 hover:pl-1`}
                   iconClass={"w-8 h-8 sm:w-10 sm:h-10 p-1"}
                   nameClass={"pl-4 text-xl sm:text-2xl"}
                 />
