@@ -24,23 +24,18 @@
 }
 @media (min-width: 400px) {
     .V_active {
-        width: 40%;
-    }
-}
-@media (min-width: 640px) {
-    .V_active {
-        width: 40%;
+        width: 40% !important;
     }
 }
 
 @media (min-width: 1024px) {
     .V_active {
-        width: 30%;
+        width: 30% !important;
     }
 }
 
 @media (min-width: 1536px) {
     .V_active {
-        width: 20%;
+        width: 20% !important;
     }
 }
