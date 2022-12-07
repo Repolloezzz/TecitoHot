@@ -1,16 +1,27 @@
+import Head from 'next/head'
 import { HeroBackground } from "../components/Background";
 import { HeroNavV } from "../components/HeroNav";
 import { SectionSelector } from "../components/SectionSelector";
 
-
-
 export default function Test() {
-
-  const data = require('../data/dataMatters.json')
-  console.log(data)
+  const data = require("../data/dataMatters.json");
+  console.log(data);
 
   return (
     <>
+    <Head>
+        <title>TeCitoHot - Repositorio Puro</title>
+        <meta charset="UTF-8"/>
+        <meta name="author" content="@RepolloEzzz"/>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta name="description" content='Respitorio de materias que se ven en la universidad o simplemente temas que son relevantes en algunos aspectos. Este sitio tiene contenido que en otras páginas no encontraras o en su defecto encontraras más de lo que
+        quieres😳'/>
+        <meta name="keywords" content="Temas de matemáticas, Temas de física, Temas de programación"/>
+        <link rel="apple-touch-icon" sizes="180x180" href="/icons/title/apple-touch-icon.png"/>
+        <link rel="icon" type="image/png" sizes="32x32" href="/icons/title/favicon-32x32.png"/>
+        <link rel="icon" type="image/png" sizes="16x16" href="/icons/titlle/favicon-16x16.png"/>
+        <link rel="manifest" href="/icons/title/site.webmanifest"></link>
+      </Head>
       <section className="flex">
         <HeroNavV
           user={{
@@ -91,20 +102,39 @@ export default function Test() {
             id="heroback"
             className="bg-sky-400"
             title={"TeCitoHot"}
-            description = {"El lugar donde encontraras recursos donde en otros sitio son escasos o incluso ni siquiera existen."}
-            options={[{ name: "Tema random", to: "#" }, {name: "Por qué TeCito?", to: "./About"}]}
+            description={`El lugar donde encontraras recursos donde en otros sitio son escasos o incluso ni siquiera existen.`}
+            options={[
+              { name: "Tema random", to: "#" },
+              { name: "Por qué TeCito?", to: "./About" },
+            ]}
           />
           <div id="materias" className="w-full h-full bg-sky-400">
-            <SectionSelector className={`w-full h-full bg-red-500`} id='mat_mat'/>
-            <div id="mat_fis" className="w-full h-full bg-blue-500">
-              Massss
-            </div>
-            <div id="mat_inf" className="w-full h-full bg-slate-800">
-              Massss
-            </div>
-            <div id="mat_mus" className="w-full h-full bg-indigo-600">
-              Massss
-            </div>
+            <SectionSelector
+              className={`w-full h-full bg-red-500 text-white`}
+              id="mat_mat"
+              title={"Matemáticas"}
+              description={`
+              La matemática2​ (del latín mathematĭca, y este del griego μαθηματικά, transliterado como mathēmatiká, derivado de μάθημα, tr. máthēma. 'conocimiento') es una ciencia formal que surgió del estudio de las figuras geométricas y la aritmética con números. No existe una definición generalmente aceptada de las matemáticas; hoy en día se suelen describir como una ciencia que utiliza la lógica para examinar las propiedades y los patrones de las estructuras abstractas creadas por las definiciones lógicas.
+              `}
+            />
+            <SectionSelector
+              className={`w-full h-full bg-blue-500`}
+              id="mat_fis"
+              title={"Física"}
+              description={"eaisnfiansfias"}
+            />
+            <SectionSelector
+              className={`w-full h-full bg-slate-800`}
+              id="mat_inf"
+              title={"Informática"}
+              description={"eaisnfiansfias"}
+            />
+            <SectionSelector
+              className={`w-full h-full bg-indigo-600`}
+              id="mat_mus"
+              title={"Música"}
+              description={"eaisnfiansfias"}
+            />
           </div>
         </div>
       </section>
