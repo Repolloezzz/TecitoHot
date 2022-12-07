@@ -33,12 +33,11 @@ export function HeroBackground({
 
   // para sacar un conjunto de colores distintos
   const coolor = [
-    "hover:text-cgreen-100",
-    "hover:text-cgreen-200",
-    "hover:text-cgreen-300",
-    "hover:text-cgreen-400",
-    "hover:text-cgreen-500",
-    "hover:text-cgreen-600",
+    "hover:text-palete-100",
+    "hover:text-palete-200",
+    "hover:text-palete-300",
+    "hover:text-palete-400",
+    "hover:text-palete-500",
   ];
   var con = 0;
   function getCoolor() {
@@ -62,7 +61,7 @@ export function HeroBackground({
                   <span
                     key={index}
                     char={char}
-                    style={{ "--deg": `${index * 12}deg` }}
+                    style={{ "--deg": `${index * 12}deg`, textShadow: '0px 5px 2px #00000070'}}
                     className={`relative block p-0 m-0 text-5xl transition-all duration-300 cursor-pointer select-none font-silk sm:text-7xl md:text-9xl border-double text-slate-100 box-content
                     ${getCoolor()}`}
                     onClick={(e) => {

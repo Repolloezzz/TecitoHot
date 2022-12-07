@@ -1,5 +1,6 @@
 import { HeroBackground } from "../components/Background";
 import { HeroNavV } from "../components/HeroNav";
+import { SectionSelector } from "../components/SectionSelector";
 
 
 
@@ -94,9 +95,7 @@ export default function Test() {
             options={[{ name: "Tema random", to: "#" }, {name: "Por qué TeCito?", to: "./About"}]}
           />
           <div id="materias" className="w-full h-full bg-sky-400">
-            <div id="mat_mat" className="w-full h-full bg-red-500">
-              Massss
-            </div>
+            <SectionSelector className={`w-full h-full bg-red-500`} id='mat_mat'/>
             <div id="mat_fis" className="w-full h-full bg-blue-500">
               Massss
             </div>
