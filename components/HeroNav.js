@@ -96,116 +96,120 @@ export function HeroNavV({
 
   return (
     <>
-      <nav
-        className={`box-content flex flex-col items-center w-12 bg-vector-100 text-slate-50 transition-all duration-500 ${navSize} overflow-hidden h-screen HERONAV`}
-      >
-        {/*   HAMBURGUER - BUTTON  */}
-        <div
-          className={`flex justify-center w-full border-red-800 ${
-            !sw
-              ? "bg-red-600 border-b-8 hover:bg-red-700 hover:border-b-2 hover:mt-3.5 sm:hover:mt-3.5"
-              : ""
-          } mt-2 p-1 sm:p-0 mb-2 sm:mt-2 sm:mb-2 box-content transition-all duration-300 cursor-pointer`}
-          onClick={HamburgerActive}
+      <div>
+        {/* DIV [CONTRARESTAR ABSOLUTE], NAV[CLASS ABSOLUTE => WITHD: 0] */}
+        <nav
+          className={`box-content absolute top-0 left-0 z-50 flex flex-col items-center w-12 bg-vector-100 text-slate-50 transition-all duration-500 ${navSize} overflow-hidden h-screen HERONAV`}
         >
-          <ul
-            className={`flex flex-col overflow-hidden gap-1.5 w-8 sm:w-10 h-10 justify-center cursor-pointer transition-all duration-500 ${hamburger} `}
+          {/*   HAMBURGUER - BUTTON  */}
+          <div
+            className={`flex justify-center w-full border-red-800 ${
+              !sw
+                ? "bg-red-600 border-b-8 hover:bg-red-700 hover:border-b-2 hover:mt-3.5 sm:hover:mt-3.5"
+                : ""
+            } mt-2 p-1 sm:p-0 mb-2 sm:mt-2 sm:mb-2 box-content transition-all duration-300 cursor-pointer`}
+            onClick={HamburgerActive}
           >
-            <li
-              className={`bg-tropical-100 w-full h-1.5 block transition-all duration-500`}
-            ></li>
-            <li
-              className={`bg-tropical-100 w-full h-1.5 block transition-all duration-500`}
-            ></li>
-            <li
-              className={`bg-tropical-100 w-full h-1.5 block transition-all duration-500`}
-            ></li>
-          </ul>
-        </div>
-        {/*   USER SECTION  - @use user */}
-        {/* validando si poner una imagen de user.img */}
-        {user.img != undefined ? (
-          <picture
-            className={`flex justify-center w-full h-28 sm:h-40 select-none ${
-              !sw ? "bg-blue-500" : ""
-            } transition-all duration-500 box-content`}
-          >
-            <img
-              className={`top-0 object-cover object-top rounded-full transition-all duration-300 cursor-pointer border-4 border-dotted ${
-                !sw
-                  ? "w-24 h-24 sm:h-36 sm:w-36 m-2 hover:rotate-12 hover:scale-105"
-                  : "w-8 h-8 m-0 sm:h-10 sm:w-10"
+            <ul
+              className={`flex flex-col overflow-hidden gap-1.5 w-8 sm:w-10 h-10 justify-center cursor-pointer transition-all duration-500 ${hamburger} `}
+            >
+              <li
+                className={`bg-tropical-100 w-full h-1.5 block transition-all duration-500`}
+              ></li>
+              <li
+                className={`bg-tropical-100 w-full h-1.5 block transition-all duration-500`}
+              ></li>
+              <li
+                className={`bg-tropical-100 w-full h-1.5 block transition-all duration-500`}
+              ></li>
+            </ul>
+          </div>
+          {/*   USER SECTION  - @use user */}
+          {/* validando si poner una imagen de user.img */}
+          {user.img != undefined ? (
+            <picture
+              className={`flex justify-center w-full h-28 sm:h-40 select-none ${
+                !sw ? "bg-blue-500" : ""
+              } transition-all duration-500 box-content`}
+            >
+              <img
+                className={`top-0 object-cover object-top rounded-full transition-all duration-300 cursor-pointer border-2 sm:border-4 border-dotted ${
+                  !sw
+                    ? "w-24 h-24 sm:h-36 sm:w-36 m-2 hover:rotate-12 hover:scale-105"
+                    : "w-8 h-8 m-0 sm:h-10 sm:w-10"
+                }`}
+                src={user.img}
+                alt="userImage"
+              ></img>
+            </picture>
+          ) : null}
+          {/* validando si poner un boton <a> del user.name y user.link */}
+          {user.name != undefined && user.link !== undefined ? (
+            <a
+              href={!sw ? user.link : "#"}
+              className={`opacity-0 transition-all w-full h-10 flex items-center justify-center duration-300 bg-white text-black text-xl font-semibold  ${
+                !sw ? "opacity-100 w-full hover:pl-7" : "text-xs"
               }`}
-              src={user.img}
-              alt="userImage"
-            ></img>
-          </picture>
-        ) : null}
-        {/* validando si poner un boton <a> del user.name y user.link */}
-        {user.name != undefined && user.link !== undefined ? (
-          <a
-            href={!sw ? user.link : "#"}
-            className={`opacity-0 transition-all w-full h-10 flex items-center justify-center duration-300 bg-white text-black text-xl font-semibold  ${
-              !sw ? "opacity-100 w-full hover:pl-7" : "text-xs"
-            }`}
-          >
-            {user.name}
-          </a>
-        ) : null}
-        <hr className="w-full border-4 border-dashed"></hr>
-        {/*   CREACION DEL MENU - @use options */}
-        <menu className={`flex flex-col w-full mt-auto h-3/5`}>
-          {/* mapeado de cada opcion */}
-          {options.map((element, index) => {
-            /*
+            >
+              {user.name}
+            </a>
+          ) : null}
+          <hr className="w-full border-4 border-dashed"></hr>
+          {/*   CREACION DEL MENU - @use options */}
+          <menu className={`flex flex-col w-full mt-auto h-3/5`}>
+            {/* mapeado de cada opcion */}
+            {options.map((element, index) => {
+              /*
               ! si el element(opcion del menu) tiene su atributo [subOption = true]
               entonces agregar una clase subMenu al <li> para agregar EVENTOS ONCLICK
             */
-            return (
-              <li
-                key={index}
-                className={`${element.subOptions ? "subMenu" : ""} ${
-                  element.especial ? "mt-auto" : ""
-                }`}
-              >
-                <ButtonRef
-                  to={element.to}
-                  toIn={element.toIn}
-                  containerId={element.containerId}
-                  name={element.name}
-                  icon={element.icon}
-                  className={`block min-w-max box-content select-none ${
-                    !sw ? "pl-2" : ""
-                  } pt-1 pb-1 ${
-                    element.className
-                  } text-slate-200 hover:bg-tropical-100 hover:text-black transition-all duration-300 hover:scale-105 hover:pl-1`}
-                  iconClass={"w-8 h-8 sm:w-10 sm:h-10 p-1"}
-                  nameClass={"pl-4 text-xl sm:text-2xl"}
-                />
-                {/* validando si la opción tiene un submenu [ SUBOPTIONS = TRUE ] => crear un SUBMENU */}
-                {element.subOptions ? (
-                  <ol className="flex flex-col h-0 pl-5 overflow-hidden transition-all duration-300 bg-slate-200">
-                    {element.options.map((suboption, k) => {
-                      return (
-                        <ButtonRef
-                          name={suboption.name}
-                          to={suboption.to}
-                          toIn={suboption.toIn}
-                          containerId={suboption.containerId}
-                          className={
-                            "text-black border-l-tropical-100 border-l-4 pl-5 text-xl hover:bg-tropical-200 hover:pl-9 transition-all duration-200"
-                          }
-                          key={k}
-                        />
-                      );
-                    })}
-                  </ol>
-                ) : null}
-              </li>
-            );
-          })}
-        </menu>
-      </nav>
+              return (
+                <li
+                  key={index}
+                  className={`${element.subOptions ? "subMenu" : ""} ${
+                    element.especial ? "mt-auto" : ""
+                  }`}
+                >
+                  <ButtonRef
+                    to={element.to}
+                    toIn={element.toIn}
+                    containerId={element.containerId}
+                    name={element.name}
+                    icon={element.icon}
+                    className={`block min-w-max box-content select-none ${
+                      !sw ? "pl-2" : ""
+                    } pt-1 pb-1 ${
+                      element.className
+                    } text-slate-200 transition-all duration-300 hover:scale-105 hover:pl-1`}
+                    iconClass={"w-8 h-8 sm:w-10 sm:h-10 p-1"}
+                    nameClass={"pl-4 text-xl sm:text-2xl"}
+                  />
+                  {/* validando si la opción tiene un submenu [ SUBOPTIONS = TRUE ] => crear un SUBMENU */}
+                  {element.subOptions ? (
+                    <ol className="flex flex-col h-0 pl-5 overflow-hidden transition-all duration-300 bg-slate-200">
+                      {element.options.map((suboption, k) => {
+                        return (
+                          <ButtonRef
+                            name={suboption.name}
+                            to={suboption.to}
+                            toIn={suboption.toIn}
+                            containerId={suboption.containerId}
+                            className={
+                              "text-black border-l-tropical-100 border-l-4 pl-5 text-xl hover:bg-tropical-200 hover:pl-9 transition-all duration-200"
+                            }
+                            key={k}
+                          />
+                        );
+                      })}
+                    </ol>
+                  ) : null}
+                </li>
+              );
+            })}
+          </menu>
+        </nav>
+        <div className="w-12" alt="AuxNavBox"></div>
+      </div>
     </>
   );
 }

@@ -1,3 +1,7 @@
+/**
+ ** Selector de <li> de los componentes de HAMBURGER - BUTTON
+ *! Solo se selecionan los li, si existe otro tipo => ERROR!
+*/
 
 .Hamburger_active > li:nth-child(1) {
     transform: translateY(200%) rotate(135deg);
@@ -9,8 +13,14 @@
     transform: translateY(-200%) rotate(-135deg);
 }
 
+/**
+ ** Clases para Desplegar el HeroNav
+ *? Cambia según el viewport ... Pues si
+ *! El HeroNav está en "absolute" pero tiene un auxiliar para contrarestar el tamaño
+*/
+
 .V_active {
-    width: calc(2 * 60%);
+    width: calc(60%);
 }
 
 @media (min-width: 640px) {
