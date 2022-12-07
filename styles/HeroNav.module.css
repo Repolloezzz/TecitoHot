@@ -22,7 +22,11 @@
 .V_active {
     width: calc(60%);
 }
-
+@media (min-width: 400px) {
+    .V_active {
+        width: 40%;
+    }
+}
 @media (min-width: 640px) {
     .V_active {
         width: 40%;
