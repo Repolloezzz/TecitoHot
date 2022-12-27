@@ -1,26 +1,30 @@
-import Head from 'next/head'
+import Head from "next/head";
 import { HeroBackground } from "../components/Background";
 import { HeroNavV } from "../components/HeroNav";
-import { SectionSelector } from "../components/SectionSelector";
+import { getElements } from "./../functions/mattersMethodsAPI";
+import { useEffect, useState } from "react";
+import { MatterSection } from "../components/MatterSection";
 
 export default function Test() {
-  const data = require("../data/dataMatters.json");
-  console.log(data);
+  // Obteniendo datos de MattersAPI
+  const [data, setData] = useState([]);
+  const mattersURL = "./api/mattersAPI";
+  function refreshData() {
+    getElements(mattersURL).then((res) => setData(res));
+  }
+
+  useEffect(() => {
+    refreshData();
+  }, []);
+
+  // colores para las secciones
+  const colors = ["bg-red-500", "bg-blue-500", "bg-slate-700", "bg-indigo-500"];
 
   return (
     <>
-    <Head>
+      <Head>
         <title>TeCitoHot - Repositorio Puro</title>
-        <meta charset="UTF-8"/>
-        <meta name="author" content="@RepolloEzzz"/>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-        <meta name="description" content='Respitorio de materias que se ven en la universidad o simplemente temas que son relevantes en algunos aspectos. Este sitio tiene contenido que en otras páginas no encontraras o en su defecto encontraras más de lo que
-        quieres😳'/>
-        <meta name="keywords" content="Temas de matemáticas, Temas de física, Temas de programación"/>
-        <link rel="apple-touch-icon" sizes="180x180" href="/icons/title/apple-touch-icon.png"/>
-        <link rel="icon" type="image/png" sizes="32x32" href="/icons/title/favicon-32x32.png"/>
-        <link rel="icon" type="image/png" sizes="16x16" href="/icons/titlle/favicon-16x16.png"/>
-        <link rel="manifest" href="/icons/title/site.webmanifest"></link>
       </Head>
       <section className="flex">
         <HeroNavV
@@ -46,32 +50,14 @@ export default function Test() {
               containerId: "contentContainer",
               className: "hover:bg-tropical-100 hover:text-black",
               subOptions: true,
-              options: [
-                {
-                  name: "Matemáticas",
-                  to: "mat_mat",
+              options: data.map((matter) => {
+                return {
+                  name: matter.name,
+                  to: matter.id,
                   toIn: true,
                   containerId: "contentContainer",
-                },
-                {
-                  name: "Física",
-                  to: "mat_fis",
-                  toIn: true,
-                  containerId: "contentContainer",
-                },
-                {
-                  name: "Informática",
-                  to: "mat_inf",
-                  toIn: true,
-                  containerId: "contentContainer",
-                },
-                {
-                  name: "Música",
-                  to: "mat_mus",
-                  toIn: true,
-                  containerId: "contentContainer",
-                },
-              ],
+                };
+              }),
             },
             {
               name: "Prácticas",
@@ -94,13 +80,13 @@ export default function Test() {
             },
           ]}
         ></HeroNavV>
-        <div
+        <section
           id="contentContainer"
-          className="w-full h-screen overflow-x-hidden overflow-y-scroll"
+          className="w-full h-screen overflow-x-hidden overflow-y-scroll scroll-smooth snap-y"
         >
           <HeroBackground
             id="heroback"
-            className="bg-sky-400"
+            className="bg-purple-900"
             title={"TeCitoHot"}
             description={`El lugar donde encontraras recursos donde en otros sitio son escasos o incluso ni siquiera existen.`}
             options={[
@@ -108,35 +94,21 @@ export default function Test() {
               { name: "Por qué TeCito?", to: "./About" },
             ]}
           />
-          <div id="materias" className="w-full h-full bg-sky-400">
-            <SectionSelector
-              className={`w-full h-full bg-red-500 text-white`}
-              id="mat_mat"
-              title={"Matemáticas"}
-              description={`
-              La matemática2​ (del latín mathematĭca, y este del griego μαθηματικά, transliterado como mathēmatiká, derivado de μάθημα, tr. máthēma. 'conocimiento') es una ciencia formal que surgió del estudio de las figuras geométricas y la aritmética con números. No existe una definición generalmente aceptada de las matemáticas; hoy en día se suelen describir como una ciencia que utiliza la lógica para examinar las propiedades y los patrones de las estructuras abstractas creadas por las definiciones lógicas.
-              `}
-            />
-            <SectionSelector
-              className={`w-full h-full bg-blue-500`}
-              id="mat_fis"
-              title={"Física"}
-              description={"eaisnfiansfias"}
-            />
-            <SectionSelector
-              className={`w-full h-full bg-slate-800`}
-              id="mat_inf"
-              title={"Informática"}
-              description={"eaisnfiansfias"}
-            />
-            <SectionSelector
-              className={`w-full h-full bg-indigo-600`}
-              id="mat_mus"
-              title={"Música"}
-              description={"eaisnfiansfias"}
-            />
-          </div>
-        </div>
+          <section id="materias">
+            {data.length != 0
+              ? data.map((element, index) => {
+                  return (
+                    <MatterSection
+                      key={index}
+                      object={element}
+                      id={element.id}
+                      className={`${colors[index]} snap-start`}
+                    />
+                  );
+                })
+              : null}
+          </section>
+        </section>
       </section>
     </>
   );

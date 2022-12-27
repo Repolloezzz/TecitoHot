@@ -12,6 +12,14 @@ module.exports = {
         vt323: ["VT323", "monospace"],
       },
       colors: {
+        alpha: {
+          100: "#00000022",
+          200: "#00000055",
+          300: "#00000077",
+        },
+        alphaSlate: {
+          100: "#ffffff99",
+        },
         none: "#00000000",
         tropical: {
           100: "#ff9f1c",
@@ -57,7 +65,7 @@ module.exports = {
           300: "#ffbc42",
           400: "#d81159",
           500: "#8f2d56",
-        }
+        },
       },
     },
   },

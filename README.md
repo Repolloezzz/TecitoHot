@@ -11,6 +11,7 @@ se utilizó parte de JavaScript y CSS. \
 [Talwind](https://tailwindcss.com/)\
 [react-scroll](https://www.npmjs.com/package/react-scroll)\
 [react-svg](https://www.npmjs.com/package/react-svg)
+[edit-json-file](https://www.npmjs.com/package/edit-json-file)
 
 ## 📦 Recursos utilizados
 

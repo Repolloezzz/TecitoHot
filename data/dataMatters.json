@@ -1,5 +1,189 @@
-[
+{
+  "matters": [
     {
-        "name" : "hola"
+      "id": "mate",
+      "name": "Matemática",
+      "url": "pages/themes/Fisica",
+      "img": "/themes/Matematica/Icon.webp",
+      "description": "La matemática2​ (del latín mathematĭca, y este del griego μαθηματικά, transliterado como mathēmatiká, derivado de μάθημα, tr. máthēma. 'conocimiento') es una ciencia formal que surgió del estudio de las figuras geométricas y la aritmética con números. No existe una definición generalmente aceptada de las matemáticas; hoy en día se suelen describir como una ciencia que utiliza la lógica para examinar las propiedades y los patrones de las estructuras abstractas creadas por las definiciones lógicas.",
+      "themes": [
+        {
+          "id": "mate_calc1",
+          "name": "Calculo 1",
+          "url": "themes/Matematica/Calc1",
+          "img": "/themes/Matematica/calc1/Icons.webp",
+          "description": "El cálculo infinitesimal es una rama de la matemática que se dedica al estudio y comprensión de las razones de cambio. Antes de que fuera inventado en forma independiente por Isaac Newton y Gottfried Leibniz a finales del siglo XVII, la matemática era considerada “estática.",
+          "subthemes": [
+            {
+              "id": "mate_calc1_nroreal",
+              "name": "Números Reales",
+              "url": "#mate_calc1_nroreal",
+              "img": "/themes/Matematica/calc1/nreal.jpg",
+              "description": "Los números reales son cualquier número que corresponda a un punto en la recta real y pueden clasificarse en números naturales, enteros, racionales e irracionales. "
+            },
+            {
+              "id": "1-element",
+              "name": "1-element",
+              "url": "",
+              "img": "",
+              "description": ""
+            },
+            {
+              "id": "2-element",
+              "name": "2-element",
+              "url": "",
+              "img": "",
+              "description": ""
+            },
+            {
+              "id": "lo edite xd",
+              "name": "caca",
+              "url": "",
+              "img": "",
+              "description": ""
+            }
+          ]
+        },
+        {
+          "id": "mate_alin",
+          "name": "Algebra lineal",
+          "url": "themes/Matematica/alin",
+          "img": "themes/Matematica/alin/Icons.webp",
+          "description": "El álgebra lineal es fundamental en casi todas las áreas de las matemáticas. Por ejemplo, el álgebra lineal es fundamental en las presentaciones modernas de la geometría, incluso para definir objetos básicos como líneas, planos y rotaciones. Además, el análisis funcional, una rama del análisis matemático, puede considerarse básicamente como la aplicación del álgebra lineal al espacios de funciones.",
+          "subthemes": []
+        },
+        {
+          "id": "mate_dis1",
+          "name": "Discretas 1",
+          "url": "themes/Matematica/dis1",
+          "img": "",
+          "description": "El álgebra de conjuntos es un área de estudio, dentro de las matemáticas y la lógica, enfocada en las operaciones que pueden efectuarse entre los conjuntos.",
+          "subthemes": []
+        },
+        {
+          "id": "mate_dis2",
+          "name": "Discretas 2",
+          "url": "themes/Matematica/dis2",
+          "img": "",
+          "description": "La matemática discreta estudia las estructuras cuyos elementos pueden contarse uno por uno separadamente, como los números enteros, grafos y sentencias lógicas, que son aplicados en diferentes campos de la ciencia, principalmente en las ciencias de la computación",
+          "subthemes": []
+        },
+        {
+          "id": "mate_calc2",
+          "name": "Calculo 2",
+          "url": "themes/Matematica/calc2",
+          "img": "",
+          "description": "En esta asignatura teórica- práctica se estudia la integral definida, las sucesiones, las series y el cálculo diferencial de n variables, y sus aplicaciones.",
+          "subthemes": []
+        }
+      ]
+    },
+    {
+      "id": "fisi",
+      "name": "Física",
+      "url": "themes/Fisica",
+      "img": "/themes/Fisica/Icons.webp",
+      "description": "La física es una ciencia natural que estudia cómo opera el universo. Busca describir la función de las cosas a nuestro alrededor, por ejemplo, cómo se mueven los objetos, por qué las cosas caen, cómo se propaga el sonido, qué es la luz, entre otras.\n\nLa palabra \"física\" deriva del latín physĭca, que se puede traducir como ‘natural’ o ‘naturaleza’. La física es probablemente la primera ciencia de la humanidad, junto con la matemática, de la que toma gran parte de sus herramientas teóricas.",
+      "themes": [
+        {
+          "id": "fisi_meca",
+          "name": "Mecánia",
+          "url": "themes/Fisica/meca",
+          "img": "",
+          "description": "",
+          "subthemes": []
+        },
+        {
+          "id": "fisi_ond",
+          "name": "Ondas",
+          "url": "themes/Fisica/ond",
+          "img": "",
+          "description": "",
+          "subthemes": []
+        },
+        {
+          "id": "fisi_tern",
+          "name": "Termodinámica",
+          "url": "themes/Fisica/tern",
+          "img": "",
+          "description": "",
+          "subthemes": []
+        },
+        {
+          "id": "fisi_elec",
+          "name": "Electromagnetismo",
+          "url": "themes/Fisica/elec",
+          "img": "",
+          "description": "",
+          "subthemes": []
+        }
+      ]
+    },
+    {
+      "id": "info",
+      "name": "Informática",
+      "url": "themes/Informatica",
+      "img": "/themes/Informatica/Icons.webp",
+      "description": "La informática,1​ también llamada computación,2​ es el área de la ciencia que se encarga de estudiar la administración de métodos, técnicas y procesos con el fin de almacenar, procesar y transmitir información y datos en formato digital. La informática abarca desde disciplinas teóricas (como algoritmos, teoría de la computación y teoría de la información) hasta disciplinas prácticas (incluido el diseño y la implementación de hardware y software).3​ La informática generalmente se considera un área de investigación académica y distinta de la programación informática.4​",
+      "themes": [
+        {
+          "id": "info_logp",
+          "name": "Logica de Programación",
+          "url": "themes/Informatica/logp",
+          "img": "",
+          "description": "Introducción a la programación, en camino para llegar con buenas bases\n",
+          "subthemes": []
+        },
+        {
+          "id": "info_func",
+          "name": "Programación funcional",
+          "url": "themes/Informatica/func",
+          "img": "",
+          "description": "Introducción a la programación funcional o modular",
+          "subthemes": []
+        },
+        {
+          "id": "info_poo",
+          "name": "POO (Programación Orientada a Objetos)",
+          "url": "themes/Informatica/poo",
+          "img": "",
+          "description": "Introducción a al programación orientada a objetos",
+          "subthemes": []
+        },
+        {
+          "id": "info_teno",
+          "name": "Teoria de números",
+          "url": "themes/Informatica/teno",
+          "img": "",
+          "description": "Introducción a la teoría de números en diferentes bases y algebra booleana",
+          "subthemes": []
+        }
+      ]
+    },
+    {
+      "id": "musi",
+      "name": "Música",
+      "url": "themes/Musica",
+      "img": "/themes/Musica/Icons.webp",
+      "description": "La música (del griego: μουσική [τέχνη] - mousikē [téchnē], «el arte de las musas») es, según la definición tradicional del término, el arte de crear y organizar sonidos y silencios respetando los principios fundamentales de la melodía, la armonía y el ritmo, mediante la intervención de complejos procesos psicoanímicos. El concepto de música ha ido evolucionando desde su origen en la Antigua Grecia, en que se reunía sin distinción a la poesía, la música y la danza como arte unitario. Desde hace varias décadas se ha vuelto más compleja la definición de qué es y qué no es la música, ya que destacados compositores en el marco de diversas experiencias artísticas fronterizas han realizado obras que, si bien podrían considerarse musicales, expanden los límites de la definición de este arte.",
+      "themes": [
+        {
+          "id": "musi_fund",
+          "name": "Fundamentos de música",
+          "url": "themes/Musica/fund",
+          "img": "",
+          "description": "Fundamentos básicos para interpretar y crear música",
+          "subthemes": []
+        },
+        {
+          "id": "musi_arm1",
+          "name": "Armonía 1",
+          "url": "themes/Musica/arm1",
+          "img": "",
+          "description": "Introducción a la composición de música",
+          "subthemes": []
+        }
+      ]
     }
-]
+  ]
+}

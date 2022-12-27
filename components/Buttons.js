@@ -1,5 +1,4 @@
-import { Link, scroller } from "react-scroll";
-import { useState } from "react";
+import { Link } from "react-scroll";
 import { Icons } from "./Icons";
 
 /**

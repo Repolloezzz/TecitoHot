@@ -1,0 +1,30 @@
+{
+    "matters": [
+      {
+        "id": "mate",
+        "name": "Matemática",
+        "url": "themes/Matematica",
+        "img": "/themes/Matematica/icon.jpg",
+        "description": "La matemática es la ciencia deductiva que se dedica al estudio de las propiedades de los entes abstractos y de sus relaciones. Esto quiere decir que las matemáticas operan con números, símbolos, figuras geométricas, etc.",
+        "themes": [
+          {
+            "id": "mate_calc1",
+            "name": "Calculo 1",
+            "url": "cal1",
+            "img": "/themes/Matematica/calc1/icon.webp",
+            "description": "El cálculo infinitesimal es una rama de la matemática que se dedica al estudio y comprensión de las razones de cambio. Antes de que fuera inventado en forma independiente por Isaac Newton y Gottfried Leibniz a finales del siglo XVII, la matemática era considerada “estática.",
+            "subthemes": [
+              {
+                "id": "mate_calc1_nroreal",
+                "name": "Números Reales",
+                "url": "#mate_calc1_nroreal",
+                "img": "/themes/Matematica/calc1/nreal.jpg",
+                "description": "Los números reales son cualquier número que corresponda a un punto en la recta real y pueden clasificarse en números naturales, enteros, racionales e irracionales. "
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+  

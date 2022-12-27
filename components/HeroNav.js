@@ -1,5 +1,5 @@
 import style from "../styles/HeroNav.module.css";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { ButtonRef } from "./Buttons";
 
 /**
@@ -107,7 +107,7 @@ export function HeroNavV({
               !sw
                 ? "bg-red-600 border-b-8 hover:bg-red-700 hover:border-b-2 hover:mt-3.5 sm:hover:mt-3.5"
                 : ""
-            } mt-2 p-1 sm:p-0 mb-2 sm:mt-2 sm:mb-2 box-content transition-all duration-300 cursor-pointer`}
+            } mt-2 p-1 sm:p-0 mb-2 sm:mt-2 sm:mb-2 box-content transition-all cursor-pointer`}
             onClick={HamburgerActive}
           >
             <ul
@@ -133,7 +133,7 @@ export function HeroNavV({
               } transition-all duration-500 box-content`}
             >
               <img
-                className={`top-0 object-cover object-top rounded-full transition-all duration-300 cursor-pointer border-2 sm:border-4 border-dotted ${
+                className={`top-0 object-cover duration-300 object-top rounded-full transition-all cursor-pointer border-2 sm:border-4 border-dotted ${
                   !sw
                     ? "w-24 h-24 sm:h-36 sm:w-36 m-2 hover:rotate-12 hover:scale-105"
                     : "w-8 h-8 m-0 sm:h-10 sm:w-10"
@@ -165,6 +165,7 @@ export function HeroNavV({
             */
               return (
                 <li
+                  onClick={element.onClick}
                   key={index}
                   className={`${element.subOptions ? "subMenu" : ""} ${
                     element.especial ? "mt-auto" : ""
@@ -180,7 +181,7 @@ export function HeroNavV({
                       !sw ? "pl-2" : ""
                     } pt-1 pb-1 ${
                       element.className
-                    } text-slate-200 transition-all duration-300 hover:scale-105 hover:pl-1`}
+                    } text-slate-200 transition-all hover:scale-105 hover:pl-1`}
                     iconClass={"w-8 h-8 sm:w-10 sm:h-10 p-1"}
                     nameClass={"pl-4 text-xl sm:text-2xl"}
                   />

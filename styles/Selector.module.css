@@ -1,0 +1,108 @@
+.titleShake>span:nth-child(2n) {
+    animation: shake 1.5s infinite ease-in-out;
+}
+
+.titleShake>span:nth-child(2n -1) {
+    animation: shake 2s infinite ease-in-out;
+}
+
+.imgTransition {
+    animation: img_transition 1s ease-in-out;
+}
+
+.titleTransition {
+    animation: title_transition 1s ease-in-out;
+}
+
+.changeButtonLeft {
+    animation: changeButton 1s ease-in-out;
+}
+
+.changeButtonRight {
+    animation: changeButton 1s ease-in-out reverse;
+}
+
+@keyframes shake {
+    25% {
+        transform: translate(1px, 1px);
+    }
+
+    50% {
+        transform: translate(0px, -1px);
+    }
+
+    75% {
+        transform: translate(-1px, .5px);
+    }
+
+    100% {
+        transform: translate(0px, 0px);
+    }
+}
+
+@keyframes img_transition {
+    25% {
+        transform: translateY(5px);
+    }
+
+    30% {
+        transform: translateY(150%);
+    }
+
+    40% {
+        transform: translateY(150%);
+    }
+
+    60% {
+        transform: translateY(150%);
+    }
+
+    70% {
+        transform: translateY(0);
+    }
+
+    75% {
+        transform: translateY(-5px);
+    }
+}
+
+@keyframes title_transition {
+    10% {
+        width: 100%;
+    }
+
+    50% {
+        width: 0%;
+        color: white;
+        text-shadow: 10px 10px 10px 10px;
+    }
+
+    100% {
+        width: 100%;
+    }
+}
+
+@keyframes changeButton {
+    0% {
+        transform: translateX(100%);
+        opacity: 1;
+    }
+
+    19% {
+        transform: translateX(100%);
+    }
+
+    20% {
+        transform: translateX(100%);
+    }
+
+    80% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(-100%);
+    }
+
+}

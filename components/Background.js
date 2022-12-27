@@ -1,7 +1,6 @@
 import { ButtonRef } from "./Buttons";
-import React, { useState } from "react";
+import { ClickDown } from "./TitleMove";
 import style from "../styles/Background.module.css";
-
 // TODO: crear un background PIXELART PARALLAX para el HEROSECTION
 
 /**
@@ -31,22 +30,6 @@ export function HeroBackground({
   // title => ARRAY<String> cada letra es un elemento
   const chars = title != "" ? [...title] : [];
 
-  // para sacar un conjunto de colores distintos
-  const coolor = [
-    "hover:text-palete-100",
-    "hover:text-palete-200",
-    "hover:text-palete-300",
-    "hover:text-palete-400",
-    "hover:text-palete-500",
-  ];
-  var con = 0;
-  function getCoolor() {
-    if (con == coolor.length) {
-      con = 0;
-    }
-    return coolor[con++];
-  }
-
   return (
     <>
       <div id={id}>
@@ -55,27 +38,8 @@ export function HeroBackground({
         >
           {/* TITULO DINÁMICO - validando si exista para crearlo */}
           {title != undefined ? (
-            <div className={`${style.titleMove} flex h-14 sm:h-16 md:h-32`}>
-              {chars.map((char, index) => {
-                return (
-                  <span
-                    key={index}
-                    char={char}
-                    style={{ "--deg": `${index * 12}deg`, textShadow: '0px 5px 2px #00000070'}}
-                    className={`relative block p-0 m-0 text-5xl transition-all duration-300 cursor-pointer select-none font-silk sm:text-7xl md:text-9xl border-double text-slate-100 box-content
-                    ${getCoolor()}`}
-                    onClick={(e) => {
-                      // ESTO ES LA ANIMACION ONCLICK PARA EL TITULO
-                      e.target.classList.add(`${style.after_title}`);
-                      setTimeout(() => {
-                        e.target.classList.remove(`${style.after_title}`);
-                      }, 1500);
-                    }}
-                  >
-                    {char}
-                  </span>
-                );
-              })}
+            <div className={`flex h-14 sm:h-16 md:h-32 ${style.HeroTitleMove}`}>
+              <ClickDown title={title} />
             </div>
           ) : null}
 
