@@ -18,13 +18,6 @@ export function ClickDown({ title = "" }) {
     }
     return coolor[con++];
   }
-  // grados de inclinación random para cada uno de las letras
-  const [randomA, setRandomA] = useState(
-    Array.from(
-      { length: chars.length },
-      () => parseInt(Math.floor(Math.random() * (-70 - 70) + 70) / 10) * 10
-    )
-  );
   return (
     <>
       {chars.map((char, index) => {
@@ -33,7 +26,7 @@ export function ClickDown({ title = "" }) {
             key={index}
             char={char}
             style={{
-              "--deg": `${randomA[index]}deg`,
+              "--deg": `${30}deg`,
               textShadow: "0px 5px 2px #00000070",
             }}
             className={`relative block p-0 m-0 text-5xl transition-all cursor-pointer select-none font-silk sm:text-7xl md:text-9xl border-double text-slate-100 box-content
