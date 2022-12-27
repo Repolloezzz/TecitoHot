@@ -49,15 +49,17 @@ export default function Test() {
               toIn: true,
               containerId: "contentContainer",
               className: "hover:bg-tropical-100 hover:text-black",
-              subOptions: true,
-              options: data.map((matter) => {
-                return {
-                  name: matter.name,
-                  to: matter.id,
-                  toIn: true,
-                  containerId: "contentContainer",
-                };
-              }),
+              options:
+                data.length != 0
+                  ? data.map((matter) => {
+                      return {
+                        name: matter.name,
+                        to: matter.id,
+                        toIn: true,
+                        containerId: "contentContainer",
+                      };
+                    })
+                  : null,
             },
             {
               name: "Prácticas",

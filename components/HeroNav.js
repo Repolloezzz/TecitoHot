@@ -84,7 +84,11 @@ export function HeroNavV({
         const options = e.children[1];
         let height = 0;
         if (options.clientHeight == "0" && !sw) {
-          height = options.children.length * options.children[0].clientHeight;
+          try {
+            height = options.children.length * options.children[0].clientHeight;
+          } catch (error) {
+            height = 0
+          }
         }
         options.style.height = `${height}px`;
       });
@@ -167,7 +171,7 @@ export function HeroNavV({
                 <li
                   onClick={element.onClick}
                   key={index}
-                  className={`${element.subOptions ? "subMenu" : ""} ${
+                  className={`${element.options != null ? "subMenu" : ""} ${
                     element.especial ? "mt-auto" : ""
                   }`}
                 >
@@ -186,7 +190,7 @@ export function HeroNavV({
                     nameClass={"pl-4 text-xl sm:text-2xl"}
                   />
                   {/* validando si la opción tiene un submenu [ SUBOPTIONS = TRUE ] => crear un SUBMENU */}
-                  {element.subOptions ? (
+                  {element.options != null ? (
                     <ol className="flex flex-col h-0 pl-5 overflow-hidden transition-all duration-300 bg-slate-200">
                       {element.options.map((suboption, k) => {
                         return (
