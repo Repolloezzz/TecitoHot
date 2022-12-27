@@ -8,14 +8,7 @@ import { MatterSection } from "../components/MatterSection";
 export default function Test() {
   // Obteniendo datos de MattersAPI
   const [data, setData] = useState([]);
-  const mattersURL = "./api/mattersAPI";
-  function refreshData() {
-    getElements(mattersURL).then((res) => setData(res));
-  }
-
-  useEffect(() => {
-    refreshData();
-  }, []);
+  
 
   // colores para las secciones
   const colors = ["bg-red-500", "bg-blue-500", "bg-slate-700", "bg-indigo-500"];
