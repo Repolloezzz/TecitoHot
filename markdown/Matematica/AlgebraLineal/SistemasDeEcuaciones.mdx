@@ -1,0 +1,83 @@
+---
+title: Sistemas de ecuaciones Lineales
+date: '1 de Enero del 2023'
+nroSubTheme: 1
+---
+<Title txt='Sistemas de ecuaciones Lineales'/>
+
+[//]: # (Definción de Ecuación lineal)
+<Ref id='definición - ecuaciones lineales'/>
+
+<ImportantBox title='Definición.' color='orange' icon='flag'>
+    Una ecuación lineal o ecuación de primer grado, es una ecuación que incluye n-variables y n-coeficientes o escalares. Las ecuaciones lineales tienen la siguiente forma:
+    <div className='flex flex-col gap-2 my-2 md:flex-row'>
+        <p className='flex flex-col w-full items-center'>
+            <Ltx txt='ax+by=c'/>
+            <LComment txt='Forma particular en R2'/>
+        </p>
+        <p className='flex flex-col w-full items-center'>
+            <Ltx txt='a_1x_1+a_2x_2+\cdots+a_nx_n=b_1'/>
+            <LComment txt='Forma General en Rn'/>
+        </p>
+    </div>
+    Donde <Ltx txt='a_i, x_{i} \in \mathbb{R}'/>
+</ImportantBox>
+
+<BComment type='note'>
+    La notación de <Ltx txt='a_{i}'/> o <Ltx txt='x_{i}'/> hace referencia a un elemento cualquiera de la ecuación, es decir que por ejemplo para <Ltx txt='x_{i}'/> podemos referirnos a <Ltx txt=' x_{0}, x_{1}, x_{2}, \cdots, x_{n} '/>, esto se hace así para no tener que listar cada uno de los elementos dentro de la ecuación.
+</BComment>
+<BComment type='warn'>
+    Remarcar que una ecuación se considera lineal si cumple las siguientes condiciones:
+    <ol className='list-decimal pl-5'>
+        <li>Todas las variables son de grado 1.</li>
+        <li>No existe multiplicación entre variables.</li>
+        <li>No son argumento o parámetro de una función.</li>
+    </ol>
+</BComment>
+
+Practicamente si cumple lo anterior, entonces lo consideramos como una ecuación lineal y así basado en esto es de donde partimos. Pero, enfatizar que solo se veran conceptos y ejemplos enfocados unicamente en el conjunto de los números reales <Ltx txt='\mathbb{R}'/>.
+
+<ChordBox title='Ejemplos de ecuaciones lineales' className='border-slate-700 bg-slate-200 my-2'>
+    <ol className='list-decimal pl-5'>
+        <li>✅ <Ltx txt=' 5x-3y=2'/></li>
+        <li>✅ <Ltx txt=' a_1x_1+a_2x_2+a_3x_3=5'/></li>
+        <li>❌ <Ltx txt=' x_{1}^{-3}+x_{2}^{2}=-8'/></li>
+        <li>❌ <Ltx txt=' 3xy+3y=43'/></li>
+        <li>❌ <Ltx txt=' 3e^{m}+n=20'/></li>
+        <li>❌ <Ltx txt=' \sin(x_1)+45x_2=200'/></li>
+    </ol>
+
+    De estos ejemplos podemos apreciar cuales son ecuaciones lineales (o de primer grado), donde para los ejemplos <b>1)</b> y el <b>2)</b> cumplen con lo anterior dicho, pero los demás no, así que veamos por que:
+    <ul className='pl-5'>
+        <li>El ejemplo <b>3)</b> no es lineal pues las variables tienen exponentes diferentes de 1 </li>
+        <li>El ejemplo <b>4)</b> no es lineal pues existe multiplicación entre variables (<Ltx txt='xy'/>) </li>
+        <li>El ejemplo <b>5)</b> y <b>6)</b> no son lineales pues las variables son argumento para una función </li>
+    </ul>
+</ChordBox>
+
+
+[//]: # (Conjunto solución)
+<Ref id='conjunto solución'/>
+<SubTitle txt='Conjunto Solución.'/>
+
+Como su nombre lo dice, es el conjunto de todas las soluciones que satisfacen la igualdad, donde una ecuacion puede tener una sola solución, muchas soluciones o ninguna solución. y como tal podemos decir que una solución para la ecuación de n-variables es la sucesión de números reales <Ltx txt='s_1, s_2, s_3, \cdots, s_n'/> tales que:
+<div className='text-center py-2'>
+        <Ltx txt='x_1=s_1 '/> ,<Ltx txt='x_2=s_2 '/> ,<Ltx txt='\cdots '/> ,<Ltx txt='x_n=s_n '/>
+</div>
+
+<ChordBox title='Ejemplo de Conjunto solución' className='border-slate-700 bg-slate-200 my-2' chord={true}>
+    <b>Sea <Ltx txt='x_1+3x_2=4'/>, dar con su solución.</b> \
+    A simple vista podemos notar que la solución es <Ltx txt='x_1=1'/> y <Ltx txt='x_2=1'/> ,pues notar que al remplazar estos valores en la ecuación tenemos que:
+    <Ltx txt='(1)+3(1) = 1+3 = 4'/>
+    Pero, también podemos decir que la solución es <Ltx txt='x_1=-2'/> y <Ltx txt='x_2=2'/> ,pues se tiene que:
+    <Ltx txt='(-2)+3(2) = -2+6 = 4'/>
+    <b>Tenemos 2 soluciones</b> donde el conjunto solución es <Ltx txt='\{(1, 1), (-2, 2)\}'/>.\
+    Pero además, podemos agregar más soluciones pues no son las unicas
+</ChordBox>
+
+<BComment type='warn'>
+    Tomar en cuenta que el conjunto solución es un conjunto que tiene por elementos varias sucesiones de forma cada sucesión es una solución para una ecuación. Podemos verlo de forma gráfica como:
+    <div className='flex h-max '>
+        <Img responsive={true} className='my-2' src='/themes/Matematica/AlgebraLineal/SistemasDeEcuaciones/1-conSol.webp' alt='Vista como conjunto del conjunto solución'/>
+    </div>
+</BComment>
