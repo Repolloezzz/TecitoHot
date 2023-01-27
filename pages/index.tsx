@@ -75,7 +75,7 @@ const Home = () => {
             return (
               <PresentSection
                 id={matter.name}
-                className={`${backgrounds[index]} snap-center my-32 md:my-0 md:h-full h-[90%]`}
+                className={`${backgrounds[index]} snap-center my-32 md:my-0 md:h-full h-3/4`}
                 main={matter}
                 seconds={matter.themes}
                 key={index}
