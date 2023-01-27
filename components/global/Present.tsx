@@ -1,4 +1,3 @@
-
 import { Icons } from "./Icons";
 import { TitleMove } from "./TitleAnimation";
 import { base } from "./../../data/Types";
@@ -98,9 +97,9 @@ const PresentSection = ({
           className={`box-content flex flex-col w-full h-full overflow-hidden sm:flex-row`}
         >
           <div className="flex flex-col items-center justify-center h-[45%] sm:h-full max-h-[40%] sm:max-h-min w-full sm:w-auto">
-            <picture className="relative flex items-center justify-center h-full p-2 overflow-hidden md:p-5 lg:p-10 w-3/4 bg-stone-800 min-w-[25%] md:w-auto">
+            <picture className="relative flex items-center justify-center h-full p-2 overflow-hidden lg:p-10 bg-stone-800 min-w-[25%]">
               <img
-                className={`object-cover w-full h-full cursor-pointer select-none md:h-min md:w-min ${
+                className={`object-cover w-full h-full cursor-pointer select-none sm:w-auto sm:h-auto lg:h-min lg:w-min ${
                   transition.current != null ? `${style.imgTransition}` : ""
                 }`}
                 src={`${view.imgUrl}`}
