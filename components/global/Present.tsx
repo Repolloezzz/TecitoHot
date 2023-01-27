@@ -9,11 +9,13 @@ interface props {
   id?: string;
   main: base;
   seconds?: Array<base>;
+  color: string
 }
 const PresentSection = ({
   className = "",
   id = "",
   main,
+  color,
   seconds = [],
 }: props) => {
   const [view, setView] = useState<base>(main);
@@ -83,7 +85,7 @@ const PresentSection = ({
       id={id}
       className={`box-content relative flex flex-col items-center justify-center w-full h-screen overflow-hidden ${className}`}
     >
-      <div className="flex flex-col w-full h-full gap-2 p-2 sm:p-4 md:gap-3 lg:gap-5 md:p-6 lg:p-10">
+      <div className={`flex flex-col w-full h-3/4 gap-2 p-2 sm:p-4 md:gap-3 lg:gap-5 md:p-6 lg:p-10 ${color}`}>
         <h1
           className={`transition-all text-5xl sm:text-5xl md:text-8xl flex items-center lg:text-9xl text-slate-50 ${style.titleShake}`}
         >
