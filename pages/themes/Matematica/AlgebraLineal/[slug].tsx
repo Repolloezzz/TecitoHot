@@ -23,7 +23,7 @@ export default function Content({ source, frontMatter, slug }: any) {
         <title>TeCitoHot - Algebra Lineal</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
-      <section className="flex w-full h-screen min-h-[40rem] bg-slate-50">
+      <section className="flex w-full min-h-[40rem] bg-slate-50">
         <VerticalNav
           options={[
             {
@@ -51,7 +51,7 @@ export default function Content({ source, frontMatter, slug }: any) {
         />
         <section className="relative flex flex-col w-full overflow-x-hidden lg:flex-row lg:gap-2 bg-slate-300/20 scroll-smooth snap-y scrollbar-thin scrollbar-w-1 md:scrollbar-w-2 lg:scrollbar-w-3 scrollbar-thumb-stone-800 scrollbar-track-amber-100">
           <NavSearch index={index} props={subThemes} actually={slug} />
-          <section className="w-full h-auto p-2 text-base leading-6 text-justify break-normal lg:leading-8 md:text-lg lg:text-xl lg:p-5 lg:pr-8 font-patrick bg-slate-50">
+          <section className="w-full h-full p-2 py-8 text-base leading-6 text-justify break-normal lg:leading-8 md:text-lg lg:text-xl lg:p-5 lg:pr-8 font-patrick bg-slate-50 ">
             <MDXRemote
               lazy={true}
               {...source}

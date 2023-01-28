@@ -77,7 +77,20 @@ Como su nombre lo dice, es el conjunto de todas las soluciones que satisfacen la
 
 <BComment type='warn'>
     Tomar en cuenta que el conjunto solución es un conjunto que tiene por elementos varias sucesiones de forma cada sucesión es una solución para una ecuación. Podemos verlo de forma gráfica como:
-    <div className='flex h-max '>
-        <Img responsive={true} className='my-2' src='/themes/Matematica/AlgebraLineal/SistemasDeEcuaciones/1-conSol.webp' alt='Vista como conjunto del conjunto solución'/>
+    <div className='flex h-max bg-slate-800 justify-center'>
+        <Img view={true} responsive={true} className='my-2' src='/themes/Matematica/AlgebraLineal/SistemasDeEcuaciones/1-conSol.webp' alt='Vista como conjunto del conjunto solución'/>
     </div>
 </BComment>
+
+Podemos dar con el conjunto solución <b>despejando la variables principal</b> (la primera variable) de la ecuación y así <b>formando una función</b> la cual necesita de valores arbitrarios (valores cuales quiera), para poder obtener la variable principal. Además, a esto se lo conoce como <b>representación paramétrica de un conjunto solución</b>.
+
+<ChordBox title='Ejemplo de representación paramétrica de un conjunto solución' className='bg-cyan-200/30 border-cyan-700 my-2' chord={true}>
+    <b>Sea <Ltx txt='3x-2y=-1'/></b>
+    Podemos dar con su conjunto solución despejando la variable principal (en este caso <Ltx txt='x'/>) donde tenemos que: \
+    <Ltx txt='3x-2y=-1'/> <br/>
+    <Ltx txt='3x=-1+2y'/> <br/>
+    <Ltx txt='x=\frac{-1+2y}{3}'/>
+    <LComment txt='Parametrizando y de forma que y = t y lo convertimos en función'/> \
+    <Ltx txt='x=\frac{-1+2t}{3}'/> donde <Ltx txt='y=t'/> \
+    <Ltx txt='f(t)=\frac{-1+2t}{3}'/>
+</ChordBox>

@@ -28,7 +28,7 @@ const Home = () => {
         <title>TeCitoHot - Repositorio Puro</title>
         <meta name="viewport" content="initial-scale=1, width=device-width" />
       </Head>
-      <section className="flex w-full h-screen bg-stone-800">
+      <section className="flex w-full h-full bg-stone-800">
         <VerticalNav
           options={[
             {

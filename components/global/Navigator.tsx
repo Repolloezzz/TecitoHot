@@ -126,7 +126,7 @@ const VerticalNav = ({ options }: optionsContext) => {
                       navSW
                     ) {
                       const submenu = e.currentTarget.nextElementSibling;
-                      submenu?.classList.toggle("h-32");
+                      submenu?.classList.toggle("h-[8rem]");
                     }
                   }}
                 />
@@ -135,7 +135,7 @@ const VerticalNav = ({ options }: optionsContext) => {
                   <menu
                     className={`${
                       navSW ? "" : "h-0"
-                    } h-0 ml-6 overflow-x-hidden overflow-y-auto transition-all border-l-4 duration-300 scrollbar-thin scrollbar-w-1.5 scrollbar-thumb-yellow-500 scrollbar-track-slate-300`}
+                    } h-0 max-h-32 ml-6 overflow-x-hidden overflow-y-auto transition-all border-l-4 duration-300 scrollbar-thin scrollbar-w-1.5 scrollbar-thumb-yellow-500 scrollbar-track-slate-300`}
                   >
                     {option.suboptions.map(
                       (suboption: ButtonRefParam, indexJ: number) => {

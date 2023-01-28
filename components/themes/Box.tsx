@@ -149,7 +149,7 @@ export function ChordBox({
   const [open, setOpen] = useState(initial);
   return (
     <div
-      className={`border-l-4  p-3 ${className ? className : ""} overflow-hidden`}
+      className={`border-l-4  p-3 ${className} overflow-hidden`}
     >
       <h1
         onClick={() => {
@@ -165,7 +165,7 @@ export function ChordBox({
       <div
         className={`${
           open ? "h-max" : "h-0"
-        } overflow-hidden text-sm md:text-lg ${h1Class ? h1Class : ''}`}
+        } overflow-hidden text-sm md:text-lg ${h1Class}`}
       >
         {children}
       </div>
