@@ -73,7 +73,7 @@ const VerticalNav = ({ options }: optionsContext) => {
             className={`${
               navSW ? "w-3/4 h-3/4 md:p-2" : "w-8 md:w-10 lg:w-12"
             }transition-all object-cover`}
-            src={"/logo.jpg"}
+            src={"/icons/logo.jpg"}
             width={500}
             height={500}
             alt="tecito-logo"

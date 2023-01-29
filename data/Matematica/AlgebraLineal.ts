@@ -20,7 +20,7 @@ const subThemes: SubTheme[] = [
     pageUrl: `${Patter}/${root}/SistemasDeEcuaciones`,
     description: "",
     gen: "SistemasDeEcuaciones",
-    sections: ['definición - ecuaciones lineales', 'conjunto solución', 'tipos de sistemas', 'resolucion de un sistema', 'metodos de reduccion'],
+    sections: ['ecuaciones lineales', 'conjunto solución', 'sistemas de ecuaciones', 'resolucion de un sistema', 'metodos de reduccion'],
   },
   {
     name: "Matrices y vectores",

@@ -1,8 +1,17 @@
 import { Title, SubTitle } from "./themes/Titles";
-import { ImportantBox, BoxwC, ButtonSections, SimpleBox, ChordBox } from "./themes/Box";
+import {
+  ImportantBox,
+  BoxwC,
+  ButtonSections,
+  SimpleBox,
+  ChordBox,
+} from "./themes/Box";
 import { LComment, BComment } from "./themes/Comments";
-import { Ltx, Ref, Img } from "./themes/General";
-
+import { Ref } from "./themes/General";
+import { Ltx } from "./themes/Text";
+import { Img } from "./global/ImgComp";
+import { Video } from "./global/VidComp";
+import { Icons } from "./global/Icons";
 const generalComponents = {
   Title,
   SubTitle,
@@ -14,7 +23,9 @@ const generalComponents = {
   SimpleBox,
   ChordBox,
   Ref,
-  Img
+  Img,
+  Video,
+  Icons
 };
 
 const latexComponets = {

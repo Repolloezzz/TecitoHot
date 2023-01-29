@@ -8,6 +8,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      colors: {
+        back: '#2d3142'
+      },
       fontFamily: {
         patrick: ["Patrick Hand", "cursive"],
         presst2: ["Press Start 2P", "cursive"],

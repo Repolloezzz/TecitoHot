@@ -6,9 +6,10 @@ nroSubTheme: 1
 <Title txt='Sistemas de ecuaciones Lineales'/>
 
 [//]: # (Definción de Ecuación lineal)
-<Ref id='definición - ecuaciones lineales'/>
+<Ref id='ecuaciones lineales'/>
+<SubTitle txt='Ecuaciones lineales'/>
 
-<ImportantBox title='Definición.' color='orange' icon='flag'>
+<ImportantBox title='¿Qué es una ecuación lineal?' color='orange' icon='clipboard'>
     Una ecuación lineal o ecuación de primer grado, es una ecuación que incluye n-variables y n-coeficientes o escalares. Las ecuaciones lineales tienen la siguiente forma:
     <div className='flex flex-col gap-2 my-2 md:flex-row'>
         <p className='flex flex-col w-full items-center'>
@@ -24,7 +25,14 @@ nroSubTheme: 1
 </ImportantBox>
 
 <BComment type='note'>
-    La notación de <Ltx txt='a_{i}'/> o <Ltx txt='x_{i}'/> hace referencia a un elemento cualquiera de la ecuación, es decir que por ejemplo para <Ltx txt='x_{i}'/> podemos referirnos a <Ltx txt=' x_{0}, x_{1}, x_{2}, \cdots, x_{n} '/>, esto se hace así para no tener que listar cada uno de los elementos dentro de la ecuación.
+    la expresión n-variables o n-escalares hace referencia a un <b>número finito de elementos</b>, pues n puede ser cualquier cantidad, pero le decimos n por que así podemos hacer referencia a cualquier cantidad para cualquier caso (por eso se llama generalización). \
+    Para el caso, digamos que n=5, entonces hacemos referencia a una ecuación con 5 variables y 5 coeficientes. Ahora digamos que n=100, entonces hacemos referencia a una ecuación con 100 variables y 100 coeficientes.
+</BComment>
+<BComment type='note'>
+    La notación de <Ltx txt='a_{i}'/> o <Ltx txt='x_{i}'/> hace referencia a un elemento cualquiera de la ecuación, es decir que por ejemplo para <Ltx txt='x_{i}'/> podemos referirnos a <Ltx txt=' x_{0}, x_{1}, x_{2}, \cdots, x_{n} '/>, esto se hace así para no tener que listar cada uno de los elementos dentro de la ecuación. Nuevamente, <b>solo hace referencia a UN elemento de todos</b>
+</BComment>
+<BComment type='alert'>
+    Aclarar que <Ltx txt='x_{0}, x_{1}, x_{2}, \cdots, x_{n} '/> no son necesariamente iguales, si bien todas las variables son <Ltx txt='x'/> lo que los diferencia es el indice que tienen (el número debajo de ellos <Ltx txt='x_1'/>), esto se lo hace así pues tiene sus ventajas en ejemplos que veremos más adelante. Esto también sucede para cualquier letra sea variable o coeficiente.
 </BComment>
 <BComment type='warn'>
     Remarcar que una ecuación se considera lineal si cumple las siguientes condiciones:
@@ -55,12 +63,19 @@ Practicamente si cumple lo anterior, entonces lo consideramos como una ecuación
     </ul>
 </ChordBox>
 
+Por otro lado, si usted se percato las ecuaciones lineales o almenos en <Ltx txt='\mathbb{R^2}'/> son ecuaciones de rectas, osea son formas que podemos apreciar graficamente, pues pensar como nuestro proceso se ve reflejado graficamente es muy útil para comprenderlo de cierta manera.
+
+<div className='w-full flex justify-center items-center bg-back my-2'>
+    <video className='object-cover lg:w-[70%] w-full sm:w-[80%] xl:w-[60%]' autoPlay muted loop src="/themes/Matematica/AlgebraLineal/SistemasDeEcuaciones/Recta.mp4"/>
+</div>
+
+Como se ve, tenemos la ecuación lineal <Ltx txt='x+y=0'/> que tiene dos variables, entonces está en <Ltx txt='\mathbb{R^2}'/> y así podemos verlo graficamente en un plano 2D como una recta, sucede casi lo mismo con ecuaciones con más variables pero naturalmente en proporción del número de sus variables
 
 [//]: # (Conjunto solución)
 <Ref id='conjunto solución'/>
 <SubTitle txt='Conjunto Solución.'/>
 
-Como su nombre lo dice, es el conjunto de todas las soluciones que satisfacen la igualdad, donde una ecuacion puede tener una sola solución, muchas soluciones o ninguna solución. y como tal podemos decir que una solución para la ecuación de n-variables es la sucesión de números reales <Ltx txt='s_1, s_2, s_3, \cdots, s_n'/> tales que:
+Como su nombre lo dice, es el conjunto de todas las soluciones que satisfacen la igualdad, donde una ecuación puede tener una sola solución, muchas soluciones o ninguna solución. y como tal podemos decir que una solución para la ecuación de n-variables es la sucesión de números reales <Ltx txt='s_1, s_2, s_3, \cdots, s_n'/> tales que:
 <div className='text-center py-2'>
         <Ltx txt='x_1=s_1 '/> ,<Ltx txt='x_2=s_2 '/> ,<Ltx txt='\cdots '/> ,<Ltx txt='x_n=s_n '/>
 </div>
@@ -77,20 +92,140 @@ Como su nombre lo dice, es el conjunto de todas las soluciones que satisfacen la
 
 <BComment type='warn'>
     Tomar en cuenta que el conjunto solución es un conjunto que tiene por elementos varias sucesiones de forma cada sucesión es una solución para una ecuación. Podemos verlo de forma gráfica como:
-    <div className='flex h-max bg-slate-800 justify-center'>
+    <div className='flex h-max bg-back justify-center'>
         <Img view={true} responsive={true} className='my-2' src='/themes/Matematica/AlgebraLineal/SistemasDeEcuaciones/1-conSol.webp' alt='Vista como conjunto del conjunto solución'/>
     </div>
 </BComment>
 
 Podemos dar con el conjunto solución <b>despejando la variables principal</b> (la primera variable) de la ecuación y así <b>formando una función</b> la cual necesita de valores arbitrarios (valores cuales quiera), para poder obtener la variable principal. Además, a esto se lo conoce como <b>representación paramétrica de un conjunto solución</b>.
 
-<ChordBox title='Ejemplo de representación paramétrica de un conjunto solución' className='bg-cyan-200/30 border-cyan-700 my-2' chord={true}>
-    <b>Sea <Ltx txt='3x-2y=-1'/></b>
-    Podemos dar con su conjunto solución despejando la variable principal (en este caso <Ltx txt='x'/>) donde tenemos que: \
+<ChordBox title='Ejemplo de representación paramétrica de un conjunto solución 1' className='bg-indigo-200/30 border-indigo-700 my-2' chord={true}>
+    <b>Sea <Ltx txt='3x-2y=-1'/></b> \
+    Podemos dar con su conjunto solución despejando la variable principal (en este caso <Ltx txt='x'/>) donde tenemos que:
     <Ltx txt='3x-2y=-1'/> <br/>
     <Ltx txt='3x=-1+2y'/> <br/>
     <Ltx txt='x=\frac{-1+2y}{3}'/>
-    <LComment txt='Parametrizando y de forma que y = t y lo convertimos en función'/> \
-    <Ltx txt='x=\frac{-1+2t}{3}'/> donde <Ltx txt='y=t'/> \
+    <LComment txt='Parametrizando y de forma que y = t y lo convertimos en función'/>
+    <Ltx txt='x=\frac{-1+2t}{3}'/> donde <Ltx txt='y=t'/> <br/>
     <Ltx txt='f(t)=\frac{-1+2t}{3}'/>
+    Finalmente lo expresamos el resultado
+    <ul className='list-disc pl-5'>
+        <li><Ltx txt='Cs = \{(x,y)\in\mathbb{R^2}:x=\frac{-1+2y}{3}, \forall{y}\in\mathbb{R}\}'/></li>
+        <li><Ltx txt='Cs = (t, f(t))'/></li>
+    </ul>
+    Para ambos casos comentar lo siguiente:
+    <ul className='list-decimal pl-5'>
+        <li>
+            se lee como: el par ordenado (por que existen dos variables en la ecuación), que pertenece a los reales al cuadrado (por que son dos), tal que <Ltx txt='x'/> sea igual a <Ltx txt='\frac{-1+2y}{3}'/>, esto para cualquier valor de <Ltx txt='y'/> que pertenece a los reales.
+        </li>
+        <li>
+            El par ordenado <Ltx txt='(f(t), t)'/> es la solución, la misma hace referencia a la primera expresión del resultado, pues ambas son equivalentes en ese sentido.
+        </li>
+    </ul>
+    <span className='font-bold text-2xl'>Pruebas</span>
+    Si hacemos la prueba usando la función anterior veremos que cada resultado que nos lanza será solución para la ecuación. Donde tenemos que:
+    <ul className='list-disc pl-5'>
+        <li>
+            Para <Ltx txt='y=0'/> <Ltx txt='\longrightarrow'/> <Ltx txt='x=\frac{-1+2(0)}{3}=\frac{-1}{3}'/>
+            <div className='pl-2 border-l-2 border-black'>
+                <Ltx txt='\therefore'/> una solución es <Ltx txt='(x,y)=(\frac{-1}{3}, 0)'/>, donde: <br/>
+                <Ltx txt='3x-2y=-1'/> <br/>
+                <Ltx txt='3(\frac{-1}{3})-2(0)=-1'/> <br/>
+                <Ltx txt='-1-0=-1'/> <br/>
+                <Ltx txt='-1=-1'/> ✔
+            </div>
+        </li>
+        <li>
+            Para <Ltx txt='y=3'/> <Ltx txt='\longrightarrow'/> <Ltx txt='x=\frac{-1+2(3)}{3}=\frac{5}{3}'/>
+            <div className='pl-2 border-l-2 border-black'>
+                <Ltx txt='\therefore'/> una solución es <Ltx txt='(x,y)=(\frac{5}{3}, 3)'/>, donde: <br/>
+                <Ltx txt='3x-2y=-1'/> <br/>
+                <Ltx txt='3(\frac{5}{3})-2(3)=-1'/> <br/>
+                <Ltx txt='5-6=-1'/> <br/>
+                <Ltx txt='-1=-1'/> ✔
+            </div>
+        </li>
+        <li>
+            Para <Ltx txt='y=-30'/> <Ltx txt='\longrightarrow'/> <Ltx txt='x=\frac{-1+2(-30)}{3}=\frac{-61}{3}'/>
+            <div className='pl-2 border-l-2 border-black'>
+                <Ltx txt='\therefore'/> una solución es <Ltx txt='(x,y)=(\frac{-61}{3}, -30)'/>, donde: <br/>
+                <Ltx txt='3x-2y=-1'/> <br/>
+                <Ltx txt='3(\frac{-61}{3})-2(-30)=-1'/> <br/>
+                <Ltx txt='-61+60=-1'/> <br/>
+                <Ltx txt='-1=-1'/> ✔
+            </div>
+        </li>
+    </ul>
+    Como vemos solo damos <b>cualquier valor para y</b> e inmediatamente podemos dar con el valor de x.
 </ChordBox>
+
+<BComment type='note'>
+    La expresión <Ltx txt='(x, y)'/> hace referencia a la solución de una ecuación con dos variables, donde no necesariamente solo son dos. Pues, vimos que existen ecuaciones con n-variables, entonces su solución puede expresarse como <Ltx txt='(x_1, x_2, x_3, \cdots, x_n)'/>, siendo una <b>tupla de n elementos</b>
+</BComment>
+
+<ChordBox title='Ejemplo de representación paramétrica de un conjunto solución 2' className='bg-lime-500/20 border-lime-800' chord={true}>
+    <b>Sea <Ltx txt='a_1x_1+a_2x_2+\cdots+a_nx_n=b'/></b> \
+    En este caso tenemos la forma general de una ecuación lineal, haciendo uso del método de paramatrización podemos dar con su conjunto solución. <br/>
+    <Ltx txt='a_1x_1+a_2x_2+\cdots+a_nx_n=b'/> <br/>
+    <Ltx txt='a_1x_1=b-a_2x_2-a_3x_3-\cdots-a_nx_n'/> <br/>
+    <Ltx txt='x_1=\frac{b-a_2x_2-a_3x_3-\cdots-a_nx_n}{a_1}'/> <br/>
+    <LComment txt='Parametrizamos todas las variables de x con indice 2 hasta n, con valores arbitrarios'/>
+    <Ltx txt='x_1=\frac{b-a_2t_2-a_3t_3-\cdots-a_nt_n}{a_1}'/> Para <Ltx txt='x_2=t_2, x_3=t_3, \cdots, x_n=t_n'/> <br/>
+    <Ltx txt='f(t_2,t_3,\cdots,t_n)=\frac{b-a_2t_2-a_3t_3-\cdots-a_nt_n}{a_1}'/> <br/>
+    Como podemos ver esta es la forma general para la variable principal, en este caso <Ltx txt='x_1'/>. Por otro lado, mencionar que el proceso es igual que el ejemplo anterior con la única diferencia de que aquí hay n-variables. \
+    Finalmente expresamos el resultado:
+    <ul className='list-disc pl-5'>
+        <li><Ltx txt='Cs = \{(x_1, x_2,\cdots,x_n)\in\mathbb{R^n}:x_1=\frac{b-a_2x_2-a_3x_3-\cdots-a_nx_n}{a_1}, \forall{x_2,x_3,\cdots,x_n}\in\mathbb{R}\}'/></li>
+        <li><Ltx txt='Cs = (f(t_2,t_3,\cdots,t_n),t_2,t_3,\cdots,t_n)'/></li>
+    </ul>
+    Ambas representan el conjunto solución de la ecuación que vimos. Pero, si bien parece conjuso solo debemos pensar en el proceso del ejemplo anterior, pues esto no es nada más que haciendolo para más variables
+</ChordBox>
+
+[//]: # (Conjunto solución)
+<Ref id='sistemas de ecuaciones'/>
+<SubTitle txt='Sistemas de ecuaciones.'/>
+
+<ImportantBox title='¿Qué es un sistema de ecuaciones?' color='orange' icon='clipboard'>
+    Un sistema de ecuaciones de <b>m-ecuaciones y n-variables</b> tiene la forma:
+    <div className='flex flex-col items-center justify-center my-2'>
+        <Ltx txt='\left\{\begin{matrix} a_{11}x_1+a_{12}x_2+\cdots+a_{1n}x_n=b_1 \\ a_{21}x_1+a_{22}x_2+\cdots+a_{2n}x_n=b_2 \\ a_{31}x_1+a_{32}x_2+\cdots+a_{3n}x_n=b_3 \\ \\ a_{m1}x_1+a_{m2}x_2+\cdots+a_{mn}x_n=b_m \end{matrix}\right.'/>
+        <LComment txt='Una sistema de ecuaciones (generalización)'/>
+    </div>
+    Donde el indice m representa la fila o número de ecuación, y n la columna o número cantidad de variables de cada ecuación. Donde <Ltx txt='a_{ij}, x_{j} \in \mathbb{R}'/>
+</ImportantBox>
+<BComment type='note'>
+    La notación <Ltx txt='x_{j}'/> como se dijó anteriormente, hace referencia al número de variables, donde no todos son necesariamente iguales. Por otro lado, <Ltx txt='a_{ij}'/> son los escalares o coeficientes, donde <b>i es el número de ecuación</b> y <b>j es el número de coeficiente</b> relacionado con la j de <Ltx txt='x_j'/>. También, demacar: que <Ltx txt='1 \leq i \leq m'/> y <Ltx txt='1 \leq j \leq n'/>.
+</BComment>
+<BComment type='alert'>
+    Los escalares <Ltx txt='a_{ij}'/> son coeficientes respecto a las variables <Ltx txt='x_j'/>, pero al igual que con las variables, los escalares no son necesariamente son iguales, solo es una forma de expresarlo o generalizar.
+</BComment>
+<BComment type='warn'>
+    Todas las ecuaciones tienen las mismas variables, solo sus coeficiente o escalares no son necesariamente iguales.
+</BComment>
+
+<SimpleBox title='Conjunto solución de un sistema' className='border-cyan-800 bg-cyan-800/10'>
+    El conjunto solución para un sistema de ecuaciones es la colección de <Ltx txt='s_1,s_2,s_3,\cdots,s_n'/> tales que al remplazar en <Ltx txt='x_i=s_i'/> debe satisfacer <b>todas las ecuaciones</b>. Y como tal todas las ecuaciones comparten el mismo resultado y como tal son una familia de ecuaciones.
+</SimpleBox>
+
+<ImportantBox title='Definición tipos de sistemas' color='orange' icon='flag' className='my-2'>
+    Cuando un sistema de ecuaciones tiene almenos una solución se denomina <b className='text-indigo-500'>SISTEMA CONSISTENTE</b> y por el contrario si no tiene solución, entonces se lo denomina <b className='text-pink-500'>SISTEMA INCONSISTENTE</b> \
+    Donde sucede lo siguiente:
+    <ul>
+        <li className='flex gap-2'>
+            <Icons name='chess' className='w-5 h-5 text-pink-400 bg-pink-600'/>
+            Caso 1.- No tiene solución
+        </li>
+        <li className='flex gap-2'>
+            <Icons name='chess' className='w-5 h-5 text-indigo-400 bg-indigo-600'/>
+            Caso 2.- Tiene UNA solución
+        </li>
+        <li className='flex gap-2'>
+            <Icons name='chess' className='w-5 h-5 text-indigo-400 bg-indigo-600'/>
+            Caso 3.- Tiene infinitas soluciones
+        </li>
+    </ul>
+</ImportantBox>
+
+<BComment type='note'>
+    Tenemos solo estos tres casos, si al menos tiene una solución o infinitas soluciones, entonces es el sistema es CONSISTENTE (SC), y por el contrario si no tiene solución (no se puede resolver), se lo denomina INCONSISTENTE
+</BComment>

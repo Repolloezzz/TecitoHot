@@ -63,7 +63,7 @@ const Home = () => {
             <HeroSection className="absolute w-full h-full" />
             <Image
               className="block object-fill w-full h-full"
-              src={"/backgrounds/City.jpg"}
+              src={"/home/City.jpg"}
               width={1000}
               height={824}
               alt="Back-city"

@@ -50,7 +50,7 @@ export function ImportantBox({
 
   return (
     <div
-      className={`w-full ${style[0]} p-1 lg:p-3 border-l-4 ${style[3]} ${
+      className={`w-full ${style[0]} group p-1 lg:p-3 border-l-4 ${style[3]} ${
         className ? className : ""
       }`}
     >
@@ -59,7 +59,7 @@ export function ImportantBox({
       >
         <Icons
           name={`${icon ? icon : "align-justify"}`}
-          className={`lg:w-8 w-5 h-5 lg:h-8 ${style[0]} ${style[1]}`}
+          className={`group-hover:scale-125 group-hover:-translate-y-1 transition-all lg:w-8 w-5 h-5 lg:h-8 ${style[0]} ${style[1]}`}
         />
         <p>{title}</p>
       </h1>
@@ -138,29 +138,32 @@ export function ChordBox({
   h1Class,
   title,
   children,
-  initial = false
+  initial = false,
 }: {
   className?: string;
   title: string;
   h1Class?: string;
   children: any;
-  initial: boolean
+  initial: boolean;
 }) {
   const [open, setOpen] = useState(initial);
   return (
-    <div
-      className={`border-l-4  p-3 ${className} overflow-hidden`}
-    >
+    <div className={`border-l-4 p-3 ${className} group overflow-hidden`}>
       <h1
         onClick={() => {
           setOpen(!open);
         }}
-        className={`w-full flex gap-1 items-center cursor-pointer text-xl md:text-2xl transition-all ${
+        className={`w-full flex gap-5 md:gap-4 lg:gap-3 text-start items-center cursor-pointer text-xl md:text-2xl transition-all ${
           open ? "mb-2" : "mb-0"
         }`}
       >
+        <Icons
+          name="add-box"
+          className={`min-w-[1.5rem] min-h-[1.5rem] group-hover:scale-125 transition-all md:min-w-[1.75rem] md:min-h-[1.75rem] lg:min-h-[2rem] lg:min-w-[2rem] ${
+            open ? "rotate-45" : ""
+          }`}
+        />
         <p>{title}</p>
-        <Icons name="add-box" className="w-4 h-4 md:w-6 md:h-6 lg:h-7 lg:w-7" />
       </h1>
       <div
         className={`${

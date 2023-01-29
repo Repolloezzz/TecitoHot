@@ -14,7 +14,7 @@ export default function Document() {
         quieres😳'/>
         <meta name="keywords" content="Temas de matemáticas, Temas de física, Temas de programación"/>
       </Head>
-      <body className='w-full h-full scroll-smooth snap-y scrollbar-thin scrollbar-w-1 md:scrollbar-w-2 lg:scrollbar-w-3 scrollbar-thumb-stone-800 scrollbar-track-amber-100'>
+      <body className='w-full h-full overflow-hidden'>
         <Main />
         <NextScript />
       </body>
