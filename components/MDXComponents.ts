@@ -2,7 +2,7 @@ import { Title, SubTitle } from "./themes/Titles";
 import {
   ImportantBox,
   BoxwC,
-  ButtonSections,
+  ButtonBox,
   SimpleBox,
   ChordBox,
 } from "./themes/Box";
@@ -19,7 +19,7 @@ const generalComponents = {
   BoxwC,
   LComment,
   BComment,
-  ButtonSections,
+  ButtonBox,
   SimpleBox,
   ChordBox,
   Ref,

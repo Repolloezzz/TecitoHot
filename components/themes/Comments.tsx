@@ -54,7 +54,7 @@ export function BComment({ type, children }: { type: string; children: any }) {
 
   return (
     <span
-      className={`flex p-1 pr-3 group transition-all w-full gap-1 lg:gap-5 lg:p-5 py-2 my-2 lg:pr-10 border-l-4 bg-slate-200/60 text-slate-600 ${border} ${bg}`}
+      className={`flex overflow-hidden p-1 pr-3 group transition-all w-full gap-1 lg:gap-5 lg:p-5 py-2 my-2 lg:pr-10 border-l-4 bg-slate-200/60 text-slate-600 ${border} ${bg}`}
     >
       <div
         about={typeMSG}

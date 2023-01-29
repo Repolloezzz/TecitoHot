@@ -59,7 +59,7 @@ export function ImportantBox({
       >
         <Icons
           name={`${icon ? icon : "align-justify"}`}
-          className={`group-hover:scale-125 group-hover:-translate-y-1 transition-all lg:w-8 w-5 h-5 lg:h-8 ${style[0]} ${style[1]}`}
+          className={`group-hover:scale-125 group-hover:-translate-y-1 transition-all lg:min-w-[2rem] min-w-[1.25rem] min-h-[1.25rem] lg:min-h-[2rem] ${style[0]} ${style[1]}`}
         />
         <p>{title}</p>
       </h1>
@@ -103,18 +103,20 @@ interface Section {
   section: JSX.Element;
 }
 
-export function ButtonSections({ data }: any) {
-  const [page, setPage] = useState(data[0].name);
+export function ButtonBox({ data, className = "" }: any) {
+  const [page, setPage] = useState(0);
   return (
-    <div>
-      <div className="flex w-full">
+    <div className={`${className}`}>
+      <div className={`flex overflow-x-auto border-2 border-black`}>
         {data.map((element: Section, index: number) => {
           return (
             <button
               onClick={() => {
-                setPage(element.name);
+                setPage(index);
               }}
-              className="w-full p-2 text-xl bg-slate-700 text-slate-50 hover:bg-slate-500"
+              className={`w-full px-2 p-0.5 md:p-2 text-base md:text-xl transition-all text-slate-50 hover:bg-slate-300 ${
+                index == page ? "bg-slate-200 text-black" : "bg-slate-700 text-slate-50"
+              }`}
               key={index}
             >
               {element.name}
@@ -122,13 +124,7 @@ export function ButtonSections({ data }: any) {
           );
         })}
       </div>
-      <div>
-        {data.map((element: Section, index: number) => {
-          if (element.name == page) {
-            return element.section;
-          }
-        })}
-      </div>
+      <div>{data[page].section ? data[page].section : null}</div>
     </div>
   );
 }

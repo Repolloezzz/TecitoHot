@@ -25,9 +25,9 @@ export function Img({
     <div className="relative overflow-hidden">
       {view ? (
         <div
-          className={`fixed flex flex-col justify-center items-center z-50 h-full ${
-            active ? "w-full top-0 left-0" : "w-0"
-          } bg-slate-700/80 transition-all pl-[2.5rem] md:pl-[3rem] lg:pl-[4rem]`}
+          className={`fixed overflow-hidden flex flex-col justify-center items-center z-50 h-full ${
+            active ? "w-full pl-[2.5rem] md:pl-[3rem] lg:pl-[4rem]" : "w-0 "
+          } bg-slate-700/80 top-0 right-0 transition-all `}
         >
           <button
             className="absolute right-5 top-10 lg:top-16 lg:right-16"

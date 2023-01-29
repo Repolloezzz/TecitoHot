@@ -187,10 +187,10 @@ Podemos dar con el conjunto solución <b>despejando la variables principal</b> (
 
 <ImportantBox title='¿Qué es un sistema de ecuaciones?' color='orange' icon='clipboard'>
     Un sistema de ecuaciones de <b>m-ecuaciones y n-variables</b> tiene la forma:
-    <div className='flex flex-col items-center justify-center my-2'>
+    <div className='flex flex-col text-xs sm:text-sm md:text-xl items-center justify-center my-2'>
         <Ltx txt='\left\{\begin{matrix} a_{11}x_1+a_{12}x_2+\cdots+a_{1n}x_n=b_1 \\ a_{21}x_1+a_{22}x_2+\cdots+a_{2n}x_n=b_2 \\ a_{31}x_1+a_{32}x_2+\cdots+a_{3n}x_n=b_3 \\ \\ a_{m1}x_1+a_{m2}x_2+\cdots+a_{mn}x_n=b_m \end{matrix}\right.'/>
-        <LComment txt='Una sistema de ecuaciones (generalización)'/>
     </div>
+    <LComment txt='Una sistema de ecuaciones (generalización)'/>
     Donde el indice m representa la fila o número de ecuación, y n la columna o número cantidad de variables de cada ecuación. Donde <Ltx txt='a_{ij}, x_{j} \in \mathbb{R}'/>
 </ImportantBox>
 <BComment type='note'>
@@ -228,4 +228,48 @@ Podemos dar con el conjunto solución <b>despejando la variables principal</b> (
 
 <BComment type='note'>
     Tenemos solo estos tres casos, si al menos tiene una solución o infinitas soluciones, entonces es el sistema es CONSISTENTE (SC), y por el contrario si no tiene solución (no se puede resolver), se lo denomina INCONSISTENTE
+</BComment>
+<BComment type='warn'>
+    Un caso particual en <Ltx txt='\mathbb{R^2}'/> (en el plano 2D) es que si tomamos un sistem de ecuaciones podemos ver graficamente el tipo de resultado que tiene y saber si es CONSISTENTE o INCONSISTENTE.
+    <ButtonBox className='my-3' data={[
+        {name: 'UNA solución', section: (
+            <div className='p-2 md:p-5 bg-indigo-400/20'>
+                Supongamos el siguiente sistema de ecuaciones: <br/>
+                <Ltx txt='\left\{\begin{matrix} x+y=3 \\ x-y=-1 \end{matrix}\right.'/> <br/>
+                Resolviendo el sistema de ecuaciones obtenemos los valores <Ltx txt='(x,y) = (1, 2)'/> o es lo mismo que decir que <Ltx txt='x=1'/> y <Ltx txt='y=2'/>. Pero, notar que al hacer su grafica tenemos que:
+                <div className='w-full flex justify-center items-center bg-back my-2'>
+                    <video className='object-cover lg:w-[70%] w-full sm:w-[80%] xl:w-[60%]' controls autoPlay muted loop src="/themes/Matematica/AlgebraLineal/SistemasDeEcuaciones/UnicaSolucion.mp4"/>
+                </div>
+                Como se puede ver, el resultado que obtuvimos es la INTERSECCIÓN de ambas rectas, pues como dijimos antes comparten los resultados y para el caso como tenemos una sola solución, entonces solo existe una intersección entre ambas graficas de las ecuaciones. También remarcar que este es un <b className='text-indigo-500'>SISTEMA CONSISTENTE</b>.
+            </div>
+            )
+        },
+        {name: 'INFINITAS soluciones', section: (
+            <div className='p-2 md:p-5 bg-indigo-400/20'>
+                Supongamos el siguiente sistema de ecuaciones: <br/>
+                <Ltx txt='\left\{\begin{matrix} x+3y=4 \\ -2x-6y=-8 \end{matrix}\right.'/> <br/>
+                Pero notar que la segunda ecuación es la primera multiplicada por -2, entonces dividiendolo por <Ltx txt='-\frac{1}{2}'/> a la segunda ecuación tenemos que: <br/>
+                <Ltx txt='\left\{\begin{matrix} x+3y=4 \\ x+3y=4 \end{matrix}\right.'/> <br/>
+                Pero esto practicamente es solo una ecuación y así parametrizando tenemos INFINITAS SOLUCIONES que es <Ltx txt='(x,y) = (f(y), y)=(4-3y, y)'/>, esto graficamente se ve como:
+                <div className='w-full flex justify-center items-center bg-back my-2'>
+                    <video className='object-cover lg:w-[70%] w-full sm:w-[80%] xl:w-[60%]' controls autoPlay muted loop src="/themes/Matematica/AlgebraLineal/SistemasDeEcuaciones/InfinitasSoluciones.mp4"/>
+                </div>
+                Como podemos ver, ambas ecuaciones graficamente son lo mismo, donde si su intersección es una solución, entonces al ser las mismas practicamente cualquier solución de <Ltx txt='(f(y),y)'/> es solución para el sistema y así concluimos que tiene infinitos puntos de intersección y es de ahí que tiene infinitas soluciones. También remarcar que este es un <b className='text-indigo-500'>SISTEMA CONSISTENTE</b>.
+            </div>
+            )
+        },
+        {name: 'SIN solución', section: (
+            <div className='p-2 md:p-5 bg-pink-400/20'>
+                Supongamos el siguiente sistema de ecuaciones: <br/>
+                <Ltx txt='\left\{\begin{matrix} x+y=0 \\ x+y=4 \end{matrix}\right.'/> <br/>
+                Pero notar que ambos son las mismas ecuaciones pero con diferentes igualdades, diciendo que <Ltx txt='x+y = 0'/> y <Ltx txt='x+y=4'/>, pero eso es una contradicción, es como decir <Ltx txt='0=4'/> pues eso no es verdad. Por lo tando, no tiene solución y graficamente se ve como:
+                <div className='w-full flex justify-center items-center bg-back my-2'>
+                    <video className='object-cover lg:w-[70%] w-full sm:w-[80%] xl:w-[60%]' controls autoPlay muted loop src="/themes/Matematica/AlgebraLineal/SistemasDeEcuaciones/SinSolucion.mp4"/>
+                </div>
+                Como podemos apreciar, no existe alguna intersección entre ambas rectas, es decir que el sistema no tiene solución pues ambas ecuaciones NO COMPARTEN la misma solución. Por lo tando, no tiene solución. También remarcar que este es un <b className='text-pink-500'>SISTEMA INCONSISTENTE</b>.
+            </div>
+            )
+        }
+        ]}
+        />
 </BComment>

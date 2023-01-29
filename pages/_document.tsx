@@ -34,7 +34,7 @@ export default function Document() {
           content="Temas de matemáticas, Temas de física, Temas de programación"
         />
       </Head>
-      <body className="relative w-screen overflow-hidden">
+      <body className="relative overflow-hidden">
         <Main />
         <NextScript />
       </body>
