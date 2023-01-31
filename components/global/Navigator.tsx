@@ -165,13 +165,13 @@ const VerticalNav = ({ options }: optionsContext) => {
                 navSW
                   ? "px-2 md:px-3 lg:px-4 xl:px-5 justify-start "
                   : "justify-center"
-              } group p-0.5 md:p-1 lg:p-2 mt-auto gap-2 md:gap-4 lg:gap-5 xl:gap-6 bg-primary text-slate-300 transition-all duration-300 hover:bg-primary-focus`}
+              } group p-0.5 md:p-1 lg:p-2 mt-auto gap-2 md:gap-4 lg:gap-5 xl:gap-6 bg-primary transition-all duration-300 hover:bg-primary-focus`}
               contentClass={`${
                 navSW
                   ? "group-hover:transition-none group-hover:font-semibold"
                   : "hidden"
-              } break-normal text-withe text-1.5xl lg:text-2xl overflow-hidden h-4 lg:h-8 transition-all duration-300 item-center leading-3 whitespace-pre-wrap`}
-              iconClass="min-w-[1.7rem] lg:min-w-[2.2rem] group-hover:rotate-6 group-hover:scale-110"
+              } break-normal text-primary-content text-1.5xl lg:text-2xl overflow-hidden h-4 lg:h-8 transition-all duration-300 item-center leading-3 whitespace-pre-wrap`}
+              iconClass="min-w-[1.7rem] text-slate-100 lg:min-w-[2.2rem] group-hover:rotate-6 group-hover:scale-110"
               content="Sobre TeCitHot"
               iconName="downasaur"
             />
