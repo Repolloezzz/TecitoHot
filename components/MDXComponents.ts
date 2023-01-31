@@ -8,7 +8,7 @@ import {
 } from "./themes/Box";
 import { LComment, BComment } from "./themes/Comments";
 import { Ref } from "./themes/General";
-import { Ltx } from "./themes/Text";
+import { Ltx, BLtx } from "./themes/Text";
 import { Img } from "./global/ImgComp";
 import { Video } from "./global/VidComp";
 import { Icons } from "./global/Icons";
@@ -25,11 +25,12 @@ const generalComponents = {
   Ref,
   Img,
   Video,
-  Icons
+  Icons,
 };
 
 const latexComponets = {
   Ltx,
+  BLtx,
 };
 
 export { generalComponents, latexComponets };

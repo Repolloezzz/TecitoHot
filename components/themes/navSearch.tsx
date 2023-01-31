@@ -18,7 +18,7 @@ export function NavSearch({
   return (
     <>
       <nav
-        className={`z-30 fixed transition-all flex flex-col gap-1 p-2 overflow-hidden shadow-lg lg:gap-5 lg:p-4 lg:h-full bg-slate-50 lg:w-80 xl:w-96 top-0 lg:left-auto left-0 w-full pl-12 lg:pl-4 ${
+        className={`z-30 fixed transition-all flex flex-col gap-1 p-2 overflow-hidden bg-base-200 shadow-lg md:pl-14 lg:gap-5 lg:h-full lg:w-80 xl:w-96 top-0 lg:left-auto left-0 w-full pl-12 lg:pl-2 ${
           open ? "h-[30rem]" : "h-20 md:h-24"
         }`}
       >
@@ -28,17 +28,17 @@ export function NavSearch({
               0,
               index.pageUrl.length - index.gen.length
             )}
-            className="flex items-center gap-3 transition-all group hover:bg-slate-100"
+            className="flex lg:bg-neutral lg:text-neutral-content lg:p-2 text-xl group items-center hover:bg-opacity-80 justify-start rounded-none gap-3"
           >
             <Icons
               name="chevron-left"
-              className="w-6 h-6 bg-red-700 lg:w-8 lg:h-8 text-slate-100 lg:bg-transparent lg:text-slate-700"
+              className="w-6 h-6 bg-red-700 lg:w-8 lg:h-8 text-neutral-content lg:bg-transparent"
             />
-            <p className="hidden transition-all lg:block lg:text-2xl group-hover:-translate-x-4">
+            <p className="hidden transition-all lg:block group-hover:-translate-x-2 lg:text-2xl">
               Volver
             </p>
           </Link>
-          <label className="flex items-center justify-center w-full h-8 gap-2 p-1 border-2 lg:h-auto bg-slate-100 focus:bg-red border-slate-300">
+          <label className="flex border-neutral items-center justify-center w-full h-8 gap-2 p-1 border-2 lg:h-auto bg-slate-100">
             <Icons
               name="search"
               className="min-w-[1rem] h-4 lg:h-6 lg:w-6 text-slate-600"
@@ -55,7 +55,7 @@ export function NavSearch({
           className="flex items-center gap-1 cursor-pointer w-max lg:hidden"
           onClick={() => setOpen(!open)}
         >
-          <Icons name="open" className="w-5 h-5 md:w-6 md:h-6" />
+          <Icons name="menu" className="w-5 h-5 md:w-6 md:h-6" />
           <p className="flex items-center justify-center text-lg md:text-2xl">
             Menu
           </p>
@@ -66,11 +66,13 @@ export function NavSearch({
             }`}
           />
         </span>
-        <h1 className="text-2xl font-semibold font-sharemono">{index.name}</h1>
+        <h1 className="text-2xl text-base-content text-center font-semibold font-sharemono">
+          {index.name}
+        </h1>
         <div
-          className={`flex flex-col w-full h-full overflow-x-hidden overflow-y-auto scroll-smooth snap-y scrollbar-thin scrollbar-w-1 md:scrollbar-w-2 lg:scrollbar-w-3 scrollbar-thumb-stone-600 scrollbar-track-slate-100`}
+          className={`flex flex-col w-full h-full overflow-x-hidden overflow-y-auto scroll-smooth snap-y scrollbar-thin scrollbar-w-1 scrollbar-thumb-stone-600 scrollbar-track-slate-100`}
         >
-          <menu className="flex flex-col w-full h-full gap-1 py-2 pl-1 border-l-4 lg:pl-3">
+          <menu className="flex flex-col w-full h-full gap-1 p-2">
             {props.map((element: SubTheme, index: number) => {
               return (
                 <li key={index}>
@@ -82,32 +84,26 @@ export function NavSearch({
                           const submenu = currentTarget.nextElementSibling;
                           submenu?.classList.toggle("h-min");
                         }}
-                        className={`flex items-center group justify-center w-full gap-2 py-1 cursor-pointer ${
+                        className={`flex items-center group rounded-none w-full gap-2 py-1 cursor-pointer ${
                           element.gen == actually
-                            ? "bg-slate-800 hover:bg-slate-400 font-bold"
-                            : "bg-slate-100 hover:bg-slate-200"
+                            ? "btn btn-primary font-bold"
+                            : "btn btn-secondary"
                         }`}
                       >
                         <Link href={element.pageUrl}>
                           <Icons
                             name="play"
-                            className={`xl:min-h-[2rem] min-h-[1rem] min-w-[1rem] lg:min-w-[1.4rem] lg:min-h-[1.4rem] xl:min-w-[2rem] text-slate-50 bg-slate-800 ${
+                            className={`xl:min-h-[2rem] min-h-[1rem] min-w-[1rem] lg:min-w-[1.4rem] lg:min-h-[1.4rem] xl:min-w-[2rem]  ${
                               element.gen == actually
-                                ? "text-slate-100 bg-slate-100"
-                                : "text-slate-100 bg-slate-700"
+                                ? "bg-slate-800 text-slate-50"
+                                : "bg-secondary-focus text-secondary-content"
                             }`}
                           />
                         </Link>
-                        <p
-                          className={`w-full text-center ${
-                            element.gen == actually ? "text-slate-100" : ""
-                          }`}
-                        >
-                          {element.name}
-                        </p>
+                        <b className="ml-auto mr-auto">{element.name}</b>
                       </button>
                       <menu
-                        className={`h-0 w-full pl-4 lg:pl-10 ml-3 overflow-hidden border-l-4 transition-all`}
+                        className={`h-0 w-full pl-4 lg:pl-10 ml-6 xl:ml-8 overflow-hidden border-neutral border-l-4 transition-all`}
                       >
                         {element.sections?.map(
                           (section: string, index: number) => {
@@ -127,28 +123,22 @@ export function NavSearch({
                     </>
                   ) : (
                     <Link
-                      className={`flex items-center group justify-center w-full gap-2 py-1 cursor-pointer ${
+                      className={`flex items-center rounded-none group w-full gap-2 py-1 cursor-pointer ${
                         element.gen == actually
-                          ? "bg-slate-800 hover:bg-slate-500 font-bold"
-                          : "bg-slate-100 hover:bg-slate-200"
+                          ? "btn btn-primary font-bold btn-active"
+                          : "btn-secondary btn"
                       }`}
                       href={element.pageUrl}
                     >
                       <Icons
                         name="play"
-                        className={`xl:min-h-[2rem] min-h-[1rem] min-w-[1rem] lg:min-w-[1.4rem] lg:min-h-[1.4rem] xl:min-w-[2rem] text-slate-50 bg-slate-800 ${
+                        className={`xl:min-h-[2rem] min-h-[1rem] min-w-[1rem] lg:min-w-[1.4rem] lg:min-h-[1.4rem] xl:min-w-[2rem] ${
                           element.gen == actually
-                            ? "text-slate-100 bg-slate-100"
-                            : "text-slate-100 bg-slate-700"
+                            ? "bg-primary-focus text-slate-50"
+                            : "bg-secondary-focus text-secondary-content"
                         }`}
                       />
-                      <p
-                        className={`w-full text-center ${
-                          element.gen == actually ? "text-slate-100" : ""
-                        }`}
-                      >
-                        {element.name}
-                      </p>
+                      <b className="ml-auto mr-auto">{element.name}</b>
                     </Link>
                   )}
                 </li>

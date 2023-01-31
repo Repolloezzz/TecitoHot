@@ -49,7 +49,7 @@ export default function Matter({ gen }: any) {
             },
           ]}
         />
-        <section className="w-full min-h-[30rem] relative flex flex-col justify-start items-center overflow-y-auto pattern-boxes pattern-slate-100 pattern-bg-transparent pattern-opacity-100 pattern-size-8">
+        <section className="text-black w-full min-h-[30rem] relative flex flex-col justify-start items-center overflow-y-auto">
           <div
             className={`flex justify-start w-full h-32 lg:h-96 border-slate-600 border-b-8 border-dashed`}
           >
@@ -70,7 +70,7 @@ export default function Matter({ gen }: any) {
               </h1>
             </div>
           </div>
-          <section className="w-full lg:w-[88%] shadow-lg bg-slate-50 relative">
+          <section className="w-full lg:px-20 shadow-lg bg-slate-50 relative">
             <div className="p-5 lg:p-10 bg-slate-100 min-h-[23rem] flex flex-col gap-1 lg:gap-5">
               <h2 className="text-4xl underline lg:text-5xl">Descripción.</h2>
               <p className="text-xl text-justify lg:text-3xl">

@@ -4,7 +4,7 @@ import { HeroSection } from "../components/global/HeroSection";
 import { PresentSection } from "../components/global/Present";
 import Head from "next/head";
 
-import type { generator, MatterTheme } from "../data/Types";
+import type { generator, Matter, MatterTheme } from "../data/Types";
 import { allData as defaultData } from "../data/main";
 
 const Home = () => {
@@ -71,11 +71,11 @@ const Home = () => {
             />
           </section>
           {/* Other */}
-          {defaultData.map((matter: MatterTheme, index: number) => {
+          {defaultData.map((matter: Matter, index: number) => {
             return (
               <PresentSection
                 id={matter.name}
-                className={`snap-center my-20 md:my-0`}
+                className={`snap-center`}
                 main={matter}
                 seconds={matter.themes}
                 key={index}

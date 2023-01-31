@@ -1,5 +1,6 @@
 import { Icons } from "./Icons";
 import Link from "next/link";
+import React from "react";
 
 /**
  * * ButtonRef - Componente que contiene un icono y letras
@@ -67,5 +68,21 @@ export function ButtonRef({
         <p className={contentClass ? contentClass : "text-3xl"}>{content}</p>
       ) : null}
     </Link>
+  );
+}
+
+export function PixelButton({
+  children,
+  className = "",
+}: {
+  children: any;
+  className?: string;
+}) {
+  return (
+    <button
+      className={`${className} p-2 flex justify-center items-center lg:text-2xl xl:text-3xl bg-slate-200 border-b-4 border-slate-800 border-l-2 hover:border-r-2 hover:border-l-0 gap-5 transition-all hover:bg-slate-400 hover:border-t-4 hover:border-b-0 text-black`}
+    >
+      {children}
+    </button>
   );
 }

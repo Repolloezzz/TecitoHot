@@ -64,7 +64,7 @@ export function ImportantBox({
         <p>{title}</p>
       </h1>
       <div className="pr-3 pl-7 lg:px-10">
-        {comment ? <LComment txt={comment} /> : null}
+        {comment ? <LComment>{comment}</LComment> : null}
         <div className="text-base text-justify md:text-lg lg:text-xl">
           {children}
         </div>
@@ -93,7 +93,7 @@ export function BoxwC({
       <div className={`flex w-full ${boxStyle ? boxStyle : ""}`}>
         {children}
       </div>
-      {comment ? <LComment txt={comment} /> : null}
+      {comment ? <LComment>{comment}</LComment> : null}
     </div>
   );
 }
@@ -115,7 +115,9 @@ export function ButtonBox({ data, className = "" }: any) {
                 setPage(index);
               }}
               className={`w-full px-2 p-0.5 md:p-2 text-base md:text-xl transition-all text-slate-50 hover:bg-slate-300 ${
-                index == page ? "bg-slate-200 text-black" : "bg-slate-700 text-slate-50"
+                index == page
+                  ? "bg-slate-200 text-black"
+                  : "bg-slate-700 text-slate-50"
               }`}
               key={index}
             >
@@ -124,7 +126,18 @@ export function ButtonBox({ data, className = "" }: any) {
           );
         })}
       </div>
-      <div>{data[page].section ? data[page].section : null}</div>
+      {data.map((e: any, index: number) => {
+        return (
+          <div
+            key={index}
+            className={`${
+              page == index ? "block" : "hidden"
+            } relative overflow-hidden`}
+          >
+            {e.section}
+          </div>
+        );
+      })}
     </div>
   );
 }
@@ -149,7 +162,7 @@ export function ChordBox({
         onClick={() => {
           setOpen(!open);
         }}
-        className={`w-full flex gap-5 md:gap-4 lg:gap-3 text-start items-center cursor-pointer text-xl md:text-2xl transition-all ${
+        className={`w-full flex gap-3 md:gap-4 lg:gap-5 text-start items-center cursor-pointer text-base md:text-2xl transition-all ${
           open ? "mb-2" : "mb-0"
         }`}
       >

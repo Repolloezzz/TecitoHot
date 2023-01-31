@@ -49,9 +49,9 @@ export default function Content({ source, frontMatter, slug }: any) {
             },
           ]}
         />
-        <section className="flex flex-col lg:flex-row lg:gap-2 relative w-full h-screen min-h-[30rem] overflow-x-hidden overflow-y-scroll bg-slate-50  scroll-smooth snap-y scrollbar-thin scrollbar-w-0 md:scrollbar-w-2 lg:scrollbar-w-3 scrollbar-thumb-stone-800 scrollbar-track-amber-100">
+        <section data-theme="cupcake" className="flex text-black flex-col bg-base-300 lg:flex-row lg:gap-2 relative w-full h-screen min-h-[30rem] overflow-x-hidden overflow-y-scrol scroll-smooth snap-y scrollbar-thin scrollbar-w-0 md:scrollbar-w-2 lg:scrollbar-w-3 scrollbar-thumb-stone-800 scrollbar-track-amber-100">
           <NavSearch index={index} props={subThemes} actually={slug} />
-          <div className="p-2 py-8 text-base leading-6 text-justify break-normal shadow-md h-max lg:leading-8 md:text-lg lg:text-xl lg:p-5 lg:pr-8 font-patrick bg-slate-100">
+          <div className="flex bg-base-100 flex-col p-2 py-8 text-base leading-6 text-justify break-normal shadow-md h-max lg:leading-8 md:text-lg lg:text-xl lg:p-8 lg:pr-10 font-patrick">
             <MDXRemote
               lazy={true}
               {...source}

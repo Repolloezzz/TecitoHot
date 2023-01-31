@@ -1,6 +1,6 @@
 import { Icons } from "./Icons";
 import { TitleMove } from "./TitleAnimation";
-import { base } from "./../../data/Types";
+import { base, Theme } from "./../../data/Types";
 import { useState, useRef, MutableRefObject, useEffect } from "react";
 import style from "../../styles/Selector.module.css";
 
@@ -8,8 +8,8 @@ interface props {
   className?: string;
   id?: string;
   main: base;
-  seconds?: Array<base>;
-  color: string
+  seconds?: Array<Theme>;
+  color: string;
 }
 const PresentSection = ({
   className = "",
@@ -59,20 +59,32 @@ const PresentSection = ({
       transition.current = null;
     }, 1000);
     setTimeout(() => {
-      setView(seconds[index.current]);
+      setView({
+        ...seconds[index.current],
+        pageUrl:
+          seconds[index.current].subThemes[0] != undefined
+            ? seconds[index.current].subThemes[0].pageUrl
+            : "",
+      });
     }, 600);
     setStateButton(true);
     setTimeout(() => setStateButton(false), 1000);
     home.current = false;
   }
-  function changeHome(viewBase: base, type: boolean) {
+  function changeHome(viewBase: any, type: boolean) {
     index.current = -1;
     transition.current = "right";
     setTimeout(() => {
       transition.current = null;
     }, 1000);
     setTimeout(() => {
-      setView(viewBase);
+      setView({
+        ...viewBase,
+        pageUrl:
+          viewBase.subThemes && viewBase.subThemes[0]
+            ? viewBase.subThemes[0].pageUrl
+            : viewBase.pageUrl,
+      });
     }, 600);
     setStateButton(true);
     setTimeout(() => setStateButton(false), 1000);
@@ -85,7 +97,9 @@ const PresentSection = ({
       id={id}
       className={`box-content relative flex flex-col items-center justify-center w-full h-screen overflow-hidden ${className}`}
     >
-      <div className={`flex flex-col w-full h-3/4 md:h-full gap-2 p-2 sm:p-4 md:gap-3 lg:gap-5 md:p-6 lg:p-10 ${color}`}>
+      <div
+        className={`flex flex-col w-full h-3/4 md:h-full gap-2 p-2 sm:p-4 md:gap-3 lg:gap-5 md:p-6 lg:p-10 ${color}`}
+      >
         <h1
           className={`transition-all text-5xl sm:text-5xl md:text-8xl flex items-center lg:text-9xl text-slate-50 ${style.titleShake}`}
         >
@@ -96,7 +110,7 @@ const PresentSection = ({
           />
         </h1>
         <div
-          className={`box-content flex flex-col w-full h-full overflow-hidden sm:flex-row`}
+          className={`box-content text-black flex flex-col w-full h-full overflow-hidden sm:flex-row`}
         >
           <div className="flex flex-col items-center justify-center h-[45%] sm:h-full max-h-[40%] sm:max-h-min w-full sm:w-auto">
             <picture className="relative flex items-center justify-center h-full p-2 overflow-hidden lg:p-10 bg-stone-800 min-w-[25%]">

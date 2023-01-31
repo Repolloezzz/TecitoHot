@@ -1,12 +1,15 @@
 import { TitleShake } from "./TitleAnimation";
 import { Icons } from "./Icons";
+import { PixelButton } from "./Buttons";
 
 interface props {
   className?: string;
 }
 export function HeroSection({ className }: props) {
   return (
-    <section className={`${className} flex flex-col items-center md:justify-center`}>
+    <section
+      className={`${className} flex flex-col items-center md:justify-center box-border border-slate-700`}
+    >
       <h1 className="flex mb-10 gap-0.5 md:gap-1 lg:gap2 xl:gap-3 text-9xl mt-32 md:mt-0">
         <TitleShake
           content="TeCitoHot"
@@ -32,27 +35,27 @@ export function HeroSection({ className }: props) {
       <div
         className={`w-3/4 lg:w-full justify-center gap-1 md:gap-5 flex mt-10 flex-col md:flex-row`}
       >
-        <button className="p-2 flex justify-center items-center lg:text-2xl xl:text-3xl bg-slate-200 md:min-w-[10rem] lg:min-w-[13rem] border-b-4 border-slate-800 border-l-2 hover:border-r-2 hover:border-l-0 gap-5 transition-all hover:bg-slate-400 hover:border-t-4 hover:border-b-0">
+        <PixelButton className="md:min-w-[10rem] lg:min-w-[13rem]">
           <Icons
             name="message-text"
             className="w-5 h-5 bg-blue-600 lg:absolute xl:w-8 xl:h-8 lg:-translate-y-8 xl:-translate-y-11 text-slate-100"
           />
           <p>Por qué TeCitoHot?</p>
-        </button>
-        <button className="p-2 md:min-w-[10rem] flex group justify-center gap-5 items-center xl:text-5xl lg:text-4xl bg-slate-200 lg:min-w-[15em] border-b-4 border-slate-800 border-l-2 hover:border-r-2 hover:border-l-0 transition-all hover:bg-slate-400 hover:border-t-4 hover:border-b-0">
+        </PixelButton>
+        <PixelButton className="md:min-w-[10rem] lg:min-w-[20em]">
           <Icons
             name="search"
             className="w-5 h-5 xl:w-8 xl:h-8 group-hover:text-slate-400 text-slate-50 bg-slate-800"
           />
           <p>Buscar</p>
-        </button>
-        <button className="p-2 md:min-w-[10rem] flex justify-center items-center xl:text-3xl lg:text-2xl bg-slate-200 lg:min-w-[13rem] border-b-4 border-slate-800 border-l-2 hover:border-r-2 hover:border-l-0 gap-5 transition-all hover:bg-slate-400 hover:border-t-4 hover:border-b-0">
+        </PixelButton>
+        <PixelButton className="md:min-w-[10rem] lg:min-w-[13rem]">
           <Icons
             name="mood-happy"
             className="w-5 h-5 bg-yellow-400 lg:absolute xl:w-8 xl:h-8 lg:-translate-y-7 xl:-translate-y-11 text-slate-700"
           />
           <p>Tema Random</p>
-        </button>
+        </PixelButton>
       </div>
     </section>
   );

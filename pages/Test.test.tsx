@@ -1,32 +1,62 @@
-import { useScroll } from "framer-motion";
-import { motion } from "framer-motion";
-import { useTransform } from "framer-motion";
-import { useRef } from "react";
+import { VerticalNav } from "../components/global/Navigator";
+import Head from "next/head";
+
+import type { generator, MatterTheme } from "../data/Types";
+import { allData as defaultData } from "../data/main";
 
 const Test = () => {
-const ref = useRef(null)
-const {scrollYProgress} = useScroll({
-    target: ref
-})
+  const navFormatData = defaultData?.map((matter: generator) => {
+    return {
+      to: `/#${matter.name}`,
+      content: matter.name,
+    };
+  });
+
+  const backgrounds = [
+    "bg-red-500",
+    "bg-blue-500",
+    "bg-slate-600",
+    "bg-indigo-500",
+  ];
 
   return (
-    <section ref={ref} className="min-h-screen">
-      
-    </section>
+    <>
+      <Head>
+        <title>TeCitoHot - Repositorio Puro</title>
+        <meta name="viewport" content="initial-scale=1, width=device-width" />
+      </Head>
+      <section className="flex w-full h-full bg-stone-800">
+        <VerticalNav
+          options={[
+            {
+              to: "#home",
+              content: "Inicio",
+              iconName: "home",
+            },
+            {
+              to: "#Materias",
+              content: "Materias",
+              iconName: "archive",
+              suboptions: navFormatData,
+            },
+            {
+              to: "/Resource",
+              content: "Recursos",
+              iconName: "folder-plus",
+            },
+            {
+              to: "/Apps",
+              content: "Aplicaciones",
+              iconName: "calculator",
+            },
+          ]}
+        />
+        <section className="relative w-full h-screen min-h-[30rem] overflow-x-hidden overflow-y-scroll bg-stone-800  scroll-smooth snap-y scrollbar-thin scrollbar-w-0 md:scrollbar-w-2 lg:scrollbar-w-3 scrollbar-thumb-stone-800 scrollbar-track-amber-100 pattern-dots pattern-stone-600 pattern-bg-transparent pattern-opacity-100 pattern-size-8">
+          {/* Background y HeroSection */}
+        </section>
+      </section>
+    </>
   );
 };
 
 export default Test;
-
-/**
- <section className="relative flex flex-col w-full bg-red-700 overflow-hidden scroll-smooth snap-y scrollbar-thin scrollbar-w-1 md:scrollbar-w-2 lg:scrollbar-w-3 scrollbar-thumb-stone-800 scrollbar-track-amber-100 lg:flex-row lg:gap-2 bg-slate-300/20">
-          <NavSearch index={index} props={subThemes} actually={slug} />
-          <section className="p-2 py-8 text-base leading-6 text-justify break-normal lg:leading-8 md:text-lg lg:text-xl lg:p-5 lg:pr-8 font-patrick bg-slate-50 h-max">
-            <MDXRemote
-              lazy={true}
-              {...source}
-              components={{ ...generalComponents, ...latexComponets }}
-            />
-          </section>
-        </section>
- */
