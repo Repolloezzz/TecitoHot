@@ -14,7 +14,7 @@ interface optionsContext {
 const VerticalNav = ({ options }: optionsContext) => {
   const [navSW, changeSW] = useState(false);
   return (
-    <nav className="h-full min-w-[2.5rem] md:min-w-[3rem] lg:min-w-[4rem] flex flex-col gap-2 z-50">
+    <nav className="h-full min-w-[2.5rem] bg-base-200 md:min-w-[3rem] lg:min-w-[4rem] flex flex-col gap-2 z-50">
       <div
         className={`${
           navSW
@@ -25,7 +25,7 @@ const VerticalNav = ({ options }: optionsContext) => {
         {/* Hambuguer button */}
         <div
           onClick={() => changeSW(!navSW)}
-          className={` md:my-2 group hover:opacity-80 transition-all h-10 flex justify-center items-center w-full cursor-pointer overflow-hidden relative mb-1`}
+          className={`md:my-2 group hover:opacity-80 transition-all h-10 flex justify-center items-center w-full cursor-pointer overflow-hidden relative mb-1`}
         >
           <div
             className={`${
