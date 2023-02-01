@@ -1,12 +1,13 @@
 import { VerticalNav } from "../components/global/Navigator";
-import Image from "next/image";
 import { HeroSection } from "../components/global/HeroSection";
 import { PresentSection } from "../components/global/Present";
 import Head from "next/head";
 
-import type { generator, Matter, MatterTheme } from "../data/Types";
+import type { generator, Matter } from "../data/Types";
 import { allData as defaultData } from "../data/main";
 
+import { CloudBack } from "../components/global/Backgrounds";
+import { PFooter } from "./../components/global/Footer";
 const Home = () => {
   const navFormatData = defaultData?.map((matter: generator) => {
     return {
@@ -58,24 +59,17 @@ const Home = () => {
           {/* Background y HeroSection */}
           <section
             id="home"
-            className="flex flex-col items-start justify-start w-full h-screen snap-center"
+            className="flex bg-clouds flex-col items-start justify-start w-full h-screen snap-center box-content md:border-b-0 border-b-[5rem] border-base-200"
           >
-            <HeroSection className="absolute w-full h-full" />
-            <Image
-              className="block object-fill w-full h-full"
-              src={"/home/City.jpg"}
-              width={1000}
-              height={824}
-              alt="Back-city"
-              priority
-            />
+            <HeroSection className="absolute w-full h-full z-10 overflow-hidden" />
+            <CloudBack className="w-full h-full" />
           </section>
           {/* Other */}
           {defaultData.map((matter: Matter, index: number) => {
             return (
               <PresentSection
                 id={matter.name}
-                className={`snap-center`}
+                className={`snap-start`}
                 main={matter}
                 seconds={matter.themes}
                 key={index}
@@ -83,6 +77,8 @@ const Home = () => {
               />
             );
           })}
+          <div className="w-full h-screen">Hola</div>
+          <PFooter />
         </section>
       </section>
     </>

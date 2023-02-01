@@ -1,7 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Nabla&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=DotGothic16&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Concert+One&display=swap');
-@import url(https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Press+Start+2P&family=Share+Tech+Mono&family=VT323&display=swap);
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

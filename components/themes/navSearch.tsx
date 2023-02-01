@@ -18,7 +18,7 @@ export function NavSearch({
   return (
     <>
       <nav
-        className={`z-30 fixed transition-all flex flex-col gap-1 p-2 overflow-hidden bg-base-200 shadow-lg md:pl-14 lg:gap-5 lg:h-full lg:w-80 xl:w-96 top-0 lg:left-auto left-0 w-full pl-12 lg:pl-2 ${
+        className={`z-30 lg:w-auto sticky transition-all flex flex-col gap-1 p-2 bg-base-200 shadow-lg lg:gap-5 lg:h-full lg:min-w-[20rem] xl:min-w-[24rem] top-0 w-full ${
           open ? "h-[30rem]" : "h-20 md:h-24"
         }`}
       >
@@ -66,7 +66,11 @@ export function NavSearch({
             }`}
           />
         </span>
-        <h1 className="text-2xl text-base-content text-center font-semibold font-sharemono">
+        <h1
+          className={`text-2xl text-base-content text-center font-semibold font-sharemono block ${
+            open ? "block" : "hidden"
+          }`}
+        >
           {index.name}
         </h1>
         <div
@@ -100,7 +104,9 @@ export function NavSearch({
                             }`}
                           />
                         </Link>
-                        <b className="ml-auto mr-auto">{element.name}</b>
+                        <b className="ml-auto lg:text-lg mr-auto">
+                          {element.name}
+                        </b>
                       </button>
                       <menu
                         className={`h-0 w-full pl-4 lg:pl-10 ml-6 xl:ml-8 overflow-hidden border-neutral border-l-4 transition-all`}
@@ -138,7 +144,9 @@ export function NavSearch({
                             : "bg-secondary-focus text-secondary-content"
                         }`}
                       />
-                      <b className="ml-auto mr-auto">{element.name}</b>
+                      <b className="ml-auto lg:text-lg mr-auto">
+                        {element.name}
+                      </b>
                     </Link>
                   )}
                 </li>
@@ -147,7 +155,6 @@ export function NavSearch({
           </menu>
         </div>
       </nav>
-      <span className="lg:min-w-[20rem] xl:min-w-[24rem] w-full lg:w-auto min-h-[5rem] lg:min-h-0 md:min-h-[6rem]" />
     </>
   );
 }

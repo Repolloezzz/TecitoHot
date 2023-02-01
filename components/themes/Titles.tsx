@@ -1,15 +1,38 @@
-export function Title({ txt, className }: { txt: string; className?: string }) {
+export function Title({
+  txt,
+  date = new Date(),
+  author = { link: "https://github.com/Repolloezzz", name: "RepolloEzzz" },
+  className,
+}: {
+  txt: string;
+  date: Date;
+  author?: { link: string; name: string };
+  className?: string;
+}) {
   return (
-    <div className="relative flex items-center w-full mb-5 overflow-hidden h-max bg-red group">
-      <h1
-        className={`w-full text-start group-hover:text-slate-200 transition-all text-3xl md:text-4xl xl:text-6xl flex z-10 break-normal font-sharemono font-extrabold leading-6 ${
-          className ? className : ""
-        }`}
-      >
-        {txt}
-      </h1>
-      <span className="absolute w-0 h-full transition-all group-hover:w-full bg-slate-700" />
-    </div>
+    <>
+      <div className="relative flex-col flex justify-center w-full overflow-hidden h-max bg-red group">
+        <h1
+          className={`w-full text-start group-hover:text-slate-200 transition-all text-3xl md:text-4xl xl:text-6xl flex z-10 break-normal font-sharemono font-extrabold leading-6 ${
+            className ? className : ""
+          }`}
+        >
+          {txt}
+        </h1>
+        <span className="absolute w-0 h-full transition-all group-hover:w-full bg-slate-700" />
+      </div>
+      <span className="flex gap-5 font-vt323 p-2 bg-slate-500/20">
+        <p>
+          <b>Create</b>: {date.toDateString()}
+        </p>
+        <p>
+          <b>Author</b>:{" "}
+          <a className="bg-slate-800 text-white p-2" href={author.link}>
+            @{author.name}
+          </a>
+        </p>
+      </span>
+    </>
   );
 }
 export function SubTitle({

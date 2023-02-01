@@ -14,7 +14,7 @@ interface optionsContext {
 const VerticalNav = ({ options }: optionsContext) => {
   const [navSW, changeSW] = useState(false);
   return (
-    <nav className="h-full min-w-[2.5rem] bg-base-200 md:min-w-[3rem] lg:min-w-[4rem] flex flex-col gap-2 z-50">
+    <nav data-theme="dark" className="h-full min-w-[2.5rem] bg-stone-800 md:min-w-[3rem] lg:min-w-[4rem] flex flex-col gap-2 z-50">
       <div
         className={`${
           navSW
@@ -144,7 +144,7 @@ const VerticalNav = ({ options }: optionsContext) => {
                             <ButtonRef
                               to={suboption.to}
                               className={
-                                "text-slate-200 pl-5 hover:bg-tropical-200 hover:pl-9 transition-all duration-200"
+                                "text-base-content pl-5 hover:bg-tropical-200 hover:pl-9 transition-all duration-200"
                               }
                               content={suboption.content}
                               contentClass={"text-xl"}
@@ -171,7 +171,7 @@ const VerticalNav = ({ options }: optionsContext) => {
                   ? "group-hover:transition-none group-hover:font-semibold"
                   : "hidden"
               } break-normal text-primary-content text-1.5xl lg:text-2xl overflow-hidden h-4 lg:h-8 transition-all duration-300 item-center leading-3 whitespace-pre-wrap`}
-              iconClass="min-w-[1.7rem] text-slate-100 lg:min-w-[2.2rem] group-hover:rotate-6 group-hover:scale-110"
+              iconClass="min-w-[1.7rem] text-primary-content lg:min-w-[2.2rem] group-hover:rotate-6 group-hover:scale-110"
               content="Sobre TeCitHot"
               iconName="downasaur"
             />

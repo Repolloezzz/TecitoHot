@@ -12,6 +12,7 @@ import { Ltx, BLtx } from "./themes/Text";
 import { Img } from "./global/ImgComp";
 import { Video } from "./global/VidComp";
 import { Icons } from "./global/Icons";
+import { PFooter } from "./global/Footer";
 const generalComponents = {
   Title,
   SubTitle,
@@ -27,10 +28,12 @@ const generalComponents = {
   Video,
   Icons,
 };
-
+const layouts = {
+  PFooter,
+}
 const latexComponets = {
   Ltx,
   BLtx,
 };
 
-export { generalComponents, latexComponets };
+export { generalComponents, latexComponets, layouts };
