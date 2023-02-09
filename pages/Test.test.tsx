@@ -1,58 +1,45 @@
-import { VerticalNav } from "../components/global/Navigator";
+// * Modulos, datos y tipos
 import Head from "next/head";
-
-import type { generator, MatterTheme } from "../data/Types";
 import { allData as defaultData } from "../data/main";
+import type { base } from "../data/Types";
+// * Componentes
+import HeadNav from "./../components/Tests/HeadNav";
 
-import { CloudBack } from "../components/global/Backgrounds";
-
-const Test = () => {
-  const navFormatData = defaultData?.map((matter: generator) => {
-    return {
-      to: `/#${matter.name}`,
-      content: matter.name,
-    };
+const Home = () => {
+  const navFormatData = defaultData?.map((matter: base) => {
+    return matter;
   });
-
   return (
     <>
       <Head>
-        <title>TeCitoHot - Repositorio Puro</title>
-        <meta name="viewport" content="initial-scale=1, width=device-width" />
+        <title>TeCitoHot - Aprende lo que buscas</title>
       </Head>
-      <section className="flex w-full h-full bg-stone-800">
-        <VerticalNav
-          options={[
-            {
-              to: "#home",
-              content: "Inicio",
-              iconName: "home",
-            },
-            {
-              to: "#Materias",
-              content: "Materias",
-              iconName: "archive",
-              suboptions: navFormatData,
-            },
-            {
-              to: "/Resource",
-              content: "Recursos",
-              iconName: "folder-plus",
-            },
-            {
-              to: "/Apps",
-              content: "Aplicaciones",
-              iconName: "calculator",
-            },
-          ]}
-        />
-        <section className="relative w-full h-screen min-h-[30rem] overflow-x-hidden overflow-y-scroll bg-stone-800  scroll-smooth snap-y scrollbar-thin scrollbar-w-0 md:scrollbar-w-2 lg:scrollbar-w-3 scrollbar-thumb-stone-800 scrollbar-track-amber-100 pattern-dots pattern-stone-600 pattern-bg-transparent pattern-opacity-100 pattern-size-8">
-          {/* Background y HeroSection */}
-          <CloudBack className="w-full h-screen"/>
-        </section>
-      </section>
+      <HeadNav options={navFormatData} />
+      <div className="bg-primary">
+        <h1 className="text-9xl">Hola mundo</h1>
+        <h1 className="text-9xl">Hola mundo</h1>
+        <h1 className="text-9xl">Hola mundo</h1>
+        <h1 className="text-9xl">Hola mundo</h1>
+        <h1 className="text-9xl">Hola mundo</h1>
+        <h1 className="text-9xl">Hola mundo</h1>
+        <h1 className="text-9xl">Hola mundo</h1>
+        <h1 className="text-9xl">Hola mundo</h1>
+        <h1 className="text-9xl">Hola mundo</h1>
+        <h1 className="text-9xl">Hola mundo</h1>
+        <h1 className="text-9xl">Hola mundo</h1>
+        <h1 className="text-9xl">Hola mundo</h1>
+        <h1 className="text-9xl">Hola mundo</h1>
+        <h1 className="text-9xl">Hola mundo</h1>
+        <h1 className="text-9xl">Hola mundo</h1>
+        <h1 className="text-9xl">Hola mundo</h1>
+        <h1 className="text-9xl">Hola mundo</h1>
+        <h1 className="text-9xl">Hola mundo</h1>
+        <h1 className="text-9xl">Hola mundo</h1>
+        <h1 className="text-9xl">Hola mundo</h1>
+      </div>
+      <div>asdas</div>
     </>
   );
 };
 
-export default Test;
+export default Home;

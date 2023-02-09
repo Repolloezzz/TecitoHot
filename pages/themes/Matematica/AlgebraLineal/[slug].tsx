@@ -60,27 +60,26 @@ export default function Content({ source, frontMatter, slug }: any) {
             },
           ]}
         />
-          <section
-            ref={contentRef}
-            data-theme="cupcake"
-            className="flex text-black flex-col bg-base-300 lg:flex-row lg:gap-2 relative w-full h-screen min-h-[30rem] overflow-x-hidden overflow-y-scrol scroll-smooth scrollbar-thin scrollbar-w-0 md:scrollbar-w-2 lg:scrollbar-w-3 scrollbar-thumb-stone-800 scrollbar-track-amber-100"
-          >
-            <NavSearch index={index} props={subThemes} actually={slug} />
-            <div className="flex bg-base-100 flex-col p-2 py-8  text-base text-justify break-normal shadow-md h-max leading-6 lg:leading-8 md:text-lg lg:text-1.5xl lg:p-8 lg:pr-10 font-patrick">
-              <div className="z-30 over flex w-full bg-primary sticky top-20 md:top-24 lg:top-0 mb-5 lg:mb-2">
-                <motion.div
-                  style={{ scaleX }}
-                  className="w-full origin-[0%] relative h-2 lg:h-5 bg-secondary"
-                >
-                </motion.div>
-              </div>
-              <MDXRemote
-                lazy={true}
-                {...source}
-                components={{ ...generalComponents, ...latexComponets }}
-              />
+        <section
+          ref={contentRef}
+          data-theme="cupcake"
+          className="flex text-black flex-col bg-base-300 lg:flex-row lg:gap-2 relative w-full h-screen min-h-[30rem] overflow-x-hidden overflow-y-scrol scroll-smooth scrollbar-thin scrollbar-w-0 md:scrollbar-w-2 lg:scrollbar-w-3 scrollbar-thumb-stone-800 scrollbar-track-amber-100"
+        >
+          <NavSearch index={index} props={subThemes} actually={slug} />
+          <div className="flex bg-base-100 flex-col p-2 py-8  text-base text-justify break-normal shadow-md h-max leading-6 lg:leading-8 md:text-lg lg:text-1.5xl lg:p-8 lg:pr-10 font-patrick">
+            <div className="z-30 over flex w-full bg-primary sticky top-20 md:top-24 lg:top-0 mb-5 lg:mb-2">
+              <motion.div
+                style={{ scaleX }}
+                className="w-full origin-[0%] relative h-2 lg:h-5 bg-secondary"
+              ></motion.div>
             </div>
-          </section>
+            <MDXRemote
+              {...source}
+              lazy={true}
+              components={{ ...generalComponents, ...latexComponets }}
+            />
+          </div>
+        </section>
       </section>
     </>
   );

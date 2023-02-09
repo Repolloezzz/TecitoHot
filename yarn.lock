@@ -307,7 +307,15 @@
     "@jridgewell/resolve-uri" "3.1.0"
     "@jridgewell/sourcemap-codec" "1.4.14"
 
-"@mdx-js/mdx@^2.2.1":
+"@mdx-js/loader@^2.2.1", "@mdx-js/loader@>=0.15.0":
+  "integrity" "sha512-J4E8A5H+xtk4otZiEZ5AXl61Tj04Avm5MqLQazITdI3+puVXVnTTuZUKM1oNHTtfDIfOl0uMt+o/Ij+x6Fvf+g=="
+  "resolved" "https://registry.npmjs.org/@mdx-js/loader/-/loader-2.2.1.tgz"
+  "version" "2.2.1"
+  dependencies:
+    "@mdx-js/mdx" "^2.0.0"
+    "source-map" "^0.7.0"
+
+"@mdx-js/mdx@^2.0.0", "@mdx-js/mdx@^2.2.1":
   "integrity" "sha512-hZ3ex7exYLJn6FfReq8yTvA6TE53uW9UHJQM9IlSauOuS55J9y8RtA7W+dzp6Yrzr00/U1sd7q+Wf61q6SfiTQ=="
   "resolved" "https://registry.npmjs.org/@mdx-js/mdx/-/mdx-2.2.1.tgz"
   "version" "2.2.1"
@@ -330,7 +338,7 @@
     "unist-util-visit" "^4.0.0"
     "vfile" "^5.0.0"
 
-"@mdx-js/react@^2.2.1":
+"@mdx-js/react@*", "@mdx-js/react@^2.2.1":
   "integrity" "sha512-YdXcMcEnqZhzql98RNrqYo9cEhTTesBiCclEtoiQUbJwx87q9453GTapYU6kJ8ZZ2ek1Vp25SiAXEFy5O/eAPw=="
   "resolved" "https://registry.npmjs.org/@mdx-js/react/-/react-2.2.1.tgz"
   "version" "2.2.1"
@@ -402,6 +410,13 @@
   "version" "13.1.2"
   dependencies:
     "glob" "7.1.7"
+
+"@next/mdx@^13.1.6":
+  "integrity" "sha512-ZLhXXDJeHbudFpSZT68eYQRzOaNwkaw+NuO7Zvnm5XKB6P7hKSj2dS47ZtitrY0JaL3KxR4FoxUSYeLvdoRwtQ=="
+  "resolved" "https://registry.npmjs.org/@next/mdx/-/mdx-13.1.6.tgz"
+  "version" "13.1.6"
+  dependencies:
+    "source-map" "^0.7.0"
 
 "@next/swc-win32-x64-msvc@13.1.2":
   "integrity" "sha512-avsyveEvcvH42PvKjR4Pb8JlLttuGURr2H3ZhS2b85pHOiZ7yjH3rMUoGnNzuLMApyxYaCvd4MedPrLhnNhkog=="
@@ -4498,7 +4513,7 @@
   "resolved" "https://registry.npmjs.org/webpack-sources/-/webpack-sources-3.2.3.tgz"
   "version" "3.2.3"
 
-"webpack@^5.1.0", "webpack@>=2":
+"webpack@^5.1.0", "webpack@>=2", "webpack@>=4":
   "integrity" "sha512-piaIaoVJlqMsPtX/+3KTTO6jfvrSYgauFVdt8cr9LTHKmcq/AMd4mhzsiP7ZF/PGRNPGA8336jldh9l2Kt2ogQ=="
   "resolved" "https://registry.npmjs.org/webpack/-/webpack-5.75.0.tgz"
   "version" "5.75.0"

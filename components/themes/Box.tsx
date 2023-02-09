@@ -8,6 +8,7 @@ export function ImportantBox({
   color,
   className,
   icon,
+  id,
 }: {
   title: string;
   comment?: string;
@@ -15,13 +16,14 @@ export function ImportantBox({
   color?: string;
   className: string;
   icon?: string;
+  id?: string;
 }) {
   let style: string[] = [];
   switch (color) {
     case "red":
-      style.push("bg-red-300");
-      style.push("bg-red-700");
-      style.push("text-red-600");
+      style.push("bg-red-300/70");
+      style.push("bg-red-400");
+      style.push("text-red-800");
       style.push("border-red-700");
       break;
     case "orange":
@@ -31,31 +33,40 @@ export function ImportantBox({
       style.push("border-orange-700");
       break;
     case "green":
-      style.push("bg-red-300");
-      style.push("text-red-600");
-      style.push("border-red-700");
+      style.push("bg-green-300/70");
+      style.push("bg-green-400");
+      style.push("text-green-800");
+      style.push("border-green-700");
       break;
     case "pink":
-      style.push("bg-red-300");
-      style.push("text-red-600");
+      style.push("bg-red-300/70");
+      style.push("bg-red-400");
+      style.push("text-red-800");
       style.push("border-red-700");
       break;
-
+    case 'blue':
+      style.push("bg-blue-300/70");
+      style.push("bg-blue-400");
+      style.push("text-blue-800");
+      style.push("border-blue-700");
+      break
     default:
-      style.push("bg-slate-300");
-      style.push("text-slate-600");
+      style.push("bg-slate-300/70");
+      style.push("bg-slate-400");
+      style.push("text-slate-800");
       style.push("border-slate-700");
       break;
   }
 
   return (
     <div
+      id={id}
       className={`w-full ${style[0]} group p-1 lg:p-3 border-l-4 ${style[3]} ${
         className ? className : ""
       }`}
     >
       <h1
-        className={`${style[2]} text-2xl lg:text-3xl font-semibold flex gap-1 md:gap-2 items-center`}
+        className={`${style[2]} text-start text-2xl lg:text-3xl font-semibold flex gap-1 md:gap-2 items-center`}
       >
         <Icons
           name={`${icon ? icon : "align-justify"}`}
@@ -114,10 +125,10 @@ export function ButtonBox({ data, className = "" }: any) {
               onClick={() => {
                 setPage(index);
               }}
-              className={`w-full px-2 p-0.5 md:p-2 text-base md:text-xl transition-all text-slate-50 hover:bg-slate-300 ${
+              className={`w-full md:p-2 text-xs md:text-lg lg:text-lg transition-all ${
                 index == page
-                  ? "bg-slate-200 text-black"
-                  : "bg-slate-700 text-slate-50"
+                  ? "bg-primary hover:bg-primary-focus text-primary-content"
+                  : "bg-neutral hover:bg-opacity-80 text-neutral-content"
               }`}
               key={index}
             >
@@ -132,7 +143,7 @@ export function ButtonBox({ data, className = "" }: any) {
             key={index}
             className={`${
               page == index ? "block" : "hidden"
-            } relative overflow-hidden`}
+            } relative overflow-hidden bg-black/5`}
           >
             {e.section}
           </div>

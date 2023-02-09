@@ -10,6 +10,9 @@
     "build-storybook": "build-storybook"
   },
   "dependencies": {
+    "@mdx-js/loader": "^2.2.1",
+    "@mdx-js/react": "^2.2.1",
+    "@next/mdx": "^13.1.6",
     "daisyui": "^2.49.0",
     "framer-motion": "^8.5.5",
     "gray-matter": "^4.0.3",

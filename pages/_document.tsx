@@ -8,13 +8,13 @@ export default function Document() {
         <link
           rel="apple-touch-icon"
           sizes="180x180"
-          href="/icons/title/apple-touch-icon.png"
+          href="/icons/favicoin/apple-touch-icon.png"
         />
         <link
           rel="icon"
           type="image/png"
           sizes="32x32"
-          href="/icons/title/favicon-32x32.png"
+          href="/icons/favicoin/favicon-32x32.png"
         />
         <link
           rel="icon"
@@ -22,7 +22,7 @@ export default function Document() {
           sizes="16x16"
           href="/icons/titlle/favicon-16x16.png"
         />
-        <link rel="manifest" href="/icons/title/site.webmanifest"></link>
+        <link rel="manifest" href="/icons/favicoin/site.webmanifest"></link>
         <meta name="author" content="@RepolloEzzz" />
         <meta
           name="description"
@@ -34,7 +34,7 @@ export default function Document() {
           content="Temas de matemáticas, Temas de física, Temas de programación"
         />
       </Head>
-      <body data-thme='dark' className="">
+      <body data-theme="forest">
         <Main />
         <NextScript />
       </body>
