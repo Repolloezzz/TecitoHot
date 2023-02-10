@@ -1,4 +1,6 @@
-// Página para cada materia
+const hola = null
+export default hola
+/*Página para cada materia
 import { MatterThemes as AllThemes } from "../../data/main";
 import { getMatter } from "../../data/mathods";
 import Image from "next/image";
@@ -136,3 +138,4 @@ export async function getStaticPaths() {
     console.log(error);
   }
 }
+*/
