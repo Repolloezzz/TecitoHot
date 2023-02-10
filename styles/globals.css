@@ -9,7 +9,7 @@ body {
     @apply font-vt323;
     @apply scrollbar-thin;
     @apply scrollbar-thumb-stone-800;
-    @apply scrollbar-track-stone-600;
+    @apply scrollbar-track-stone-400;
     @apply scrollbar-w-0;
     @apply md:scrollbar-w-2;
     @apply lg:scrollbar-w-3;
@@ -17,6 +17,10 @@ body {
     @apply text-base-content;
     @apply overflow-x-hidden;
     @apply overflow-y-auto;
+    @apply snap-y;
+    @apply snap-proximity;
+}
+#__next {
     @apply snap-y;
     @apply snap-proximity;
 }

@@ -101,7 +101,7 @@ const PresentSection = ({
         className={`flex flex-col w-full h-3/4 md:h-full gap-2 p-2 sm:p-4 md:gap-3 lg:gap-5 md:p-6 lg:p-10 ${color}`}
       >
         <h1
-          className={`transition-all text-5xl sm:text-5xl md:text-8xl flex items-center lg:text-9xl text-slate-50 ${style.titleShake}`}
+          className={`transition-all w-full text-5xl sm:text-5xl md:text-8xl flex items-center lg:text-9xl text-slate-50 ${style.titleShake}`}
         >
           <Icons name="play" />
           <TitleMove

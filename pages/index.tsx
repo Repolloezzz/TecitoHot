@@ -1,5 +1,5 @@
 import { VerticalNav } from "../components/global/Navigator";
-import { HeroSection } from "../components/global/HeroSection";
+import  HeroSection  from "../components/global/HeroSection";
 import { PresentSection } from "../components/global/Present";
 import Head from "next/head";
 

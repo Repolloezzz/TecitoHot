@@ -1,43 +1,62 @@
 // * Modulos, datos y tipos
 import Head from "next/head";
 import { allData as defaultData } from "../data/main";
-import type { base } from "../data/Types";
+import type { base, Matter } from "../data/Types";
+import moment from "moment";
 // * Componentes
 import HeadNav from "./../components/Tests/HeadNav";
+import Footer from "./../components/Tests/FooterTCH";
+import BackgroundTime from "./../components/Tests/BackgroundTime";
+import HeroSection from "../components/global/HeroSection";
+import Present from "../components/Tests/PresentSection";
+import { BaseCard } from "../components/Tests/Card";
 
 const Home = () => {
   const navFormatData = defaultData?.map((matter: base) => {
     return matter;
   });
+  const backgrounds = [
+    "bg-red-500",
+    "bg-blue-500",
+    "bg-slate-600",
+    "bg-indigo-500",
+  ];
   return (
     <>
       <Head>
         <title>TeCitoHot - Aprende lo que buscas</title>
       </Head>
       <HeadNav options={navFormatData} />
-      <div className="bg-primary">
-        <h1 className="text-9xl">Hola mundo</h1>
-        <h1 className="text-9xl">Hola mundo</h1>
-        <h1 className="text-9xl">Hola mundo</h1>
-        <h1 className="text-9xl">Hola mundo</h1>
-        <h1 className="text-9xl">Hola mundo</h1>
-        <h1 className="text-9xl">Hola mundo</h1>
-        <h1 className="text-9xl">Hola mundo</h1>
-        <h1 className="text-9xl">Hola mundo</h1>
-        <h1 className="text-9xl">Hola mundo</h1>
-        <h1 className="text-9xl">Hola mundo</h1>
-        <h1 className="text-9xl">Hola mundo</h1>
-        <h1 className="text-9xl">Hola mundo</h1>
-        <h1 className="text-9xl">Hola mundo</h1>
-        <h1 className="text-9xl">Hola mundo</h1>
-        <h1 className="text-9xl">Hola mundo</h1>
-        <h1 className="text-9xl">Hola mundo</h1>
-        <h1 className="text-9xl">Hola mundo</h1>
-        <h1 className="text-9xl">Hola mundo</h1>
-        <h1 className="text-9xl">Hola mundo</h1>
-        <h1 className="text-9xl">Hola mundo</h1>
-      </div>
-      <div>asdas</div>
+      <section
+        id="home"
+        className="bg-clouds w-full h-screen relative snap-center"
+      >
+        <HeroSection className="absolute w-full h-full z-10 overflow-hidden -top-10" />
+        <BackgroundTime className="w-full h-full" />
+      </section>
+      <Present title="Materias" className="bg-pink-600">
+        <p className="text-lg p-2 md:text-xl text-justify lg:text-3xl lg:p-6 bg-slate-50/10">
+          Encuentra un repositorio lleno de material sobre temas de varias
+          materias que generalmente se tornan o llegan a ser complicados.
+          Donde, cada tema se intenta describir de la simple más entendible posible, con
+          notas sobre cada concepto que tienen ... osea como unos apuntes ... seee? <br/>
+          Bueno si son apuntes de temas estudiados por mi @RepolloEzzz. Pero, espero
+          que se de gran ayuda mis apuntes xd 👺.
+        </p>
+        <div data-theme="dracula">
+          <h2 className="text-2xl bg-secondary text-center">Seleciona una de tu agrado</h2>
+          <div className="carousel carousel-center max-w-[16rem] lg:max-w-md xl:max-w-xl 2xl:max-w-2xl p-4 space-x-4 bg-neutral box-content">
+            {defaultData?.map((matter: base, index:number) => {
+              return(
+                <BaseCard key={index} className='carousel-item w-52 h-72 lg:w-72 lg:h-[28rem]' base={matter}/>
+              )
+            })}
+          </div>
+        </div>
+      </Present>
+      <Present title="Recursos" className="bg-stone-600"></Present>
+      <Present title="Aplicaciones" className="bg-indigo-600"></Present>
+      <Footer />
     </>
   );
 };
