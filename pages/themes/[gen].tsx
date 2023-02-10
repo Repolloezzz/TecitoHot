@@ -1,108 +1,72 @@
 // Página para cada materia
 import { MatterThemes as AllThemes } from "../../data/main";
 import { getMatter } from "../../data/mathods";
-import Image from "next/image";
 import Head from "next/head";
+import Image from "next/image";
 
 import type { generator, Theme } from "../../data/Types";
 import { allData as defaultData } from "../../data/main";
-import { VerticalNav } from "../../components/global/Navigator";
-import { Card } from "../../components/themes/CardTheme";
+import HeadNav from "../../components/layout/HeadNav";
+import Present from "../../components/home/PresentSection";
+import { BaseCard } from "../../components/home/Card";
+import Ventage from "../../components/layout/AbsolutVentage";
 
 export default function Matter({ gen }: any) {
   const data = getMatter(gen);
-  const navFormatData = defaultData?.map((matter: any) => {
-    return {
-      to: `/#${matter.name}`,
-      content: matter.name,
-    };
+  const navFormatData = defaultData?.map((matter: generator) => {
+    return matter;
   });
   return (
     <>
       <Head>
-        <title>TeCitoHot - {data.name ? data.name : "Matter"}</title>
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <title>
+          TeCitoHot - Esto es {data.name ? data.name.toString() : "Matter"}
+        </title>
       </Head>
-      <section className="flex w-full h-screen">
-        <VerticalNav
-          options={[
-            {
-              to: "/#home",
-              content: "Inicio",
-              iconName: "home",
-            },
-            {
-              to: "#",
-              content: "Materias",
-              iconName: "archive",
-              suboptions: navFormatData,
-            },
-            {
-              to: "/Resource",
-              content: "Recursos",
-              iconName: "folder-plus",
-            },
-            {
-              to: "/Apps",
-              content: "Aplicaciones",
-              iconName: "calculator",
-            },
-          ]}
-        />
-        <section className="text-black w-full min-h-[30rem] relative flex flex-col justify-start items-center overflow-y-auto">
-          <div
-            className={`flex justify-start w-full h-32 lg:h-96 border-slate-600 border-b-8 border-dashed`}
-          >
-            <Image
-              className="object-cover h-full w-min"
-              src={data.imgUrl}
-              width={500}
-              height={500}
-              alt={`${data.name}-icon`}
-            />
-            <div
-              className={`${
-                data.color ? `bg-${data.color}-500` : "bg-stone-600"
-              } w-full h-full flex flex-col`}
-            >
-              <h1 className="p-5 mt-auto text-4xl border-t-4 border-r-4 w-max lg:text-8xl bg-slate-200/50 border-slate-600">
-                {data.name}
-              </h1>
-            </div>
+      <HeadNav options={navFormatData} />
+      <Ventage />
+      <Present title={data.name} className={`${data.color ? data.color : ""}`}>
+        <div className="bg-back flex flex-col p-2 items-center md:p-3 gap-5 md:gap-3 lg:gap-0 lg:p-5 lg:flex-row">
+          <Image
+            src={data.imgUrl}
+            alt={`${data.name}-image`}
+            width={500}
+            height={500}
+            priority
+          />
+          <div className="bg-slate-200/10 p-2 max-h-[25rem] overflow-y-auto scrollbar-thin scrollbar-w-0.5 scrollbar-thumb-primary-focus scrollbar-track-secondary md:scrollbar-w-2 md:p-4 lg:p-6">
+            <p className="text-lg text-justify text-base-content md:text-xl lg:text-3xl">
+              {data.description}
+            </p>
           </div>
-          <section className="w-full lg:px-20 shadow-lg bg-slate-50 relative">
-            <div className="p-5 lg:p-10 bg-slate-100 min-h-[23rem] flex flex-col gap-1 lg:gap-5">
-              <h2 className="text-4xl underline lg:text-5xl">Descripción.</h2>
-              <p className="text-xl text-justify lg:text-3xl">
-                {data.description}
-              </p>
-            </div>
-
-            <div className={`w-full min-h-[30rem]`}>
-              <h2 className="p-5 text-4xl underline lg:text-5xl lg:p-10">
-                Temas de la materia.
-              </h2>
-              <div className="grid content-center w-full grid-cols-2 gap-2 p-5 pt-0 md:grid-cols-4 lg:gap-10 lg:p-10 justify-items-center">
-                {data.themes.map((theme: Theme, index: number) => {
-                  return <Card key={index} theme={theme} gen={gen} />;
-                })}
-              </div>
-            </div>
-            <div className="w-full h-screen bg-red-300">
-              <h2 className="p-10 text-5xl underline">Videos Relacionados.</h2>
-            </div>
-            <div className="w-full h-screen bg-red-300">
-              <h2 className="p-10 text-5xl underline">
-                Recursos Relacionados.
-              </h2>
-            </div>
-            <div className="w-full h-screen bg-red-300">
-              <h2 className="p-10 text-5xl underline">
-                Aplicaciones Relacionadas.
-              </h2>
-            </div>
-          </section>
-        </section>
+        </div>
+      </Present>
+      <section
+        id="themes"
+        data-theme="synthwave"
+        className='w-full bg-neutral p-5 flex flex-col md:p-7 lg:p-10'
+      >
+        <h1 className="text-5xl text-primary hover:text-primary-focus hover:underline transition-all sm:text-6xl md:text-7xl lg:text-8xl">
+          #Temas
+        </h1>
+        <div className="bg-slate-100/20 grid grid-cols-2 lg:grid-cols-5 gap-2 p-2 md:p-4 lg:p-5 md:gap-4 lg:gap-5">
+          {data.themes.map((theme: Theme, index: number) => {
+            return (
+              <BaseCard
+                key={index}
+                base={{
+                  ...theme,
+                  pageUrl:
+                    theme.subThemes != undefined &&
+                    theme.subThemes[0] != undefined
+                      ? theme.subThemes[0].pageUrl
+                      : "#",
+                }}
+                className="bg-back"
+              />
+            );
+          })}
+        </div>
       </section>
     </>
   );

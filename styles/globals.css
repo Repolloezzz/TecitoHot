@@ -19,8 +19,10 @@ body {
     @apply overflow-y-auto;
     @apply snap-y;
     @apply snap-proximity;
+    @apply scroll-smooth
 }
 #__next {
     @apply snap-y;
     @apply snap-proximity;
+    @apply scroll-smooth
 }

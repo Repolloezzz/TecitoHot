@@ -16,7 +16,7 @@ const index: generator = {
   imgUrl: `${root}/Icon.webp`,
   pageUrl: root,
   gen: "Matematica",
-  color: 'red'
+  color: 'bg-pink-700'
 };
 
 const matter = {

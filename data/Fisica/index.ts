@@ -14,7 +14,7 @@ const index: generator = {
   imgUrl: `${root}/Icon.webp`,
   pageUrl: root,
   gen: "Fisica",
-  color: 'blue'
+  color: 'bg-blue-600'
 };
 
 const matter = {

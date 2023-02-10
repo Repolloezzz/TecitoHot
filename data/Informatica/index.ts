@@ -14,7 +14,7 @@ const index: generator = {
   imgUrl: `${root}/Icon.webp`,
   pageUrl: root,
   gen: "Informatica",
-  color: 'slate'
+  color: 'bg-slate-700'
 };
 
 const matter = {
