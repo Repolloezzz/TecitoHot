@@ -5,4 +5,5 @@ date: '1 de Enero del 2023'
 ---
 
 
-# Valores caracterísitocs
+<Title content='Valores característicos y canónicos'/>
+

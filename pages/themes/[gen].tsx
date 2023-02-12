@@ -8,14 +8,11 @@ import type { generator, Theme } from "../../data/Types";
 import { allData as defaultData } from "../../data/main";
 import HeadNav from "../../components/layout/HeadNav";
 import Present from "../../components/home/PresentSection";
-import { BaseCard } from "../../components/home/Card";
+import { ThemeCard } from "../../components/home/Card";
 import Ventage from "../../components/layout/AbsolutVentage";
 
 export default function Matter({ gen }: any) {
   const data = getMatter(gen);
-  const navFormatData = defaultData?.map((matter: generator) => {
-    return matter;
-  });
   return (
     <>
       <Head>
@@ -23,7 +20,7 @@ export default function Matter({ gen }: any) {
           TeCitoHot - Esto es {data.name ? data.name.toString() : "Matter"}
         </title>
       </Head>
-      <HeadNav options={navFormatData} />
+      <HeadNav/>
       <Ventage />
       <Present title={data.name} className={`${data.color ? data.color : ""}`}>
         <div className="bg-back flex flex-col p-2 items-center md:p-3 gap-5 md:gap-3 lg:gap-0 lg:p-5 lg:flex-row">
@@ -52,7 +49,7 @@ export default function Matter({ gen }: any) {
         <div className="bg-slate-100/20 grid grid-cols-2 lg:grid-cols-5 gap-2 p-2 md:p-4 lg:p-5 md:gap-4 lg:gap-5">
           {data.themes.map((theme: Theme, index: number) => {
             return (
-              <BaseCard
+              <ThemeCard
                 key={index}
                 base={{
                   ...theme,

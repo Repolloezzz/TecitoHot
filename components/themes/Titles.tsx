@@ -1,57 +1,53 @@
-export function Title({
-  txt,
-  date = new Date(),
-  author = { link: "https://github.com/Repolloezzz", name: "RepolloEzzz" },
-  className,
-}: {
-  txt: string;
-  date: Date;
-  author?: { link: string; name: string };
-  className?: string;
-}) {
-  return (
-    <>
-      <div className="relative flex-col flex justify-center w-full overflow-hidden h-max bg-red group">
-        <h1
-          className={`w-full text-start px-0.5 py-2 group-hover:text-slate-200 transition-all text-3xl md:text-4xl xl:text-6xl flex z-10 break-normal font-extrabold leading-6 ${
-            className ? className : ""
-          }`}
-        >
-          {txt}
-        </h1>
-        <span className="absolute w-0 h-full transition-all group-hover:w-full bg-slate-700" />
-      </div>
-      <span className="flex flex-col md:flex-row md:gap-5 font-vt323 p-2 bg-slate-500/20">
-        <p className="flex items-center gap-2">
-          <b>Create:</b> {date.toDateString()}
-        </p>
-        <p className="flex items-center gap-2">
-          <b>Author:</b>{" "}
-          <a className="bg-slate-800 inline-block hover:bg-slate-600 transition-all hover:scale-105 text-white p-1 md:p-2" href={author.link}>
-            @{author.name}
-          </a>
-        </p>
-      </span>
-    </>
-  );
+import moment from "moment";
+import { Icons } from "../global/Icons";
+
+interface HeadTitleContext {
+  title: string;
+  created: string[];
+  author: { name: string; link: string };
 }
-export function SubTitle({
-  txt,
-  className,
-}: {
-  txt: string;
-  className?: string;
-}) {
+export const HeadTitle = ({
+  title,
+  created,
+  author = { name: "@RepolloEzzz", link: "https://github.com/Repolloezzz" },
+}: HeadTitleContext) => {
+  const data = moment(...created).format("LL");
   return (
-    <div className="relative flex items-center justify-end my-3 overflow-hidden lg:my-5 hover:justify-start w-max bg-red group">
-      <h2
-        className={`w-max text-start underline group-hover:text-slate-200 transition-all text-1.5xl md:text-4xl xl:text-4xl flex z-10 break-normal font-extrabold leading-5 ${
-          className ? className : ""
-        }`}
-      >
-        {txt}
-      </h2>
-      <span className="absolute w-0 h-full transition-all group-hover:w-full bg-slate-700" />
+    <div className="font-vt323">
+      <h1 className="font-bold text-2xl text-start break-normal leading-5 md:text-4xl lg:text-6xl">
+        {title}
+      </h1>
+      <div className="flex flex-col md:flex-row md:gap-10 lg:text-2xl bg-base-300 p-1 md:p-2">
+        <span className="flex items-center gap-2">
+          <span>Creación:</span>
+          <span>{data.toString()}</span>
+        </span>
+        <span className="flex items-center gap-2">
+          <span>Autor:</span>
+          <a
+            href={author.link}
+            className="link link-success text-base p-0 md:text-2xl leading-4 bg-slate-600 px-2"
+          >
+            {author.name}
+          </a>
+        </span>
+      </div>
     </div>
   );
-}
+};
+
+export const TitleSection = ({ txt, nr }: { txt: string; nr: number }) => {
+  return (
+    <h1 className="flex gap-2 text-2xl md:text-4xl lg:text-5xl items-center font-vt323 text-base-content link hover:link-primary">
+      {nr ? (
+        <span className="w-6 h-6 md:w-8 md:h-8 lg:w-10 lg:h-10 text-xl md:text-2xl text-neutral-content lg:text-3xl bg-slate-600 flex items-center justify-center">{nr}</span>
+      ) : (
+        <Icons name="circle" />
+      )}
+      <span>{txt}</span>
+    </h1>
+  );
+};
+
+const all = { HeadTitle, TitleSection };
+export default all;

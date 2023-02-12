@@ -21,7 +21,7 @@ const Home = () => {
       <Head>
         <title>TeCitoHot - Aprende lo que buscas</title>
       </Head>
-      <HeadNav options={navFormatData} />
+      <HeadNav/>
       <Ventage />
       <section
         id="home"

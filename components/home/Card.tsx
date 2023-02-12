@@ -19,12 +19,12 @@ const MatterCard = ({ className, base }: context) => {
       <h1 className="text-2xl bg-base-300 w-full text-center text-base-content">
         {base.name}
       </h1>
-      <ImageBetter
-        src={base.imgUrl}
-        alt={`${base.name}-image`}
-        width={500}
-        height={500}
-      />
+      <picture>
+        <img src={base.imgUrl} alt={`${base.name}-image`} onError={({currentTarget}) => {
+          currentTarget.onerror = null
+          currentTarget.src = '/imgNotFound.webp'
+        }}/>
+      </picture>
       <div className="bg-base-300 w-full flex justify-around p-2 overflow-hidden my-auto">
         <Link
           className="btn btn-primary px-3 py-0 btn-sm flex md:btn-md rounded-none"
@@ -58,6 +58,7 @@ const MatterCard = ({ className, base }: context) => {
                             </span>
                             <Link
                               className="btn btn-outline btn-secondary btn-sm md:btn-md rounded-none w-full"
+                              onClick={() => change({title: 'Null', open: false})}
                               href={
                                 element.subThemes != undefined &&
                                 element.subThemes[0] != undefined
@@ -89,7 +90,7 @@ interface contextTheme {
   className?: string;
   base: Theme;
 }
-const BaseCard = ({ className, base }: contextTheme) => {
+const ThemeCard = ({ className, base }: contextTheme) => {
   const { change } = useAbsoluteContext();
 
   return (
@@ -97,12 +98,12 @@ const BaseCard = ({ className, base }: contextTheme) => {
       <h1 className="text-lg bg-base-300 w-full text-center text-base-content leading-6 break-all md:text-xl lg:text-2xl">
         {base.name}
       </h1>
-      <ImageBetter
-        src={base.imgUrl}
-        alt={`${base.name}-image`}
-        width={500}
-        height={500}
-      />
+      <picture>
+        <img src={base.imgUrl} alt={`${base.name}-image`} onError={({currentTarget}) => {
+          currentTarget.onerror = null
+          currentTarget.src = '/imgNotFound.webp'
+        }}/>
+      </picture>
       <div className="w-full flex justify-around p-2 overflow-hidden my-auto">
         <Link
           className="btn btn-primary px-3 py-0 btn-sm flex md:btn-md rounded-none"
@@ -117,13 +118,19 @@ const BaseCard = ({ className, base }: contextTheme) => {
               open: true,
               content: (
                 <div>
-                  <h1 className="text-3xl text-base-content md:text-4xl lg:text-6xl underline">#{base.name}</h1>
+                  <h1 className="text-3xl text-base-content md:text-4xl lg:text-6xl underline">
+                    #{base.name}
+                  </h1>
                   <div className="flex flex-col items-center w-full md:p-2 lg:p-5 gap-5 lg:flex-row">
                     <picture className="md:min-w-[30%]">
-                      <img src={base.imgUrl} alt={`${base.name}-image`} onError={({currentTarget}) => {
-                        currentTarget.onerror = null
-                        currentTarget.src = '/imgNotFound.webp'
-                      }}/>
+                      <img
+                        src={base.imgUrl}
+                        alt={`${base.name}-image`}
+                        onError={({ currentTarget }) => {
+                          currentTarget.onerror = null;
+                          currentTarget.src = "/imgNotFound.webp";
+                        }}
+                      />
                     </picture>
                     <div className="bg-slate-200/10 p-2 max-h-[20rem] overflow-y-auto scrollbar-thin scrollbar-w-0.5 scrollbar-thumb-primary-focus scrollbar-track-secondary md:scrollbar-w-2 md:p-4 lg:p-6">
                       <p className="text-lg text-justify  text-base-content md:text-xl lg:text-3xl">
@@ -131,7 +138,9 @@ const BaseCard = ({ className, base }: contextTheme) => {
                       </p>
                     </div>
                   </div>
-                  <h2 className="text-5xl text-base-content underline">#Sub-Temas</h2>
+                  <h2 className="text-5xl text-base-content underline">
+                    #Sub-Temas
+                  </h2>
                   <ul className="w-full md:p-2 lg:p-5">
                     <li className="grid grid-cols-4 w-full justify-around bg-primary-focus p-2 text-xl text-center">
                       <span>Nro</span>
@@ -151,6 +160,7 @@ const BaseCard = ({ className, base }: contextTheme) => {
                           <Link
                             className="btn btn-outline btn-secondary btn-sm md:btn-md rounded-none w-full ml-1"
                             href={element.pageUrl}
+                            onClick={() => change({title: 'Null', open: false})}
                           >
                             Ver más
                           </Link>
@@ -171,4 +181,4 @@ const BaseCard = ({ className, base }: contextTheme) => {
   );
 };
 
-export { BaseCard, MatterCard };
+export { ThemeCard, MatterCard };

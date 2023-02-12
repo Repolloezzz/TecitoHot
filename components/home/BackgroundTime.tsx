@@ -5,7 +5,11 @@ import moment from "moment";
 import { useEffect, useState } from "react";
 
 const BackgroundTime = ({ className = "" }: { className?: string }) => {
-  const backgroundType = getStyle();
+  const [backgroundType, setBackType] = useState('magic')
+  useEffect(() => {
+    setBackType(getStyle())
+  }, []);
+
   const images = [1, 2, 3, 4];
   const [ref, { height }] = useMeasure();
   const style = images.map((e) => ({

@@ -2,15 +2,16 @@
 import Link from "next/link";
 import { useState } from "react";
 import type { base } from "../../data/Types";
+import { allData as defaultData } from "../../data/main";
 
 // * Componentes
 import { Icons } from "../global/Icons";
 
-interface context {
-  options?: base[];
-}
-const HeadNav = ({ options }: context) => {
+const HeadNav = () => {
   const [navSW, changeSW] = useState(false);
+  const navFormatData = defaultData?.map((matter: base) => {
+    return matter;
+  });
   return (
     <div className={`navbar sticky top-0 transition-all bg-base-100 z-50`}>
       <div className="flex-1 z-10">
@@ -73,7 +74,7 @@ const HeadNav = ({ options }: context) => {
               <p className="mx-auto lg:mx-0">Materias</p>
             </Link>
             <ul className="bg-base-100/80 left-0 relative border-l-2 ml-6 lg:absolute lg:m-0 lg:border-none overflow-y-auto max-h-[15rem] scrollbar-w-1 scrollbar-thumb-slate-100 scrollbar-thin">
-              {options?.map((item, index) => {
+              {navFormatData?.map((item:base, index:number) => {
                 return (
                   <li key={index}>
                     <Link

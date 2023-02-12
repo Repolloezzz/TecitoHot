@@ -1,86 +1,46 @@
-import Head from "next/head";
+// * Métodos, datos y tipos
 import { getFileBySlug, getFiles } from "../../../../lib/mdx";
+import Head from "next/head";
 import { MDXRemote } from "next-mdx-remote";
-import { VerticalNav } from "../../../../components/global/Navigator";
-import { allData as defaultData } from "../../../../data/main";
-import { NavSearch } from "../../../../components/themes/navSearch";
+// * Componentes
+import HeadNav from "../../../../components/layout/HeadNav";
+import { Global, Latex, Media } from "../../../../components/themes/MDXComponents";
+import ModuleMenu from "../../../../components/themes/ModuleMenu";
 import { subThemes, index } from "../../../../data/Matematica/AlgebraLineal";
-import {
-  generalComponents,
-  latexComponets,
-} from "../../../../components/MDXComponents";
-import { motion, useScroll, useSpring } from "framer-motion";
-import { useRef } from "react";
+import { useThemeContext } from "../../../../context/ThemeContent";
+import Ventage from "../../../../components/layout/AbsolutVentage";
+import Footer from "../../../../components/layout/FooterTCH";
 
 export default function Content({ source, frontMatter, slug }: any) {
-  const navFormatData = defaultData.map((matter: any) => {
-    return {
-      to: `/#${matter.name}`,
-      content: matter.name,
-    };
-  });
-  const contentRef = useRef(null);
-  const { scrollYProgress } = useScroll({
-    container: contentRef,
-  });
-  const scaleX = useSpring(scrollYProgress, {
-    stiffness: 100,
-    damping: 30,
-    restDelta: 0.001,
-  });
+  const { themeContent } = useThemeContext();
   return (
     <>
       <Head>
         <title>TeCitoHot - Algebra Lineal</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
-      <section className="flex w-full h-full bg-stone-800">
-        <VerticalNav
-          options={[
-            {
-              to: "/#home",
-              content: "Inicio",
-              iconName: "home",
-            },
-            {
-              to: "#",
-              content: "Materias",
-              iconName: "archive",
-              suboptions: navFormatData,
-            },
-            {
-              to: "/Resource",
-              content: "Recursos",
-              iconName: "folder-plus",
-            },
-            {
-              to: "/Apps",
-              content: "Aplicaciones",
-              iconName: "calculator",
-            },
-          ]}
+      <HeadNav />
+      <Ventage/>
+      <section
+        data-theme='halloween'
+        className="flex flex-col h-max w-full bg-slate-700 lg:gap-5 lg:flex-row"
+      >
+        <ModuleMenu
+          className="xl:min-w-[25%]"
+          title={index.name}
+          options={subThemes}
+          actually={slug}
         />
-        <section
-          ref={contentRef}
-          data-theme="cupcake"
-          className="flex text-black flex-col bg-base-300 lg:flex-row lg:gap-2 relative w-full h-screen min-h-[30rem] overflow-x-hidden overflow-y-scrol scroll-smooth scrollbar-thin scrollbar-w-0 md:scrollbar-w-2 lg:scrollbar-w-3 scrollbar-thumb-stone-800 scrollbar-track-amber-100"
-        >
-          <NavSearch index={index} props={subThemes} actually={slug} />
-          <div className="flex bg-base-100 flex-col p-2 py-8  text-base text-justify break-normal shadow-md h-max leading-6 lg:leading-8 md:text-lg lg:text-1.5xl lg:p-8 lg:pr-10 font-patrick">
-            <div className="z-30 over flex w-full bg-primary sticky top-20 md:top-24 lg:top-0 mb-5 lg:mb-2">
-              <motion.div
-                style={{ scaleX }}
-                className="w-full origin-[0%] relative h-2 lg:h-5 bg-secondary"
-              ></motion.div>
-            </div>
-            <MDXRemote
-              {...source}
-              lazy={true}
-              components={{ ...generalComponents, ...latexComponets }}
-            />
-          </div>
+        <section data-theme={`${themeContent.theme}`} className="xl:min-w-[75%] p-3 lg:p-10 lg:pr-12 text-justify font-patrick bg-base-200 min-h-screen break-keep lg:text-xl">
+          <MDXRemote
+            {...source}
+            lazy={true}
+            components={{ ...Global, ...Latex, ...Media }}
+            frontmatter={frontMatter}
+          />
         </section>
       </section>
+      <Footer/>
     </>
   );
 }
