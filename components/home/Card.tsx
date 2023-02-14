@@ -1,8 +1,6 @@
 import type { Matter, Theme } from "../../data/Types";
-import Image from "next/image";
 import Link from "next/link";
 import { useAbsoluteContext } from "../../context/Absolute";
-import ImageBetter from "../global/Image";
 
 interface context {
   className?: string;
@@ -58,7 +56,7 @@ const MatterCard = ({ className, base }: context) => {
                             </span>
                             <Link
                               className="btn btn-outline btn-secondary btn-sm md:btn-md rounded-none w-full"
-                              onClick={() => change({title: 'Null', open: false})}
+                              onClick={() => change({title: 'Hola mundo', open: false, content: <></>})}
                               href={
                                 element.subThemes != undefined &&
                                 element.subThemes[0] != undefined
@@ -160,7 +158,7 @@ const ThemeCard = ({ className, base }: contextTheme) => {
                           <Link
                             className="btn btn-outline btn-secondary btn-sm md:btn-md rounded-none w-full ml-1"
                             href={element.pageUrl}
-                            onClick={() => change({title: 'Null', open: false})}
+                            onClick={() => change({title: 'Hola mundo', open: false, content: <></>})}
                           >
                             Ver más
                           </Link>
