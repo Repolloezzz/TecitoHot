@@ -4,7 +4,7 @@ import Latex from "react-latex-next";
 
 export function Ltx({ txt }:{txt:string}) {
   return (
-    <Latex>{txt}</Latex>
+    <Latex strict>{`$${txt}$`}</Latex>
   );
 }
 

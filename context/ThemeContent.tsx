@@ -6,7 +6,7 @@ interface ContextProps {
   changeTheme: Dispatch<SetStateAction<StateContext>>;
 }
 export const ThemeContentContext = createContext<ContextProps>({
-  themeContent: { theme: "hallowen", is: false },
+  themeContent: { theme: "hallowen", is: true },
   changeTheme: () => {},
 });
 
@@ -21,7 +21,7 @@ interface StateContext {
 export const ThemeContextProvider = ({ children }: any) => {
   const [themeContent, changeTheme] = useState<StateContext>({
     theme: "hallowen",
-    is: false,
+    is: true,
   });
   return (
     <ThemeContentContext.Provider value={{ themeContent, changeTheme }}>
@@ -30,5 +30,5 @@ export const ThemeContextProvider = ({ children }: any) => {
   );
 };
 
-export const LightOptions = ["bumblebee", "emerald", "light", "cmyk", 'acid'];
-export const DarkOptions = ["halloween", "dracula", "dark", "synthwave", 'forest'];
+export const LightOptions = ["emerald", "cmyk", "corporate", "acid", 'light'];
+export const DarkOptions = ["halloween", "dracula", "forest", "synthwave", 'dark'];

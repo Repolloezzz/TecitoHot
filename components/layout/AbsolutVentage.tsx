@@ -18,15 +18,15 @@ const Ventage = () => {
               : "scale-0"
           } relative w-full h-full mockup-window bg-base-300 transition-all duration-300 `}
         >
-          <h1 className="flex bg-neutral p-2 h-[8%]">
+          <h1 className="flex bg-neutral p-2 h-[8%] font-bold text-xl">
             <p className="text-xl mx-auto">{context.title}</p>
             <button
-              onClick={() => change({ ...context, open: false })}
+              onClick={() => change({ title: 'hola mundo', open: false, content: (<div></div>) })}
             >
               <Icons name="close" className="w-8 h-8 bg-red-500" />
             </button>
           </h1>
-          <div className="p-5 overflow-y-auto overflow-x-hidden relative h-[92%] bg-base-200 scrollbar-thin scrollbar-w-1 scrollbar-thumb-stone-600 scrollbar-track-stone-800 md:scrollbar-w-2">
+          <div className="p-5 overflow-y-auto overflow-x-hidden relative h-[90%] bg-base-200 scrollbar-thin scrollbar-w-1 scrollbar-thumb-stone-600 scrollbar-track-stone-800 md:scrollbar-w-2">
             {context.content}
           </div>
         </div>

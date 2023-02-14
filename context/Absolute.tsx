@@ -6,7 +6,7 @@ interface ContextProps {
   change: Dispatch<SetStateAction<Props>>;
 }
 export const AbsoluteContext = createContext<ContextProps>({
-  context: {},
+  context: { title: "hola mundo", open: false, content: <></> },
   change: () => {},
 });
 
@@ -15,9 +15,9 @@ export const useAbsoluteContext = () => {
 };
 
 export interface Props {
-  title?: string;
-  content?: JSX.Element;
-  open?: boolean;
+  title: string;
+  content: JSX.Element | JSX.Element[];
+  open: boolean;
 }
 export const ContextProvider = ({ children }: any) => {
   const [state, setState] = useState<Props>({

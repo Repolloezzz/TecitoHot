@@ -1,5 +1,5 @@
 export function Ref({ id }: { id: string }) {
-    return <span id={id} className="relative -top-24 lg:top-5" />;
+    return <span id={id} className="relative -top-20 lg:-top-5" />;
   }
 export function Sep() {
     return <div className='divider'/>

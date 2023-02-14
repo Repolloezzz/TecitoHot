@@ -13,7 +13,7 @@ const HeadNav = () => {
     return matter;
   });
   return (
-    <div className={`navbar sticky top-0 transition-all bg-base-100 z-50`}>
+    <header className={`navbar sticky top-0 transition-all bg-base-100 z-50`}>
       <div className="flex-1 z-10">
         <Link
           href={"/"}
@@ -53,9 +53,9 @@ const HeadNav = () => {
       <div
         className={`${
           navSW ? "w-3/4 sm:w-1/2 md:w-2/5" : "w-0 px-0"
-        } box-content p-5 overflow-hidden transition-all flex-col gap-2 absolute top-16 right-0 bg-base-100/95 h-screen lg:flex-row lg:static lg:bg-none lg:h-auto lg:w-auto lg:overflow-visible lg:p-0`}
+        } flex flex-col p-5 pb-20 overflow-hidden transition-all gap-2 absolute top-16 right-0 bg-base-100/95 h-screen lg:flex-row lg:static lg:bg-none lg:h-auto lg:w-auto lg:overflow-visible lg:p-0`}
       >
-        <menu className="flex menu menu-vertical lg:menu-horizontal w-full lg:w-auto order-2 lg:order-1">
+        <menu className="grid grid-cols-1 menu menu-vertical overflow-y-auto lg:menu-horizontal w-full lg:w-auto order-2 lg:order-1 lg:flex box-content lg:overflow-y-visible">
           <li className="text-xl rounded-none">
             <Link
               href="/"
@@ -107,7 +107,7 @@ const HeadNav = () => {
             </Link>
           </li>
         </menu>
-        <div className="order-1 flex item-center lg:gap-2 justify-center items-center relative w-full mb-20 lg:order-2 lg:m-0 lg:w-auto">
+        <div className="order-1 flex item-center lg:gap-2 justify-center items-center relative w-full mb-5 lg:order-2 lg:m-0 lg:w-auto">
           <a className="btn rounded-none text-xs font-dotgot gap-2 p-2 w-3/4 lg:w-auto btn-outline lg:btn-ghost">
             <Icons
               name="search"
@@ -128,7 +128,7 @@ const HeadNav = () => {
           </a>
         </div>
       </div>
-    </div>
+    </header>
   );
 };
 export default HeadNav;

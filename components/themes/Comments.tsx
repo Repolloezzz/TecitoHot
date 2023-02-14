@@ -12,8 +12,9 @@ export function LComment({
   className?: string;
 }) {
   return (
-    <span className={`${className ? className : ""} text-slate-600`}>
-      {children ? children : null}
+    <span className={`${className ? className : ""} text-start text-base-content/80 flex items-center gap-1`}>
+      <Icons name='info-box' className='min-w-[1.25rem] min-h-[1.25rem] text-base-content'/>
+      <span className="break-all leading-5 text-sm md:text-base">{children}</span>
     </span>
   );
 }
@@ -27,7 +28,6 @@ export function BComment({
 }) {
   let props: {
     cube: string;
-    bg: string;
     border: string;
     icon: string;
     text: string;
@@ -35,37 +35,33 @@ export function BComment({
   switch (type) {
     case "note":
       props = {
-        cube: "bg-success",
-        bg: "bg-base-200",
-        text: "text-base-content",
+        cube: "bg-success text-success-content",
+        text: "text-base-content/90",
         border: "border-success",
         icon: "invert",
       };
       break;
     case "warn":
       props = {
-        cube: "bg-warning",
-        bg: "bg-warning/5",
-        text: "text-base-content",
+        cube: "bg-warning text-warning-content",
+        text: "text-base-content/90",
         border: "border-warning",
         icon: "bullseye-arrow",
       };
       break;
     case "alert":
       props = {
-        cube: "bg-error",
-        bg: "bg-error/5",
-        text: "text-base-content",
+        cube: "bg-error text-error-content",
+        text: "text-base-content/90",
         border: "border-error",
         icon: "alert",
       };
       break;
     default:
       props = {
-        cube: "bg-base-300",
-        bg: "bg-base-300/10",
-        text: "text-base-content",
-        border: "border-base-300",
+        cube: "bg-neutral text-neutral-content",
+        text: "text-base-content/90",
+        border: "border-neutral",
         icon: "article",
       };
       break;
@@ -73,8 +69,8 @@ export function BComment({
   const { themeContent } = useThemeContext();
   return (
     <span
-      data-theme={`${themeContent.is ? LightOptions[4] : DarkOptions[1]}`}
-      className={`flex overflow-hidden p-1 pr-3 group transition-all w-full gap-1 lg:gap-5 lg:p-5 py-2 my-2 lg:pr-10 border-l-4 text-slate-600 ${props.border} ${props.bg}`}
+      data-theme={`${themeContent.is ? LightOptions[2] : DarkOptions[1]}`}
+      className={`flex overflow-hidden p-1 pr-3 group transition-all w-full gap-1 lg:gap-5 lg:p-5 py-2 my-2 lg:pr-10 border-l-4 text-slate-600 ${props.border} bg-base-200 shadow-sm`}
     >
       <div className={`w-5 h-full`}>
         <Icons

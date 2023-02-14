@@ -7,7 +7,7 @@ import HeadNav from "../../../../components/layout/HeadNav";
 import { Global, Latex, Media } from "../../../../components/themes/MDXComponents";
 import ModuleMenu from "../../../../components/themes/ModuleMenu";
 import { subThemes, index } from "../../../../data/Matematica/AlgebraLineal";
-import { useThemeContext } from "../../../../context/ThemeContent";
+import { useThemeContext, DarkOptions, LightOptions } from "../../../../context/ThemeContent";
 import Ventage from "../../../../components/layout/AbsolutVentage";
 import Footer from "../../../../components/layout/FooterTCH";
 
@@ -23,7 +23,7 @@ export default function Content({ source, frontMatter, slug }: any) {
       <Ventage/>
       <section
         data-theme='halloween'
-        className="flex flex-col h-max w-full bg-slate-700 lg:gap-5 lg:flex-row"
+        className="flex flex-col h-max w-full pattern-dots pattern-slate-600 pattern-bg-transparent pattern-opacity-100 pattern-size-4 lg:gap-5 lg:flex-row"
       >
         <ModuleMenu
           className="xl:min-w-[25%]"
@@ -31,7 +31,7 @@ export default function Content({ source, frontMatter, slug }: any) {
           options={subThemes}
           actually={slug}
         />
-        <section data-theme={`${themeContent.theme}`} className="xl:min-w-[75%] p-3 lg:p-10 lg:pr-12 text-justify font-patrick bg-base-200 min-h-screen break-keep lg:text-xl">
+        <section data-theme={themeContent.is ? LightOptions[0] : DarkOptions[0]} className="xl:min-w-[75%] p-2 lg:p-10 lg:pr-12 text-justify font-patrick bg-base-200 min-h-screen break-words lg:text-xl">
           <MDXRemote
             {...source}
             lazy={true}

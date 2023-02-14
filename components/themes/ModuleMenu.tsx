@@ -18,12 +18,12 @@ const ModuleMenu = ({ title, className, options, actually }: context) => {
   return (
     <>
       <nav
-        className={`bg-base-100 max-h-[95vh] flex flex-col lg:p-7 sticky top-16 bottom-0 overflow-y-hidden ${className}`}
+        className={`bg-base-100 max-h-[95vh] flex flex-col lg:p-7 sticky top-16 bottom-0 overflow-y-hidden z-30 ${className}`}
       >
         {/* Button for Small */}
         <button
           onClick={() => setOpen(!open)}
-          className="flex gap-2 items-center p-2 px-5 btn btn-ghost rounded-none justify-start lg:hidden"
+          className="flex gap-2 items-center p-2 px-5 btn btn-outline btn-primary rounded-none justify-start lg:hidden"
         >
           <Icons name="menu" className="w-5 h-5" />
           <span className="text-base">Menú de contenido</span>
@@ -36,8 +36,8 @@ const ModuleMenu = ({ title, className, options, actually }: context) => {
         </button>
         <div
           className={`${
-            open ? "h-[32rem] border-b-4 border-primary" : "h-0"
-          } overflow-hidden lg:overflow-visible lg:h-auto`}
+            open ? "h-[32rem]" : "h-0"
+          } overflow-hidden lg:overflow-visible lg:h-auto border-b-4 md:border-b-8 border-primary`}
         >
           <h1 className="text-2xl md:text-4xl lg:text-5xl text-center">
             {title}
@@ -66,7 +66,7 @@ const ModuleMenu = ({ title, className, options, actually }: context) => {
                 </span>
                 <input
                   type="checkbox"
-                  className="toggle toggle-success toggle-sm md:toggle-md"
+                  className="toggle toggle-success toggle-sm md:toggle-md rounded-none"
                   checked={themeContent.is}
                   onChange={() =>
                     changeTheme({
@@ -81,7 +81,7 @@ const ModuleMenu = ({ title, className, options, actually }: context) => {
             </div>
           </div>
           <div className="divider"></div>
-          <menu className="w-full h-[18rem] lg:h-[65vh] gap-1 overflow-y-auto overflow-x-hidden scrollbar-thin scrollbar-w-1 scrollbar-thumb-stone-600 scrollbar-track-stone-800 md:scrollbar-w-2 box-content">
+          <menu className="w-full h-[18rem] lg:h-[60vh] gap-1 overflow-y-auto overflow-x-hidden scrollbar-thin scrollbar-w-1 scrollbar-thumb-stone-600 scrollbar-track-stone-800 md:scrollbar-w-2 box-content">
             {options.map((element, index) => {
               return (
                 <li key={index} className={`flex flex-col p-0 relative`}>
