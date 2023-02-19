@@ -1,4 +1,4 @@
-import { Icons } from "./Icons";
+import { PixelIcons } from "./Icons";
 import Link from "next/link";
 import React from "react";
 
@@ -42,7 +42,7 @@ export function ButtonRef({
   )
     return (
       <p className="p-2 overflow-visible text-lg text-justify bg-red-700 w-max h-max text-slate-200 break-keep">
-        <b>ICONS</b> se necesita al menos un {"'icon'"} O UN {"'content'"}
+        <b>PixelIcons</b> se necesita al menos un {"'icon'"} O UN {"'content'"}
       </p>
     );
   // que tipo de boton es, se queda o se va?
@@ -58,7 +58,7 @@ export function ButtonRef({
     >
       {/* validando si existe un icono */}
       {iconName != undefined || "" ? (
-        <Icons
+        <PixelIcons
           name={`${iconName}`}
           className={iconClass ? iconClass : "w-7 h-7"}
         />

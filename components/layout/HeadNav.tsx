@@ -3,9 +3,10 @@ import Link from "next/link";
 import { useState } from "react";
 import type { base } from "../../data/Types";
 import { allData as defaultData } from "../../data/main";
+import { DiGithubBadge } from "react-icons/di";
 
 // * Componentes
-import { Icons } from "../global/Icons";
+import { PixelIcons } from "../global/Icons";
 
 const HeadNav = () => {
   const [navSW, changeSW] = useState(false);
@@ -61,7 +62,7 @@ const HeadNav = () => {
               href="/"
               className="flex item-center justify-start lg:justify-center gap-1"
             >
-              <Icons name="home" className="w-6 h-6" />
+              <PixelIcons name="home" className="w-6 h-6" />
               <p className="mx-auto lg:mx-0">Inicio</p>
             </Link>
           </li>
@@ -70,11 +71,11 @@ const HeadNav = () => {
               href={"#Materias"}
               className="flex item-center justify-start lg:justify-center gap-1"
             >
-              <Icons name="downasaur" className="w-6 h-6" />
+              <PixelIcons name="downasaur" className="w-6 h-6" />
               <p className="mx-auto lg:mx-0">Materias</p>
             </Link>
             <ul className="bg-base-100/80 left-0 relative border-l-2 ml-6 lg:absolute lg:m-0 lg:border-none overflow-y-auto max-h-[15rem] scrollbar-w-1 scrollbar-thumb-slate-100 scrollbar-thin">
-              {navFormatData?.map((item:base, index:number) => {
+              {navFormatData?.map((item: base, index: number) => {
                 return (
                   <li key={index}>
                     <Link
@@ -93,7 +94,7 @@ const HeadNav = () => {
               href="/Recursos"
               className="flex item-center justify-start lg:justify-center gap-1"
             >
-              <Icons name="folder-plus" className="w-6 h-6" />
+              <PixelIcons name="folder-plus" className="w-6 h-6" />
               <p className="mx-auto lg:mx-0">Recursos</p>
             </Link>
           </li>
@@ -102,14 +103,14 @@ const HeadNav = () => {
               href="/Aplicaciones"
               className="flex item-center justify-start lg:justify-center gap-1"
             >
-              <Icons name="calculator" className="w-6 h-6" />
+              <PixelIcons name="calculator" className="w-6 h-6" />
               <p className="mx-auto lg:mx-0">Aplicaciones</p>
             </Link>
           </li>
         </menu>
         <div className="order-1 flex item-center lg:gap-2 justify-center items-center relative w-full mb-5 lg:order-2 lg:m-0 lg:w-auto">
-          <a className="btn rounded-none text-xs font-dotgot gap-2 p-2 w-3/4 lg:w-auto btn-outline lg:btn-ghost">
-            <Icons
+          <a className="btn text-xs font-dotgot gap-2 p-2 w-3/4 rounded-none lg:w-auto btn-outline lg:btn-ghost">
+            <PixelIcons
               name="search"
               className="w-4 h-4 lg:w-7 lg:h-7 lg:text-slate-100"
             />
@@ -117,14 +118,9 @@ const HeadNav = () => {
           </a>
           <a
             href="https://github.com/Repolloezzz/tecitohot--ts"
-            className="btn btn-ghost m-0 p-2 btn-circle avatar w-1/4 lg:w-auto"
+            className="btn btn-ghost m-0 p-1 btn-circle avatar w-1/4 lg:w-auto"
           >
-            <picture className="w-7 lg:w-8 rounded-full bg-white overflow-hidden">
-              <img
-                src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"
-                alt="GitHub-Icon"
-              />
-            </picture>
+            <DiGithubBadge className="w-10 h-10 lg:text-slate-100" />
           </a>
         </div>
       </div>

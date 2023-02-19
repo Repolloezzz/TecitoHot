@@ -1,4 +1,5 @@
-import { ReactSVG } from 'react-svg'
+import { ReactSVG } from "react-svg";
+
 
 /**
  * * Componente que retorna iconos SVG del paquete PIXELARTICONS
@@ -12,32 +13,33 @@ import { ReactSVG } from 'react-svg'
  * ! Si no existe el icono => retorna un contenedor de PELIGRO(no es peligroso)
  */
 interface params {
-  name?: string
-  className?: string
+  name?: string;
+  className?: string;
 }
-export function Icons({ name = 'file', className }: params) {
+export function PixelIcons({ name = "file", className }: params) {
   try {
-    const icon = require(`pixelarticons/svg/${name}.svg`)
-    const src = icon.default.src
+    const icon = require(`pixelarticons/svg/${name}.svg`);
+    const src = icon.default.src;
     return (
       <>
         <ReactSVG
           icon={icon}
           className={`${
-            className || '' ? className : 'w-8 h-8 bg-slate-800 text-slate-100'
+            className || "" ? className : "w-8 h-8 bg-slate-800 text-slate-100"
           }`}
-          src={src}></ReactSVG>
+          src={src}
+        ></ReactSVG>
       </>
-    )
+    );
   } catch (error) {
-    console.log(error)
-    console.log('Error el nombre del icono no existe')
+    console.log(error);
+    console.log("Error el nombre del icono no existe");
     return (
       <>
         <p className="box-content inline-block w-8 h-8 text-justify text-white bg-red-500 break-keep">
           Error No existe ese icono
         </p>
       </>
-    )
+    );
   }
 }

@@ -1,6 +1,7 @@
-import { Icons } from "../global/Icons";
+import { PixelIcons } from "../global/Icons";
 import { LComment } from "./Comments";
 import { useState } from "react";
+import { Ref } from "./General";
 import {
   useThemeContext,
   DarkOptions,
@@ -10,11 +11,11 @@ import {
 export function BoxImp({
   title = "hola mundo",
   comment = "esto es un comentario",
-  children = <></>,
   color,
   className = "",
   icon = "file",
   id,
+  children = <></>,
 }: {
   title: string;
   comment?: string;
@@ -56,10 +57,10 @@ export function BoxImp({
       style.border = "border-pink-500";
       break;
     case "blue":
-      style.icon = "bg-blue-300/70";
-      style.bg = "bg-blue-600";
-      style.text = "text-blue-800";
-      style.border = "border-blue-500";
+      style.icon = "bg-sky-300/70";
+      style.bg = "bg-sky-600";
+      style.text = "text-sky-800";
+      style.border = "border-sky-500";
       break;
     default:
       style.icon = "bg-slate-300/70";
@@ -71,32 +72,36 @@ export function BoxImp({
   const { themeContent } = useThemeContext();
 
   return (
-    <div
-      id={id}
-      className={`${style.bg} ${
-        style.border
-      } w-full group p-1 lg:p-3 border-l-4 ${className ? className : ""} ${
-        themeContent.is ? "bg-opacity-50" : "bg-opacity-100"
-      } my-2`}
-    >
-      <h1
-        className={`${style.text} text-start text-2xl lg:text-3xl font-semibold flex gap-1 md:gap-2 items-center`}
+    <>
+      <Ref id={id ? id : "#"} />
+      <div
+        className={`${style.bg} ${
+          style.border
+        } w-full group p-1 lg:p-3 border-l-4 ${className ? className : ""} ${
+          themeContent.is ? "bg-opacity-50" : "bg-opacity-100"
+        } my-2`}
       >
-        <Icons
-          name={`${icon ? icon : "align-justify"}`}
-          className={`group-hover:scale-125 group-hover:-translate-y-1 transition-all lg:min-w-[2rem] min-w-[1.25rem] min-h-[1.25rem] lg:min-h-[2rem] ${style.text} ${style.bg}`}
-        />
-        <p
-          className={`${themeContent.is ? "" : "grayscale brightness-[1000%]"}`}
+        <h1
+          className={`${style.text} text-start text-2xl lg:text-3xl font-semibold flex gap-1 md:gap-2 items-center`}
         >
-          {title}
-        </p>
-      </h1>
-      <div className={`pr-3 pl-5 lg:px-8 text-base-content`}>
-        {comment ? <LComment>{comment}</LComment> : null}
-        <div className="text-justify md:text-lg lg:text-xl">{children}</div>
+          <PixelIcons
+            name={`${icon ? icon : "align-justify"}`}
+            className={`group-hover:scale-125 group-hover:-translate-y-1 transition-all lg:min-w-[2rem] min-w-[1.25rem] min-h-[1.25rem] lg:min-h-[2rem] ${style.text} ${style.bg}`}
+          />
+          <p
+            className={`${
+              themeContent.is ? "" : "grayscale brightness-[1000%]"
+            }`}
+          >
+            {title}
+          </p>
+        </h1>
+        <div className={`pr-3 pl-5 lg:px-8 text-base-content`}>
+          {comment ? <LComment>{comment}</LComment> : null}
+          <div className="text-justify md:text-lg lg:text-xl">{children}</div>
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 
@@ -104,7 +109,6 @@ export function BoxSimp({
   comment,
   children,
   className,
-  boxStyle,
 }: {
   comment?: string;
   className?: string;
@@ -115,11 +119,9 @@ export function BoxSimp({
     <div
       className={`${
         className ? className : ""
-      } w-full p-4 flex flex-col items-center`}
+      } w-full p-0.5 md:p-2 lg:p-4 xl:p-6 flex flex-col items-center`}
     >
-      <div className={`flex w-full ${boxStyle ? boxStyle : ""}`}>
-        {children}
-      </div>
+      {children}
       {comment ? <LComment>{comment}</LComment> : null}
     </div>
   );
@@ -163,7 +165,7 @@ export function BoxSect({ data, className = "" }: any) {
             key={index}
             className={`${
               page == index ? "block" : "hidden"
-            } relative overflow-hidden p-0.5 md:p-2`}
+            } relative overflow-hidden p-0.5 md:p-3 lg:p-5`}
           >
             {e.section}
           </div>
@@ -176,6 +178,7 @@ export function BoxSect({ data, className = "" }: any) {
 export function BoxChord({
   title = "Hola mundo",
   style,
+  className='',
   children = <></>,
   initial = false,
   color,
@@ -184,6 +187,7 @@ export function BoxChord({
   style?: { bg: string; border: string; bgContent: string };
   children?: JSX.Element | JSX.Element[];
   initial?: boolean;
+  className?: string;
   color?: string;
 }) {
   function getColor(opt = "default") {
@@ -217,7 +221,7 @@ export function BoxChord({
   return (
     <div
       data-theme={`${themeContent.is ? LightOptions[4] : DarkOptions[4]}`}
-      className={`border-l-4 group overflow-hidden ${styleBox.border}`}
+      className={`border-l-4 group overflow-hidden ${styleBox.border} ${className}`}
     >
       <h1
         onClick={() => {
@@ -225,7 +229,7 @@ export function BoxChord({
         }}
         className={`w-full flex gap-3 md:gap-4 p-1.5 md:p-2 lg:p-3 rounded-none lg:gap-5 justify-start items-center cursor-pointer md:text-2xl transition-all shadow-md ${styleBox.bg}`}
       >
-        <Icons
+        <PixelIcons
           name="add-box"
           className={`min-w-[1.5rem] min-h-[1.5rem] group-hover:scale-125 transition-all md:min-w-[1.75rem] md:min-h-[1.75rem] lg:min-h-[2rem] lg:min-w-[2rem] ${
             open ? "rotate-45" : ""
@@ -235,12 +239,12 @@ export function BoxChord({
       </h1>
       <div
         className={`${
-          open ? "max-h-max pt-2 pb-2" : "max-h-0"
-        } overflow-hidden px-0.5 md:px-2 text-start text-sm md:text-lg transition-all ${
+          open ? "h-max py-3" : "h-0 py-0"
+        } overflow-hidden px-2 md:px-4 lg:px-5 xl:px-6 text-start text-sm md:text-lg transition-all ${
           styleBox.bgContent
         }`}
       >
-        {children}
+        {open ? children : null}
       </div>
     </div>
   );

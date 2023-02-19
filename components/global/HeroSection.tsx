@@ -1,5 +1,5 @@
 import { TitleShake } from "./TitleAnimation";
-import { Icons } from "./Icons";
+import { PixelIcons } from "./Icons";
 import { PixelButton } from "./Buttons";
 
 interface props {
@@ -36,21 +36,21 @@ export default function HeroSection({ className }: props) {
         className={`w-3/4 lg:w-full justify-center gap-1 md:gap-5 flex mt-10 flex-col md:flex-row`}
       >
         <PixelButton className="md:min-w-[10rem] lg:min-w-[13rem]">
-          <Icons
+          <PixelIcons
             name="message-text"
             className="w-5 h-5 bg-blue-600 lg:absolute xl:w-8 xl:h-8 lg:-translate-y-8 xl:-translate-y-11 text-slate-100"
           />
           <p>Por qué TeCitoHot?</p>
         </PixelButton>
         <PixelButton className="md:min-w-[10rem] lg:min-w-[20em]">
-          <Icons
+          <PixelIcons
             name="search"
             className="w-5 h-5 xl:w-8 xl:h-8 group-hover:text-slate-400 text-slate-50 bg-slate-800"
           />
           <p>Buscar</p>
         </PixelButton>
         <PixelButton className="md:min-w-[10rem] lg:min-w-[13rem]">
-          <Icons
+          <PixelIcons
             name="mood-happy"
             className="w-5 h-5 bg-yellow-400 lg:absolute xl:w-8 xl:h-8 lg:-translate-y-7 xl:-translate-y-11 text-slate-700"
           />

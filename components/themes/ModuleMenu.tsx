@@ -1,7 +1,7 @@
 import type { SubTheme } from "../../data/Types";
 import { useThemeContext } from "../../context/ThemeContent";
 import { LightOptions, DarkOptions } from "../../context/ThemeContent";
-import { Icons } from "../global/Icons";
+import { PixelIcons } from "../global/Icons";
 import { useRef, useState } from "react";
 import Link from "next/link";
 import React from "react";
@@ -18,16 +18,16 @@ const ModuleMenu = ({ title, className, options, actually }: context) => {
   return (
     <>
       <nav
-        className={`bg-base-100 max-h-[95vh] flex flex-col lg:p-7 sticky top-16 bottom-0 overflow-y-hidden z-30 ${className}`}
+        className={`bg-base-100 max-h-[95vh] flex flex-col lg:min-w-[35%] lg:p-4 xl:p-7 sticky top-16 bottom-0 overflow-y-hidden z-30 ${className}`}
       >
         {/* Button for Small */}
         <button
           onClick={() => setOpen(!open)}
           className="flex gap-2 items-center p-2 px-5 btn btn-outline btn-primary rounded-none justify-start lg:hidden"
         >
-          <Icons name="menu" className="w-5 h-5" />
+          <PixelIcons name="menu" className="w-5 h-5" />
           <span className="text-base">Menú de contenido</span>
-          <Icons
+          <PixelIcons
             name="chevron-right"
             className={`w-4 h-4 transition-all ${
               open ? "rotate-90" : "rotate-0"
@@ -48,7 +48,7 @@ const ModuleMenu = ({ title, className, options, actually }: context) => {
             }}
             className={`flex w-full bg-neutral-focus p-2 items-center gap-2`}
           >
-            <Icons name="search" className="w-4 h-4 lg:w-5 lg:h-5" />
+            <PixelIcons name="search" className="w-4 h-4 lg:w-5 lg:h-5" />
             <input
               ref={focusSearch}
               className="w-full outline-0 bg-transparent text-lg md:text-xl"
@@ -60,7 +60,7 @@ const ModuleMenu = ({ title, className, options, actually }: context) => {
           <div className="flex flex-col alert alert-info p-0 rounded-none">
             <div className="form-control w-52">
               <label className="cursor-pointer label flex gap-10">
-                <Icons name="info-box" className="w-5 h-5" />
+                <PixelIcons name="info-box" className="w-5 h-5" />
                 <span className="label-text min-w-max text-lg lg:text-xl">
                   Contenido Claro?
                 </span>
@@ -105,7 +105,7 @@ const ModuleMenu = ({ title, className, options, actually }: context) => {
                       href={element.pageUrl}
                       className="flex gap-2 items-center hover:scale-105 transition-all"
                     >
-                      <Icons name="label-alt" className="w-5 h-5" />
+                      <PixelIcons name="label-alt" className="w-5 h-5" />
                       <span className="lg:text-1.5xl">Inicio de página</span>
                     </Link>
                     {element.sections?.map((section, index) => {
