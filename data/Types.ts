@@ -7,28 +7,28 @@ export interface base {
 
 export interface generator extends base {
   gen: string;
-  color?: string
+  color?: string;
 }
 
 export interface Matter extends generator {
-  themes: Theme[]
+  themes: Theme[];
 }
 
 export interface Theme extends generator {
-  subThemes: SubTheme[] | generator[]
+  subThemes: SubTheme[] | generator[];
 }
 
 export interface SubTheme extends generator {
-  keys?: string[]
-  sections?: string[]
+  keys?: string[];
+  sections?: string[];
 }
 
 export interface MatterTheme extends generator {
-  themes: generator[]
+  themes: generator[];
 }
 
 export interface Category {
-  name: string
-  pageUrl?: string
-  color?: string
+  name: string;
+  pageUrl?: string;
+  color?: string;
 }

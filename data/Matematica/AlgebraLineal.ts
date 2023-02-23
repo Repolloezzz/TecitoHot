@@ -1,9 +1,13 @@
 import type { generator, SubTheme } from "../Types";
 import { routes } from "../routes";
 
-const Patter = routes.route1;
+// Para traer datos
+// console.log(getAllFilesMetaData("markdown/Matematica/AlgebraLineal"))
 
+
+const Patter = routes["matematica"];
 const root = "AlgebraLineal";
+
 const index: generator = {
   name: "Algebra Lineal",
   imgUrl: `${Patter}/${root}/Icon.webp`,
@@ -13,6 +17,8 @@ const index: generator = {
   gen: root,
 };
 
+// pageUrl: `${Patter}/${root}/SistemasDeEcuaciones`,
+
 const subThemes: SubTheme[] = [
   {
     name: "Sistema de Ecuaciones",
@@ -20,7 +26,14 @@ const subThemes: SubTheme[] = [
     pageUrl: `${Patter}/${root}/SistemasDeEcuaciones`,
     description: "",
     gen: "SistemasDeEcuaciones",
-    sections: ['ecuaciones lineales', 'conjunto solución', 'sistemas de ecuaciones', 'operaciones elementales', 'resolucion de un sistema', 'metodos de reduccion'],
+    sections: [
+      "ecuaciones lineales",
+      "conjunto solución",
+      "sistemas de ecuaciones",
+      "operaciones elementales",
+      "resolucion de un sistema",
+      "metodos de reduccion",
+    ],
   },
   {
     name: "Matrices y vectores",

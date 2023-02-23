@@ -1,7 +1,7 @@
 import type { generator } from "../Types";
 import {routes} from '../routes'
 
-const Patter = routes.route1
+const Patter = routes['matematica'];
 
 const root = "Calculo1";
 const index: generator = {

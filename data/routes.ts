@@ -1,12 +1,12 @@
 const mainRoot = "/themes";
 
 const routes = {
-    route1 : `${mainRoot}/Matematica`,
-    route2 : `${mainRoot}/Fisica`,
-    route3 : `${mainRoot}/Informatica`,
-    route4 : `${mainRoot}/Musica`,
-}
+  matematica: `${mainRoot}/Matematica`,
+  fisica: `${mainRoot}/Fisica`,
+  informatica: `${mainRoot}/Informatica`,
+  musica: `${mainRoot}/Musica`,
+  estadistica: `${mainRoot}/Estadistica`,
+  Tecnologias: `${mainRoot}/Tecnologias`,
+};
 
-
-
-export {mainRoot, routes}
+export { mainRoot, routes };

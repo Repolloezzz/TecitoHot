@@ -24,6 +24,7 @@
     "react-dom": "18.2.0",
     "react-hook-form": "^7.43.1",
     "react-icons": "^4.7.1",
+    "react-image": "^4.0.3",
     "react-latex-next": "^2.2.0",
     "react-player": "^2.11.2",
     "react-svg": "^15.1.20",

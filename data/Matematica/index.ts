@@ -7,7 +7,7 @@ import { all as Dis1 } from "./Discretas1";
 import { all as Dis2 } from "./Discretas2";
 import { routes } from "../routes";
 
-const root = routes.route1;
+const root = routes['matematica'];
 
 const index: generator = {
   name: "Matemática",

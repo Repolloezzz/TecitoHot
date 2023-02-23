@@ -3,7 +3,7 @@ import { all as Fun } from "./Fundamentos";
 import { all as Arm1 } from "./Armonia1";
 import { routes } from "../routes";
 
-const root = routes.route4;
+const root = routes['musica'];
 const index: generator = {
   name: "Música",
   description:

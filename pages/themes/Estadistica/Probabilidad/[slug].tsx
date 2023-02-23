@@ -1,13 +1,22 @@
 // * Métodos, datos y tipos
-import { getAllFilesMetaData, getFileBySlug, getFiles } from "../../../../lib/mdx";
+import { getFileBySlug, getFiles } from "../../../../lib/mdx";
 import Head from "next/head";
 import { MDXRemote } from "next-mdx-remote";
 // * Componentes
 import HeadNav from "../../../../components/layout/HeadNav";
-import { Global, Latex, Media, Forms } from "../../../../components/themes/MDXComponents";
+import {
+  Global,
+  Latex,
+  Media,
+  Forms,
+} from "../../../../components/themes/MDXComponents";
 import ModuleMenu from "../../../../components/themes/ModuleMenu";
-import { subThemes, index } from "../../../../data/Matematica/AlgebraLineal";
-import { useThemeContext, DarkOptions, LightOptions } from "../../../../context/ThemeContent";
+import { subThemes, index } from "../../../../data/Estadistica/Probabilidad";
+import {
+  useThemeContext,
+  DarkOptions,
+  LightOptions,
+} from "../../../../context/ThemeContent";
 import Ventage from "../../../../components/layout/AbsolutVentage";
 import Footer from "../../../../components/layout/FooterTCH";
 
@@ -20,9 +29,9 @@ export default function Content({ source, frontMatter, slug }: any) {
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <HeadNav />
-      <Ventage/>
+      <Ventage />
       <section
-        data-theme='halloween'
+        data-theme="halloween"
         className="flex flex-col h-max w-full pattern-dots pattern-slate-600 pattern-bg-transparent pattern-opacity-100 pattern-size-4 lg:gap-0 xl:gap-5 lg:flex-row"
       >
         <ModuleMenu
@@ -31,7 +40,10 @@ export default function Content({ source, frontMatter, slug }: any) {
           options={subThemes}
           actually={slug}
         />
-        <section data-theme={themeContent.is ? LightOptions[0] : DarkOptions[0]} className="lg:min-w-[60%] xl:min-w-[75%] p-2 lg:p-5 lg:pr-7 xl:p-10 xl:pr-12 text-justify font-patrick bg-base-200 min-h-screen break-words lg:text-xl">
+        <section
+          data-theme={themeContent.is ? LightOptions[0] : DarkOptions[0]}
+          className="lg:min-w-[60%] xl:min-w-[75%] p-2 lg:p-5 lg:pr-7 xl:p-10 xl:pr-12 text-justify font-patrick bg-base-200 min-h-screen break-words lg:text-xl"
+        >
           <MDXRemote
             {...source}
             lazy={true}
@@ -40,15 +52,15 @@ export default function Content({ source, frontMatter, slug }: any) {
           />
         </section>
       </section>
-      <Footer/>
+      <Footer />
     </>
   );
 }
 
 export async function getStaticProps({ params }: any) {
-  const { frontMatter, source } = await getFileBySlug(
+  const { source, frontMatter } = await getFileBySlug(
     params.slug,
-    "markdown/Matematica/AlgebraLineal"
+    "markdown/Estadistica/Probabilidad"
   );
   return {
     props: {
@@ -60,7 +72,7 @@ export async function getStaticProps({ params }: any) {
 }
 
 export async function getStaticPaths() {
-  const posts = await getFiles("markdown/Matematica/AlgebraLineal");
+  const posts = await getFiles("markdown/Estadistica/Probabilidad");
   const paths = posts.map((post) => ({
     params: {
       slug: post.replace(/\.mdx/, ""),

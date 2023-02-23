@@ -26,6 +26,16 @@ export const getFileBySlug = async (slug: string, rootTheme: string) => {
   };
 };
 
+export const getDataBySlug = async (slug: string, rootTheme: string) => {
+  const mdxSource = fs.readFileSync(
+    path.join(root, rootTheme, `${slug}.mdx`),
+    "utf-8"
+  );
+
+  const { data } = await matter(mdxSource);
+  return data;
+}
+
 export const getAllFilesMetaData = (rootTheme: string) => {
   try {
     const files = getFiles(rootTheme);

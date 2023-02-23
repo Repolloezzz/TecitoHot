@@ -13,9 +13,6 @@ import MCarousel from "../components/home/MatterCaruser";
 import Ventage from "../components/layout/AbsolutVentage";
 
 const Home = () => {
-  const navFormatData = defaultData?.map((matter: base) => {
-    return matter;
-  });
   return (
     <>
       <Head>

@@ -6,7 +6,7 @@ import { all as Num } from "./Numeros";
 
 import { routes } from "../routes";
 
-const root = routes.route3;
+const root = routes['informatica'];
 const index: generator = {
   name: "Informática",
   description:

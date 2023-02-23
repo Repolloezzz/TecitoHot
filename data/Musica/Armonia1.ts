@@ -1,7 +1,7 @@
 import type { generator } from "../Types";
 import { routes } from "../routes";
 
-const Patter = routes.route1;
+const Patter = routes["musica"];
 const root = "Armonia1";
 const index: generator = {
   name: "Armonia 1",

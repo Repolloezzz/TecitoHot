@@ -1,7 +1,7 @@
 import type { generator } from "../Types";
 import {routes} from '../routes'
 
-const Patter = routes.route3
+const Patter = routes['informatica']
 const root = "Funcional";
 const index: generator = {
   name: "Programación Funcional",

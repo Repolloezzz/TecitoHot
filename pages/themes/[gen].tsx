@@ -3,9 +3,7 @@ import { MatterThemes as AllThemes } from "../../data/main";
 import { getMatter } from "../../data/mathods";
 import Head from "next/head";
 import Image from "next/image";
-
 import type { generator, Theme } from "../../data/Types";
-import { allData as defaultData } from "../../data/main";
 import HeadNav from "../../components/layout/HeadNav";
 import Present from "../../components/home/PresentSection";
 import { ThemeCard } from "../../components/home/Card";
@@ -80,6 +78,8 @@ export async function getStaticProps({ params }: any) {
     console.log(error);
   }
 }
+
+import { getPathsFiles } from "../../lib/getFiles";
 
 export async function getStaticPaths() {
   try {
