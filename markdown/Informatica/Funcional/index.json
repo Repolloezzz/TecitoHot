@@ -1,0 +1,4 @@
+{
+    "name": "Programación funcional",
+    "description": "La programación funcional es un paradigma de programación en el cual el enfoque se centra en las funciones y en su aplicación para resolver problemas. En la programación funcional, las funciones son consideradas como objetos de primera clase y se les da un papel central en la escritura de programas. En la programación funcional, los programas se escriben como una serie de funciones que reciben ciertos datos de entrada, procesan esos datos y producen una salida. El estado interno de un programa y las variables globales se evitan en la medida de lo posible, y se prefiere trabajar con datos inmutables para garantizar la integridad de los datos y simplificar el razonamiento sobre el programa."
+}

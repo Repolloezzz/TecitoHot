@@ -2,10 +2,12 @@ import { useAbsoluteContext } from "../../context/Absolute";
 import { FcGallery } from "react-icons/fc";
 
 interface ImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
-  containStyle: string;
+  containStyle?: string;
   title: string;
-  content: JSX.Element | JSX.Element[];
+  content?: JSX.Element | JSX.Element[];
 }
+
+export const notFound = "/imgNotFound.webp";
 
 const ImgAbs: React.FC<ImageProps> = ({
   containStyle = "",
@@ -50,6 +52,10 @@ const ImgAbs: React.FC<ImageProps> = ({
                       {...props}
                       alt={props.alt}
                       className="w-full h-full object-contain"
+                      onError={({ currentTarget }) => {
+                        currentTarget.onerror = null;
+                        currentTarget.src = notFound;
+                      }}
                     />
                   </picture>
                 </div>
@@ -64,7 +70,14 @@ const ImgAbs: React.FC<ImageProps> = ({
         <FcGallery className="min-w-[1.25rem] min-h-[1.25rem] md:min-w-[1.50rem] md:min-h-[1.50rem] lg:min-w-[1.75rem] lg:min-h-[1.75rem]" />
       </button>
       <picture className="flex justify-center items-center w-full h-full p-2">
-        <img {...props} alt={props.alt} />
+        <img
+          {...props}
+          alt={props.alt}
+          onError={({ currentTarget }) => {
+            currentTarget.onerror = null;
+            currentTarget.src = notFound;
+          }}
+        />
       </picture>
     </div>
   );

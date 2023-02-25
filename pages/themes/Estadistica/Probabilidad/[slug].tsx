@@ -1,5 +1,5 @@
 // * Métodos, datos y tipos
-import { getFileBySlug, getFiles } from "../../../../lib/mdx";
+import { getSource } from "../../../../lib/genDataContent";
 import Head from "next/head";
 import { MDXRemote } from "next-mdx-remote";
 // * Componentes
@@ -11,7 +11,6 @@ import {
   Forms,
 } from "../../../../components/themes/MDXComponents";
 import ModuleMenu from "../../../../components/themes/ModuleMenu";
-import { subThemes, index } from "../../../../data/Estadistica/Probabilidad";
 import {
   useThemeContext,
   DarkOptions,
@@ -20,7 +19,13 @@ import {
 import Ventage from "../../../../components/layout/AbsolutVentage";
 import Footer from "../../../../components/layout/FooterTCH";
 
-export default function Content({ source, frontMatter, slug }: any) {
+export default function Content({
+  source,
+  frontMatter,
+  slug,
+  data,
+  dataNav,
+}: any) {
   const { themeContent } = useThemeContext();
   return (
     <>
@@ -28,7 +33,7 @@ export default function Content({ source, frontMatter, slug }: any) {
         <title>TeCitoHot - Algebra Lineal</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
-      <HeadNav />
+      <HeadNav defaultData={dataNav} />
       <Ventage />
       <section
         data-theme="halloween"
@@ -36,8 +41,8 @@ export default function Content({ source, frontMatter, slug }: any) {
       >
         <ModuleMenu
           className="xl:min-w-[25%]"
-          title={index.name}
-          options={subThemes}
+          title={data.name}
+          options={data.subThemes}
           actually={slug}
         />
         <section
@@ -57,25 +62,36 @@ export default function Content({ source, frontMatter, slug }: any) {
   );
 }
 
+import {
+  getTheme,
+  allMatters,
+  getSubThemeGenerators,
+} from "../../../../lib/genDataContent";
 export async function getStaticProps({ params }: any) {
-  const { source, frontMatter } = await getFileBySlug(
-    params.slug,
-    "markdown/Estadistica/Probabilidad"
+  const dataNav = allMatters();
+  const data = getTheme("Estadistica", "Probabilidad");
+  const { source, frontMatter } = await getSource(
+    "Estadistica",
+    "Probabilidad",
+    params.slug
   );
+
   return {
     props: {
       source,
       frontMatter,
       slug: params.slug,
+      data,
+      dataNav,
     },
   };
 }
 
 export async function getStaticPaths() {
-  const posts = await getFiles("markdown/Estadistica/Probabilidad");
+  const posts = getSubThemeGenerators("Estadistica", "Probabilidad");
   const paths = posts.map((post) => ({
     params: {
-      slug: post.replace(/\.mdx/, ""),
+      slug: post,
     },
   }));
 

@@ -2,13 +2,12 @@
 import Link from "next/link";
 import { useState } from "react";
 import type { base } from "../../data/Types";
-import { allData as defaultData } from "../../data/main";
 import { DiGithubBadge } from "react-icons/di";
 
 // * Componentes
 import { PixelIcons } from "../global/Icons";
 
-const HeadNav = () => {
+const HeadNav = ({defaultData}: {defaultData: base[]}) => {
   const [navSW, changeSW] = useState(false);
   const navFormatData = defaultData?.map((matter: base) => {
     return matter;

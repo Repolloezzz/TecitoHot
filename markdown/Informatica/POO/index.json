@@ -1,0 +1,4 @@
+{
+    "name": "Programación orientada a objetos",
+    "description": "La programación orientada a objetos (POO) es un paradigma de programación que se basa en la creación de objetos que contienen datos y funciones que actúan sobre esos datos. En la POO, los objetos son considerados como entidades individuales que pueden interactuar con otros objetos a través de métodos y mensajes. La POO se centra en la modularidad, la encapsulación, la herencia y el polimorfismo. La modularidad implica que los programas se dividen en módulos independientes, cada uno de los cuales contiene objetos que realizan tareas específicas. La encapsulación significa que los datos y las funciones que actúan sobre esos datos se agrupan en objetos y se ocultan del mundo exterior, lo que evita que otros objetos accedan directamente a ellos."
+}

@@ -19,8 +19,9 @@ export interface Theme extends generator {
 }
 
 export interface SubTheme extends generator {
-  keys?: string[];
+  //keys?: string[];
   sections?: string[];
+  index: number;
 }
 
 export interface MatterTheme extends generator {
@@ -31,4 +32,11 @@ export interface Category {
   name: string;
   pageUrl?: string;
   color?: string;
+}
+
+export interface SubThemeMD {
+  name: string;
+  description: string;
+  sections: string[];
+  index: number
 }

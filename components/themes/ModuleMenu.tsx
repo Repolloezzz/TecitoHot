@@ -15,6 +15,7 @@ const ModuleMenu = ({ title, className, options, actually }: context) => {
   const { changeTheme, themeContent } = useThemeContext();
   const focusSearch = useRef<HTMLInputElement>(null);
   const [open, setOpen] = useState(false);
+  options.sort((a, b) => a.index - b.index);
   return (
     <>
       <nav
