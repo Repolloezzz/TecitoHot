@@ -106,23 +106,59 @@ export function BoxImp({
 }
 
 export function BoxSimp({
-  comment,
-  children,
-  className,
+  title = "Hola mundo",
+  style,
+  className = "",
+  children = <></>,
+  color,
 }: {
-  comment?: string;
+  title?: string;
+  style?: { bg: string; border: string; bgContent: string };
+  children?: JSX.Element | JSX.Element[];
   className?: string;
-  children?: any;
-  boxStyle: string;
+  color?: string;
 }) {
+  function getColor(opt = "default") {
+    return {
+      bg: {
+        blue: "bg-info text-info-content",
+        green: "bg-success text-success-content",
+        yellow: "bg-warning text-warning-content",
+        red: "bg-error text-error-content",
+        default: "bg-neutral text-neutral-content",
+      }[opt],
+      border: {
+        blue: "border-blue-600",
+        green: "border-green-600",
+        yellow: "border-yellow-600",
+        red: "border-red-600",
+        default: "border-neutral",
+      }[opt],
+      bgContent: {
+        blue: "bg-blue-500/10",
+        green: "bg-green-500/10",
+        yellow: "bg-yellow-500/10",
+        red: "bg-red-500/10",
+        default: "bg-neutral/10",
+      }[opt],
+    };
+  }
+  const { themeContent } = useThemeContext();
+  const styleBox = style ? style : getColor(color);
   return (
     <div
-      className={`${
-        className ? className : ""
-      } w-full p-0.5 md:p-2 lg:p-4 xl:p-6 flex flex-col items-center`}
+      className={`border-l-4 bg-opacity-70 overflow-hidden ${styleBox.border} ${className} my-2`}
     >
-      {children}
-      {comment ? <LComment>{comment}</LComment> : null}
+      <h1
+        className={`w-full p-1.5 md:p-2 md:py-1 justify-start items-center md:text-2xl`}
+      >
+        {title}
+      </h1>
+      <div
+        className={`overflow-hidden px-2 md:px-4 text-start text-sm md:text-lg`}
+      >
+        {children}
+      </div>
     </div>
   );
 }
@@ -178,7 +214,7 @@ export function BoxSect({ data, className = "" }: any) {
 export function BoxChord({
   title = "Hola mundo",
   style,
-  className='',
+  className = "",
   children = <></>,
   initial = false,
   color,

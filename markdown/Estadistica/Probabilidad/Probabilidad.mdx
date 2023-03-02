@@ -1,0 +1,364 @@
+---
+name: Probabilidad
+index: 2
+description: hola mundo
+sections: [Definición de experimento, Espacios muestrales, Eventos]
+---
+
+<HeadTitle title="Probabilidad" created={["26-02-2023", "DD-MM-YYYY"]} />
+<Sep />
+[//]: # "Definción de experimento"
+
+<TitleSection txt="Definición de experimento" nr={1} />
+<Ref id="Definición de experimento" />
+
+<BoxImp
+  title='¿Qué es un experimento?'
+  comment='Definción de experimento'
+  color='orange'
+  icon='flag'
+  id='def_exp'
+>
+    Un experimento es un método de investigación que involucra cualquier acción o
+    proceso cuyo, la misma manipula una o más <Lnk url='/themes/Estadistica/Probabilidad/ConceptosGenerales#def_var' txt='variables' ext/> de las cuales sacar conclusiones. También podemos decir que es la acción de "observar"
+    los efectos de ciertas circunstancias, fenómenos, entre otros. \
+    Para denotar un experimento se usa el símbolo <Ltx txt='\mathcal{E}'/>
+</BoxImp>
+<BComment type='warn'>
+    En la definción dijimos "variables", esto hace referencia a un concepto visto en
+    los Conceptos Generales, que no es más que declarar características de las cuales
+    se tomaran datos.
+</BComment>
+<BComment type='note'>
+    Un experimento puede estar basado en la observación de una población o una muestra de la misma, pero no
+    necesariamente a objetos, también puede estar basado en la observación de fenómenos.
+</BComment>
+<BoxImp
+  title='Tipos de experimento'
+  color='green'
+  comment='Los escenciales para más adelante'
+>
+    Para los siguientes conceptos debemos definir dos tipos de experimentos que veremos.
+    - **Determinístico:** Siendo un experimento donde el resultado se puede predecir con
+        certeza a partir de un conjunto de posibles resultados.
+    - **Aleatorio:** Siendo un experimento donde el resultado es uno de los ya conocidos de
+        un conjunto de posibles resultados. Practicamente lo contrario a determinístico.
+</BoxImp>
+<BComment type='note'>
+    Para el caso de un experimento determinístico, podemos dar como ejemplo los experimentos
+    caseros:
+    <span className='my-1 bg-neutral/5 block'>
+        - <Ltx txt='\mathcal{E_1}'/>: Ponder un huevo en vinagre y observar que sucede con el cascaron.
+        - <Ltx txt='\mathcal{E_2}'/>: Ponder una lupa en medio de la luz del sol y una hoja.
+        - <Ltx txt='\mathcal{E_3}'/>: Ponder pastillas de menta a una gaseosa.
+    </span>
+    En estos experimentos, aun que usted no los haya realizado de por si seguramente ya conoce el resultado,
+    pues esta es la idea de un experimento determinístico, siendo que no es necesario realizarlo para
+    saber el resultado que tendrá.
+</BComment>
+<BComment type='note'>
+    Para el caso de experimento no determinístico, al igual que uno determinístico se conoce el resultado,
+    pero no con exactitud, si no que un conjunto de posibles resultados de los cuales no se sabe cual
+    podrá resultar, pero si se sabe cuales son los posibles que podemos obtener.
+</BComment>
+<BComment>
+    Notar que para ambos se hace referencia a un conjunto de posibles resultados de los
+    cuales ya se llegan a definir con antelación.
+</BComment>
+
+<BoxChord className='mt-2' title='Ejemplo de experimento 1'>
+    Supongamos el siguiente experimento:
+    <span className='my-1 bg-neutral/5 block'>
+        <Ltx txt='\mathcal{E}'/>: Lanzar un dado y observar el número de la cara superior.
+    </span>
+    Un ejemplo simple, donde lanzamos un dado, pero notar que la misma es un experimento
+    no determinístico o aleatorio, es decir que los posibles resultados <Ltx txt='\{1, 2, 3, 4, 5, 6\}'/>
+    obtengamos uno de ellos al hacer el experimento.
+</BoxChord>
+<BoxChord className='mb-2' title='Ejemplo de experimento 2'>
+    Supongamos el siguiente experimento:
+    <span className='my-1 bg-neutral/5 block'>
+        <Ltx txt='\mathcal{E}'/>: Lanzar una moneda y observar la cara superior.
+    </span>
+    Un ejemplo simple, donde lanzamos una moneda y observamos si sale "cara" o "cruz". Ahora bien,
+    notar que también este experimento es no determinístico o aleatorio. Pues, tenemos un conjunto
+    de posibles resultados <Ltx txt='\{Cara, Cruz\}'/>.
+</BoxChord>
+
+Como se vió, un experimento es simplemente es la observación y toma de datos de varias
+variables, como tal estos conceptos son fundamentales para empezar a trabajar con los
+que se dijo anteriormente, los conjuntos que contienen los posibles resultados.
+
+[//]: # "Definción de Espacio muestral"
+<Sep />
+<TitleSection txt="Espacios muestrales" nr={2} />
+<Ref id="Espacios muestrales" />
+<BoxImp
+  title='¿Qué es un espacio muestral?'
+  comment='Definción de espacio muestral'
+  id='def_esp_mus'
+  color='orange'
+>
+    El espacio muestral de un experimento, es el conjunto de todos los posibles resultados de tal
+    experimento.\
+    Un espacio muestral se denota por <Ltx txt='\mathcal{S}'/>
+</BoxImp>
+<BComment type='warn'>
+    Un espacio muestral es un conjunto de <Lnk url='/themes/Estadistica/Probabilidad/ConceptosGenerales#def_dat' txt='datos'/>
+    ya preestablecidos, si son datos eso quiere decir que es un conjunto de "tuplas" (conjunto ordenado de elementos). Esto
+    es importante concerlo pues tendremos espacios muestrales:
+    - **-Simples:** contiene datos simples o "univariantes".
+    - **-Compuestos:** contiene datos compuesto o "multivariantes".
+</BComment>
+<BComment type='note'>
+    Otra forma de verlo es considerando dos experimentos **simples** y hacer una operación con ellos.
+    Por ejemplo:
+    <span className='my-1 bg-neutral/5 block'>
+        <Ltx txt='\mathcal{E_1}'/>: lanzar una moneda. \
+        <Ltx txt='\mathcal{E_2}'/>: lanzar un dado. \
+        <Ltx txt='\mathcal{E_3}'/>: lanzar una moneda **Y** un dado. \
+        <Ltx txt='\mathcal{E_4}'/>: lanzar una moneda **Ó** un dado.
+    </span>
+    Como vemos el experimento 3 y 4 son una combinación del 1 y del 2, pero resaltamos el conector
+    **Ó** e **y**, pues denotar una operación con espacios muestrales.
+    <span className='my-1 bg-neutral/5 block'>
+        <Ltx txt='\mathcal{S_1}'/>: \{Cara, Cruz\}. \
+        <Ltx txt='\mathcal{S_2}'/>: \{1,2,3,4,5,6\}. \
+        <Ltx txt='\mathcal{S_3}'/>: <Ltx txt='S_2 \times S_4'/> = \{(Cara, 1), (Cruz, 1), (Cara, 2), (Cruz, 2), ... (Cruz, 6)\}. \
+        <Ltx txt='\mathcal{S_4}'/>: <Ltx txt='S_2 \cup S_3'/> = \{Cara, Cruz, 1, 2, 3, 4, 5, 6\}.
+    </span>
+    Donde tenemos que <Ltx txt='\mathcal{E_3}'/> considera a <Ltx txt='\mathcal{E_1,E_2}'/> sucediendo al mismo tiempo
+    por lo que su espacio muestral es un **producto cartesiano** de los espacios muestrales de <Ltx txt='\mathcal{E_1,E_2}'/>.
+    Por otro lado, <Ltx txt='\mathcal{E_3}'/> considera a <Ltx txt='\mathcal{E_1,E_2}'/> donde solo uno de ellos
+    puede pasar, es decir o pasa <Ltx txt='\mathcal{E_1}'/> o pasa <Ltx txt='\mathcal{E_2}'/>, por lo que su espacio
+    muestral es la **unión de conjuntos** de <Ltx txt='\mathcal{E_1,E_2}'/>. Por lo tanto, <Ltx txt='\mathcal{E_3,E_4}'/>
+    **son experimentos compuestos** pues se basan en más de un experimento simple
+</BComment>
+<BComment type='note'>
+    Notar que la definición de espacio muestral se atribuye bastante a un experimento
+    no determinístico. Pues, la misma es un conjunto de posibles resultados.
+</BComment>
+<BoxChord className='mt-2' title='Ejemplo de espacio muestral 1'>
+    Supongamos el siguiente experimento:
+    <span className='my-1 bg-neutral/5 block'>
+        <Ltx txt='\mathcal{E_1}'/>: lanzar una botella y observar como cae.
+    </span>
+    De este experimento podemos sacar los posibles resultados al hacerlo, siendo que:
+    <span className='my-1 bg-neutral/5 block'>
+        <Ltx txt='\mathcal{S_1}'/> = \{de pie, de cabeza, de costado\}
+    </span>
+    Como vemos, tenemos posibles resultados al hacer nuestro experimento. Pero, no sabemos
+    cual de ellos nos saldra como resultado.
+</BoxChord>
+<BoxChord title='Ejemplo de espacio muestral 2' color='blue'>
+    Supongamos el siguiente experimento:
+    <span className='my-1 bg-neutral/5 block'>
+        <Ltx txt='\mathcal{E_2}'/>: Jugar en una ruleta americana y observar el número que sale
+    </span>
+    De este experimento sabemos los posibles resultados al realizarlo:
+    <span className='my-1 bg-neutral/5 block'>
+        <Ltx txt='\mathcal{S_2}'/> = <Ltx txt='\{x:0\leq x \leq 38\}'/>
+        <LComment>Osea todos los números del 0 al 38</LComment>
+    </span>
+    Viendolo así tenemos que al jugar en una ruleta americana nos puede salir uno de los resultados
+    del espacio muestral, en este caso solo nos fijamos en el número.
+    <ImgAbs
+      title='Ruleta americana'
+      content={<>Esto es una ruleta americana, generalmente vista en casinos</>}
+      src='https://img.europapress.es/fotoweb/fotonoticia_20160229130911_1200.jpg'
+    />
+    <LComment>Imagen de lo que es una ruleta americana</LComment>
+</BoxChord>
+<BoxChord title='Ejemplo de espacio muestral 3'>
+    Supongamos el siguiente experimento:
+    <span className='my-1 bg-neutral/5 block'>
+        <Ltx txt='\mathcal{E_3}'/>: De una caja que contiene pelotas de color enumeradas, dos de color rojo y dos de color azul. Observar el color y observar el número al sacar una pelota
+    </span>
+    Siendo que sacaremos una pelota podemos dar con su espacio muestral:
+    <span className='my-1 bg-neutral/5 block'>
+        <Ltx txt='\mathcal{S_3}'/> = \{(1, rojo), (1, azul), (2, rojo), (2, azul)\} 
+    </span>
+    Así tenemos que el espacio muestral del experimento <Ltx txt='\mathcal{E_3}'/> es un conjunto
+    cuyos elementos son datos multivariantes, entonces es un espacio muestral compuesto.
+</BoxChord>
+<BoxChord title='Ejemplo de espacio muestral 3' color='green'>
+    Supongamos los siguientes experimentos:
+    <span className='my-1 bg-neutral/5 block'>
+        - <Ltx txt='\mathcal{E_1}'/>: De una caja con 4 tickets sacar uno y ver el color.
+        - <Ltx txt='\mathcal{E_2}'/>: De una caja con 4 tickets sacar uno y el premio.
+        - <Ltx txt='\mathcal{E_3}'/>: De una caja con 4 tickets sacar uno, ver el color **Y** el premio.
+    </span>
+    Como vemos el experimento tres es una combinación del uno y del dos, la misma tendrá un espacio muestral
+    compuesto pues conecta al experimento uno y dos con el **Y**.
+    <span className='my-1 bg-neutral/5 block'>
+        <Ltx txt='\mathcal{S_1}'/> = \{rojo, amarillo, verde, azul\}.
+        <Ltx txt='\mathcal{S_2}'/> = \{helado, jugo, almuerzo, papas\}.
+        <Ltx txt='\mathcal{S_3}'/> = <Ltx txt='\mathcal{S_1 \times S_2}'/> = \{(rojo, helado), (amarillo, helado), ..., (azul, papas)\}.
+    </span>
+    Pues en el experimento tres hacemos dos cosas a la vez, entonces su espacio muestral se representa como un conjunto de
+    pares ordenados.
+</BoxChord>
+<BoxImp
+  title='Tipos de espacios muestrales'
+  comment='definición de dos tipos'
+  id='tip_mues'
+  color='green'
+>
+    Sea un experimento denotado por <Ltx txt='\mathcal{E}'/>, la misma tiene un espacio muestral
+    denotado por <Ltx txt='\mathcal{S}'/>. Su espacio muestral puede ser:
+    <BoxSimp title='Discretos' className='text-base-content'>
+        Espacios muestrales que se conforman por:
+        - **discreto finito:** un conjunto limitado, donde se puede contar todos sus elementos.
+        - **discreto infinito:*** un conjunto infinito, onde se pueden enumerar sus elementos, es decir que se puede armar una lista o una suceción con estos elementos.
+    </BoxSimp>
+    <BoxSimp title='Continuos' className='text-base-content'>
+        Espacios muestrales donde sus elementos son infinitos, se definen en un rango pero como tal
+        no son numerables, entonces no se pude saber con exactitud como van todos sus elementos.
+    </BoxSimp>
+    Es decir que es discreto cuando los elementos se pueden contar o se pueden enumerar, y es continuo si
+    no se puede contar y no se puede enumerar.
+</BoxImp>
+<BComment type='note'>
+    Como tal es una clasificación de los tipos de espacios muestrales:
+    - **Discreto:** finito contable o infinito enumerable.
+    - **Continuo:** infinito no numerable y no contable.
+</BComment>
+<BoxChord title='Ejemplo de espacio muestral discreto 1'>
+    Supongamos el siguiente experimento:
+    <span className='my-1 bg-neutral/5 block'>
+        <Ltx txt='\mathcal{E}'/>: Lanzar un dado y ver la cara superior.
+    </span>
+    Su espacio muestral simplemente es:
+    <span className='my-1 bg-neutral/5 block'>
+        <Ltx txt='\mathcal{S}:\{1,2,3,4,5,6\}'/>
+    </span>
+    Como vemos el mismo se puede **enumerar**, además de que los elementos en
+    <Ltx txt='\mathcal{S}'/> son finitos. Por lo tanto este es un espacio
+    muestral discreto finito por que se pueden contar sus elementos.
+</BoxChord>
+<BoxChord title='Ejemplo de espacio muestral discreto 2'>
+    Supongamos el siguiente experimento:
+    <span className='my-1 bg-neutral/5 block'>
+        <Ltx txt='\mathcal{E}'/>: Encuestar a una persona si ya comio.
+    </span>
+    Como tal es un experimento simple, preguntar a alguien si ya comio. Pues, tenemos que
+    su espacio muestral es:
+    <span className='my-1 bg-neutral/5 block'>
+        <Ltx txt='\mathcal{S}'/>: \{SI, NO\}.
+    </span>
+    Pues son las unicas respuestas que nos pueden dar. Por lo tanto, este es un espacio
+    muestral discreto finito, ya que tiene finitos elementos que se pueden contar.
+</BoxChord>
+<BoxChord title='Ejemplo de espacio muestral discreto 3'>
+    Un ejemplo claro de lo que es un espacio muestral discreto infinito es
+    el conjunto de numeros naturales. Pues tenemos que se denota como.
+    <span className='my-1 bg-neutral/5 block'>
+        <Ltx txt='\mathcal{S}:\{1,2,3,4...\infty\}'/>.
+    </span>
+    La misma es discreta pues se pueden enumerar sus elementos (de por si ya son números), y
+    también los conocemos.
+</BoxChord>
+<BoxChord title='Ejemplo de espacio muestral discreto 4'>
+    Supongamos el siguiente experimento:
+    <span className='my-1 bg-neutral/5 block'>
+        <Ltx txt='\mathcal{E}'/>: Lanzar una moneda infinitas veces y ver la cara superior.
+    </span>
+    Considerarlo como un solo experimento, al lanzarlo infinitas veces tendremos infinitos
+    resultados.
+    <span className='my-1 bg-neutral/5 block'>
+        <Ltx txt='\mathcal{S}'/>: \{CARA, CRUZ, CARA, CRUZ, CARA, CRUZ, ....\}.
+    </span>
+    en este caso es una sucesión infinita de resultados, donde literalmente podemos saber el siguiente ya que
+    es como una serie que se repite, entonces el epacio muestral es enumerable y eso implica que es un
+    espacio muestral discreto infinito por que es enumerable.
+</BoxChord>
+<BoxChord title='Ejemplo de espacio muestral discreto 5'>
+    Supongamos el siguiente experimento:
+    <span className='my-1 bg-neutral/5 block'>
+        <Ltx txt='\mathcal{E}'/>: formar una palabra con las letras del alfabeto.
+    </span>
+    Como tal existen una cantidad infinita de palabras, de poder contarlos se puede pero
+    es un número extremadamente grande que no podriamos. Pero, sabemos que tiene que haber un final,
+    de manera que podemos enumerarlos de forma que hagamos primero todas las paralbras con la primera
+    letra a luego la b y así, es decir los enumeramos, entonces su espacio muestral es uno discreto infinito
+    por que no sabemos la cantidad y no podemos contarlos, pero si podemos enumerarlos.
+</BoxChord>
+<BComment type='warn'>
+    Los espacios muestrales discretos **infinitos** tiene una manera de enumerar sus elementos, puede ser enlistando,
+    ordenado como una sucesión, asignandole un valor número como una etiqueta de forma que este ordenado.
+</BComment>
+
+<BoxChord title='Ejemplo de espacio muestral continuo 1'>
+    Supongamos el siguiente experimento:
+    <span className='my-1 bg-neutral/5 block'>
+        <Ltx txt='\mathcal{E}'/>: Medir la altura de una población de personas.
+    </span>
+    Como mediremos la altura de muchas personas tenemos que no todas sus alturas serán iguales, pero sabemos
+    con antelación que minimamente las alturas que saquemos como resultados estaran en un **rango**.
+    <span className='my-1 bg-neutral/5 block'>
+        <Ltx txt='\mathcal{S}: \{h:1.50[m]\leq h \leq 2[m]\}'/>
+    </span>
+    Estamos hablando de un rango exacto, podriamos decir el rango <Ltx txt='[1.50, 2.00]\in\mathbb{R}'/>
+    por definición este intervalo o rango es infinito. Entonces es un espacio muestral continuo por que
+    sus elementos están en un rango infinito, pues hablamos de alturas espacíficas para cada persona, esto
+    incluye una exactitud precisa.
+</BoxChord>
+<BoxChord title='Ejemplo de espacio muestral continuo 2'>
+    Supongamos el siguiente experimento:
+    <span className='my-1 bg-neutral/5 block'>
+        <Ltx txt='\mathcal{E_3}'/>: Medir la distancia que corre una persona en 30 minutos.
+    </span>
+    Donde tenemos que las personas minimamente se encuentran en este rango:
+    <span className='my-1 bg-neutral/5 block'>
+        <Ltx txt='\mathcal{S}: \{x:100[m]\leq h \leq 3000[m]\}'/>
+    </span>
+    Donde hablamos especificamente de valores exactos, 100.000001, 100.000002, así, es decir una cantidad
+    infinita de números entre 100 y 300. Por lo tanto, el espacio muestral es continuo por que
+    no se pueden contar sus elementos y no se pueden enumerar de alguna manera.
+</BoxChord>
+<BComment type='warn'>
+    Como se ve en los ejemplos, un espacio muestral continuo es un conjunto que se denota a sus elementos
+    en un **rango**, como tal es algo parecido a los intervalos en matemáticas, pues de [0, 1] el rango entre
+    0 y 1 es infinitos, pues existen infinitos números entre ambos como 0.000000001 así hasta el 1. Osea, no se
+    pueden contar, es infinito literalmente, no se pueden enumerar.
+</BComment>
+<BComment type='alert'>
+    La gran diferencia entre un espacio muestral **discreto infinito** y uno **continuo** es que para
+    el primero se pueden enumerar de manera **precisa**, enlistandolos o haciendolo como una sucesión.
+    Por otro lado, en un espacio muestral continuo no se pueden contar sus elementos de ninguna manera
+    y no se los puede enumerar de manera precisa, pues al ser infinitos elementos no tenemos forma
+    de enumerarlos.
+</BComment>
+<BComment type='note'>
+    Viendolo de otra forma, en un espacio muestral continuo los elementos siguen una continuidad,
+    y como tal no es posible representarlos, la manera de hacerlo generalmente es con una función,
+    algo parecido a una función cualquiera en matemáticas. Podemos tener muchos valores de respuesta y
+    como tal estas respuestas son infinitas.
+</BComment>
+
+Como tal el problema es entender como se diferencian un espacio muestral discreto infinito y un espacio
+muestral continuo. Pues, si bien parece que ambas son iguales, la verdad es que tienen diferencias
+que las hemos repetido una y otra vez, la enumeración y el poder contarlos.
+
+<Sep />
+[//]: # "Definción de experimento"
+<TitleSection txt="Eventos" nr={3} />
+<Ref id="Eventos" />
+<BoxImp
+  title='¿Qué es un evento?'
+  comment='Definición de evento'
+  id='def_event'
+  color='orange'
+  icon='flag'
+>
+    Un evento es un **subconjunto** de un espacio muestral <Ltx txt='\mathcal{S}'/>, denotado por letras
+    mayúsculas como <Ltx txt='A,B,C,D'/>. Por otro lado, como tal un evento considera un subconjunto de resultados
+    del espacio muestral que sucedan.
+    - **Evento simple:** considera unicamente un elemento o resultado en <Ltx txt='\mathcal{S}'/>.
+    - **Evento compuesto:** considra más de un elemento o resultado en <Ltx txt='\mathcal{S}'/>.
+</BoxImp>
+<BComment type='note'>
+    Como tal un evento recopila una cantidad de resultados de un experimento <Ltx txt='\mathcal{E}'/>, donde
+    tenemos que un evento simple es literalmente un subconjunto que considera unicamente UNO de los elementos
+    en el espacio muestral. Mientras que, un evento compuesto es un subconjunto que considera MÁS DE UN elemento.
+</BComment>

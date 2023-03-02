@@ -18,6 +18,7 @@ import {
 } from "../../../../context/ThemeContent";
 import Ventage from "../../../../components/layout/AbsolutVentage";
 import Footer from "../../../../components/layout/FooterTCH";
+import { NextPage } from "../../../../components/themes/NextPage";
 
 export default function Content({
   source,
@@ -27,6 +28,7 @@ export default function Content({
   dataNav,
 }: any) {
   const { themeContent } = useThemeContext();
+  console.log(frontMatter)
   return (
     <>
       <Head>
@@ -55,6 +57,7 @@ export default function Content({
             components={{ ...Global, ...Latex, ...Media, ...Forms }}
             frontmatter={frontMatter}
           />
+          <NextPage options={data.subThemes} gen={slug}/>
         </section>
       </section>
       <Footer />

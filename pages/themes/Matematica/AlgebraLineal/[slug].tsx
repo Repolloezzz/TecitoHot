@@ -18,7 +18,7 @@ import {
 } from "../../../../context/ThemeContent";
 import Ventage from "../../../../components/layout/AbsolutVentage";
 import Footer from "../../../../components/layout/FooterTCH";
-
+import { NextPage } from "../../../../components/themes/NextPage";
 export default function Content({
   source,
   frontMatter,
@@ -55,6 +55,7 @@ export default function Content({
             components={{ ...Global, ...Latex, ...Media, ...Forms }}
             frontmatter={frontMatter}
           />
+          <NextPage options={data.subThemes} gen={slug}/>
         </section>
       </section>
       <Footer />

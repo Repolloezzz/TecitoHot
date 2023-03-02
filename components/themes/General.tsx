@@ -1,3 +1,4 @@
+import Link from "next/link";
 export function Ref({ id }: { id: string }) {
   return <span id={id} className="relative -top-20 lg:-top-32" />;
 }
@@ -5,14 +6,40 @@ export function Sep() {
   return <div className="divider" />;
 }
 
-export function Lnk({ url = "#", txt = "link" }: { url: string; txt: string }) {
+export function Lnk({
+  url = "#",
+  txt = "link",
+  ext = false,
+  style = "",
+}: {
+  url: string;
+  txt: string;
+  ext?: boolean;
+  style?: string;
+}) {
   return (
-    <a className="link link-secondary" href={url}>
-      {txt}
-    </a>
+    <>
+      {ext ? (
+        <a className={`link ${style}`} href={url}>
+          {txt}
+        </a>
+      ) : (
+        <Link href={url} target="_blank" className={`link ${style}`}>
+          {txt}
+        </Link>
+      )}
+    </>
   );
 }
-export function List({ items, type, className='' }: { items: JSX.Element[]; type?: string, className?: string }) {
+export function List({
+  items,
+  type,
+  className = "",
+}: {
+  items: JSX.Element[];
+  type?: string;
+  className?: string;
+}) {
   return (
     <ol className={`${className} my-1`}>
       {items.map((item, i) => {
