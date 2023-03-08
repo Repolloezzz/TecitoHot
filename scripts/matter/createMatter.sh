@@ -1,13 +1,15 @@
 # validar que el gen no sea nulo
-if [ -z "$1" ]; then
-    echo "El gen de la materia no puede ser nulo"
-    exit 1
+if [ ! -n "$4" ] || [ $(expr length "$4") -le 2 ]; then
+    echo "❓ El generador no es valido, debe tener al menos 3 caracteres."
+    exit 0
 fi
 
-gen=$1
-public=$2
-source=$3
-pages=$4
+public=$1
+source=$2
+pages=$3
+
+gen=$4
+
 # Para crear el directorio y los archivos necesarios para la materia
 mkdir $public/$gen
 mkdir $source/$gen

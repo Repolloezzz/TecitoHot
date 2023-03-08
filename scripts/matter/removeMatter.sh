@@ -1,13 +1,15 @@
 # validar que el gen no sea nulo
-if [ -z "$1" ]; then
-    echo "El gen de la materia no puede ser nulo"
+if [ ! -n "$4" ] || [ $(expr length "$4") -le 2 ]; then
+    echo "❓ El generador no es valido, debe tener al menos 3 caracteres."
     exit 1
 fi
 
-gen=$1
-public=$2
-source=$3
-pages=$4
+public=$1
+source=$2
+pages=$3
+
+gen=$4
+
 mensajes=("Se borró" "Se borró" "Se borró" "Se borraron todos" "✅Se borró")
 # Para intentar eliminar los directorios y archivos de la materia
 if ! rm -r $public/$gen 2>/dev/null; then

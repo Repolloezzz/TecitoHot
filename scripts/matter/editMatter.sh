@@ -1,14 +1,15 @@
 # validar que el generador no sea nulo
-if [ -z "$1" ] && [ -z "$2"]; then
-    echo "Se requieren dos generadores, uno para la materia que se quiere editar y otro para el nuevo nombre de la materia"
-    exit 1
+if [ ! -n "$4" ] || [ $(expr length "$4") -le 2 ]; then
+    echo "❓ El generador no es valido, debe tener al menos 3 caracteres."
+    exit 0
 fi
 
-gen_1=$1
-gen_2=$2
-public=$3
-source=$4
-pages=$5
+public=$1
+source=$2
+pages=$3
+
+gen_1=$4
+gen_2=$5
 
 mensajes=("Se editó" "Se editó" "Se editó" "✅Se editó")
 # Para intentar editar los directorios y archivos de la materia

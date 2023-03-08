@@ -6,7 +6,7 @@ pages="pages/matters"
 while getopts "hm:cm:rm:em:lm" opt; do
     case ${opt} in
     h)
-        echo -e "🎈 Opciones que puedes ejecutar con $(tput bold)matterop$(tput sgr0):
+        echo -e "🎈 Opciones que puedes ejecutar con $(tput bold)mt$(tput sgr0):
     ▶ -h: muestra la ayuda del script con todas las opciones disponibles.
     ▶ -c: crea una nueva materia con el nombre que se le pase como parametro
           ↪[gen]: nombre con el que se genera el directorio de la materia.
@@ -20,15 +20,15 @@ while getopts "hm:cm:rm:em:lm" opt; do
         ;;
     c)
         # Para crear una nueva materia
-        source scripts/matter/createMatter.sh $2 $public $source $pages
+        source scripts/matter/createMatter.sh $public $source $pages $2
         ;;
     r)
         # Para borrar una materia
-        source scripts/matter/removeMatter.sh $2 $public $source $pages
+        source scripts/matter/removeMatter.sh $public $source $pages $2
         ;;
     e)
         # Para editar una materia
-        source scripts/matter/editMatter.sh $2 $3 $public $source $pages
+        source scripts/matter/editMatter.sh $public $source $pages $2 $3
         ;;
     l)
         # Para listar todas las materias

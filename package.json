@@ -7,8 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "matterop": "bash scripts/matterop.sh",
-    "themeop": "bash scripts/themeop.sh"
+    "mt": "bash scripts/matterop.sh",
+    "th": "bash scripts/themeop.sh",
+    "st": "bash scripts/subthemeop.sh"
   },
   "dependencies": {
     "@mdx-js/loader": "^2.2.1",

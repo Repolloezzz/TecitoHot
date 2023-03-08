@@ -3,7 +3,7 @@ source=$2
 pages=$3
 
 matters=()
-directorio_encontrado=$(find markdown -maxdepth 2 -name "index.json" -printf '%h\n' | sort -u)
+directorio_encontrado=$(find $source -maxdepth 2 -name "index.json" -printf '%h\n' | sort -u)
 for dir in $directorio_encontrado; do
     matters+=($(basename $dir))
 done

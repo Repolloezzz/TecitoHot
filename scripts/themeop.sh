@@ -6,7 +6,7 @@ pages="pages/matters"
 while getopts "hm:cm:rm:em:lm" opt; do
     case ${opt} in
     h)
-        echo -e "🎈 Opciones que puedes ejecutar con $(tput bold)matterop$(tput sgr0):
+        echo -e "🎈 Opciones que puedes ejecutar con $(tput bold)th$(tput sgr0):
     ▶ -h: muestra la ayuda del script con todas las opciones disponibles.
     ▶ -c: crea un nuevo tema con el nombre que se le pase como parametro
           ↪[gen_1] [gen_2]: generador de la materia en la que se crea, generador del tema.
@@ -20,19 +20,19 @@ while getopts "hm:cm:rm:em:lm" opt; do
         ;;
     c)
         # Para crear una nueva materia
-        source scripts/theme/createTheme.sh $2 $3 $public $source $pages
+        source scripts/theme/createTheme.sh $public $source $pages $2 $3
         ;;
     r)
         # Para borrar una materia
-        source scripts/matter/removeMatter.sh $2 $3 $public $source $pages
+        source scripts/theme/removeTheme.sh $public $source $pages $2 $3
         ;;
     e)
         # Para editar una materia
-        source scripts/matter/editMatter.sh $2 $3 $4 $public $source $pages
+        source scripts/theme/editTheme.sh $public $source $pages $2 $3 $4
         ;;
     l)
         # Para listar todas las materias
-        source scripts/matter/listMatters.sh $2 $public $source $pages
+        source scripts/theme/listThemes.sh $public $source $pages $2
         ;;
     \?)
         echo "Opción inválida: -$OPTARG" >&2
