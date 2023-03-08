@@ -1,15 +1,15 @@
 // Página para cada materia
 import { allMatters, getMatter } from "../../lib/genDataContent";
 import Head from "next/head";
-import Image from "next/image";
 import type { generator, Theme } from "../../data/Types";
 import HeadNav from "../../components/layout/HeadNav";
 import Present from "../../components/home/PresentSection";
 import { ThemeCard } from "../../components/home/Card";
 import Ventage from "../../components/layout/AbsolutVentage";
 import ImgAbs from "../../components/themes/Image";
+import { search } from "../../lib/getDataWiki";
 
-export default function Matter({ data, dataNav }: any) {
+export default function Matter({ data, dataNav, chInf }: any) {
   return (
     <>
       <Head>
@@ -24,10 +24,10 @@ export default function Matter({ data, dataNav }: any) {
           <ImgAbs
             src={data.imgUrl}
             alt={`${data.name}-image`}
-            title={`${data.name}-image`}
+            title={`${chInf.title}`}
             containStyle="max-w-[90%] sm:max-w-[50%] md:max-w-[35%] lg:min-w-[40%] lg:max-w-none"
             className="lg:object-contain"
-            content={<>Icono de la materia {data.name}</>}
+            content={<>{chInf.extract}</>}
           />
           <div className="bg-slate-200/10 p-2 max-h-[25rem] overflow-y-auto scrollbar-thin scrollbar-w-0.5 scrollbar-thumb-primary-focus scrollbar-track-secondary md:scrollbar-w-2 md:p-4 lg:p-6">
             <p className="text-lg text-justify text-base-content md:text-xl lg:text-3xl">
@@ -67,14 +67,16 @@ export default function Matter({ data, dataNav }: any) {
   );
 }
 export async function getStaticProps({ params }: any) {
+  // Para obtener datos de los temas y materia en si
   const dataNav = allMatters();
   const data = getMatter(params.gen);
-  console.log(data);
+  // Para obtener los datos de los personajes caracteristicos de la materia
+  const chInf = await search(data.character ? data.character : 'hola');
   return {
     props: {
-      gen: params.gen,
       data,
       dataNav,
+      chInf,
     },
   };
 }

@@ -10,6 +10,10 @@ export interface generator extends base {
   color?: string;
 }
 
+export interface Character {
+  character: string;
+}
+
 export interface Matter extends generator {
   themes: Theme[];
 }

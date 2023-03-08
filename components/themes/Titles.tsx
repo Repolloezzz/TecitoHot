@@ -10,11 +10,11 @@ interface HeadTitleContext {
 export const HeadTitle = ({
   title,
   created = "1-1-0",
-  finished = "1-1-0",
+  finished,
   author = { name: "@RepolloEzzz", link: "https://github.com/Repolloezzz" },
 }: HeadTitleContext) => {
   const data1 = moment(created, "DD-MM-YYYY").format("LL");
-  const data2 = moment(finished, "DD-MM-YYYY").format("LL");
+  const data2 = moment(finished ? finished : created, "DD-MM-YYYY").format("LL");
 
   return (
     <div className="font-vt323">
@@ -29,7 +29,7 @@ export const HeadTitle = ({
           </span>
         </span>
         <span className="flex items-center gap-2 font-bold">
-          <span>Culminación:</span>
+          <span>Modificación:</span>
           <span className="font-dotgot text-sm lg:text-xl">
             {data2.toString()}
           </span>

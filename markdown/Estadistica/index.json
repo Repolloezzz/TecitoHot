@@ -1,5 +1,6 @@
 {
   "name": "Estadística",
   "description": "La estadística es una disciplina que se encarga de recopilar, analizar e interpretar datos numéricos con el fin de obtener información útil para la toma de decisiones. Su objetivo es describir y explicar los fenómenos que se estudian a través de métodos cuantitativos. La estadística se aplica en una amplia variedad de campos, como la ciencia, la medicina, la economía, la ingeniería, la psicología, la sociología, entre otros. En general, se utiliza para resumir y presentar datos, evaluar la relación entre variables, hacer inferencias y tomar decisiones basadas en evidencia numérica.",
-  "color": "bg-cyan-500"
+  "color": "bg-cyan-500",
+  "character": "Sir Ronald Aylmer Fisher"
 }

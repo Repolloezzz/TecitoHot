@@ -2,7 +2,7 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import { serialize } from "next-mdx-remote/serialize";
-import { generator, SubTheme, SubThemeMD } from "../data/Types";
+import { generator, SubTheme, SubThemeMD, Character } from "../data/Types";
 
 // * Operaciones establecidas en la ruta markdown
 const root = process.cwd();
@@ -40,6 +40,7 @@ export const getMatterGenerators = () => {
   });
   return data;
 };
+
 export const getThemeGenerators = (matterGen: string) => {
   // Obtener todos las carpetas en @matterGen
   let generators = getFiles(matterGen);
@@ -97,7 +98,7 @@ export const allSubThemes = (matterGen: string, themeGen: string) => {
       subthemes.push(dataParse);
     } catch (error) {
       console.log(
-        "Hubo un error al generar los objetos en allSubThemes, verifique lo siguiente:\n-Existe el directirio de matterGen y themeGen.\n-Su directorio debe contener el archivo \"Gen\".mdx.\n-El archivo \"Gen\".mdx debe de tener en su encabezado un objeto del tipo SubThemeMD de TYpes.\nVerifique alguno de los anteriores se cumpla."
+        'Hubo un error al generar los objetos en allSubThemes, verifique lo siguiente:\n-Existe el directirio de matterGen y themeGen.\n-Su directorio debe contener el archivo "Gen".mdx.\n-El archivo "Gen".mdx debe de tener en su encabezado un objeto del tipo SubThemeMD de TYpes.\nVerifique alguno de los anteriores se cumpla.'
       );
     }
   });
@@ -128,10 +129,11 @@ export const allThemes = (matterGen: string) => {
   return themes;
 };
 
+interface context extends generator, Character {}
 export const allMatters = () => {
   const generators = getMatterGenerators();
   //console.log(generators)
-  const matters: generator[] = [];
+  const matters: context[] = [];
   generators.forEach((gen) => {
     try {
       const res = readFiles(gen, "index.json");

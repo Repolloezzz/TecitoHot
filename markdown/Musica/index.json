@@ -1,5 +1,6 @@
 {
   "name": "Música",
-  "description": "La música es un arte que se basa en la organización de sonidos en el tiempo y en el espacio. La teoría musical es el estudio de los elementos fundamentales de la música, como la melodía, el ritmo, la armonía, la forma y la interpretación, y de cómo estos elementos se combinan para crear una obra musical. La teoría musical se enfoca en la notación musical, que es el lenguaje que se utiliza para escribir y leer partituras y que permite la comunicación entre músicos y compositores. También se estudian las escalas, los acordes, las progresiones armónicas, los modos y otras estructuras musicales que se utilizan para crear y desarrollar una obra musical.",
-  "color": "bg-indigo-700"
+  "description": "La música es una disciplina artística que se enfoca en la creación, interpretación y estudio de sonidos organizados en el tiempo. Como materia académica, se estudia la teoría musical, la historia de la música, la composición, la interpretación y la producción musical. El estudio de la música como materia puede incluir tanto aspectos prácticos como teóricos. Los estudiantes pueden aprender a tocar un instrumento, cantar, componer música y producir grabaciones, así como también estudiar la teoría musical y la historia de la música. En resumen, la música como materia abarca una amplia gama de habilidades y conocimientos relacionados con la creación, interpretación y estudio de la música.",
+  "color": "bg-indigo-600",
+  "character": "Beethoven"
 }

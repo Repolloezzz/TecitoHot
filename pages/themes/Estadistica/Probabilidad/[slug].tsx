@@ -1,16 +1,7 @@
-// * Métodos, datos y tipos
 import { getSource } from "../../../../lib/genDataContent";
 import Head from "next/head";
 import { MDXRemote } from "next-mdx-remote";
-// * Componentes
 import HeadNav from "../../../../components/layout/HeadNav";
-import {
-  Global,
-  Latex,
-  Media,
-  Forms,
-} from "../../../../components/themes/MDXComponents";
-import ModuleMenu from "../../../../components/themes/ModuleMenu";
 import {
   useThemeContext,
   DarkOptions,
@@ -19,6 +10,18 @@ import {
 import Ventage from "../../../../components/layout/AbsolutVentage";
 import Footer from "../../../../components/layout/FooterTCH";
 import { NextPage } from "../../../../components/themes/NextPage";
+import {
+  Global,
+  Latex,
+  Media,
+  Forms,
+} from "../../../../components/themes/MDXComponents";
+import ModuleMenu from "../../../../components/themes/ModuleMenu";
+import {
+  getTheme,
+  allMatters,
+  getSubThemeGenerators,
+} from "../../../../lib/genDataContent";
 
 export default function Content({
   source,
@@ -28,7 +31,6 @@ export default function Content({
   dataNav,
 }: any) {
   const { themeContent } = useThemeContext();
-  console.log(frontMatter)
   return (
     <>
       <Head>
@@ -57,7 +59,7 @@ export default function Content({
             components={{ ...Global, ...Latex, ...Media, ...Forms }}
             frontmatter={frontMatter}
           />
-          <NextPage options={data.subThemes} gen={slug}/>
+          <NextPage options={data.subThemes} gen={slug} />
         </section>
       </section>
       <Footer />
@@ -65,14 +67,12 @@ export default function Content({
   );
 }
 
-import {
-  getTheme,
-  allMatters,
-  getSubThemeGenerators,
-} from "../../../../lib/genDataContent";
 export async function getStaticProps({ params }: any) {
+  // Obtiene todas las materias
   const dataNav = allMatters();
+  // Obtiene el tema que incluye los subtemas
   const data = getTheme("Estadistica", "Probabilidad");
+  // Obtiene el contenido del generador para el tema
   const { source, frontMatter } = await getSource(
     "Estadistica",
     "Probabilidad",
@@ -91,6 +91,7 @@ export async function getStaticProps({ params }: any) {
 }
 
 export async function getStaticPaths() {
+  // Obtiene todos los generadores de los temas
   const posts = getSubThemeGenerators("Estadistica", "Probabilidad");
   const paths = posts.map((post) => ({
     params: {

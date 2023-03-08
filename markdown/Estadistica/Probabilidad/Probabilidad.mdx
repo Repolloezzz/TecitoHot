@@ -2,10 +2,10 @@
 name: Probabilidad
 index: 2
 description: hola mundo
-sections: [Definición de experimento, Espacios muestrales, Eventos]
+sections: [Definición de experimento, Espacios muestrales, Eventos, Algebra de eventos]
 ---
 
-<HeadTitle title="Probabilidad" created={["26-02-2023", "DD-MM-YYYY"]} />
+<HeadTitle title="Probabilidad" created={['26-02-2023', 'DD-MM-YYYY']} />
 <Sep />
 [//]: # "Definción de experimento"
 
@@ -13,83 +13,91 @@ sections: [Definición de experimento, Espacios muestrales, Eventos]
 <Ref id="Definición de experimento" />
 
 <BoxImp
-  title='¿Qué es un experimento?'
-  comment='Definción de experimento'
-  color='orange'
-  icon='flag'
-  id='def_exp'
+  title="¿Qué es un experimento?"
+  comment="Definción de experimento"
+  color="orange"
+  icon="flag"
+  id="def_exp"
 >
-    Un experimento es un método de investigación que involucra cualquier acción o
-    proceso cuyo, la misma manipula una o más <Lnk url='/themes/Estadistica/Probabilidad/ConceptosGenerales#def_var' txt='variables' ext/> de las cuales sacar conclusiones. También podemos decir que es la acción de "observar"
-    los efectos de ciertas circunstancias, fenómenos, entre otros. \
-    Para denotar un experimento se usa el símbolo <Ltx txt='\mathcal{E}'/>
+  Un experimento es un método de investigación que involucra cualquier acción o
+  proceso cuyo, la misma manipula una o más <Lnk url="/themes/Estadistica/Probabilidad/ConceptosGenerales#def_var" txt="variables" ext/>
+  de las cuales sacar conclusiones. También podemos decir que es la acción de
+  "observar" los efectos de ciertas circunstancias, fenómenos, entre otros. \
+  Para denotar un experimento se usa el símbolo <Ltx txt="\mathcal{E}" />
 </BoxImp>
-<BComment type='warn'>
-    En la definción dijimos "variables", esto hace referencia a un concepto visto en
-    los Conceptos Generales, que no es más que declarar características de las cuales
-    se tomaran datos.
+<BComment type="warn">
+  En la definción dijimos "variables", esto hace referencia a un concepto visto
+  en los Conceptos Generales, que no es más que declarar características de las
+  cuales se tomaran datos.
 </BComment>
-<BComment type='note'>
-    Un experimento puede estar basado en la observación de una población o una muestra de la misma, pero no
-    necesariamente a objetos, también puede estar basado en la observación de fenómenos.
+<BComment type="note">
+  Un experimento puede estar basado en la observación de una población o una
+  muestra de la misma, pero no necesariamente a objetos, también puede estar
+  basado en la observación de fenómenos.
 </BComment>
-<BoxImp
-  title='Tipos de experimento'
-  color='green'
-  comment='Los escenciales para más adelante'
->
-    Para los siguientes conceptos debemos definir dos tipos de experimentos que veremos.
-    - **Determinístico:** Siendo un experimento donde el resultado se puede predecir con
-        certeza a partir de un conjunto de posibles resultados.
-    - **Aleatorio:** Siendo un experimento donde el resultado es uno de los ya conocidos de
-        un conjunto de posibles resultados. Practicamente lo contrario a determinístico.
+<BoxImp title="Tipos de experimento" color="green" icon="at">
+  Para los siguientes conceptos debemos definir dos tipos de experimentos que
+  veremos a continuación:
+  - **Determinístico:** Siendo un experimento donde el resultado se puede predecir con certeza a partir de un conjunto de posibles resultados.
+  - **Aleatorio:** Siendo un experimento donde el resultado es uno de los ya conocidos de un conjunto de posibles resultados. Practicamente lo contrario a determinístico.
+
 </BoxImp>
-<BComment type='note'>
-    Para el caso de un experimento determinístico, podemos dar como ejemplo los experimentos
-    caseros:
-    <span className='my-1 bg-neutral/5 block'>
-        - <Ltx txt='\mathcal{E_1}'/>: Ponder un huevo en vinagre y observar que sucede con el cascaron.
-        - <Ltx txt='\mathcal{E_2}'/>: Ponder una lupa en medio de la luz del sol y una hoja.
-        - <Ltx txt='\mathcal{E_3}'/>: Ponder pastillas de menta a una gaseosa.
-    </span>
-    En estos experimentos, aun que usted no los haya realizado de por si seguramente ya conoce el resultado,
-    pues esta es la idea de un experimento determinístico, siendo que no es necesario realizarlo para
-    saber el resultado que tendrá.
+<BComment type="note">
+  Para el caso de un experimento determinístico, podemos dar como ejemplo los
+  experimentos caseros:
+  <Balph>
+    - <Ltx txt="\mathcal{E_1}" />: Ponder un huevo en vinagre y observar que sucede con el cascaron.
+    - <Ltx txt="\mathcal{E_2}" />: Ponder una lupa en medio de la luz del sol y una hoja.
+    - <Ltx txt="\mathcal{E_3}" />: Ponder pastillas de menta a una gaseosa.
+
+  </Balph>
+  En estos experimentos, aun que usted no los haya realizado de por si
+  seguramente ya conoce el resultado, pues esta es la idea de un experimento
+  determinístico, siendo que no es necesario realizarlo para saber el resultado
+  que tendrá, por que su resultado siempre termina siendo el mismo.
 </BComment>
-<BComment type='note'>
-    Para el caso de experimento no determinístico, al igual que uno determinístico se conoce el resultado,
-    pero no con exactitud, si no que un conjunto de posibles resultados de los cuales no se sabe cual
-    podrá resultar, pero si se sabe cuales son los posibles que podemos obtener.
+<BComment type="note">
+  Para el caso de experimento no determinístico, al igual que uno determinístico
+  se conoce el resultado, pero no con exactitud, si no que un conjunto de
+  posibles resultados de los cuales no se sabe cual podrá resultar, pero si se
+  sabe cuales son los posibles que podemos obtener. Es decir, cuando realicemos
+  el experimento podemos obtener uno de los posibles resultados aleatoriamente.
 </BComment>
 <BComment>
-    Notar que para ambos se hace referencia a un conjunto de posibles resultados de los
-    cuales ya se llegan a definir con antelación.
+  Notar que para ambos se hace referencia a un conjunto de posibles resultados
+  de los cuales ya se llegan a definir con antelación, pero para el caso de
+  experimento determinístico tenemos unicamente un resultado, pero para el no
+  determinístico tenemos más de uno.
 </BComment>
 
-<BoxChord className='mt-2' title='Ejemplo de experimento 1'>
-    Supongamos el siguiente experimento:
-    <span className='my-1 bg-neutral/5 block'>
-        <Ltx txt='\mathcal{E}'/>: Lanzar un dado y observar el número de la cara superior.
-    </span>
-    Un ejemplo simple, donde lanzamos un dado, pero notar que la misma es un experimento
-    no determinístico o aleatorio, es decir que los posibles resultados <Ltx txt='\{1, 2, 3, 4, 5, 6\}'/>
-    obtengamos uno de ellos al hacer el experimento.
+<BoxChord className="mt-2" title="Ejemplo de experimento 1">
+  Supongamos el siguiente experimento:
+  <Balph>
+    <Ltx txt="\mathcal{E}" />: Lanzar un dado y observar el número de la cara
+    superior.
+  </Balph>
+  Un ejemplo simple, donde lanzamos un dado, pero notar que la misma es un
+  experimento no determinístico o aleatorio, es decir que los posibles
+  resultados <Ltx txt="\{1, 2, 3, 4, 5, 6\}" />
+  obtengamos uno de ellos al hacer el experimento.
 </BoxChord>
-<BoxChord className='mb-2' title='Ejemplo de experimento 2'>
-    Supongamos el siguiente experimento:
-    <span className='my-1 bg-neutral/5 block'>
-        <Ltx txt='\mathcal{E}'/>: Lanzar una moneda y observar la cara superior.
-    </span>
-    Un ejemplo simple, donde lanzamos una moneda y observamos si sale "cara" o "cruz". Ahora bien,
-    notar que también este experimento es no determinístico o aleatorio. Pues, tenemos un conjunto
-    de posibles resultados <Ltx txt='\{Cara, Cruz\}'/>.
+<BoxChord className="mb-2" title="Ejemplo de experimento 2">
+  Supongamos el siguiente experimento:
+  <Balph>
+    <Ltx txt="\mathcal{E}" />: Lanzar una moneda y observar la cara superior.
+  </Balph>
+  Un ejemplo simple, donde lanzamos una moneda y observamos si sale "cara" o
+  "cruz". Ahora bien, notar que también este experimento es no determinístico o
+  aleatorio. Pues, tenemos un conjunto de posibles resultados{' '}
+  <Ltx txt="\{Cara, Cruz\}" />.
 </BoxChord>
 
 Como se vió, un experimento es simplemente es la observación y toma de datos de varias
 variables, como tal estos conceptos son fundamentales para empezar a trabajar con los
 que se dijo anteriormente, los conjuntos que contienen los posibles resultados.
 
-[//]: # "Definción de Espacio muestral"
+[//]: # 'Definción de Espacio muestral'
+
 <Sep />
 <TitleSection txt="Espacios muestrales" nr={2} />
 <Ref id="Espacios muestrales" />
@@ -98,6 +106,7 @@ que se dijo anteriormente, los conjuntos que contienen los posibles resultados.
   comment='Definción de espacio muestral'
   id='def_esp_mus'
   color='orange'
+  icon='flag'
 >
     El espacio muestral de un experimento, es el conjunto de todos los posibles resultados de tal
     experimento.\
@@ -111,229 +120,255 @@ que se dijo anteriormente, los conjuntos que contienen los posibles resultados.
     - **-Compuestos:** contiene datos compuesto o "multivariantes".
 </BComment>
 <BComment type='note'>
-    Otra forma de verlo es considerando dos experimentos **simples** y hacer una operación con ellos.
-    Por ejemplo:
-    <span className='my-1 bg-neutral/5 block'>
-        <Ltx txt='\mathcal{E_1}'/>: lanzar una moneda. \
-        <Ltx txt='\mathcal{E_2}'/>: lanzar un dado. \
-        <Ltx txt='\mathcal{E_3}'/>: lanzar una moneda **Y** un dado. \
-        <Ltx txt='\mathcal{E_4}'/>: lanzar una moneda **Ó** un dado.
-    </span>
-    Como vemos el experimento 3 y 4 son una combinación del 1 y del 2, pero resaltamos el conector
-    **Ó** e **y**, pues denotar una operación con espacios muestrales.
-    <span className='my-1 bg-neutral/5 block'>
-        <Ltx txt='\mathcal{S_1}'/>: \{Cara, Cruz\}. \
-        <Ltx txt='\mathcal{S_2}'/>: \{1,2,3,4,5,6\}. \
-        <Ltx txt='\mathcal{S_3}'/>: <Ltx txt='S_2 \times S_4'/> = \{(Cara, 1), (Cruz, 1), (Cara, 2), (Cruz, 2), ... (Cruz, 6)\}. \
-        <Ltx txt='\mathcal{S_4}'/>: <Ltx txt='S_2 \cup S_3'/> = \{Cara, Cruz, 1, 2, 3, 4, 5, 6\}.
-    </span>
-    Donde tenemos que <Ltx txt='\mathcal{E_3}'/> considera a <Ltx txt='\mathcal{E_1,E_2}'/> sucediendo al mismo tiempo
-    por lo que su espacio muestral es un **producto cartesiano** de los espacios muestrales de <Ltx txt='\mathcal{E_1,E_2}'/>.
-    Por otro lado, <Ltx txt='\mathcal{E_3}'/> considera a <Ltx txt='\mathcal{E_1,E_2}'/> donde solo uno de ellos
-    puede pasar, es decir o pasa <Ltx txt='\mathcal{E_1}'/> o pasa <Ltx txt='\mathcal{E_2}'/>, por lo que su espacio
-    muestral es la **unión de conjuntos** de <Ltx txt='\mathcal{E_1,E_2}'/>. Por lo tanto, <Ltx txt='\mathcal{E_3,E_4}'/>
-    **son experimentos compuestos** pues se basan en más de un experimento simple
+  Otra forma de verlo es considerando dos experimentos **simples** y hacer una operación con ellos.
+  Por ejemplo:
+  <Balph>
+    - <Ltx txt='\mathcal{E_1}'/> : lanzar una moneda.
+    - <Ltx txt='\mathcal{E_2}'/> : lanzar un dado.
+    - <Ltx txt='\mathcal{E_3}'/> : lanzar una moneda **Y** un dado.
+    - <Ltx txt='\mathcal{E_4}'/> : lanzar una moneda **Ó** un dado.
+  </Balph>
+  Como vemos el experimento 3 y 4 son una combinación del 1 y del 2, pero resaltamos el conector
+  **Ó** e **y**, pues denotar una operación con espacios muestrales.
+  <Balph>
+    - <Ltx txt='\mathcal{S_1}'/> = \{Cara, Cruz\}.
+    - <Ltx txt='\mathcal{S_2}'/> = \{1,2,3,4,5,6\}.
+    - <Ltx txt='\mathcal{S_3}'/> = <Ltx txt='S_2 \times S_4'/> = \{(Cara, 1), (Cruz, 1), (Cara, 2), (Cruz, 2), ... (Cruz, 6)\}.
+    - <Ltx txt='\mathcal{S_4}'/> = <Ltx txt='S_2 \cup S_3'/> = \{Cara, Cruz, 1, 2, 3, 4, 5, 6\}.
+
+  </Balph>
+  Donde tenemos que <Ltx txt='\mathcal{E_3}'/> considera a <Ltx txt='\mathcal{E_1,E_2}'/> sucediendo al mismo tiempo
+  por lo que su espacio muestral es un **producto cartesiano** de los espacios muestrales de <Ltx txt='\mathcal{E_1,E_2}'/>.
+  Por otro lado, <Ltx txt='\mathcal{E_3}'/> considera a <Ltx txt='\mathcal{E_1,E_2}'/> donde solo uno de ellos
+  puede pasar, es decir o pasa <Ltx txt='\mathcal{E_1}'/> o pasa <Ltx txt='\mathcal{E_2}'/>, por lo que su espacio
+  muestral es la **unión de conjuntos** de <Ltx txt='\mathcal{E_1,E_2}'/>. Por lo tanto, <Ltx txt='\mathcal{E_3,E_4}'/>
+  **son experimentos compuestos** pues se basan en más de un experimento simple
 </BComment>
 <BComment type='note'>
-    Notar que la definición de espacio muestral se atribuye bastante a un experimento
-    no determinístico. Pues, la misma es un conjunto de posibles resultados.
+  Notar que la definición de espacio muestral se atribuye bastante a un experimento
+  no determinístico. Pues, la misma es un conjunto de posibles resultados.
 </BComment>
-<BoxChord className='mt-2' title='Ejemplo de espacio muestral 1'>
-    Supongamos el siguiente experimento:
-    <span className='my-1 bg-neutral/5 block'>
-        <Ltx txt='\mathcal{E_1}'/>: lanzar una botella y observar como cae.
-    </span>
-    De este experimento podemos sacar los posibles resultados al hacerlo, siendo que:
-    <span className='my-1 bg-neutral/5 block'>
-        <Ltx txt='\mathcal{S_1}'/> = \{de pie, de cabeza, de costado\}
-    </span>
-    Como vemos, tenemos posibles resultados al hacer nuestro experimento. Pero, no sabemos
-    cual de ellos nos saldra como resultado.
+<BoxChord className='mt-2' title='Ejemplo de espacio muestral 1' color='blue'>
+  Supongamos el siguiente experimento:
+  <Balph>
+    <Ltx txt='\mathcal{E_1}'/> : lanzar una botella y observar como cae.
+  </Balph>
+  De este experimento podemos sacar los posibles resultados al hacerlo, siendo que:
+  <Balph>
+    <Ltx txt='\mathcal{S_1}'/> = \{de pie, de cabeza, de costado\}
+  </Balph>
+  Como vemos, tenemos posibles resultados al hacer nuestro experimento. Pero, no sabemos
+  cual de ellos nos saldra como resultado, entonces el experimento es no deterministico
+  o aleatorio.
+  <ImgAbs
+    src='http://media4.giphy.com/media/l46CBrjRXMDlQyUIE/giphy.gif'
+    title='Botella challenge, un ejemplo claro'
+    content={<>El reto de la botella, la misma consiste en intentar hacer car una botella de píe. La imagen se sacó de <Lnk url='https://www.20minutos.es/noticia/2852001/0/reto-botella-fenomeno-limites-viral/' content='esta página'/></>}
+  />
 </BoxChord>
 <BoxChord title='Ejemplo de espacio muestral 2' color='blue'>
-    Supongamos el siguiente experimento:
-    <span className='my-1 bg-neutral/5 block'>
-        <Ltx txt='\mathcal{E_2}'/>: Jugar en una ruleta americana y observar el número que sale
-    </span>
-    De este experimento sabemos los posibles resultados al realizarlo:
-    <span className='my-1 bg-neutral/5 block'>
-        <Ltx txt='\mathcal{S_2}'/> = <Ltx txt='\{x:0\leq x \leq 38\}'/>
-        <LComment>Osea todos los números del 0 al 38</LComment>
-    </span>
-    Viendolo así tenemos que al jugar en una ruleta americana nos puede salir uno de los resultados
-    del espacio muestral, en este caso solo nos fijamos en el número.
-    <ImgAbs
-      title='Ruleta americana'
-      content={<>Esto es una ruleta americana, generalmente vista en casinos</>}
-      src='https://img.europapress.es/fotoweb/fotonoticia_20160229130911_1200.jpg'
-    />
-    <LComment>Imagen de lo que es una ruleta americana</LComment>
+  Supongamos el siguiente experimento:
+  <Balph>
+    <Ltx txt='\mathcal{E_2}'/> : Jugar en una ruleta americana y observar el número que sale
+  </Balph>
+  De este experimento sabemos los posibles resultados al realizarlo:
+  <Balph>
+    <Ltx txt='\mathcal{S_2}'/> = <Ltx txt='\{x:0\leq x \leq 38\}'/>
+    <LComment>Osea todos los números del 0 al 38</LComment>
+  </Balph>
+  Viendolo así tenemos que al jugar en una ruleta americana nos puede salir uno de los resultados
+  del espacio muestral, siendo que es un juego de azar, pues no sabemos cual es el resultado exacto
+  que obtendremos al realizar el experimento.
+  <ImgAbs
+    title='Ruleta americana'
+    content={<>Esto es una ruleta americana, generalmente vista en casinos</>}
+    src='https://img.europapress.es/fotoweb/fotonoticia_20160229130911_1200.jpg'
+  />
+  <LComment>Imagen de lo que es una ruleta americana</LComment>
 </BoxChord>
-<BoxChord title='Ejemplo de espacio muestral 3'>
-    Supongamos el siguiente experimento:
-    <span className='my-1 bg-neutral/5 block'>
-        <Ltx txt='\mathcal{E_3}'/>: De una caja que contiene pelotas de color enumeradas, dos de color rojo y dos de color azul. Observar el color y observar el número al sacar una pelota
-    </span>
-    Siendo que sacaremos una pelota podemos dar con su espacio muestral:
-    <span className='my-1 bg-neutral/5 block'>
-        <Ltx txt='\mathcal{S_3}'/> = \{(1, rojo), (1, azul), (2, rojo), (2, azul)\} 
-    </span>
-    Así tenemos que el espacio muestral del experimento <Ltx txt='\mathcal{E_3}'/> es un conjunto
-    cuyos elementos son datos multivariantes, entonces es un espacio muestral compuesto.
+<BoxChord title='Ejemplo de espacio muestral 3' color='yellow'>
+  Supongamos que tenemos una caja con cuatro pelotas, dos son de color rojo y las otras dos son de color
+  azul. Además, cada pelota tiene un número unico del 1 al 2:
+  <Balph>
+    <Ltx txt='\mathcal{E_3}'/> : Sacar una pelota y observar el número y el color.
+    <LComment>Este es un experimento compuesto, tiene espacio muestral compuesto</LComment>
+  </Balph>
+  Siendo que sacaremos una pelota podemos dar con su espacio muestral:
+  <Balph>
+    <Ltx txt='\mathcal{S_3}'/> = \{(1, rojo), (2, rojo), (1, azul), (2, azul)\}
+  </Balph>
+  Así tenemos que el espacio muestral del experimento <Ltx txt='\mathcal{E_3}'/> es un conjunto
+  cuyos elementos son datos multivariantes, entonces es un espacio muestral compuesto.
+  <VidAbs
+    url='/themes/Estadistica/Probabilidad/1_ex1.mp4'
+    title='Representación del experimento'
+    content={<>Video representativo de como se obtiene los elementos del espacio muestral del experimentodo donde se sacan cuatro pelotas de colores</>}
+    playing
+    loop
+  />
 </BoxChord>
-<BoxChord title='Ejemplo de espacio muestral 3' color='green'>
-    Supongamos los siguientes experimentos:
-    <span className='my-1 bg-neutral/5 block'>
-        - <Ltx txt='\mathcal{E_1}'/>: De una caja con 4 tickets sacar uno y ver el color.
-        - <Ltx txt='\mathcal{E_2}'/>: De una caja con 4 tickets sacar uno y el premio.
-        - <Ltx txt='\mathcal{E_3}'/>: De una caja con 4 tickets sacar uno, ver el color **Y** el premio.
-    </span>
-    Como vemos el experimento tres es una combinación del uno y del dos, la misma tendrá un espacio muestral
-    compuesto pues conecta al experimento uno y dos con el **Y**.
-    <span className='my-1 bg-neutral/5 block'>
-        <Ltx txt='\mathcal{S_1}'/> = \{rojo, amarillo, verde, azul\}.
-        <Ltx txt='\mathcal{S_2}'/> = \{helado, jugo, almuerzo, papas\}.
-        <Ltx txt='\mathcal{S_3}'/> = <Ltx txt='\mathcal{S_1 \times S_2}'/> = \{(rojo, helado), (amarillo, helado), ..., (azul, papas)\}.
-    </span>
-    Pues en el experimento tres hacemos dos cosas a la vez, entonces su espacio muestral se representa como un conjunto de
-    pares ordenados.
+<BoxChord title='Ejemplo de espacio muestral 4' color='green'>
+  Supongamos los siguientes experimentos:
+  <Balph>
+    - <Ltx txt='\mathcal{E_1}'/> : De una caja con 4 tickets sacar uno y ver el color.
+    - <Ltx txt='\mathcal{E_2}'/> : De una caja con 4 tickets sacar uno y el premio.
+    - <Ltx txt='\mathcal{E_3}'/> : De una caja con 4 tickets sacar uno, ver el color **Y** el premio.
+
+  </Balph>
+  Como vemos el experimento tres es una combinación del uno y del dos, la misma tendrá un espacio muestral
+  compuesto pues conecta al experimento uno y dos con el **Y**.
+  <Balph>
+    - <Ltx txt='\mathcal{S_1}'/> = \{rojo, amarillo, verde, azul\}.
+    - <Ltx txt='\mathcal{S_2}'/> = \{helado, jugo, almuerzo, papas\}.
+    - <Ltx txt='\mathcal{S_3}'/> = <Ltx txt='\mathcal{S_1 \times S_2}'/> = \{(rojo, helado), (amarillo, helado), ..., (azul, papas)\}.
+
+  </Balph>
+  Pues en el experimento tres hacemos dos cosas a la vez, entonces su espacio muestral se representa como un conjunto de
+  pares ordenados.
 </BoxChord>
 <BoxImp
   title='Tipos de espacios muestrales'
-  comment='definición de dos tipos'
   id='tip_mues'
   color='green'
+  icon='at'
 >
-    Sea un experimento denotado por <Ltx txt='\mathcal{E}'/>, la misma tiene un espacio muestral
-    denotado por <Ltx txt='\mathcal{S}'/>. Su espacio muestral puede ser:
-    <BoxSimp title='Discretos' className='text-base-content'>
-        Espacios muestrales que se conforman por:
-        - **discreto finito:** un conjunto limitado, donde se puede contar todos sus elementos.
-        - **discreto infinito:*** un conjunto infinito, onde se pueden enumerar sus elementos, es decir que se puede armar una lista o una suceción con estos elementos.
-    </BoxSimp>
-    <BoxSimp title='Continuos' className='text-base-content'>
-        Espacios muestrales donde sus elementos son infinitos, se definen en un rango pero como tal
-        no son numerables, entonces no se pude saber con exactitud como van todos sus elementos.
-    </BoxSimp>
-    Es decir que es discreto cuando los elementos se pueden contar o se pueden enumerar, y es continuo si
-    no se puede contar y no se puede enumerar.
+  Sea un experimento denotado por <Ltx txt='\mathcal{E}'/>, la misma tiene un espacio muestral
+  denotado por <Ltx txt='\mathcal{S}'/>. Su espacio muestral puede ser:
+  <BoxSimp title='Discretos' className='text-base-content'>
+    Espacios muestrales que se conforman por:
+    - **discreto finito:** un conjunto limitado, donde se puede contar todos sus elementos.
+    - **discreto infinito:*** un conjunto infinito, onde se pueden enumerar sus elementos, es decir que se puede armar una lista o una suceción con estos elementos.
+  </BoxSimp>
+  <BoxSimp title='Continuos' className='text-base-content'>
+    Espacios muestrales donde sus elementos son infinitos, se definen en un rango pero como tal
+    no son numerables, entonces no se pude saber con exactitud como van todos sus elementos.
+  </BoxSimp>
+  Es decir que es discreto cuando los elementos se pueden contar o se pueden enumerar, y es continuo si
+  no se puede contar y no se puede enumerar.
 </BoxImp>
 <BComment type='note'>
-    Como tal es una clasificación de los tipos de espacios muestrales:
-    - **Discreto:** finito contable o infinito enumerable.
-    - **Continuo:** infinito no numerable y no contable.
+  Como tal es una clasificación de los tipos de espacios muestrales:
+  - **Discreto:** finito contable o infinito enumerable.
+  - **Continuo:** infinito no numerable y no contable.
 </BComment>
 <BoxChord title='Ejemplo de espacio muestral discreto 1'>
-    Supongamos el siguiente experimento:
-    <span className='my-1 bg-neutral/5 block'>
-        <Ltx txt='\mathcal{E}'/>: Lanzar un dado y ver la cara superior.
-    </span>
-    Su espacio muestral simplemente es:
-    <span className='my-1 bg-neutral/5 block'>
-        <Ltx txt='\mathcal{S}:\{1,2,3,4,5,6\}'/>
-    </span>
-    Como vemos el mismo se puede **enumerar**, además de que los elementos en
-    <Ltx txt='\mathcal{S}'/> son finitos. Por lo tanto este es un espacio
-    muestral discreto finito por que se pueden contar sus elementos.
+  Supongamos el siguiente experimento:
+  <Balph>
+    <Ltx txt='\mathcal{E}'/>: Lanzar un dado y ver la cara superior.
+  </Balph>
+  Su espacio muestral simplemente es:
+  <Balph>
+    <Ltx txt='\mathcal{S}=\{1,2,3,4,5,6\}'/>
+  </Balph>
+  Como vemos el mismo se puede **enumerar**, además de que los elementos en
+  <Ltx txt='\mathcal{S}'/> son finitos. Por lo tanto este es un espacio
+  muestral discreto finito por que se pueden contar sus elementos.
 </BoxChord>
 <BoxChord title='Ejemplo de espacio muestral discreto 2'>
-    Supongamos el siguiente experimento:
-    <span className='my-1 bg-neutral/5 block'>
-        <Ltx txt='\mathcal{E}'/>: Encuestar a una persona si ya comio.
-    </span>
-    Como tal es un experimento simple, preguntar a alguien si ya comio. Pues, tenemos que
-    su espacio muestral es:
-    <span className='my-1 bg-neutral/5 block'>
-        <Ltx txt='\mathcal{S}'/>: \{SI, NO\}.
-    </span>
-    Pues son las unicas respuestas que nos pueden dar. Por lo tanto, este es un espacio
-    muestral discreto finito, ya que tiene finitos elementos que se pueden contar.
+  Supongamos el siguiente experimento:
+  <Balph>
+    <Ltx txt='\mathcal{E}'/>: Encuestar a una persona si ya comio.
+  </Balph>
+  Como tal es un experimento simple, preguntar a alguien si ya comio. Pues, tenemos que
+  su espacio muestral es:
+  <Balph>
+    <Ltx txt='\mathcal{S}'/>= \{SI, NO\}.
+  </Balph>
+  Pues son las unicas respuestas que nos pueden dar. Por lo tanto, este es un espacio
+  muestral discreto finito, ya que tiene finitos elementos que se pueden contar.
 </BoxChord>
 <BoxChord title='Ejemplo de espacio muestral discreto 3'>
-    Un ejemplo claro de lo que es un espacio muestral discreto infinito es
-    el conjunto de numeros naturales. Pues tenemos que se denota como.
-    <span className='my-1 bg-neutral/5 block'>
-        <Ltx txt='\mathcal{S}:\{1,2,3,4...\infty\}'/>.
-    </span>
-    La misma es discreta pues se pueden enumerar sus elementos (de por si ya son números), y
-    también los conocemos.
+  Un ejemplo claro de lo que es un espacio muestral discreto infinito es
+  el conjunto de numeros naturales. Pues tenemos que se denota como.
+  <Balph>
+    <Ltx txt='\mathcal{S}=\{1,2,3,4...\infty\}'/>.
+  </Balph>
+  La misma es discreta pues se pueden enumerar sus elementos (de por si ya son números), y
+  también los conocemos.
 </BoxChord>
 <BoxChord title='Ejemplo de espacio muestral discreto 4'>
-    Supongamos el siguiente experimento:
-    <span className='my-1 bg-neutral/5 block'>
-        <Ltx txt='\mathcal{E}'/>: Lanzar una moneda infinitas veces y ver la cara superior.
-    </span>
-    Considerarlo como un solo experimento, al lanzarlo infinitas veces tendremos infinitos
-    resultados.
-    <span className='my-1 bg-neutral/5 block'>
-        <Ltx txt='\mathcal{S}'/>: \{CARA, CRUZ, CARA, CRUZ, CARA, CRUZ, ....\}.
-    </span>
-    en este caso es una sucesión infinita de resultados, donde literalmente podemos saber el siguiente ya que
-    es como una serie que se repite, entonces el epacio muestral es enumerable y eso implica que es un
-    espacio muestral discreto infinito por que es enumerable.
+  Supongamos el siguiente experimento:
+  <Balph>
+    <Ltx txt='\mathcal{E}'/>: Lanzar una moneda infinitas veces y ver la cara superior.
+  </Balph>
+  Considerarlo como un solo experimento, al lanzarlo infinitas veces tendremos infinitos
+  resultados.
+  <Balph>
+    <Ltx txt='\mathcal{S}'/>= \{CARA, CRUZ, CARA, CRUZ, CARA, CRUZ, ....\}.
+  </Balph>
+  en este caso es una sucesión infinita de resultados, donde literalmente podemos saber el siguiente ya que
+  es como una serie que se repite, entonces el epacio muestral es enumerable y eso implica que es un
+  espacio muestral discreto infinito por que es enumerable.
 </BoxChord>
 <BoxChord title='Ejemplo de espacio muestral discreto 5'>
-    Supongamos el siguiente experimento:
-    <span className='my-1 bg-neutral/5 block'>
-        <Ltx txt='\mathcal{E}'/>: formar una palabra con las letras del alfabeto.
-    </span>
-    Como tal existen una cantidad infinita de palabras, de poder contarlos se puede pero
-    es un número extremadamente grande que no podriamos. Pero, sabemos que tiene que haber un final,
-    de manera que podemos enumerarlos de forma que hagamos primero todas las paralbras con la primera
-    letra a luego la b y así, es decir los enumeramos, entonces su espacio muestral es uno discreto infinito
-    por que no sabemos la cantidad y no podemos contarlos, pero si podemos enumerarlos.
+  Supongamos el siguiente experimento:
+  <Balph>
+    <Ltx txt='\mathcal{E}'/>: formar una palabra con las letras del alfabeto.
+  </Balph>
+  Como tal existen una cantidad infinita de palabras, de poder contarlos se puede pero
+  es un número extremadamente grande que no podriamos. Pero, sabemos que tiene que haber un final,
+  de manera que podemos enumerarlos de forma que hagamos primero todas las paralbras con la primera
+  letra a luego la b y así, es decir los enumeramos, entonces su espacio muestral es uno discreto infinito
+  por que no sabemos la cantidad y no podemos contarlos, pero si podemos enumerarlos.
 </BoxChord>
 <BComment type='warn'>
-    Los espacios muestrales discretos **infinitos** tiene una manera de enumerar sus elementos, puede ser enlistando,
-    ordenado como una sucesión, asignandole un valor número como una etiqueta de forma que este ordenado.
+  Los espacios muestrales discretos **infinitos** tiene una manera de enumerar sus elementos, puede ser enlistando,
+  ordenado como una sucesión, asignandole un valor número como una etiqueta de forma que este ordenado.
 </BComment>
 
-<BoxChord title='Ejemplo de espacio muestral continuo 1'>
-    Supongamos el siguiente experimento:
-    <span className='my-1 bg-neutral/5 block'>
-        <Ltx txt='\mathcal{E}'/>: Medir la altura de una población de personas.
-    </span>
-    Como mediremos la altura de muchas personas tenemos que no todas sus alturas serán iguales, pero sabemos
-    con antelación que minimamente las alturas que saquemos como resultados estaran en un **rango**.
-    <span className='my-1 bg-neutral/5 block'>
-        <Ltx txt='\mathcal{S}: \{h:1.50[m]\leq h \leq 2[m]\}'/>
-    </span>
-    Estamos hablando de un rango exacto, podriamos decir el rango <Ltx txt='[1.50, 2.00]\in\mathbb{R}'/>
-    por definición este intervalo o rango es infinito. Entonces es un espacio muestral continuo por que
-    sus elementos están en un rango infinito, pues hablamos de alturas espacíficas para cada persona, esto
-    incluye una exactitud precisa.
+<BoxChord title="Ejemplo de espacio muestral continuo 1">
+  Supongamos el siguiente experimento:
+  <Balph>
+    <Ltx txt="\mathcal{E}" />: Medir la altura de una población de personas.
+  </Balph>
+  Como mediremos la altura de muchas personas tenemos que no todas sus alturas
+  serán iguales, pero sabemos con antelación que minimamente las alturas que
+  saquemos como resultados estaran en un **rango**.
+  <Balph>
+    <Ltx txt="\mathcal{S}= \{h:1.50[m]\leq h \leq 2[m]\}" />
+  </Balph>
+  Estamos hablando de un rango exacto, podriamos decir el rango{' '}
+  <Ltx txt="[1.50, 2.00]\in\mathbb{R}" />
+  por definición este intervalo o rango es infinito. Entonces es un espacio muestral
+  continuo por que sus elementos están en un rango infinito, pues hablamos de alturas
+  espacíficas para cada persona, esto incluye una exactitud precisa.
 </BoxChord>
-<BoxChord title='Ejemplo de espacio muestral continuo 2'>
-    Supongamos el siguiente experimento:
-    <span className='my-1 bg-neutral/5 block'>
-        <Ltx txt='\mathcal{E_3}'/>: Medir la distancia que corre una persona en 30 minutos.
-    </span>
-    Donde tenemos que las personas minimamente se encuentran en este rango:
-    <span className='my-1 bg-neutral/5 block'>
-        <Ltx txt='\mathcal{S}: \{x:100[m]\leq h \leq 3000[m]\}'/>
-    </span>
-    Donde hablamos especificamente de valores exactos, 100.000001, 100.000002, así, es decir una cantidad
-    infinita de números entre 100 y 300. Por lo tanto, el espacio muestral es continuo por que
-    no se pueden contar sus elementos y no se pueden enumerar de alguna manera.
+<BoxChord title="Ejemplo de espacio muestral continuo 2">
+  Supongamos el siguiente experimento:
+  <Balph>
+    <Ltx txt="\mathcal{E_3}" />: Medir la distancia que corre una persona en 30
+    minutos.
+  </Balph>
+  Donde tenemos que las personas minimamente se encuentran en este rango:
+  <Balph>
+    <Ltx txt="\mathcal{S}= \{x:100[m]\leq h \leq 3000[m]\}" />
+  </Balph>
+  Donde hablamos especificamente de valores exactos, 100.000001, 100.000002,
+  así, es decir una cantidad infinita de números entre 100 y 300. Por lo tanto,
+  el espacio muestral es continuo por que no se pueden contar sus elementos y no
+  se pueden enumerar de alguna manera.
 </BoxChord>
-<BComment type='warn'>
-    Como se ve en los ejemplos, un espacio muestral continuo es un conjunto que se denota a sus elementos
-    en un **rango**, como tal es algo parecido a los intervalos en matemáticas, pues de [0, 1] el rango entre
-    0 y 1 es infinitos, pues existen infinitos números entre ambos como 0.000000001 así hasta el 1. Osea, no se
-    pueden contar, es infinito literalmente, no se pueden enumerar.
+<BComment type="warn">
+  Como se ve en los ejemplos, un espacio muestral continuo es un conjunto que se
+  denota a sus elementos en un **rango**, como tal es algo parecido a los
+  intervalos en matemáticas, pues de [0, 1] el rango entre 0 y 1 es infinitos,
+  pues existen infinitos números entre ambos como 0.000000001 así hasta el 1.
+  Osea, no se pueden contar, es infinito literalmente, no se pueden enumerar.
 </BComment>
-<BComment type='alert'>
-    La gran diferencia entre un espacio muestral **discreto infinito** y uno **continuo** es que para
-    el primero se pueden enumerar de manera **precisa**, enlistandolos o haciendolo como una sucesión.
-    Por otro lado, en un espacio muestral continuo no se pueden contar sus elementos de ninguna manera
-    y no se los puede enumerar de manera precisa, pues al ser infinitos elementos no tenemos forma
-    de enumerarlos.
+<BComment type="alert">
+  La gran diferencia entre un espacio muestral **discreto infinito** y uno
+  **continuo** es que para el primero se pueden enumerar de manera **precisa**,
+  enlistandolos o haciendolo como una sucesión. Por otro lado, en un espacio
+  muestral continuo no se pueden contar sus elementos de ninguna manera y no se
+  los puede enumerar de manera precisa, pues al ser infinitos elementos no
+  tenemos forma de enumerarlos.
 </BComment>
-<BComment type='note'>
-    Viendolo de otra forma, en un espacio muestral continuo los elementos siguen una continuidad,
-    y como tal no es posible representarlos, la manera de hacerlo generalmente es con una función,
-    algo parecido a una función cualquiera en matemáticas. Podemos tener muchos valores de respuesta y
-    como tal estas respuestas son infinitas.
+<BComment type="note">
+  Viendolo de otra forma, en un espacio muestral continuo los elementos siguen
+  una continuidad, y como tal no es posible representarlos, la manera de hacerlo
+  generalmente es con una función, algo parecido a una función cualquiera en
+  matemáticas. Podemos tener muchos valores de respuesta y como tal estas
+  respuestas son infinitas.
 </BComment>
 
 Como tal el problema es entender como se diferencian un espacio muestral discreto infinito y un espacio
@@ -341,24 +376,341 @@ muestral continuo. Pues, si bien parece que ambas son iguales, la verdad es que 
 que las hemos repetido una y otra vez, la enumeración y el poder contarlos.
 
 <Sep />
-[//]: # "Definción de experimento"
+[//]: # "Definción de eventos"
 <TitleSection txt="Eventos" nr={3} />
 <Ref id="Eventos" />
 <BoxImp
-  title='¿Qué es un evento?'
-  comment='Definición de evento'
-  id='def_event'
+  title="¿Qué es un evento?"
+  comment="Definición de evento"
+  id="def_event"
+  color="orange"
+  icon="flag"
+>
+  Un evento es un **subconjunto** de un espacio muestral
+  <Ltx txt="\mathcal{S}" />, denotado por letras mayúsculas como <Ltx txt="A,B,C,D" /> .Por otro lado,
+  como tal un evento considera un subconjunto de resultados del espacio muestral que sucedan.
+  - **Evento simple:** considera unicamente un elemento o resultado en <Ltx txt="\mathcal{S}" />.
+  - **Evento compuesto:** considra más de un elemento o resultado en <Ltx txt="\mathcal{S}" />.
+
+</BoxImp>
+<BComment type="note">
+  Como tal un evento recopila una cantidad de resultados de un experimento
+  <Ltx txt="\mathcal{E}" />, donde tenemos que un evento simple es literalmente
+  un elemento de el espacio muestral. Mientras que, un evento compuesto es un
+  subconjunto que considera MÁS DE UN elemento, entonces seria un conjunto de
+  eventos simples.
+</BComment>
+<BoxChord title="Ejemplo de evento 1">
+  Supongamos nuevamente el experimento de lanzar un dado, donde tenemos que el
+  espacio muestral es:
+  <Balph>
+    <Ltx txt="\mathcal{S}=\{1,2,3,4,5,6\}" />
+  </Balph>
+  Podemos definir los siguientes eventos **simples**:
+  <Balph>
+    - <Ltx txt="E_1" />: sale uno = 1.
+    - <Ltx txt="E_2" />: sale dos = 2.
+    - <Ltx txt="E_3" />: sale tres = 3.
+    - <Ltx txt="E_4" />: sale cuatro = 4.
+    - <Ltx txt="E_5" />: sale cinco = 5.
+    - <Ltx txt="E_6" />: sale seis = 6.
+
+  </Balph>
+  Notar que estos eventos simples literalmente son subconjuntos de{' '}
+  <Ltx txt="\mathcal{S}" /> que al juntarlos en un conjunto forman un espacio
+  muestral igual a <Ltx txt="\mathcal{S}" />. Por otro lado, si consideramos
+  eventos **compuestos** tenemos que:
+  <Balph>
+    - <Ltx txt="A" />= sale par = <Ltx txt="\{E_2,E_4,E_6\}" /> = <Ltx txt="\{2,4,6\}" />.
+    - <Ltx txt="B" />= sale impar = <Ltx txt="\{E_1,E_3,E_5\}" /> = <Ltx txt="\{1,3,5\}" />
+
+  </Balph>
+  Ahora los eventos A y B se forman a partir de eventos simples, pues las mismas
+  ya no son elementos individuales si no que son subconjuntos del espacio
+  muestral <Ltx txt="\mathcal{S}" />.
+</BoxChord>
+<BoxChord className="mb-2" title="Ejemplo de evento 2" color="yellow">
+  Supongamos que tenemos una baraja de poker, unicamente solo las cartas con
+  números y de colores rojo y azul. Entonces tenemos que:
+  <VidAbs
+    url="/themes/Estadistica/Probabilidad/3_ex2.mp4"
+    title="Ejemplo de evento con cartas"
+    content={
+      <>
+        En el video se representa un espacio muestral de un experimento, donde a
+        partir de cirtos eventos obtenemos subconjuntos del espacio muestral
+      </>
+    }
+    loop
+    playing
+  />
+  Como observamos tenemos los siguentes eventos.
+  <Balph>
+    - <Ltx txt="A" />= el número de la carta es par.
+    - <Ltx txt="B" />= el número de la carta es primo.
+
+  </Balph>
+  Como tal ambos son eventos, pues son subconjuntos del espacio muestral para el
+  caso ambos eventos se enfocan en el número de la carta.
+</BoxChord>
+
+Como observamos, cada evento lo podemos considerar como un subconjunto de un espacio muestral, entonces
+tenemos que podemos hacer operaciones con los mismo. Pero, no hay que pensarlo como un conjuntos unicamente,
+pues eso es muy matemático, lo que tenemos que pensar es que un evento simplemente es un **un suceso específico**
+que sucede en nuestro experimento.
+
+<BoxImp
+  title="Operaciones con eventos"
+  comment="Operaciones de conjuntos con perspectiva de eventos"
+  id="op_event"
+  color="pink"
+  icon="list"
+>
+  Sea un experimento <Ltx txt="\mathcal{E}" /> con espacio muestral
+  <Ltx txt="\mathcal{S}" />, donde tenemos que los eventos <Ltx txt="A,B,C,D" />
+  son subconjuntos de <Ltx txt="\mathcal{S}" />. Entonces tenemos que:
+  <BoxSimp className="text-base-content">
+    - <Ltx txt="A \cup B = \{w:w \in A \lor w \in B \}" />
+    <LComment>Operación unión de eventos</LComment>
+    - <Ltx txt="A \cap B = \{w:w \in A \land w \in B \}" />
+    <LComment>Operación intersección de eventos</LComment>
+    - <Ltx txt="A^c = \{w:w \in \mathcal{S} \land w \notin A \}" />
+    <LComment>Operación complemento de un evento</LComment>
+    - <Ltx txt="A - B = \{w:w \notin A \land w \in B \}" />
+    <LComment>Operación diferencia de eventos</LComment>
+  </BoxSimp>
+  De estas operaciones derivan operaciones que combinan a las mismas.
+</BoxImp>
+<BComment type="warn">
+  Consideremos algunas situaciones:
+  <Balph>
+    - <Ltx txt="A \cup B = S" />, entonces se considera a <Ltx txt="A" /> y <Ltx txt="B" /> como eventos exhaustivos.
+    - <Ltx txt="A \cap B = \emptyset" />, entonces se considera a <Ltx txt="A" /> y <Ltx txt="B" /> como eventos mutuamente excluyentes.
+    - <Ltx txt="A \cap B \neq \emptyset" />, entonces se considera a <Ltx txt="A" /> y <Ltx txt="B" /> como eventos complementarios.
+  </Balph>
+  Ambas representan situaciones en los eventos tienen alguna relación o ninguna relación una con la otra.
+  Es decir, que no comparten algún elemento entre ellos.
+</BComment>
+<BComment type='note'>
+  Como dijimos anteriormente, los eventos son subconjuntos de un espacio muestral, entonces cumplen
+  con las propiedades de los conjuntos. Por lo tanto, podemos aplicar las propiedades de los conjuntos
+  para realizar operaciones con las mismas.
+</BComment>
+<BComment type='note'>
+  Generalmente al hacer operaciones con eventos, tendremos que analizar las premisas o descripciones que las
+  representan, pues según el "conector" (palabra que conecta dos premisas. Ej y, o, con, sin, solo )
+  nos dara una operación u otra, esto queda a criterio de usted. Ejemplos:
+  - <Ltx txt='A'/> y <Ltx txt='B'/>, entonces <Ltx txt='A \cap B'/>.
+  - <Ltx txt='A'/> o <Ltx txt='B'/>, entonces <Ltx txt='A \cup B'/>.
+  - <Ltx txt='A'/> sin <Ltx txt='B'/>, entonces <Ltx txt='A - B'/>.
+  - Todo menos <Ltx txt='A'/>, entonces <Ltx txt='A^c'/>
+</BComment>
+<BoxChord title='Ejemplo de unión de eventos 1'>
+  Supongamos el siguente experimento y su espacio muestral:
+  <Balph>
+    - <Ltx txt='\mathcal{E}'/> : lanzar un dado y observar la cara superior.
+    - <Ltx txt='\mathcal{S}'/> = <Ltx txt='\{1,2,3,4,5,6\}'/>.
+
+  </Balph>
+  De esto podemos definir los siguientes eventos:
+  <Balph>
+    - <Ltx txt='A' /> = El número sale impar = <Ltx txt='\{1,3,5\}'/>.
+    - <Ltx txt='B' /> = El número sale primo = <Ltx txt='\{2,3,5\}'/>.
+    - <Ltx txt='C' /> = El número sale impar o primo = <Ltx txt='A \cup B'/> = <Ltx txt='\{1,2,3,5\}'/>.
+    <LComment>C es la unión de A y B</LComment>
+  </Balph>
+  Para el caso tenemos el evento <Ltx txt='C' /> que es la unión de <Ltx txt='A' /> y <Ltx txt='B' />, esto
+  lo sabemos ya que la "premisa" (la descripción de <Ltx txt='C'/>) dice que es un número impar o primo, entonces
+  puede salir uno de ellos.
+</BoxChord>
+<BoxChord title='Ejemplo de unión de eventos 2'>
+  Supongamos el siguente experimento y su espacio muestral:
+  <Balph>
+    - <Ltx txt='\mathcal{E}'/> : lanzar dos monedas al aire y observar el resultado.
+    - <Ltx txt='\mathcal{S}'/> = <Ltx txt='\{(cara, cara), (cara, cruz), (cruz, cara), (cruz, cruz)\}'/>.
+
+  </Balph>
+  De esto podemos definir los siguientes eventos:
+  <Balph>
+    - <Ltx txt='A' /> = La primera moneda sale cara = <Ltx txt='\{(cara, cara), (cara, cruz)\}'/>.
+    - <Ltx txt='B' /> = La primera moneda sale cruz = <Ltx txt='\{(cruz, cara), (cruz, cruz)\}'/>.
+
+  </Balph>
+  De los eventos <Ltx txt='A' /> y <Ltx txt='B' /> podemos observar que al hacer su union podemos
+  obtener como resultado todo el espacio muestral del experimento.
+  <Balph>
+    - <Ltx txt='A \cup B' /> = <Ltx txt='\mathcal{S}'/> = <Ltx txt='\{(cara, cara), (cara, cruz), (cruz, cara), (cruz, cruz)\}'/>.
+  </Balph>
+  Por lo tanto, los eventos <Ltx txt='A' /> y <Ltx txt='B' /> son eventos exhaustivos.
+</BoxChord>
+<BoxChord title='Ejemplo de intersección de eventos 1' color='red'>
+  Supongamos el siguente experimento y su espacio muestral:
+  <Balph>
+    - <Ltx txt='\mathcal{E}'/> : lanzar dos monedas al aire y observar el resultado.
+    - <Ltx txt='\mathcal{S}'/> = <Ltx txt='\{(cara, cara), (cara, cruz), (cruz, cara), (cruz, cruz)\}'/>.
+
+  </Balph>
+  De esto podemos definir los siguientes eventos:
+  <Balph>
+    - <Ltx txt='A' /> = La primera moneda sale cara = <Ltx txt='\{(cara, cara), (cara, cruz)\}'/>.
+    - <Ltx txt='B' /> = La primera moneda sale cruz = <Ltx txt='\{(cruz, cara), (cruz, cruz)\}'/>.
+
+  </Balph>
+  De los eventos <Ltx txt='A' /> y <Ltx txt='B' /> podemos observar que al hacer su intersección podemos
+  obtener como resultado un evento vacío.
+  <Balph>
+    - <Ltx txt='A \cap B' /> = <Ltx txt='\emptyset' />.
+  </Balph>
+  Por lo tanto, los eventos <Ltx txt='A' /> y <Ltx txt='B' /> son eventos mutuamente excluyentes.
+</BoxChord>
+<BoxChord title='Ejemplo de intersección de eventos 2' color='red'>
+  Supongamos el siguiente experimento y su espacio muestral:
+  <Balph>
+    - <Ltx txt='\mathcal{E}'/> : lanzar un dado y observar la cara superior.
+    - <Ltx txt='\mathcal{S}'/> = <Ltx txt='\{1,2,3,4,5,6\}'/>.
+  </Balph>
+  Ahora bien, de el espacio muestral podemos definir los siguentes eventos:
+  <Balph>
+    - <Ltx txt='A' /> = El número sale impar = <Ltx txt='\{1,3,5\}'/>.
+    - <Ltx txt='B' /> = El número sale primo = <Ltx txt='\{2,3,5\}'/>.
+    - <Ltx txt='C' /> = El número sale impar y primo = <Ltx txt='A \cap B'/> = <Ltx txt='\{3, 5\}'/>
+  </Balph>
+  Para este caso tenemos que el evento <Ltx txt='C' /> es la intersección de <Ltx txt='A' /> y <Ltx txt='B' />.
+
+</BoxChord>
+<BoxChord title='Ejemplo de complemento de eventos 1' color='yellow'>
+  Supongamos el siguente experimento y su espacio muestral:
+  <Balph>
+    - <Ltx txt='\mathcal{E}'/> : lanzar una botella y observar como cae.
+    - <Ltx txt='\mathcal{S}'/> = \{de pie, de costado, de cabeza\}.
+  </Balph>
+  De este espacio muestral podemos definir los siguentes eventos:
+  <Balph>
+    - <Ltx txt='A' /> = La botella cae de pie = \{de pie\}.
+    - <Ltx txt='B' /> = La botella cae de costado o de cabeza = <Ltx txt='A^c'/> = \{de cabeza, de costado\}.
+  </Balph>
+  Como podemos observar, el evento <Ltx txt='B' /> es el complemento del evento <Ltx txt='A' />. Pues es todo
+  menos el evento <Ltx txt='A' />.
+</BoxChord>
+<BoxChord title='Ejemplo de complemento de eventos 2' color='yellow'>
+  Supongamos el siguente experimento y su espacio muestral:
+  <Balph>
+    - <Ltx txt='\mathcal{E}'/> : ir a una zapateria y observar los tipos de calzados.
+    - <Ltx txt='\mathcal{S}'/> = \{👟,👞,👠,🥿,👢,🥾,👡,🩰\}.
+  </Balph>
+  De este espacio muestral podemos definir los siguentes eventos:
+  <Balph>
+    - <Ltx txt='A' /> = El calzado es para correr = \{👟,🥾\}.
+    - <Ltx txt='B' /> = El calzado es para ir a la oficina = \{👞,👠,👡\}
+    - <Ltx txt='C' /> = El calzado no es para ir a la oficina o para correr = <Ltx txt='A^c \cup B^c'/> = \{👢,🩰,🥿\}.
+  </Balph>
+  Como podemos observar, el evento <Ltx txt='C' /> es el complemento del evento <Ltx txt='A \cup B' />. Pues, la misma
+  es la union de los complementos de los eventos <Ltx txt='A' /> y <Ltx txt='B' />, donde tenemos que son todos
+  menos los zapatos de correr y los zapatos para ir a la oficina.
+</BoxChord>
+<BoxChord title='Ejemplo de diferencia de eventos 1' color='green'>
+  Supongamos el siguente experimento y su espacio muestral:
+  <Balph>
+    - <Ltx txt='\mathcal{E}'/> : observar las opciones comunes de los restaurantes en Estados Unidos.
+    - <Ltx txt='\mathcal{S}'/> = \{🍔,🍟,🍕,🍗,🍖,🍝,🍜,🍲,🍧,🍭,🍫,🎂,🥓,🥟\}.
+  </Balph>
+  De lo anterior podemos definir los siguientes eventos:
+  <Balph>
+    - <Ltx txt='A' /> = La comida es para el desayuno = \{🥓,🥟\}.
+    - <Ltx txt='B' /> = la comida tiene carne = \{🍔,🍕,🍗,🍖,🍝,🍲,🥓\}.
+    - <Ltx txt='C' /> = La comida es para el desayuno pero no tiene carne = <Ltx txt='A - D'/> = \{🥟\}.
+  </Balph>
+  Como podemos observar el evento <Ltx txt='C' /> es la diferencia de los eventos <Ltx txt='A' /> y <Ltx txt='B' />.
+  pues solo consideramos la comida para el desayuno que no tiene carne, entonces solo los del evento <Ltx txt='A' />
+  que no estén en el evento <Ltx txt='D' />.
+</BoxChord>
+<BoxChord title='Ejemplo de diferencia de eventos 2' color='green'>
+  Supongamos el siguiente experimento y su espacio muestral:
+  <Balph>
+    - <Ltx txt='\mathcal{E}'/> : observar las opciones comunes de transporte en Chile.
+    - <Ltx txt='\mathcal{S}'/> = \{🚗,🚕,🚙,🚌,🚎,🚲,🛴,🛵\}.
+  </Balph>
+  De la misma podemos definir los siguentes eventos:
+  <Balph>
+    - <Ltx txt='A' /> = El transporte tiene motor = \{🚗,🚕,🚙,🚌,🚎,🛵\}.
+    - <Ltx txt='B' /> = El transporte es para 4 o más personas = \{🚌,🚎\}.
+    - <Ltx txt='C' /> = El transporte no es para más de 4 personas = <Ltx txt='A - B'/> = \{🚗,🚕,🚙,🛵\}.
+  </Balph>
+  Como podemos ver, el evento <Ltx txt='C' /> es la diferencia de los eventos <Ltx txt='A' /> y <Ltx txt='B' />, donde
+  tenemos que solo considera vehiculos pequeños para no más de 4 personas.
+</BoxChord>
+<BComment type='note'>
+  Los ejemplos anteriores son solo para ilustrar el concepto de eventos y sus operaciones, pero las
+  misma pueden ser aún más complejas según la cantidad de condiciones que agreguemos. Pues, en si
+  al definir un evento, estamos definiendo un conjunto de elementos del espacio muestral que cumplan con
+  cierta condición.
+</BComment>
+<BoxImp
+  title='Tipos de eventos'
+  color='green'
+  comment='Dos tipos de eventos utiles'
+  id='tip_ev'
+  icon='at'
+>
+  Sea <Ltx txt='\mathcal{E}'/> un experimento y <Ltx txt='\mathcal{S}'/> su espacio muestral. Donde
+  se define el evento <Ltx txt='A' /> como un subconjunto de <Ltx txt='\mathcal{S}'/>. Entonces
+  podemos decir que <Ltx txt='A' /> es:
+  <BoxSimp>
+    - **Un evento seguro** si <Ltx txt='A = \mathcal{S}' /> o tambíen si <Ltx txt='\mathcal{S} \subset {A}' />.
+    <LComment>Ambas expresiones son validas para representar al evento seguro</LComment>
+    - **Un evento imposible** si <Ltx txt='A = \emptyset' />.
+    <LComment>Solo si es el conjunto vacio es un evento imposible</LComment>
+  </BoxSimp>
+  Ambas tienen una estrecha relación con el tema de probabilidad.
+</BoxImp>
+[//]: # 'Definción del algebra de eventos'
+<Sep />
+<TitleSection txt="Algebra de eventos" nr={4} />
+<Ref id="Algebra de eventos" />
+<BoxImp
+  title='¿Qué es un algebra de eventos?'
+  comment='Definición de el conjunto algebra de eventos'
   color='orange'
+  id='def_algev'
   icon='flag'
 >
-    Un evento es un **subconjunto** de un espacio muestral <Ltx txt='\mathcal{S}'/>, denotado por letras
-    mayúsculas como <Ltx txt='A,B,C,D'/>. Por otro lado, como tal un evento considera un subconjunto de resultados
-    del espacio muestral que sucedan.
-    - **Evento simple:** considera unicamente un elemento o resultado en <Ltx txt='\mathcal{S}'/>.
-    - **Evento compuesto:** considra más de un elemento o resultado en <Ltx txt='\mathcal{S}'/>.
+  Sea <Ltx txt='\mathscr{A} \subset \mathcal{S}'/> una clase de eventos. Se denomina a <Ltx txt='\mathscr{A}'/> como
+  "algebra de eventos" si y solo si:
+  <BoxSimp>
+    - ◼<Ltx txt='\mathcal{S} \subset \mathscr{A}'/>
+    <LComment>El evento seguro se encuentra en el conjunto <Ltx txt='\mathscr{A}'/></LComment>
+    - ◼<Ltx txt='\forall A,B \subset \mathscr{A}'/>, entonces <Ltx txt='A \cup B \subset \mathscr{A}'/>
+    <LComment>La operación unión es cerrada, osea todos los resultados están en <Ltx txt='\mathscr{A}'/></LComment>
+    - ◼<Ltx txt='\forall A \subset \mathscr{A}'/>, entonces <Ltx txt='A^c \subset \mathscr{A}'/>
+    <LComment>La operación complemento es cerrada, osea todos los resultados están en <Ltx txt='\mathscr{A}'/></LComment>
+  </BoxSimp>
+  Solo si cumple estas condiciones se puede decir que es un algebra de eventos.
 </BoxImp>
 <BComment type='note'>
-    Como tal un evento recopila una cantidad de resultados de un experimento <Ltx txt='\mathcal{E}'/>, donde
-    tenemos que un evento simple es literalmente un subconjunto que considera unicamente UNO de los elementos
-    en el espacio muestral. Mientras que, un evento compuesto es un subconjunto que considera MÁS DE UN elemento.
+  Al referirnos con operaciones "cerradas", nos referimos a que si tomamos dos eventos <Ltx txt='A' /> y <Ltx txt='B' />
+  que pertenecen a <Ltx txt='\mathscr{A}' />, entonces las operaciones de unión y complementos daran resultados
+  que también pertenecen a <Ltx txt='\mathscr{A}' />.
+</BComment>
+<BoxImp
+  title='Extensión de la definción'
+  comment='Una vista general de la definición'
+  color='blue'
+  icon='bullseye-arrow'
+>
+  Basado en la definición, podemos demostrar y definir lo siguiente:
+  <BoxSimp>
+    - ◼<Ltx txt='\mathcal{S} \subset \mathscr{A}'/>, entonces <Ltx txt='\mathcal{S^c} = \emptyset \subset \mathscr{A}' />
+    - ◼<Ltx txt='A_1,A_2,\cdots,A_n\subset\mathscr{A}'/>, entonces <Ltx txt='A_1\cup A_2\cup \cdots \cup A_n'/> = <Ltx txt='\bigcup_{i=1}^n A_i \subset \mathscr{A}' />
+    - ◼<Ltx txt='A_1,A_2,\cdots,A_n\subset\mathscr{A}'/>, entonces <Ltx txt='A_1\cap A_2\cap \cdots \cap A_n'/> = <Ltx txt='\bigcap_{i=1}^n A_i \subset \mathscr{A}' />
+    - ◼<Ltx txt='\forall A,B \subset \mathscr{A}'/>, entonces <Ltx txt='A \cap B^c \subset \mathscr{A}'/> = <Ltx txt='A - B \subset \mathscr{A}'/>
+  </BoxSimp>
+  Donde para cada una de estas se usa la definición y condiciones de la definción de algebra de eventos.
+</BoxImp>
+<BComment type='warn'>
+  Por la definción de algebra de eventos se puede demostrar las afirmaciones 1 y 4 mediante el uso de complemento. Por otro lado,
+  la afirmación 2 y 3 se puede demostrar mediante la definición de la unión y un caso especial con unión y complemento.
+</BComment>
+<BComment type='note'>
+  En general un algebra de eventos es un conjunto de eventos que cumple con las condiciones de la definición.
+  Siendo que tiene las operaciones de unión, intersección, complemento y diferencia.n
 </BComment>
