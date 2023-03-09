@@ -1,16 +1,16 @@
 // * Modulos, datos y tipos
-import Head from "next/head";
-import type { Matter } from "../data/Types";
-import { allData } from "../lib/genDataContent";
+import Head from 'next/head'
+import type { Matter } from '@/data/Types'
+import { allData } from '@/lib/genDataContent'
 // * Componentes
-import HeadNav from "../components/layout/HeadNav";
-import Footer from "../components/layout/FooterTCH";
-import BackgroundTime from "../components/home/BackgroundTime";
-import HeroSection from "../components/global/HeroSection";
-import Present from "../components/home/PresentSection";
-import { MatterCard } from "../components/home/Card";
-import MCarousel from "../components/home/MatterCaruser";
-import Ventage from "../components/layout/AbsolutVentage";
+import HeadNav from '@/components/layout/HeadNav'
+import Footer from '@/components/layout/FooterTCH'
+import BackgroundTime from '@/components/home/BackgroundTime'
+import HeroSection from '@/components/global/HeroSection'
+import Present from '@/components/home/PresentSection'
+import { MatterCard } from '@/components/home/Card'
+import MCarousel from '@/components/home/MatterCaruser'
+import Ventage from '@/components/layout/AbsolutVentage'
 
 const Home = ({ dataMatter }: { dataMatter: Matter[] }) => {
   return (
@@ -29,7 +29,7 @@ const Home = ({ dataMatter }: { dataMatter: Matter[] }) => {
       </section>
       <Present
         id="Materias"
-        theme={"dracula"}
+        theme={'dracula'}
         title="Materias"
         className="bg-base"
       >
@@ -39,7 +39,7 @@ const Home = ({ dataMatter }: { dataMatter: Matter[] }) => {
           cada tema se intenta describir de la simple más entendible posible,
           con notas sobre cada concepto que tienen ... osea como unos apuntes
           ... seee? <br />
-          Bueno si son apuntes de temas estudiados por mi{" "}
+          Bueno si son apuntes de temas estudiados por mi{' '}
           <a
             href="https://github.com/Repolloezzz"
             className="link link-primary"
@@ -60,7 +60,7 @@ const Home = ({ dataMatter }: { dataMatter: Matter[] }) => {
                   className="carousel-item w-52 h-72 lg:w-72 lg:h-[28rem]"
                   base={matter}
                 />
-              );
+              )
             })}
           </MCarousel>
         </div>
@@ -69,19 +69,19 @@ const Home = ({ dataMatter }: { dataMatter: Matter[] }) => {
       <Present title="Aplicaciones" className="bg-indigo-700"></Present>
       <Footer />
     </>
-  );
-};
+  )
+}
 
 // * Para toda pagina debe de estar getStaticProps, el dato dataNav para el menu
 export async function getStaticProps() {
-  const defaultData = allData();
+  const defaultData = allData()
   //const dataNav = allMatters();
   return {
     props: {
       dataMatter: defaultData,
       //dataNav,
     },
-  };
+  }
 }
 
-export default Home;
+export default Home

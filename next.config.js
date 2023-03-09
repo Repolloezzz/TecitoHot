@@ -8,6 +8,7 @@ const withMDX = require('@next/mdx')({
     providerImportSource: "@mdx-js/react",
   },
 })
+
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
