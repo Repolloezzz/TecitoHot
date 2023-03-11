@@ -3,7 +3,8 @@ import path from 'path'
 import matter from 'gray-matter'
 import { serialize } from 'next-mdx-remote/serialize'
 import { rootMarkdown, Pages, Public } from '@/data/routes'
-import type { Content, Base } from '@/data/DataTypes'
+import type { Content } from '@/data/DataTypes'
+import { genAllMatters } from '@/lib/getGenerators'
 
 const message = '⚠ Hubo un error al ejecutar la función'
 
@@ -18,15 +19,26 @@ export const getMatterObject = (matterGen: string) => {
       name: data.name,
       index: data.index ? data.index : 0,
       gen: matterGen,
-      url: `/${Pages}/${matterGen}`,
+      url: `${Pages}/${matterGen}`,
       description: data.description ? data.description : '',
-      img: `/${Public}/${matterGen}/${data.img ? data.img : 'Icon.webp'}`,
+      img: `${Public}/${matterGen}/${data.img ? data.img : 'Icon.webp'}`,
       color: data.color ? data.color : 'slate',
       character: data.character ? data.character : 'patos',
     }
   } catch (error) {
     console.log(`\n\x1b[1m${message} getMatterObject:\x1b[0m\n${error}`)
     return null
+  }
+}
+
+export const getAllMatterObject = () => {
+  try {
+    const gens = genAllMatters()
+    const matters = gens.map((gen) => getMatterObject(gen))
+    return matters
+  } catch (error) {
+    console.log(`\n\x1b[1m${message} getMatterObject:\x1b[0m\n${error}`)
+    return []
   }
 }
 
@@ -38,9 +50,9 @@ export const getThemeObject = (matterGen: string, themeGen: string) => {
       name: data.name,
       index: data.index ? data.index : 0,
       gen: themeGen,
-      url: `/${Pages}/${matterGen}/${themeGen}`,
+      url: `${Pages}/${matterGen}/${themeGen}`,
       description: data.description ? data.description : '',
-      img: `/${Public}/${matterGen}/${themeGen}/${
+      img: `${Public}/${matterGen}/${themeGen}/${
         data.img ? data.img : 'Icon.webp'
       }`,
     }
@@ -68,7 +80,7 @@ export const getSubThemeObject = (
       name: data.name,
       index: data.index ? data.index : 0,
       gen: subThemeGen,
-      url: `/${Pages}/${matterGen}/${themeGen}/${subThemeGen}`,
+      url: `${Pages}/${matterGen}/${themeGen}/${subThemeGen}`,
       description: data.description ? data.description : '',
     } as {
       name: string
@@ -103,7 +115,7 @@ export const getContentObject = (
       name: data.name,
       index: data.index ? data.index : 0,
       gen: contentGen,
-      url: `/${Pages}/${matterGen}/${themeGen}/${subThemeGen}/${contentGen}`,
+      url: `${Pages}/${matterGen}/${themeGen}/${subThemeGen}/${contentGen}`,
       description: data.description ? data.description : '',
       keys: data.keys ? data.keys : [],
     }

@@ -5,8 +5,8 @@
  * 3.- Ruta donde se encuentran las páginas de los objetos generados
  */
 const Markdown = 'markdown'
-const Public = 'public/matters'
-const Pages = 'pages/matters'
+const Public = '/matters'
+const Pages = '/matters'
 const rootMarkdown = `${process.cwd()}/${Markdown}`
 const rootPublic = `${process.cwd()}/${Public}}`
 const rootPage = `${process.cwd()}/${Pages}}`

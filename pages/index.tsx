@@ -1,7 +1,8 @@
 // * Modulos, datos y tipos
 import Head from 'next/head'
-import type { Matter } from '@/data/Types'
-import { allData } from '@/lib/genDataContent'
+import type { Matter, Base } from '@/data/DataTypes'
+import { allMatters } from '@/lib/getParsedObjects'
+import { getAllMatterObject } from '@/lib/getObjects'
 // * Componentes
 import HeadNav from '@/components/layout/HeadNav'
 import Footer from '@/components/layout/FooterTCH'
@@ -12,13 +13,19 @@ import { MatterCard } from '@/components/home/Card'
 import MCarousel from '@/components/home/MatterCaruser'
 import Ventage from '@/components/layout/AbsolutVentage'
 
-const Home = ({ dataMatter }: { dataMatter: Matter[] }) => {
+const Home = ({
+  listMatter,
+  dataLayout,
+}: {
+  listMatter: Matter[]
+  dataLayout: Base[]
+}) => {
   return (
     <>
       <Head>
         <title>TeCitoHot - Aprende lo que buscas</title>
       </Head>
-      <HeadNav defaultData={dataMatter} />
+      <HeadNav listData={dataLayout} />
       <Ventage />
       <section
         id="home"
@@ -53,7 +60,7 @@ const Home = ({ dataMatter }: { dataMatter: Matter[] }) => {
             Seleciona una de tu agrado
           </h2>
           <MCarousel>
-            {dataMatter?.map((matter: Matter, index: number) => {
+            {listMatter?.map((matter: Matter, index: number) => {
               return (
                 <MatterCard
                   key={index}
@@ -74,12 +81,13 @@ const Home = ({ dataMatter }: { dataMatter: Matter[] }) => {
 
 // * Para toda pagina debe de estar getStaticProps, el dato dataNav para el menu
 export async function getStaticProps() {
-  const defaultData = allData()
-  //const dataNav = allMatters();
+  const listMatter = allMatters()
+  // Datos para el layout de las páginas
+  const dataLayout = getAllMatterObject()
   return {
     props: {
-      dataMatter: defaultData,
-      //dataNav,
+      listMatter,
+      dataLayout,
     },
   }
 }

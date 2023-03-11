@@ -1,22 +1,17 @@
-// * Modulos, datos y tipos
-import Link from "next/link";
-import { useState } from "react";
-import type { base } from "../../data/Types";
-import { DiGithubBadge } from "react-icons/di";
+import Link from 'next/link'
+import { useState } from 'react'
+import { DiGithubBadge } from 'react-icons/di'
+import type { Base } from '@/data/DataTypes'
+import { PixelIcons } from '../global/Icons'
 
-// * Componentes
-import { PixelIcons } from "../global/Icons";
-
-const HeadNav = ({defaultData}: {defaultData: base[]}) => {
-  const [navSW, changeSW] = useState(false);
-  const navFormatData = defaultData?.map((matter: base) => {
-    return matter;
-  });
+const HeadNav = ({ listData = [] }: { listData: Base[] }) => {
+  const [navSW, changeSW] = useState(false)
+  const navFormatData = listData
   return (
     <header className={`navbar sticky top-0 transition-all bg-base-100 z-50`}>
       <div className="flex-1 z-10">
         <Link
-          href={"/"}
+          href={'/'}
           id="LogoContainer"
           className="select-none h-full bg-primary flex items-center text-3xl px-1 lg:text-5xl lg:px-5"
         >
@@ -32,27 +27,27 @@ const HeadNav = ({defaultData}: {defaultData: base[]}) => {
         <span
           className={`h-1 bg-yellow-400 transition-all duration-500  ${
             navSW
-              ? "absolute rotate-[45deg] md:h-1.5 w-6"
-              : "group-hover:w-3/4 w-full"
+              ? 'absolute rotate-[45deg] md:h-1.5 w-6'
+              : 'group-hover:w-3/4 w-full'
           }`}
         />
         <span
           className={`h-1 bg-yellow-400 transition-all duration-700 ${
-            navSW ? "w-0" : "w-full"
+            navSW ? 'w-0' : 'w-full'
           }`}
         />
         <span
           className={`h-1 bg-yellow-400 transition-all duration-300  ${
             navSW
-              ? "absolute -rotate-[225deg] md:h-1.5 w-6"
-              : "group-hover:w-3/4 w-full"
+              ? 'absolute -rotate-[225deg] md:h-1.5 w-6'
+              : 'group-hover:w-3/4 w-full'
           }`}
         />
       </div>
       {/* Opciones */}
       <div
         className={`${
-          navSW ? "w-3/4 sm:w-1/2 md:w-2/5" : "w-0 px-0"
+          navSW ? 'w-3/4 sm:w-1/2 md:w-2/5' : 'w-0 px-0'
         } flex flex-col p-5 pb-20 overflow-hidden transition-all gap-2 absolute top-16 right-0 bg-base-100/95 h-screen lg:flex-row lg:static lg:bg-none lg:h-auto lg:w-auto lg:overflow-visible lg:p-0`}
       >
         <menu className="grid grid-cols-1 menu menu-vertical overflow-y-auto lg:menu-horizontal w-full lg:w-auto order-2 lg:order-1 lg:flex box-content lg:overflow-y-visible">
@@ -67,24 +62,24 @@ const HeadNav = ({defaultData}: {defaultData: base[]}) => {
           </li>
           <li tabIndex={0} className="text-xl rounded-none block">
             <Link
-              href={"#Materias"}
+              href={'#Materias'}
               className="flex item-center justify-start lg:justify-center gap-1"
             >
               <PixelIcons name="downasaur" className="w-6 h-6" />
               <p className="mx-auto lg:mx-0">Materias</p>
             </Link>
             <ul className="bg-base-100/80 left-0 relative border-l-2 ml-6 lg:absolute lg:m-0 lg:border-none overflow-y-auto max-h-[15rem] scrollbar-w-1 scrollbar-thumb-slate-100 scrollbar-thin">
-              {navFormatData?.map((item: base, index: number) => {
+              {navFormatData?.map((item: Base, index: number) => {
                 return (
                   <li key={index}>
                     <Link
                       className="text-xl flex justify-center"
-                      href={item.pageUrl}
+                      href={item.url}
                     >
                       {item.name}
                     </Link>
                   </li>
-                );
+                )
               })}
             </ul>
           </li>
@@ -124,6 +119,6 @@ const HeadNav = ({defaultData}: {defaultData: base[]}) => {
         </div>
       </div>
     </header>
-  );
-};
-export default HeadNav;
+  )
+}
+export default HeadNav

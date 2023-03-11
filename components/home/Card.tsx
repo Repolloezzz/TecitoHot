@@ -1,4 +1,4 @@
-import type { Matter, Theme } from "../../data/Types";
+import type { Matter, Theme } from "@/data/DataTypes";
 import Link from "next/link";
 import { useAbsoluteContext } from "../../context/Absolute";
 
@@ -19,7 +19,7 @@ const MatterCard = ({ className, base }: context) => {
         {base.name}
       </h1>
       <picture>
-        <img src={base.imgUrl} alt={`${base.name}-image`} onError={({currentTarget}) => {
+        <img src={base.img} alt={`${base.name}-image`} onError={({currentTarget}) => {
           currentTarget.onerror = null
           currentTarget.src = '/imgNotFound.webp'
         }}/>
@@ -27,7 +27,7 @@ const MatterCard = ({ className, base }: context) => {
       <div className="bg-base-300 w-full flex justify-around p-2 overflow-hidden my-auto">
         <Link
           className="btn btn-primary px-3 py-0 btn-sm flex md:btn-md rounded-none"
-          href={base.pageUrl}
+          href={base.url}
         >
           Explorar
         </Link>
@@ -61,7 +61,7 @@ const MatterCard = ({ className, base }: context) => {
                               href={
                                 element.subThemes != undefined &&
                                 element.subThemes[0] != undefined
-                                  ? element.subThemes[0].pageUrl
+                                  ? element.subThemes[0].url
                                   : "#"
                               }
                             >
@@ -98,7 +98,7 @@ const ThemeCard = ({ className, base }: contextTheme) => {
         {base.name}
       </h1>
       <picture>
-        <img src={base.imgUrl} alt={`${base.name}-image`} onError={({currentTarget}) => {
+        <img src={base.img} alt={`${base.name}-image`} onError={({currentTarget}) => {
           currentTarget.onerror = null
           currentTarget.src = '/imgNotFound.webp'
         }}/>
@@ -106,7 +106,7 @@ const ThemeCard = ({ className, base }: contextTheme) => {
       <div className="w-full flex justify-around p-2 overflow-hidden my-auto">
         <Link
           className="btn btn-primary px-3 py-0 btn-sm flex md:btn-md rounded-none"
-          href={base.pageUrl}
+          href={base.url}
         >
           Explorar
         </Link>
@@ -123,7 +123,7 @@ const ThemeCard = ({ className, base }: contextTheme) => {
                   <div className="flex flex-col items-center w-full md:p-2 lg:p-5 gap-5 lg:flex-row">
                     <picture className="md:min-w-[30%]">
                       <img
-                        src={base.imgUrl}
+                        src={base.img}
                         alt={`${base.name}-image`}
                         onError={({ currentTarget }) => {
                           currentTarget.onerror = null;
@@ -158,7 +158,7 @@ const ThemeCard = ({ className, base }: contextTheme) => {
                           </span>
                           <Link
                             className="btn btn-outline btn-secondary btn-sm md:btn-md rounded-none w-full ml-1"
-                            href={element.pageUrl}
+                            href={element.url}
                             onClick={() => change({title: 'Hola mundo', open: false, content: <></>})}
                           >
                             Ver más
