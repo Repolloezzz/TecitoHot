@@ -51,7 +51,7 @@ export const allContents = (
       const content = getContentObject(matterGen, themeGen, subThemeGen, gen)
       if (content) res.push(content)
     }
-    return res
+    return res.sort((a, b) => a.index - b.index)
   } catch (error) {
     console.log(`\n\x1b[1m${message} allContents:\x1b[0m\n${error}`)
     return []
@@ -96,7 +96,7 @@ export const allSubThemes = (
       const subTheme = getSubTheme(matterGen, themeGen, gen)
       if (subTheme) res.push(subTheme)
     }
-    return res
+    return res.sort((a, b) => a.index - b.index)
   } catch (error) {
     console.log(`\n\x1b[1m${message} allSubThemes:\x1b[0m\n${error}`)
     return []
@@ -132,7 +132,7 @@ export const allThemes = (matterGen: string): Theme[] => {
       const theme = getTheme(matterGen, gen)
       if (theme) res.push(theme)
     }
-    return res
+    return res.sort((a, b) => a.index - b.index)
   } catch (error) {
     console.log(`\n\x1b[1m${message} allThemes:\x1b[0m\n${error}`)
     return []
@@ -166,7 +166,7 @@ export const allMatters = (): Matter[] => {
       const matter = getMatter(gen)
       if (matter) res.push(matter)
     }
-    return res
+    return res.sort((a, b) => a.index - b.index)
   } catch (error) {
     console.log(`\n\x1b[1m${message} allMatters:\x1b[0m\n${error}`)
     return []

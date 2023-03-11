@@ -21,7 +21,7 @@ export default function SubThemeHome({
   dataTheme,
   slug,
 }: {
-  data: Theme
+  data: SubTheme
   dataLayout: Base[]
   dataTheme: Theme
   slug: string

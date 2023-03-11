@@ -116,8 +116,12 @@ export const getContentObject = (
       index: data.index ? data.index : 0,
       gen: contentGen,
       url: `${Pages}/${matterGen}/${themeGen}/${subThemeGen}/${contentGen}`,
-      description: data.description ? data.description : '',
+      description: data.description
+        ? data.description
+        : 'esto es un descripción ...',
       keys: data.keys ? data.keys : [],
+      created: data.created ? data.created : '',
+      updated: data.updated ? data.updated : '',
     }
   } catch (error) {
     console.log(`\n\x1b[1m${message} getContentObject:\x1b[0m\n${error}`)
@@ -139,13 +143,19 @@ export const getContentSource = async (
       subThemeGen,
       `${contentGen}.mdx`,
     )
-    const { content } = matter(file)
+    const { content, data } = matter(file)
     const source = await serialize(content, {})
     return {
       source,
+      frontMatter: {
+        ...data,
+      },
     }
   } catch (error) {
     console.log(`\n\x1b[1m${message} getContentSource:\x1b[0m\n${error}`)
-    return null
+    return {
+      source: null,
+      frontMatter: null,
+    }
   }
 }

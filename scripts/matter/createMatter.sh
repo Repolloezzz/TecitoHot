@@ -6,20 +6,17 @@ fi
 
 public=$1
 source=$2
-pages=$3
 
-gen=$4
+gen=$3
 
 # Para crear el directorio y los archivos necesarios para la materia
 mkdir $public/$gen
 mkdir $source/$gen
 contenido="{\"name\": \"$gen\"}"
 echo $contenido >$source/$gen/index.json
-mkdir $pages/$gen
 # Mostrar si se completo el proceso, BONITO...
 echo -e "
 🚀Creando el directorio con el generador: ▶ $gen
-- Se creó el directorio en pages: $(tput bold)$pages/$gen$(tput sgr0)
 - Se creó el directorio en public: $(tput bold)$public/$gen$(tput sgr0)
 - Se creó el directorio en source: $(tput bold)$source/$gen$(tput sgr0)
 - Se creó un archivo json en source: $(tput bold)$source/$gen/index.json$(tput sgr0)

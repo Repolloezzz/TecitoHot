@@ -6,11 +6,10 @@ fi
 
 public=$1
 source=$2
-pages=$3
 
-gen_1=$4
-gen_2=$5
-gen_3=$6
+gen_1=$3
+gen_2=$4
+gen_3=$5
 
 if [ ! -f "$source/$gen_1/index.json" ]; then
     echo "❓ El generador $gen_1 no existe o no es valido como materia"
@@ -33,13 +32,9 @@ fi
 if ! mv -i $source/$gen_1/$gen_2 $source/$gen_1/$gen_3 2>/dev/null; then
     mensajes[1]="No se pudó editar"
 fi
-if ! mv -i $pages/$gen_1/$gen_2 $pages/$gen_1/$gen_3 2>/dev/null; then
-    mensajes[2]="No se pudó editar"
-fi
 
 echo -e "
 🚀Editando el directorio con el generador: ▶ $gen_2 de la materia $gen_1
-- ${mensajes[0]} el directorio en pages: $(tput bold)$pages/$gen_1/$gen_2$(tput sgr0)
 - ${mensajes[1]} el directorio en public: $(tput bold)$public/$gen_1/$gen_2$(tput sgr0)
 - ${mensajes[2]} directorio en source: $(tput bold)$source/$gen_1/$gen_2$(tput sgr0)
 ${mensajes[3]} el tema: $(tput bold)$gen_2$(tput sgr0) -> $(tput bold)$gen_3$(tput sgr0) correctamente.

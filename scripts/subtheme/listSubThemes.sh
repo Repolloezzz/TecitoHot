@@ -5,10 +5,9 @@ fi
 
 public=$1
 source=$2
-pages=$3
 
-gen_1=$4
-gen_2=$5
+gen_1=$3
+gen_2=$4
 
 if [ ! -f "$source/$gen_1/index.json" ]; then
     echo "❓ El generador $gen_1 no existe o no es valido como materia"
@@ -35,12 +34,9 @@ subsubthemes=(${subsubthemes[@]})
 echo "🔰 La materia $gen_1 tiene los siguientes temas:"
 printf "\033[1m| %-7s | %-7s | %-7s | %-20s |\033[0m\n" "Markdown" "Public" "Pages" "Generador"
 for subtheme in ${subsubthemes[@]}; do
-    opts=("✅" "❌" "❌")
+    opts=("✅" "❌" "🔰")
     if [ -d $public/$gen_1/$gen_2/$subtheme ]; then
         opts[1]="✅"
-    fi
-    if [ -d $pages/$gen_1/$gen_2/$subtheme ]; then
-        opts[2]="✅"
     fi
     printf "| %-9s | %-8s | %-8s | %-20s |\n" "${opts[0]}" "${opts[1]}" "${opts[2]}" "$subtheme"
 done

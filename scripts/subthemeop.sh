@@ -1,7 +1,7 @@
 # rutas absolutas del proyecto donde se generan las materias
 public="public/matters"
 source="markdown"
-pages="pages/matters"
+#pages="pages/matters"
 
 while getopts "hm:cm:rm:em:lm" opt; do
     case ${opt} in
@@ -23,19 +23,19 @@ while getopts "hm:cm:rm:em:lm" opt; do
         ;;
     c)
         # Para crear una nueva materia
-        source scripts/subtheme/createSubTheme.sh $public $source $pages $2 $3 $4
+        source scripts/subtheme/createSubTheme.sh $public $source $2 $3 $4
         ;;
     r)
         # Para borrar una materia
-        source scripts/subtheme/removeSubTheme.sh $public $source $pages $2 $3 $4
+        source scripts/subtheme/removeSubTheme.sh $public $source $2 $3 $4
         ;;
     e)
         # Para editar una materia
-        source scripts/subtheme/editSubTheme.sh $public $source $pages $2 $3 $4 $5
+        source scripts/subtheme/editSubTheme.sh $public $source $2 $3 $4 $5
         ;;
     l)
         # Para listar todas las materias
-        source scripts/subtheme/listSubThemes.sh $public $source $pages $2 $3
+        source scripts/subtheme/listSubThemes.sh $public $source $2 $3
         ;;
     \?)
         echo "Opción inválida: -$OPTARG" >&2

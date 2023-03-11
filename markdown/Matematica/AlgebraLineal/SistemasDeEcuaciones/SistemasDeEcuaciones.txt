@@ -1,0 +1,319 @@
+---
+name: "Sistema de Ecuaciones"
+index: 1
+---
+<HeadTitle
+  title="Sistemas de Ecuaciones Lineales"
+  created={["18-01-2023", "DD-MM-YYYY"]}
+/>
+<Sep />
+[//]: # "Definción de Ecuación lineal"
+
+<TitleSection txt="Ecuaciones lineales" nr={1} />
+<Ref id="ecuaciones lineales" />
+<BoxImp
+  title="¿Qué es una ecuación lineal?"
+  comment="Definición de ecuación lineal"
+  color="orange"
+  icon="flag"
+  id="def_ec_lin"
+>
+  Una ecuación lineal o también conocido como ecuación de primer grado, es una
+  ecuación que contiene <b>n-variables</b> junto a <b>n-escalares</b> con una
+  igualdad. Las ecuaciones lineales tiene la siguiente forma.
+  <div className="grid grid-rows-2 md:grid-rows-none md:grid-cols-2 gap-2">
+    <BoxSimp className="bg-back/5 ">
+      <Ltx txt="ax+by=c" />
+      <LComment>
+        Forma en <Ltx txt="\mathbb{R^2}" />
+      </LComment>
+    </BoxSimp>
+    <BoxSimp className="bg-back/5 ">
+      <Ltx txt="a_1x_1+a_2x_2+\cdots+a_nx_n=b_1" />
+      <LComment>
+        Forma en <Ltx txt="\mathbb{R^n}" />
+      </LComment>
+    </BoxSimp>
+  </div>
+  Donde <Ltx txt="a_i, x_{i} \in \mathbb{R}" />.
+</BoxImp>
+<BComment type="note">
+  la expresión n-variables o n-escalares hace referencia a un
+  <b>número finito de elementos</b>, es decir que se puden contar y como tal es una{" "}
+  <b>GENERALIZACIÓN</b> para referirnos a cualquier cantidad de elementos (en el
+  caso variables y escalares). Además, cabe resaltar que un escalar siempre está
+  acompañado de una variable.
+</BComment>
+<BComment>
+  La notación de <Ltx txt="a_{i}" /> y <Ltx txt="x_{i}" /> se usa para indicar
+  <b>cualquier elemento de todos los que hay</b>, es como pedir cualquier sopa en
+  un restaurante, no dices cual pero haces referencia a una. En el caso
+  <Ltx txt="a_{i}" /> hace referencia a cualquiera de los "n escalares" al igual
+  que <Ltx txt="x_{i}" /> hace referencia a cualquiera de las "n-variables".
+</BComment>
+<BComment type="alert">
+  Aclarar que <Ltx txt="x_{0}, x_{1}, x_{2}, \cdots, x_{n} " /> no son
+  necesariamente iguales, si bien todas las variables son <Ltx txt="x" /> lo que
+  los diferencia es el indice que tienen (el número debajo de ellos
+  <Ltx txt="x_1" />, etc), esto se lo hace así pues tiene sus ventajas en ejemplos
+  que veremos más adelante. Esto también sucede para cualquier letra sea variable
+  o coeficiente.
+</BComment>
+<Ref id='condicionesEcuacionLineal'/>
+<BComment type="warn">
+  Remarcar que una ecuación se considera lineal si cumple las siguientes
+  condiciones:
+  <List className="pl-5" items={[
+    <>Todas las variables son de exponente igual 1.</>,
+    <>No existe multiplicación entre variables.</>,
+    <>No son argumento o parámetro de una función.</>,
+  ]}/>
+
+</BComment>
+<BoxChord title="Notación y orden de una ecuación lineal" color="yellow">
+  Como se mencionó antes en los comentarios, una ecuación lineal puede tener
+  varias notaciones y cada una de ellas es valida, pero reconocer como anotarlo
+  es importante. Ejemplo:
+  <Ltx txt="ax+by+cz+dw=e" block />
+  Debemos definir lo siguiente:
+  <List
+    className="pl-5"
+    items={[
+      <>
+        <Ltx txt="x,y,z,w\in\mathbb{R}" />, son valores que
+        <b> PUEDEN CAMBIAR</b> (denominados variables)
+      </>,
+      <>
+        <Ltx txt="a,b,c,d,e\in\mathbb{R}" />, son valores que
+        <b> NUNCA CAMBIAN</b> (denominados escalares)
+      </>,
+    ]}
+  />
+  Es fundamental comprender esto para no confundirnos en su forma general
+  definida en la <Lnk url="#def_ec_lin" txt="definición de ecuación lineal" />.
+  Por lo tando, tenemos lo siguiente:
+  <VidAbs
+    url="/themes/Matematica/AlgebraLineal/SistemasDeEcuaciones/EcuacionesLinealesForm.mp4"
+    title="Notación de una ecuación lineal"
+    content={
+      <>
+        Un video explicativo sobre la notación de una ecuación lineal, el orden
+        del mismo y como es mejor agruparlo
+      </>
+    }
+    playing
+    loop
+  />
+  Sin importar como lo representemos, podemos usar las letras, indices, figuras que
+  queramos para representar una ecuación lineal, al final sigue siendo lo mismo, pero hay que
+  tomar en cuenta la misma debe de ser legible o que se pueda entender de forma facil, es por eso
+  que la notación que se usa es de indices pues cuando la ecuación es muy grande las letras no nos alcanzaran
+  para llenar toda la ecuación. Por ejemplo, una ecuación lineal en <Ltx txt="\mathbb{R^n}" /> de la <Lnk url='def_ec_lin' txt='definción'/>.
+</BoxChord>
+<BoxChord title="Ejemplo de ecuacion lineal 1">
+  Una ecuación lineal siempre tendrá las variables de exponente 1, es decir que su
+  potencia es 1 o que siempre está elevado a 1.
+  <Ltx txt="x+y^1+z+w=0" block />
+  <LComment>
+    Para el caso la ecuación es de exponente 1, pues todas las variables están
+    elevadas a 1
+  </LComment>
+  Por otro lado, mencionar que en la ecuació lineal los escalares pueden ser
+  <b>cualquier número real</b>. Ejemplos:
+  <List className='pl-5' items={[
+    <><Ltx txt='\sqrt{2}x+9^{23}y+ez=32'/></>,
+    <><Ltx txt='\ln{3}x_1+\sqrt{3}{5}x_2+\sin{\pi}x_3=1'/></>,
+    <><Ltx txt='y_1+\frac{1}{2}y_2+\frac{1}{3}y_3+\cdots+\frac{1}{n}y_n=0'/></>
+  ]}/>
+  De lo anterior, considerar que los escalares no tienen restricción alguna, pero las
+  variables deben apegarse a las condiciones del <Lnk url='#condicionesEcuacionLineal' txt='comentario'/>
+</BoxChord>
+<BoxChord title='Ejemplo de ecuación lineal 2'>
+  Como dijimos antes una ecuación lineal no puede tener variables con potencias diferentes de 1
+  por lo que siempre veremos su forma <Ltx txt='x'/>, <Ltx txt='x^1'/>, <Ltx txt='x^{-2+3}'/> o cualquiera
+  que exprese la misma idea. Ejemplos
+  <List className='pl-5' items={[
+    <><Ltx txt='2x+2^{2022}y^{2022-2021}+\frac{1}{z^{-1}}=3'/></>,
+    <><Ltx txt='t_1^1+t_2^{2-1}+t_3^{3-2}=4'/></>,
+  ]}/>
+  En resumen, ambas son ecuaciones lineales, si bien parece que no, la verdad es de que si se hace
+  las operaciones correspondientes se llega a una forma de ecuación lineal.
+</BoxChord>
+<BoxChord title='Ejemplo de ecuaciones NO lineales' color='red'>
+  Al decir no lineales nos referimos a que la misma no cumple las condiciones del <Lnk url='#condicionesEcuacionLineal' txt='comentario'/> anterior. Entonces tenemos que son lo contrario y unos ejemplos son:
+  <List className='pl-5 gap-2' items={[
+    <span className='flex flex-col'>
+      <Ltx txt='2x+y^{2}+3z^{e}+w^{-1}=10'/>
+      <LComment>No todas las variables son de exponente 1</LComment>
+    </span>,
+    <span className='flex flex-col'>
+      <Ltx txt='2xy+3xw+4z-10w=-2'/>
+      <LComment>Existe multiplicación entre variables</LComment>
+    </span>,
+    <span className='flex flex-col'>
+      <Ltx txt='\sin{x}+14\log_{2}{y}+e^{w}+3=-5'/>
+      <LComment>Las variables son parámetro de una función</LComment>
+    </span>,
+    <span className='flex flex-col'>
+      <Ltx txt='4\sin{x^2}-5\ln{xy}z^{-3}+7wu=0'/>
+      <LComment>Una combinación de los demás</LComment>
+    </span>,
+]}/>
+  Todos estos son ejemplos de lo que no son ecuaciones lineales.
+</BoxChord>
+<BoxChord title="¿Es ecuación lineal? - Quiz" color="green" className='mb-2'>
+  Con lo visto anterior, pudes reconocer cuales de estas ecuaciones son lineales
+  o <b>de primer grado?</b>👻
+  <Check
+    options={[
+      { content: <Ltx txt="5x-3y=2" />, value: true },
+      { content: <Ltx txt="5x-3y=3z" />, value: true },
+      { content: <Ltx txt="x_{1}^{-3}+x_{2}^{2}=-8" />, value: false },
+      { content: <Ltx txt="a_1x_1+a_2x_2+a_3x_3=5" />, value: true },
+      { content: <Ltx txt="3xy+3y=43" />, value: false },
+      { content: <Ltx txt="3x_1+4x_2+2x_5+7x_9=3" />, value: true },
+      { content: <Ltx txt="3^2x+\sqrt{2}y+z^0=1" />, value: false },
+      { content: <Ltx txt="3=3+x+y" />, value: true },
+    ]}
+  />
+</BoxChord>
+
+Si bien parece complejo todo este tema, la verdad es que lo anterior llega a ser un poco
+de sobra de contenido, pues generalmente no pasaran casos donde hayan ecuaciones no lineales
+en este documento. Pero, no está de más saberlo o recordarlo.
+
+<BoxImp
+  title="¿Qué es un conjunto solución?"
+  comment="Definción de conjunto solución"
+  color="blue"
+  icon="label-alt"
+>
+  Es el conjunto de todas las soluciones que satisfacen una igualdad, donde
+  pueden ocurrir que tiene UNA solución INFINITAS soluciones ó NINGUNA solución.
+</BoxImp>
+<BComment type="warn">
+  Parece obvio mencionarlo, pero el conjunto solución es un CONJUNTO pueden
+  existir las soluciones a una igualdad. Pero, una representación es ver al
+  conjunto solución como un "conjunto de conjuntos" donde cada elemento es una
+  serie de soluciones para la ecuación. Por ejemplo:
+  <div className="grid grid-rows-3 md:grid-rows-none md:grid-cols-3 my-2">
+    <div className="flex flex-col bg-back">
+      <ImgAbs
+        containStyle="my-0"
+        title="Conjunto solución con una solución"
+        content={
+          "Una representación de como se ve un conjunto solución cuando solo hay UNA solución, pues solo existe un elemento en el conjunto."
+        }
+        src="/themes/Matematica/AlgebraLineal/SistemasDeEcuaciones/UnSol.webp"
+      />
+      <LComment className="bg-slate-50/50 w-full justify-center">
+        Para UNA solución
+      </LComment>
+    </div>
+    <div className="flex flex-col bg-back">
+      <ImgAbs
+        containStyle="my-0"
+        title="Conjunto solución con infinitos elementos"
+        content={
+          "Una representación de como se ve un conjunto solución cuando tiene infinitos elementos o soluciones, pues el mismo graficamente queda corto, pero literalmente es infinito. Pero aclarar que no necesariamente una solución tiene infinitos elementos. Es decir, si tomamos una solución, la misma no necesariamente tendra infinitos elementos."
+        }
+        src="/themes/Matematica/AlgebraLineal/SistemasDeEcuaciones/InfSol.webp"
+      />
+      <LComment className="bg-slate-50/50 w-full justify-center">
+        Para INFINITAS soluciones
+      </LComment>
+    </div>
+    <div className="flex flex-col bg-back">
+      <ImgAbs
+        containStyle="my-0"
+        title="Conjunto solución sin elementos"
+        content={
+          "Una representación de como se ve un conjunto solución cuando solo hay no tiene soluciones, pues el mismo conjunto está vacio."
+        }
+        src="/themes/Matematica/AlgebraLineal/SistemasDeEcuaciones/SinSol.webp"
+      />
+      <LComment className="bg-slate-50/50 w-full justify-center">
+        Para NINGUNA solución
+      </LComment>
+    </div>
+  </div>
+  Como se puede ver, el conjunto solución contiene mini conjuntos que son una
+  solución para la ecuación como se ve en el caso 1 y 2, pero para el caso 3 no
+  existe ninguno por que la misma no tiene solución.
+</BComment>
+
+En nuestro contexto actual, vimos hasta ahora muchas ecuaciones lineales, pero no sus soluciones. Por lo tanto,
+veremos que una ecuación lineal tiene un conjunto solución que se puede expresar de una manera familiar a las funciones. Además,
+este método es denominado como representación paramétrica de un conjunto solución.
+
+<BoxChord title="Ejemplo de representación parametrica 1" className="mt-2">
+  Para lo siguiente debemos de tomar en cuenta cualquier ecuación lineal. Por
+  ejemplo.
+  <Ltx txt="7x-5y=3" block />
+  Lo único que debemos de hacer es despejar una de las variables, ya sea
+  <Ltx txt="x" /> o <Ltx txt="y" />. Entonces tenemos que:
+  <Ltx txt="x=\frac{3-5y}{7} \longrightarrow f(y)=\frac{3-5y}{7}" block />
+  <LComment>Para el caso donde despejamos x</LComment>
+  <Ltx txt="y=\frac{7x-3}{5} \longrightarrow f(x)=\frac{7x-3}{5}" block />
+  <LComment>Para el caso donde despejamos y</LComment>
+  Notar que para ambos casos (es indiferente) lo convertimos en una función
+  donde dado cualquier valor de <Ltx txt="t" /> obtenemos un resultado. Es
+  decir, la misma función es el conjunto solución o llamado representación
+  paramétrica. Por otro lado, notar que para cualquier valor de la función nos
+  dará otro valor. siendo así <Ltx txt="(x,y)" /> un par ordenado.
+</BoxChord>
+<BoxChord title="Ejemplo de representación parametrica 2" color="yellow">
+  Veamos como podemos dar con el conjunto solución de esta ecuación lineal de
+  forma que se vuelve intuitivo como hacerlo para ecuaciones más grandes.
+  <Ltx txt="3v-8w+2x-y+4z=0" block />
+  <VidAbs
+    title="Pasos para dar con el conjunto solución"
+    content="Video que representa los pasos para dar con el conjunto solución de una ecuación lineal. Siendo que para ecuaciones más grandes el método sigue siendo el mismo, por lo que es repetitivo."
+    url="/themes/Matematica/AlgebraLineal/SistemasDeEcuaciones/ConSol1.mp4"
+    playing
+    loop
+  />
+  Al igual que el ejemplo 1, la forma de obtener el conjunto solución no cambia y
+  la diferencia solo es el tamaño de la ecuación, entonces aplica para cualquier
+  ecuación. Por otro lado, notar que al despejar tenemos 4 variables, expuestas en
+  la función como <Ltx txt="f(w,x,y,z)" />, la razón de esto, es que para cualquier
+  valor de <Ltx txt="w, x, y, z" /> obtenemos el valor de <Ltx txt="v" />. Practicamente
+  una función donde entran cuatro valores cuales quiera.
+</BoxChord>
+<BoxChord title="Ejemplo de representación parametrica 3">
+  Dado la ecuación lineal
+  <Ltx txt="x+2y+5z+w=9" block />
+  Podemos dar con su conjunto solución:
+  <Ltx txt="x+2y+5z-w=9" block />
+  <Ltx txt="x=9-2y-5z+w" block />
+  <LComment>Despejando x</LComment>
+  <Ltx txt="f(y,z,w)=9-2y-5z+w" block />
+  <LComment>Volverlo función donde entran 3 valores cuales quiera</LComment>
+  Finalmente, concluimos que la función es el conjunto solución.
+</BoxChord>
+<BoxChord title="Ejemplo de representación parametrica 4" color="red">
+  Si bien parece alocado, podemos dar una forma 'general' de la representación
+  parametrica de un conjunto solución, esto aplicandolo a la forma general de
+  una ecuación lineal.
+  <Ltx txt="a_1x_1+a_2x_2+a_3x_3+\cdots+a_nx_n=b" block />
+  Pues aplicando lo mismo que los anteriores ejemplos, podemos dar con la misma.
+  <Ltx txt="a_1x_1+a_2x_2+a_3x_3+\cdots+a_nx_n=b" block />
+  <Ltx txt="a_1x_1=b-a_2x_2-a_3x_3-\cdots-a_nx_n" block />
+  <LComment>Llevando todo para un lado</LComment>
+  <Ltx txt="x_1=\frac{b-a_2x_2-a_3x_3-\cdots-a_nx_n}{a_1}" block />
+  <LComment>
+    Despejando la variable <Ltx txt="x_1" />
+  </LComment>
+  <Ltx
+    txt="f(x_2,x_3,\cdots,x_n)=\frac{b-a_2x_2-a_3x_3-\cdots-a_nx_n}{a_1}"
+    block
+  />
+  <LComment>
+    Función donde entran <Ltx txt="n-1" /> valores cuales quiera
+  </LComment>
+  Como se ve, es lo mismo que los anteriores ejemplos, la unica diferencia son
+  el número de variables que hay. Para este caso, tenemos n-variables, entonces
+  despejamos una variables <Ltx txt="x_1" /> y las demás les asignamos cualquier
+  valor para obtener <Ltx txt="x_1" />.
+</BoxChord>
+<Sep />

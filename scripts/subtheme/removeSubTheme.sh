@@ -6,11 +6,10 @@ fi
 
 public=$1
 source=$2
-pages=$3
 
-gen_1=$4
-gen_2=$5
-gen_3=$6
+gen_1=$3
+gen_2=$4
+gen_3=$5
 
 mensajes=("Se borró" "Se borró" "Se borró" "Se borraron todos" "✅Se borró")
 
@@ -35,14 +34,9 @@ if ! rm -r $source/$gen_1/$gen_2/$gen_3 2>/dev/null; then
     mensajes[1]="No se pudó borrar"
     mensajes[4]="🟨No se pudó borrar"
 fi
-if ! rm -r $pages/$gen_1/$gen_2/$gen_3 2>/dev/null; then
-    mensajes[2]="No se pudó borrar"
-    mensajes[4]="🟨No se pudó borrar"
-fi
 
 echo -e "
 🚀Borrando el directorio con el gen: ▶ $gen_3 de el tema $gen_2 de la materia $gen_1
-- ${mensajes[0]} el directorio en pages: $(tput bold)$pages/$gen_1/$gen_2/$gen_3$(tput sgr0)
 - ${mensajes[1]} el directorio en public: $(tput bold)$public/$gen_1/$gen_2/$gen_3$(tput sgr0)
 - ${mensajes[2]} el directorio en source: $(tput bold)$source/$gen_1/$gen_2/$gen_3$(tput sgr0)
 - ${mensajes[3]} lo subdirectorios y archivos de el tema: $(tput bold)$gen_2/$gen_3$(tput sgr0)

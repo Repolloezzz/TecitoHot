@@ -13,10 +13,12 @@ export interface View extends Base {
 
 export interface Content extends Base {
   keys: string[]
+  created: string,
+  updated: string
 }
 
 export interface SubTheme extends Base {
-  contents: Content[]
+  contents: Content[],
 }
 
 export interface Theme extends View {

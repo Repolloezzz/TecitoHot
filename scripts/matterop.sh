@@ -1,7 +1,7 @@
 # rutas absolutas del proyecto donde se generan las materias
 public="public/matters"
 source="markdown"
-pages="pages/matters"
+#pages="pages/matters"
 
 while getopts "hm:cm:rm:em:lm" opt; do
     case ${opt} in
@@ -20,19 +20,19 @@ while getopts "hm:cm:rm:em:lm" opt; do
         ;;
     c)
         # Para crear una nueva materia
-        source scripts/matter/createMatter.sh $public $source $pages $2
+        source scripts/matter/createMatter.sh $public $source $2
         ;;
     r)
         # Para borrar una materia
-        source scripts/matter/removeMatter.sh $public $source $pages $2
+        source scripts/matter/removeMatter.sh $public $source $2
         ;;
     e)
         # Para editar una materia
-        source scripts/matter/editMatter.sh $public $source $pages $2 $3
+        source scripts/matter/editMatter.sh $public $source $2 $3
         ;;
     l)
         # Para listar todas las materias
-        source scripts/matter/listMatters.sh $public $source $pages
+        source scripts/matter/listMatters.sh $public $source
         ;;
     \?)
         echo "Opción inválida: -$OPTARG" >&2
