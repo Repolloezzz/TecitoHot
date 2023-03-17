@@ -1,9 +1,9 @@
-import { TitleShake } from "./TitleAnimation";
-import { PixelIcons } from "./Icons";
-import { PixelButton } from "./Buttons";
+import { TitleShake } from './TitleAnimation'
+import { PixelIcons } from './Icons'
+import { PixelButton } from './Buttons'
 
 interface props {
-  className?: string;
+  className?: string
 }
 export default function HeroSection({ className }: props) {
   return (
@@ -14,15 +14,15 @@ export default function HeroSection({ className }: props) {
         <TitleShake
           content="TeCitoHot"
           colors={[
-            "bg-red-500 hover:text-red-500 hover:bg-slate-100",
-            "bg-yellow-400 hover:text-yellow-400 hover:bg-slate-100",
-            "bg-green-600 hover:bg-slate-100 hover:text-green-600",
-            "bg-blue-500 hover:bg-slate-100 hover:text-blue-500",
-            "bg-indigo-600 hover:bg-slate-100 hover:text-indigo-600",
-            "bg-cyan-500 hover:bg-slate-100 hover:text-cyan-500",
-            "bg-stone-600 hover:bg-slate-100 hover:text-stone-600",
-            "bg-pink-500 hover:bg-slate-100 hover:text-pink-500",
-            "bg-slate-600 hover:bg-slate-100 hover:text-slate-600",
+            'bg-red-500 hover:text-red-500 hover:bg-slate-100',
+            'bg-yellow-400 hover:text-yellow-400 hover:bg-slate-100',
+            'bg-green-600 hover:bg-slate-100 hover:text-green-600',
+            'bg-blue-500 hover:bg-slate-100 hover:text-blue-500',
+            'bg-indigo-600 hover:bg-slate-100 hover:text-indigo-600',
+            'bg-cyan-500 hover:bg-slate-100 hover:text-cyan-500',
+            'bg-stone-600 hover:bg-slate-100 hover:text-stone-600',
+            'bg-pink-500 hover:bg-slate-100 hover:text-pink-500',
+            'bg-slate-600 hover:bg-slate-100 hover:text-slate-600',
           ]}
           className="text-7xl sm:text-8xl md:text-[9rem] drop-shadow-[0px_5px_0px_rgba(0,0,0,1)] lg:drop-shadow-[0px_10px_0px_rgba(0,0,0,1)] bg lg:text-[10rem] xl:text-[11rem] font-extrabold text-slate-100"
         />
@@ -58,5 +58,5 @@ export default function HeroSection({ className }: props) {
         </PixelButton>
       </div>
     </section>
-  );
+  )
 }

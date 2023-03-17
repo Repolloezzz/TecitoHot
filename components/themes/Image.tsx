@@ -4,7 +4,7 @@ import { FcGallery } from "react-icons/fc";
 interface ImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
   containStyle?: string;
   title: string;
-  content?: JSX.Element | JSX.Element[];
+  content?: JSX.Element | JSX.Element[] | string | string[];
 }
 
 export const notFound = "/imgNotFound.webp";

@@ -9,22 +9,27 @@ import { getAllMatterObject } from '@/lib/getObjects'
 import Layout from '@/components/layout/Layout'
 import type { SubTheme, Theme, Base } from '@/data/DataTypes'
 import ModuleMenu from '@/components/themes/ModuleMenu'
+import PaginationSub from '@/components/themes/PaginationSub'
 import {
   useThemeContext,
   DarkOptions,
   LightOptions,
 } from '@/context/ThemeContent'
+import { allSubThemes } from '@/lib/getParsedObjects'
+import { ID_txt } from '@/components/global/Text'
 
 export default function SubThemeHome({
   data,
   dataLayout,
   dataTheme,
-  slug,
+  dataNext,
+  slugSub,
 }: {
   data: SubTheme
   dataLayout: Base[]
   dataTheme: Theme
-  slug: string
+  dataNext: SubTheme[]
+  slugSub: string
 }) {
   const { themeContent } = useThemeContext()
   return (
@@ -37,13 +42,27 @@ export default function SubThemeHome({
           <ModuleMenu
             className="xl:min-w-[25%]"
             theme={dataTheme}
-            actually={slug}
+            actually={slugSub}
           />
           <section
             data-theme={themeContent.is ? LightOptions[0] : DarkOptions[0]}
             className="lg:min-w-[60%] xl:min-w-[75%] p-2 lg:p-5 lg:pr-7 xl:p-10 xl:pr-12 text-justify font-patrick bg-base-200 min-h-screen break-words lg:text-xl"
           >
-            <h1 className="text-4xl font-bold">{data.name}</h1>
+            <h1 className="text-4xl lg:text-6xl font-bold font-vt323 text-center underline">
+              {data.name}
+            </h1>
+            <p className="text-lg lg:text-2xl p-2">{data.description}</p>
+            <ID_txt id="videos-relacionados">Videos Relacionados</ID_txt>
+            <section
+              className={`w-full h-[50dvh] ${
+                themeContent.is ? 'bg-neutral/10' : 'bg-neutral-content/10'
+              }`}
+            ></section>
+            <PaginationSub
+              genSubTheme={slugSub}
+              subthemes={dataNext}
+              content={data.contents}
+            />
           </section>
         </section>
       </Layout>
@@ -56,12 +75,15 @@ export const getStaticProps: GetStaticProps = async ({ params }: any) => {
   const dataTheme = getTheme(params.matter, params.theme)
   // Datos para el layout de las páginas
   const dataLayout = getAllMatterObject()
+  // Datos para el componente Next Page
+  const dataNext = allSubThemes(params.matter, params.theme)
   return {
     props: {
       data,
       dataLayout,
       dataTheme,
-      slug: params.subTheme,
+      dataNext,
+      slugSub: params.subTheme,
     },
   }
 }

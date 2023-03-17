@@ -1,4 +1,4 @@
-if [ $(expr length "$4") -le 2 ] || [ ! -n "$4" ] || [ $(expr length "$5") -le 2 ] || [ ! -n "$5" ]; then
+if [ $(expr length "$4") -le 2 ] || [ ! -n "$4" ] || [ $(expr length "$3") -le 2 ] || [ ! -n "$3" ]; then
     echo "❓ El generador de la materia no puede ser nulo"
     exit 1
 fi

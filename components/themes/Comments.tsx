@@ -81,12 +81,12 @@ export function BComment({
       data-theme={`${themeContent.is ? LightOptions[2] : DarkOptions[1]}`}
       className={`flex overflow-hidden p-1 pr-3 group transition-all w-full gap-1 lg:gap-5 lg:p-5 py-2 my-2 lg:pr-10 border-l-4 text-slate-600 ${props.border} ${props.cube} bg-opacity-5 shadow-sm`}
     >
-      <div className={`w-5 h-full`}>
+      <span className={`w-5 h-full`}>
         <PixelIcons
           name={props.icon}
           className={`${props.cube} group-hover:rotate-6 group-hover:scale-125 lg:w-8 h-5 w-5 lg:h-8 text-slate-700 transition-all`}
         />
-      </div>
+      </span>
       <span
         className={`w-full text-base leading-5 text-justify lg:text-lg ${props.text}`}
       >

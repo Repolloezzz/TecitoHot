@@ -6,11 +6,17 @@ import {
   genAllContents,
 } from '@/lib/getGenerators'
 import { getContentSource } from '@/lib/getObjects'
-import { getTheme, getContent } from '@/lib/getParsedObjects'
+import {
+  getTheme,
+  getContent,
+  allSubThemes,
+  allContents,
+} from '@/lib/getParsedObjects'
 import { getAllMatterObject } from '@/lib/getObjects'
 import Layout from '@/components/layout/Layout'
-import type { Theme, Base, Content } from '@/data/DataTypes'
+import type { Theme, Base, Content, SubTheme } from '@/data/DataTypes'
 import ModuleMenu from '@/components/themes/ModuleMenu'
+import PaginationSub from '@/components/themes/PaginationSub'
 import {
   useThemeContext,
   DarkOptions,
@@ -25,14 +31,20 @@ export default function ContentHome({
   data,
   dataLayout,
   dataTheme,
-  slug,
+  dataNext,
+  dataContent,
+  slugSub,
+  slugCon,
   source,
   frontMatter,
 }: {
   data: Content
   dataLayout: Base[]
   dataTheme: Theme
-  slug: string
+  dataNext: SubTheme[]
+  dataContent: Content[]
+  slugSub: string
+  slugCon: string
   source: any
   frontMatter: any
 }) {
@@ -47,7 +59,7 @@ export default function ContentHome({
           <ModuleMenu
             className="xl:min-w-[25%]"
             theme={dataTheme}
-            actually={slug}
+            actually={slugSub}
           />
           <section
             data-theme={themeContent.is ? LightOptions[0] : DarkOptions[0]}
@@ -60,6 +72,12 @@ export default function ContentHome({
               lazy={true}
               components={{ ...Global, ...Latex, ...Media, ...Forms }}
               frontmatter={frontMatter}
+            />
+            <PaginationSub
+              genContent={slugCon}
+              genSubTheme={slugSub}
+              subthemes={dataNext}
+              content={dataContent}
             />
           </section>
         </section>
@@ -84,12 +102,18 @@ export const getStaticProps: GetStaticProps = async ({ params }: any) => {
   const dataTheme = getTheme(params.matter, params.theme)
   // Datos para el layout de las páginas
   const dataLayout = getAllMatterObject()
+  // Datos para el componente Next Page
+  const dataNext = allSubThemes(params.matter, params.theme)
+  const dataContent = allContents(params.matter, params.theme, params.subTheme)
   return {
     props: {
       data,
       dataLayout,
       dataTheme,
-      slug: params.subTheme,
+      dataNext,
+      dataContent,
+      slugSub: params.subTheme,
+      slugCon: params.content,
       source,
       frontMatter,
     },

@@ -24,7 +24,7 @@ export default function MatterHome({
       <Layout listData={dataLayout}>
         <Present
           title={data.name}
-          className={`${data.color ? data.color : ''}`}
+          className={`${data.color ? data.color : ''} min-h-[80dvh]`}
         >
           <div className="bg-back flex flex-col p-2 items-center md:p-3 gap-5 md:gap-3 lg:gap-0 lg:p-5 lg:flex-row">
             <ImgAbs

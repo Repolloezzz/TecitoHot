@@ -28,6 +28,7 @@ export function PixelIcons({ name = "file", className }: params) {
             className || "" ? className : "w-8 h-8 bg-slate-800 text-slate-100"
           }`}
           src={src}
+          wrapper="span"
         ></ReactSVG>
       </>
     );
@@ -36,9 +37,9 @@ export function PixelIcons({ name = "file", className }: params) {
     console.log("Error el nombre del icono no existe");
     return (
       <>
-        <p className="box-content inline-block w-8 h-8 text-justify text-white bg-red-500 break-keep">
+        <span className="box-content inline-block w-8 h-8 text-justify text-white bg-red-500 break-keep">
           Error No existe ese icono
-        </p>
+        </span>
       </>
     );
   }

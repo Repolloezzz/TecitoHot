@@ -23,7 +23,7 @@ const MCarousel = ({ children }: context) => {
       >
         <PixelIcons
           name="chevron-left"
-          className="w-8 h-8 text-slate-700 bg-slate-200"
+          className="w-8 h-8 text-slate-700 bg-slate-200 block"
         />
       </button>
       <motion.div
@@ -42,7 +42,7 @@ const MCarousel = ({ children }: context) => {
       >
         <PixelIcons
           name="chevron-right"
-          className="w-8 h-8 text-slate-700 bg-slate-200"
+          className="w-8 h-8 text-slate-700 bg-slate-200 block"
         />
       </button>
     </div>

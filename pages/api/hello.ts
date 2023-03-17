@@ -10,10 +10,5 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>
 ) {
-  const data = await axios.get(
-    "https://es.wikipedia.org/w/api.php?action=query&list=search&srprop=snippet&format=json&origin=*&utf8=&srsearch=apple"
-  );
-  console.log(data.data);
-  const hola = JSON.stringify(data.data);
-  res.status(200).json({ data: hola });
+  res.status(200).json({ data: "Hola munedo" });
 }

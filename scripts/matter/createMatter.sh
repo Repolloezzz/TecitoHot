@@ -1,5 +1,5 @@
 # validar que el gen no sea nulo
-if [ ! -n "$4" ] || [ $(expr length "$4") -le 2 ]; then
+if [ ! -n "$3" ] || [ $(expr length "$3") -le 2 ]; then
     echo "❓ El generador no es valido, debe tener al menos 3 caracteres."
     exit 0
 fi

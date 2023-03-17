@@ -31,7 +31,7 @@ const Ventage = () => {
                 })
               }
             >
-              <PixelIcons name="close" className="w-8 h-8 bg-red-500" />
+              <PixelIcons name="close" className="w-8 h-8 bg-red-500 block" />
             </button>
           </h1>
           <div className="p-5 overflow-y-auto overflow-x-hidden relative h-[90%] bg-base-200 scrollbar-thin scrollbar-w-1 scrollbar-thumb-stone-600 scrollbar-track-stone-800 md:scrollbar-w-2">
