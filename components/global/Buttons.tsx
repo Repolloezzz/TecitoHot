@@ -1,6 +1,6 @@
-import { PixelIcons } from "./Icons";
-import Link from "next/link";
-import React from "react";
+import { PixelIcons } from './Icons';
+import Link from 'next/link';
+import React from 'react';
 
 /**
  * * ButtonRef - Componente que contiene un icono y letras
@@ -37,8 +37,8 @@ export function ButtonRef({
 }: ButtonRefParam) {
   // existe contenido para renderizarlo ?
   if (
-    (content == undefined || content == "") &&
-    (iconName == undefined || iconName == "")
+    (content == undefined || content == '') &&
+    (iconName == undefined || iconName == '')
   )
     return (
       <p className="p-2 overflow-visible text-lg text-justify bg-red-700 w-max h-max text-slate-200 break-keep">
@@ -53,19 +53,19 @@ export function ButtonRef({
       className={`${
         className
           ? className
-          : "bg-white w-max p-0.5 gap-2 rounded-lg hover:bg-slate-500 transition-all hover:text-slate-50"
+          : 'bg-white w-max p-0.5 gap-2 rounded-lg hover:bg-slate-500 transition-all hover:text-slate-50'
       } cursor-pointer flex items-center`}
     >
       {/* validando si existe un icono */}
-      {iconName != undefined || "" ? (
+      {iconName != undefined || '' ? (
         <PixelIcons
           name={`${iconName}`}
-          className={iconClass ? iconClass : "w-7 h-7"}
+          className={iconClass ? iconClass : 'w-7 h-7'}
         />
       ) : null}
       {/* validando si existe un name para el contenido */}
       {content != undefined || null ? (
-        <p className={contentClass ? contentClass : "text-3xl"}>{content}</p>
+        <p className={contentClass ? contentClass : 'text-3xl'}>{content}</p>
       ) : null}
     </Link>
   );
@@ -73,7 +73,7 @@ export function ButtonRef({
 
 export function PixelButton({
   children,
-  className = "",
+  className = '',
 }: {
   children: any;
   className?: string;

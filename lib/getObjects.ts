@@ -1,20 +1,20 @@
-import fs from 'fs'
-import path from 'path'
-import matter from 'gray-matter'
-import { serialize } from 'next-mdx-remote/serialize'
-import { rootMarkdown, Pages, Public } from '@/data/routes'
-import type { Content } from '@/data/DataTypes'
-import { genAllMatters } from '@/lib/getGenerators'
+import fs from 'fs';
+import path from 'path';
+import matter from 'gray-matter';
+import { serialize } from 'next-mdx-remote/serialize';
+import { rootMarkdown, Pages, Public } from '@/data/routes';
+import type { Content } from '@/data/DataTypes';
+import { genAllMatters } from '@/lib/getGenerators';
 
-const message = '⚠ Hubo un error al ejecutar la función'
+const message = '⚠ Hubo un error al ejecutar la función';
 
 const readFile = (...route: string[]) =>
-  fs.readFileSync(path.join(...route), 'utf8')
+  fs.readFileSync(path.join(...route), 'utf8');
 
 export const getMatterObject = (matterGen: string) => {
   try {
-    const file = readFile(rootMarkdown, matterGen, 'index.json')
-    const data = JSON.parse(file)
+    const file = readFile(rootMarkdown, matterGen, 'index.json');
+    const data = JSON.parse(file);
     return {
       name: data.name,
       index: data.index ? data.index : 0,
@@ -24,28 +24,28 @@ export const getMatterObject = (matterGen: string) => {
       img: `${Public}/${matterGen}/${data.img ? data.img : 'Icon.webp'}`,
       color: data.color ? data.color : 'slate',
       character: data.character ? data.character : 'patos',
-    }
+    };
   } catch (error) {
-    console.log(`\n\x1b[1m${message} getMatterObject:\x1b[0m\n${error}`)
-    return null
+    console.log(`\n\x1b[1m${message} getMatterObject:\x1b[0m\n${error}`);
+    return null;
   }
-}
+};
 
 export const getAllMatterObject = () => {
   try {
-    const gens = genAllMatters()
-    const matters = gens.map((gen) => getMatterObject(gen))
-    return matters
+    const gens = genAllMatters();
+    const matters = gens.map((gen) => getMatterObject(gen));
+    return matters;
   } catch (error) {
-    console.log(`\n\x1b[1m${message} getMatterObject:\x1b[0m\n${error}`)
-    return []
+    console.log(`\n\x1b[1m${message} getMatterObject:\x1b[0m\n${error}`);
+    return [];
   }
-}
+};
 
 export const getThemeObject = (matterGen: string, themeGen: string) => {
   try {
-    const file = readFile(rootMarkdown, matterGen, themeGen, 'index.json')
-    const data = JSON.parse(file)
+    const file = readFile(rootMarkdown, matterGen, themeGen, 'index.json');
+    const data = JSON.parse(file);
     return {
       name: data.name,
       index: data.index ? data.index : 0,
@@ -55,17 +55,17 @@ export const getThemeObject = (matterGen: string, themeGen: string) => {
       img: `${Public}/${matterGen}/${themeGen}/${
         data.img ? data.img : 'Icon.webp'
       }`,
-    }
+    };
   } catch (error) {
-    console.log(`\n\x1b[1m${message} getThemeObject:\x1b[0m\n${error}`)
-    return null
+    console.log(`\n\x1b[1m${message} getThemeObject:\x1b[0m\n${error}`);
+    return null;
   }
-}
+};
 
 export const getSubThemeObject = (
   matterGen: string,
   themeGen: string,
-  subThemeGen: string,
+  subThemeGen: string
 ) => {
   try {
     const file = readFile(
@@ -73,9 +73,9 @@ export const getSubThemeObject = (
       matterGen,
       themeGen,
       subThemeGen,
-      'index.json',
-    )
-    const data = JSON.parse(file)
+      'index.json'
+    );
+    const data = JSON.parse(file);
     return {
       name: data.name,
       index: data.index ? data.index : 0,
@@ -83,23 +83,23 @@ export const getSubThemeObject = (
       url: `${Pages}/${matterGen}/${themeGen}/${subThemeGen}`,
       description: data.description ? data.description : '',
     } as {
-      name: string
-      index: number
-      gen: string
-      url: string
-      description: string
-    }
+      name: string;
+      index: number;
+      gen: string;
+      url: string;
+      description: string;
+    };
   } catch (error) {
-    console.log(`\n\x1b[1m${message} getSubThemeObject:\x1b[0m\n${error}`)
-    return null
+    console.log(`\n\x1b[1m${message} getSubThemeObject:\x1b[0m\n${error}`);
+    return null;
   }
-}
+};
 
 export const getContentObject = (
   matterGen: string,
   themeGen: string,
   subThemeGen: string,
-  contentGen: string,
+  contentGen: string
 ) => {
   try {
     const file = readFile(
@@ -107,10 +107,10 @@ export const getContentObject = (
       matterGen,
       themeGen,
       subThemeGen,
-      `${contentGen}.mdx`,
-    )
-    const parsed = matter(file)
-    const data = parsed.data as Content
+      `${contentGen}.mdx`
+    );
+    const parsed = matter(file);
+    const data = parsed.data as Content;
     return {
       name: data.name,
       index: data.index ? data.index : 0,
@@ -122,18 +122,18 @@ export const getContentObject = (
       keys: data.keys ? data.keys : [],
       created: data.created ? data.created : '',
       updated: data.updated ? data.updated : '',
-    }
+    };
   } catch (error) {
-    console.log(`\n\x1b[1m${message} getContentObject:\x1b[0m\n${error}`)
-    return null
+    console.log(`\n\x1b[1m${message} getContentObject:\x1b[0m\n${error}`);
+    return null;
   }
-}
+};
 
 export const getContentSource = async (
   matterGen: string,
   themeGen: string,
   subThemeGen: string,
-  contentGen: string,
+  contentGen: string
 ) => {
   try {
     const file = readFile(
@@ -141,21 +141,21 @@ export const getContentSource = async (
       matterGen,
       themeGen,
       subThemeGen,
-      `${contentGen}.mdx`,
-    )
-    const { content, data } = matter(file)
-    const source = await serialize(content, {})
+      `${contentGen}.mdx`
+    );
+    const { content, data } = matter(file);
+    const source = await serialize(content, {});
     return {
       source,
       frontMatter: {
         ...data,
       },
-    }
+    };
   } catch (error) {
-    console.log(`\n\x1b[1m${message} getContentSource:\x1b[0m\n${error}`)
+    console.log(`\n\x1b[1m${message} getContentSource:\x1b[0m\n${error}`);
     return {
       source: null,
       frontMatter: null,
-    }
+    };
   }
-}
+};

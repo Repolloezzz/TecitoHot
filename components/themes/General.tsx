@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from 'next/link';
 export function Ref({ id }: { id: string }) {
   return <span id={id} className="relative -top-20 lg:-top-32" />;
 }
@@ -7,10 +7,10 @@ export function Sep() {
 }
 
 export function Lnk({
-  url = "#",
-  txt = "link",
+  url = '#',
+  txt = 'link',
   ext = false,
-  style = "",
+  style = '',
 }: {
   url: string;
   txt: string;
@@ -34,7 +34,7 @@ export function Lnk({
 export function List({
   items,
   type,
-  className = "",
+  className = '',
 }: {
   items: JSX.Element[];
   type?: string;

@@ -1,5 +1,5 @@
-import { PixelIcons } from "../global/Icons";
-import { TitleMove } from "../global/TitleAnimation";
+import { PixelIcons } from '../global/Icons';
+import { TitleMove } from '../global/TitleAnimation';
 
 interface context {
   id?: string;
@@ -13,7 +13,7 @@ const Present = ({ id, theme, className, title, children }: context) => {
     <div
       id={id}
       data-theme={theme}
-      className={`hero min-h-screen ${className ? className : "bg-base-200"}`}
+      className={`hero min-h-screen ${className ? className : 'bg-base-200'}`}
     >
       <div className="hero-content flex-col">
         <h1 className="text-5xl lg:text-9xl font-bold flex items-center w-full">

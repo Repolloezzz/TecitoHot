@@ -1,31 +1,31 @@
-import { GetStaticPaths, GetStaticProps } from 'next/types'
+import { GetStaticPaths, GetStaticProps } from 'next/types';
 import {
   genAllThemes,
   genAllMatters,
   genAllSubThemes,
   genAllContents,
-} from '@/lib/getGenerators'
-import { getContentSource } from '@/lib/getObjects'
+} from '@/lib/getGenerators';
+import { getContentSource } from '@/lib/getObjects';
 import {
   getTheme,
   getContent,
   allSubThemes,
   allContents,
-} from '@/lib/getParsedObjects'
-import { getAllMatterObject } from '@/lib/getObjects'
-import Layout from '@/components/layout/Layout'
-import type { Theme, Base, Content, SubTheme } from '@/data/DataTypes'
-import ModuleMenu from '@/components/themes/ModuleMenu'
-import PaginationSub from '@/components/themes/PaginationSub'
+} from '@/lib/getParsedObjects';
+import { getAllMatterObject } from '@/lib/getObjects';
+import Layout from '@/components/layout/Layout';
+import type { Theme, Base, Content, SubTheme } from '@/data/DataTypes';
+import ModuleMenu from '@/components/themes/ModuleMenu';
+import PaginationSub from '@/components/themes/PaginationSub';
 import {
   useThemeContext,
   DarkOptions,
   LightOptions,
-} from '@/context/ThemeContent'
-import { MDXRemote } from 'next-mdx-remote'
-import { Global, Latex, Media, Forms } from '@/components/themes/MDXComponents'
-import { HeadTitle } from '@/components/themes/Titles'
-import { Sep } from '@/components/themes/General'
+} from '@/context/ThemeContent';
+import { MDXRemote } from 'next-mdx-remote';
+import { Global, Latex, Media, Forms } from '@/components/themes/MDXComponents';
+import { HeadTitle } from '@/components/themes/Titles';
+import { Sep } from '@/components/themes/General';
 
 export default function ContentHome({
   data,
@@ -38,17 +38,17 @@ export default function ContentHome({
   source,
   frontMatter,
 }: {
-  data: Content
-  dataLayout: Base[]
-  dataTheme: Theme
-  dataNext: SubTheme[]
-  dataContent: Content[]
-  slugSub: string
-  slugCon: string
-  source: any
-  frontMatter: any
+  data: Content;
+  dataLayout: Base[];
+  dataTheme: Theme;
+  dataNext: SubTheme[];
+  dataContent: Content[];
+  slugSub: string;
+  slugCon: string;
+  source: any;
+  frontMatter: any;
 }) {
-  const { themeContent } = useThemeContext()
+  const { themeContent } = useThemeContext();
   return (
     <>
       <Layout listData={dataLayout}>
@@ -83,7 +83,7 @@ export default function ContentHome({
         </section>
       </Layout>
     </>
-  )
+  );
 }
 
 export const getStaticProps: GetStaticProps = async ({ params }: any) => {
@@ -91,20 +91,20 @@ export const getStaticProps: GetStaticProps = async ({ params }: any) => {
     params.matter,
     params.theme,
     params.subTheme,
-    params.content,
-  )
+    params.content
+  );
   const { source, frontMatter } = await getContentSource(
     params.matter,
     params.theme,
     params.subTheme,
-    params.content,
-  )
-  const dataTheme = getTheme(params.matter, params.theme)
+    params.content
+  );
+  const dataTheme = getTheme(params.matter, params.theme);
   // Datos para el layout de las páginas
-  const dataLayout = getAllMatterObject()
+  const dataLayout = getAllMatterObject();
   // Datos para el componente Next Page
-  const dataNext = allSubThemes(params.matter, params.theme)
-  const dataContent = allContents(params.matter, params.theme, params.subTheme)
+  const dataNext = allSubThemes(params.matter, params.theme);
+  const dataContent = allContents(params.matter, params.theme, params.subTheme);
   return {
     props: {
       data,
@@ -117,19 +117,19 @@ export const getStaticProps: GetStaticProps = async ({ params }: any) => {
       source,
       frontMatter,
     },
-  }
-}
+  };
+};
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const paths: any = []
+  const paths: any = [];
   // Obtenemos todas las materias
-  const mattersGens = genAllMatters()
+  const mattersGens = genAllMatters();
   mattersGens.forEach((matterGen) => {
-    const themesGen = genAllThemes(matterGen)
+    const themesGen = genAllThemes(matterGen);
     themesGen.forEach((themeGen) => {
-      const subThemesGen = genAllSubThemes(matterGen, themeGen)
+      const subThemesGen = genAllSubThemes(matterGen, themeGen);
       subThemesGen.forEach((subThemeGen) => {
-        const contentsGen = genAllContents(matterGen, themeGen, subThemeGen)
+        const contentsGen = genAllContents(matterGen, themeGen, subThemeGen);
         contentsGen.forEach((contentGen) => {
           paths.push({
             params: {
@@ -138,13 +138,13 @@ export const getStaticPaths: GetStaticPaths = async () => {
               subTheme: subThemeGen,
               content: contentGen,
             },
-          })
-        })
-      })
-    })
-  })
+          });
+        });
+      });
+    });
+  });
   return {
     paths,
     fallback: false,
-  }
-}
+  };
+};

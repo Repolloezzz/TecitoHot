@@ -1,6 +1,6 @@
-import type { Matter, Theme } from "@/data/DataTypes";
-import Link from "next/link";
-import { useAbsoluteContext } from "../../context/Absolute";
+import type { Matter, Theme } from '@/data/DataTypes';
+import Link from 'next/link';
+import { useAbsoluteContext } from '../../context/Absolute';
 
 interface context {
   className?: string;
@@ -12,17 +12,21 @@ const MatterCard = ({ className, base }: context) => {
   return (
     <div
       className={`${
-        className ? className : ""
+        className ? className : ''
       } flex flex-col items-center bg-base-100`}
     >
       <h1 className="text-2xl bg-base-300 w-full text-center text-base-content">
         {base.name}
       </h1>
       <picture>
-        <img src={base.img} alt={`${base.name}-image`} onError={({currentTarget}) => {
-          currentTarget.onerror = null
-          currentTarget.src = '/imgNotFound.webp'
-        }}/>
+        <img
+          src={base.img}
+          alt={`${base.name}-image`}
+          onError={({ currentTarget }) => {
+            currentTarget.onerror = null;
+            currentTarget.src = '/imgNotFound.webp';
+          }}
+        />
       </picture>
       <div className="bg-base-300 w-full flex justify-around p-2 overflow-hidden my-auto">
         <Link
@@ -57,12 +61,18 @@ const MatterCard = ({ className, base }: context) => {
                             </span>
                             <Link
                               className="btn btn-outline btn-secondary btn-sm md:btn-md rounded-none w-full"
-                              onClick={() => change({title: 'Hola mundo', open: false, content: <></>})}
+                              onClick={() =>
+                                change({
+                                  title: 'Hola mundo',
+                                  open: false,
+                                  content: <></>,
+                                })
+                              }
                               href={
                                 element.subThemes != undefined &&
                                 element.subThemes[0] != undefined
                                   ? element.subThemes[0].url
-                                  : "#"
+                                  : '#'
                               }
                             >
                               Ver más
@@ -93,15 +103,19 @@ const ThemeCard = ({ className, base }: contextTheme) => {
   const { change } = useAbsoluteContext();
 
   return (
-    <div className={`${className ? className : ""} flex flex-col items-center`}>
+    <div className={`${className ? className : ''} flex flex-col items-center`}>
       <h1 className="text-lg bg-base-300 w-full text-center text-base-content leading-6 break-all md:text-xl lg:text-2xl">
         {base.name}
       </h1>
       <picture>
-        <img src={base.img} alt={`${base.name}-image`} onError={({currentTarget}) => {
-          currentTarget.onerror = null
-          currentTarget.src = '/imgNotFound.webp'
-        }}/>
+        <img
+          src={base.img}
+          alt={`${base.name}-image`}
+          onError={({ currentTarget }) => {
+            currentTarget.onerror = null;
+            currentTarget.src = '/imgNotFound.webp';
+          }}
+        />
       </picture>
       <div className="w-full flex justify-around p-2 overflow-hidden my-auto">
         <Link
@@ -127,7 +141,7 @@ const ThemeCard = ({ className, base }: contextTheme) => {
                         alt={`${base.name}-image`}
                         onError={({ currentTarget }) => {
                           currentTarget.onerror = null;
-                          currentTarget.src = "/imgNotFound.webp";
+                          currentTarget.src = '/imgNotFound.webp';
                         }}
                       />
                     </picture>
@@ -159,7 +173,13 @@ const ThemeCard = ({ className, base }: contextTheme) => {
                           <Link
                             className="btn btn-outline btn-secondary btn-sm md:btn-md rounded-none w-full ml-1"
                             href={element.url}
-                            onClick={() => change({title: 'Hola mundo', open: false, content: <></>})}
+                            onClick={() =>
+                              change({
+                                title: 'Hola mundo',
+                                open: false,
+                                content: <></>,
+                              })
+                            }
                           >
                             Ver más
                           </Link>

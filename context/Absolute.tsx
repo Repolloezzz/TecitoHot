@@ -1,12 +1,12 @@
-import { createContext, Dispatch, SetStateAction, useContext } from "react";
-import { useState } from "react";
+import { createContext, Dispatch, SetStateAction, useContext } from 'react';
+import { useState } from 'react';
 
 interface ContextProps {
   context: Props;
   change: Dispatch<SetStateAction<Props>>;
 }
 export const AbsoluteContext = createContext<ContextProps>({
-  context: { title: "hola mundo", open: false, content: <></> },
+  context: { title: 'hola mundo', open: false, content: <></> },
   change: () => {},
 });
 
@@ -21,7 +21,7 @@ export interface Props {
 }
 export const ContextProvider = ({ children }: any) => {
   const [state, setState] = useState<Props>({
-    title: "Nueva ventana",
+    title: 'Nueva ventana',
     open: false,
     content: <div></div>,
   });

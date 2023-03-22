@@ -1,27 +1,27 @@
-import moment from 'moment'
-import { PixelIcons } from '../global/Icons'
-import type { Content } from '@/data/DataTypes'
+import moment from 'moment';
+import { PixelIcons } from '../global/Icons';
+import type { Content } from '@/data/DataTypes';
 
 interface HeadTitleContext {
-  content: Content
-  author?: { name: string; link: string }
+  content: Content;
+  author?: { name: string; link: string };
 }
 export const HeadTitle = ({
   content,
   author = { name: '@RepolloEzzz', link: 'https://github.com/Repolloezzz' },
 }: HeadTitleContext) => {
-  const created = moment(content.created, 'DD-MM-YYYY')
+  const created = moment(content.created, 'DD-MM-YYYY');
   const updated = moment(
     content.updated ? content.updated : content.created,
-    'DD-MM-YYYY',
-  )
-  let msgCreated: string, msgUpdated: string
+    'DD-MM-YYYY'
+  );
+  let msgCreated: string, msgUpdated: string;
   if (created.isValid()) {
-    msgCreated = created.format('LL')
-    msgUpdated = created.format('LL')
+    msgCreated = created.format('LL');
+    msgUpdated = updated.format('LL');
   } else {
-    msgCreated = 'Desconocido'
-    msgUpdated = 'Desconocido'
+    msgCreated = 'Desconocido';
+    msgUpdated = 'Desconocido';
   }
 
   return (
@@ -51,10 +51,10 @@ export const HeadTitle = ({
           </a>
         </span>
       </div>
-      <p className='p-2'>{content.description}</p>
+      <p className="p-2">{content.description}</p>
     </div>
-  )
-}
+  );
+};
 
 export const TitleSection = ({ txt, nr }: { txt: string; nr: number }) => {
   return (
@@ -68,8 +68,8 @@ export const TitleSection = ({ txt, nr }: { txt: string; nr: number }) => {
       )}
       <span>{txt}</span>
     </h1>
-  )
-}
+  );
+};
 
-const all = { HeadTitle, TitleSection }
-export default all
+const all = { HeadTitle, TitleSection };
+export default all;

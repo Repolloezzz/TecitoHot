@@ -1,22 +1,22 @@
-import { GetStaticPaths, GetStaticProps } from 'next/types'
+import { GetStaticPaths, GetStaticProps } from 'next/types';
 import {
   genAllThemes,
   genAllMatters,
   genAllSubThemes,
-} from '@/lib/getGenerators'
-import { getSubTheme, getTheme } from '@/lib/getParsedObjects'
-import { getAllMatterObject } from '@/lib/getObjects'
-import Layout from '@/components/layout/Layout'
-import type { SubTheme, Theme, Base } from '@/data/DataTypes'
-import ModuleMenu from '@/components/themes/ModuleMenu'
-import PaginationSub from '@/components/themes/PaginationSub'
+} from '@/lib/getGenerators';
+import { getSubTheme, getTheme } from '@/lib/getParsedObjects';
+import { getAllMatterObject } from '@/lib/getObjects';
+import Layout from '@/components/layout/Layout';
+import type { SubTheme, Theme, Base } from '@/data/DataTypes';
+import ModuleMenu from '@/components/themes/ModuleMenu';
+import PaginationSub from '@/components/themes/PaginationSub';
 import {
   useThemeContext,
   DarkOptions,
   LightOptions,
-} from '@/context/ThemeContent'
-import { allSubThemes } from '@/lib/getParsedObjects'
-import { ID_txt } from '@/components/global/Text'
+} from '@/context/ThemeContent';
+import { allSubThemes } from '@/lib/getParsedObjects';
+import { ID_txt } from '@/components/global/Text';
 
 export default function SubThemeHome({
   data,
@@ -25,13 +25,13 @@ export default function SubThemeHome({
   dataNext,
   slugSub,
 }: {
-  data: SubTheme
-  dataLayout: Base[]
-  dataTheme: Theme
-  dataNext: SubTheme[]
-  slugSub: string
+  data: SubTheme;
+  dataLayout: Base[];
+  dataTheme: Theme;
+  dataNext: SubTheme[];
+  slugSub: string;
 }) {
-  const { themeContent } = useThemeContext()
+  const { themeContent } = useThemeContext();
   return (
     <>
       <Layout listData={dataLayout}>
@@ -67,16 +67,16 @@ export default function SubThemeHome({
         </section>
       </Layout>
     </>
-  )
+  );
 }
 
 export const getStaticProps: GetStaticProps = async ({ params }: any) => {
-  const data = getSubTheme(params.matter, params.theme, params.subTheme)
-  const dataTheme = getTheme(params.matter, params.theme)
+  const data = getSubTheme(params.matter, params.theme, params.subTheme);
+  const dataTheme = getTheme(params.matter, params.theme);
   // Datos para el layout de las páginas
-  const dataLayout = getAllMatterObject()
+  const dataLayout = getAllMatterObject();
   // Datos para el componente Next Page
-  const dataNext = allSubThemes(params.matter, params.theme)
+  const dataNext = allSubThemes(params.matter, params.theme);
   return {
     props: {
       data,
@@ -85,16 +85,16 @@ export const getStaticProps: GetStaticProps = async ({ params }: any) => {
       dataNext,
       slugSub: params.subTheme,
     },
-  }
-}
+  };
+};
 
 export const getStaticPaths: GetStaticPaths = async (context) => {
-  const paths: any = []
-  const matters = genAllMatters()
+  const paths: any = [];
+  const matters = genAllMatters();
   matters.forEach((matter) => {
-    const themes = genAllThemes(matter)
+    const themes = genAllThemes(matter);
     themes.forEach((theme) => {
-      const subThemes = genAllSubThemes(matter, theme)
+      const subThemes = genAllSubThemes(matter, theme);
       subThemes.forEach((subTheme) => {
         paths.push({
           params: {
@@ -102,12 +102,12 @@ export const getStaticPaths: GetStaticPaths = async (context) => {
             theme,
             subTheme,
           },
-        })
-      })
-    })
-  })
+        });
+      });
+    });
+  });
   return {
     paths,
     fallback: false,
-  }
-}
+  };
+};

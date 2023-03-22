@@ -1,4 +1,4 @@
 {
-    "name": "Estructura de datos",
-    "description": "Una estructura de datos es una forma de organizar y almacenar datos en una computadora de manera que puedan ser utilizados de manera eficiente. Las estructuras de datos son esenciales para el diseño de algoritmos y la implementación de programas eficientes. Las estructuras de datos pueden ser simples o complejas. Las estructuras de datos simples incluyen tipos de datos básicos, como enteros, caracteres y flotantes, mientras que las estructuras de datos complejas incluyen arrays, listas, árboles, grafos, pilas, colas, tablas hash y muchos otros."
+  "name": "Estructura de datos",
+  "description": "Una estructura de datos es una forma de organizar y almacenar datos en una computadora de manera que puedan ser utilizados de manera eficiente. Las estructuras de datos son esenciales para el diseño de algoritmos y la implementación de programas eficientes. Las estructuras de datos pueden ser simples o complejas. Las estructuras de datos simples incluyen tipos de datos básicos, como enteros, caracteres y flotantes, mientras que las estructuras de datos complejas incluyen arrays, listas, árboles, grafos, pilas, colas, tablas hash y muchos otros."
 }

@@ -1,5 +1,5 @@
-import { useAbsoluteContext } from "../../context/Absolute";
-import { PixelIcons } from "../global/Icons";
+import { useAbsoluteContext } from '../../context/Absolute';
+import { PixelIcons } from '../global/Icons';
 const Ventage = () => {
   const { change, context } = useAbsoluteContext();
   return (
@@ -7,17 +7,17 @@ const Ventage = () => {
       <section
         className={`fixed transition-all origin-center z-40 top-0 pt-20 pb-16 right-0 overflow-hidden bg-neutral/70 h-screen flex justify-center items-center ${
           context.open
-            ? "w-full px-2 md:px-5 lg:px-24 xl:px-32"
-            : "w-0 duration-[400ms]"
+            ? 'w-full px-2 md:px-5 lg:px-24 xl:px-32'
+            : 'w-0 duration-[400ms]'
         }`}
       >
         <div
           className={`${
             context.open
               ? setTimeout(() => {
-                  return "scale-100 ";
+                  return 'scale-100 ';
                 }, 1000)
-              : "scale-0"
+              : 'scale-0'
           } relative w-full h-full mockup-window bg-base-300 transition-all duration-300 `}
         >
           <h1 className="flex bg-neutral p-2 h-[8%] font-bold text-xl md:text-1.5xl lg:text-2xl xl:text-3xl">
@@ -25,7 +25,7 @@ const Ventage = () => {
             <button
               onClick={() =>
                 change({
-                  title: "hola mundo",
+                  title: 'hola mundo',
                   open: false,
                   content: <div></div>,
                 })

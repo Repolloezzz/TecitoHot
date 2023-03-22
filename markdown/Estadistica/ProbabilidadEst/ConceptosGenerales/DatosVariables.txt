@@ -1,0 +1,237 @@
+---
+name: Datos y variables
+created: 25-02-2023
+index: 2
+---
+
+<BoxImp title="¿Qué es un dato?" color="orange" icon="flag" id="def_dat" comment="definción de dato"
+
+> Un dato es una información o un conjunto de información que se usa como base para la obtención de conclusiones. este puede ser un valor o una categoría. </BoxImp>
+
+<BComment type="note">
+  Al decir que una variable puede ser un valor nos referimos a que puede ser un
+  número, una cantidad o medida específica. \ Al decir que una variable puede
+  ser una categoria nos referimos que es una clasificación al que pertenece el
+  dato. \ Un ejemplo de ambos es decir la edad de una persona y su tipo de
+  sangre:
+
+  <span className="grid my-1 bg-neutral/5 p-1 grid-cols-2">
+    <span className="w-full text-center">24 años</span>
+
+    <span className="w-full text-center">O+</span>
+
+  </span>
+
+Así el dato tiene un valor (edad) y una categoria (tipo de sangre) </BComment>
+
+Al estudiar un conjunto de objetos, generalmente nos centramos en estudiar ciertas característicate relevantes para nosotros, entonces estas características se denominan variables, donde de una variable o más podemos sacar un dato.
+
+<BoxImp title="¿Qué es una variable?" color="orange" icon="flag" id="def_var" comment="Definición de una variable"
+
+> Una variable es una característica de una población, donde la misma se concentra solo en UNA de todas las características de la población. Por ejemplo, la edad de una población de personas en Argentina. Por otro lado, los datos obtenidos de una variable pueden o no cambiar por diferentes factores. \
+> Las variables se representan por las ultimas letras del abecedario{' '} <Ltx txt="x,y,z,..." /> y más. </BoxImp> <BComment type="warn"> La misma definción también aplica para una muestra de la población, no es exlusivo y puede ser tanto para una población como para una muestra de la población. </BComment> <BComment type="note"> Una variables practicamente es decir que es lo que vamos a estudiar de una población. Por ejemplo si tenemos una población de estudiantes, decimos: <span className="block my-1 bg-neutral/5 p-1">
+
+    <b>
+      <Ltx txt="x" />
+      :
+    </b>
+    {' '} el color de cuaderno de un estudiantes
+
+  </span>
+
+Entonces, sacamos datos de todos los estudiantes basados en la variable x. Es decir, recopilar datos de los colores de los cuadernos de los estudiantes. Un ejemplo de los datos pueden ser:
+
+  <span className="my-1 bg-neutral/5 p-1 grid grid-cols-5 w-full">
+    <span className="w-full text-center">rojo</span>
+
+    <span className="w-full text-center">verde</span>
+
+    <span className="w-full text-center">rojo</span>
+
+    <span className="w-full text-center">azul</span>
+
+    <span className="w-full text-center">negro</span>
+
+  </span>
+
+<LComment>Datos resultantes del estudio de cinco estudiantes</LComment> </BComment>
+
+<BoxImp title="Tipos de datos" color="green" icon="flag" id="tip_dat">
+  Como se dijo en la
+
+{' '}
+<Lnk url="#def_data" txt="definición de dato" />
+
+este puede ser de dos tipos: - -Univariante: dato que se basa en una sola variable. Ej (edad) - -Multivariante: dato que se basa en multiples variables. Ej (edad, peso, altura) </BoxImp>
+
+Entonces con estos conceptos podemos entender como tomar datos de varias variables. Es decir, obtener datos que sean un conjunto de información.
+
+<BoxChord className="mt-2" title="Ejemplo de datos y variables 1">
+  De una población de palomas tenemos la siguiente variable.
+
+  <span className="block my-1 bg-neutral/5 p-1">
+    <b>
+      <Ltx txt="x" />
+
+      :
+    </b>
+
+    {' '} el genero de la paloma.
+
+  </span>
+
+Entonces supongamos que tomamos 8 datos donde nos sale:
+
+  <span className="my-1 bg-neutral/5 p-1 grid grid-cols-8 w-full">
+    <span className="w-full text-center">Macho</span>
+
+    <span className="w-full text-center">Hembra</span>
+
+    <span className="w-full text-center">Macho</span>
+
+    <span className="w-full text-center">Macho</span>
+
+    <span className="w-full text-center">Hembra</span>
+
+    <span className="w-full text-center">Hembra</span>
+
+    <span className="w-full text-center">Hembra</span>
+
+    <span className="w-full text-center">Hembra</span>
+
+  </span>
+
+Osea, de 8 palomas estudiadas sacamos estos datos. </BoxChord>
+
+<BoxChord title="Ejemplo de datos y variables 2">
+  De una población de estudiantes tenemos las siguientes variables.
+
+  <span className="block my-1 bg-neutral/5 p-1">
+    <span className="block">
+      <b>
+        <Ltx txt="x" />
+
+        :
+      </b>
+
+      {' '} la edad del estudiante.
+    </span>
+
+    <span className="block">
+      <b>
+        <Ltx txt="y" />
+
+        :
+      </b>
+
+      {' '} la futura profesión del estudiante.
+    </span>
+
+  </span>
+
+Entonces supongamos que tomamos 8 datos, donde sale:
+
+  <span className="my-1 bg-neutral/5 p-1 grid grid-flow-col grid-rows-3 w-full">
+    <span className="w-full text-center">(14, Doctor)</span>
+
+    <span className="w-full text-center">(17, Profesor)</span>
+
+    <span className="w-full text-center">(13, Astronauta)</span>
+
+    <span className="w-full text-center">(15, Chef)</span>
+
+    <span className="w-full text-center">(17, Doctor)</span>
+
+    <span className="w-full text-center">(15, Bombero)</span>
+
+    <span className="w-full text-center">(14, Policia)</span>
+
+    <span className="w-full text-center">(10, Doctor)</span>
+
+  </span>
+
+Ahora bien, cada dato sacado es una "par ordenado". Es decir, que representa cada cada variable como (
+
+{' '}
+<Ltx txt="x" />
+
+,
+
+{' '}
+<Ltx txt="y" />
+
+) = (edad, profesión) = (14, Doctor), de esta forma tenemos una dato Bivariante basado en dos variables, que es la edad y profesión. </BoxChord>
+
+<BoxChord className="mb-2" title="Ejemplo de datos y variables 3">
+  Supongamos una muestra de conejos de una granja donde se tiene las siguientes
+  variables.
+
+  <span className="block my-1 bg-neutral/5 p-1">
+    <span className="block">
+      <b>
+        <Ltx txt="x" />
+
+        :
+      </b>
+
+      {' '} el tamaño del conejo.
+    </span>
+
+    <span className="block">
+      <b>
+        <Ltx txt="y" />
+
+        :
+      </b>
+
+      {' '} el color del conejo.
+    </span>
+
+    <span className="block">
+      <b>
+        <Ltx txt="z" />
+
+        :
+      </b>
+
+      {' '} el tiempo de vida del conejo en días.
+    </span>
+
+  </span>
+
+Ahora bien, queremos que
+
+{' '}
+<Ltx txt="x" />
+
+se una categoria, donde solo saldran los valores pequeño, mediano ó grande, al igual que
+
+{' '}
+<Ltx txt="y" />
+
+donde solo hay conejos de color blanco, cafe y plomo. Pero
+
+{' '}
+<Ltx txt="z" />
+
+es un valor ya que daremos con un valor numérico como es su tiempo de vida. Entonces, suponiendo que tomamos 5 datos tenemos que:
+
+  <span className="my-1 bg-neutral/5 p-1 grid grid-flow-col grid-rows-2 w-full">
+    <span className="w-full text-center">(mediano, cafe, 64)</span>
+
+    <span className="w-full text-center">(pequeño, cafe, 20)</span>
+
+    <span className="w-full text-center">(grande, blanco, 245)</span>
+
+    <span className="w-full text-center">(grande, plomo, 147)</span>
+
+    <span className="w-full text-center">(mediano, cafe, 86)</span>
+
+  </span>
+
+Pues así tenemos que (
+
+{' '}
+<Ltx txt="x,y,z" />
+
+) = (tamaño, color, tiempo) = (mediano, cafe, 64), este es la forma de la que obtenemos datos de multiples variables, en este caso nuestros datos son de tres variables. </BoxChord>

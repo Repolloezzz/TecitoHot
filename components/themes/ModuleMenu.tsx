@@ -1,26 +1,26 @@
-import type { SubTheme, Theme } from '@/data/DataTypes'
-import { PixelIcons } from '../global/Icons'
-import { useRef, useState } from 'react'
-import Link from 'next/link'
-import React from 'react'
+import type { SubTheme, Theme } from '@/data/DataTypes';
+import { PixelIcons } from '../global/Icons';
+import { useRef, useState } from 'react';
+import Link from 'next/link';
+import React from 'react';
 import {
   LightOptions,
   DarkOptions,
   useThemeContext,
-} from '@/context/ThemeContent'
+} from '@/context/ThemeContent';
 interface context {
-  theme: Theme
-  className: string
-  actually: string
+  theme: Theme;
+  className: string;
+  actually: string;
 }
 const ModuleMenu = ({ theme, className, actually }: context) => {
-  const { changeTheme, themeContent } = useThemeContext()
-  const focusSearch = useRef<HTMLInputElement>(null)
-  const [open, setOpen] = useState(false)
+  const { changeTheme, themeContent } = useThemeContext();
+  const focusSearch = useRef<HTMLInputElement>(null);
+  const [open, setOpen] = useState(false);
   return (
     <>
       <nav
-        className={`bg-base-100 max-h-[95vh] flex flex-col lg:min-w-[35%] lg:p-4 xl:p-7 sticky top-16 bottom-0 overflow-y-hidden z-30 ${className}`}
+        className={`bg-base-100 max-h-[60vh] md:max-h-[90vh] flex flex-col lg:min-w-[35%] lg:p-4 xl:p-7 sticky top-16 bottom-0 overflow-y-hidden z-30 ${className}`}
       >
         {/* Button for Small */}
         <button
@@ -46,7 +46,7 @@ const ModuleMenu = ({ theme, className, actually }: context) => {
           </h1>
           <div
             onClick={() => {
-              focusSearch?.current?.focus()
+              focusSearch?.current?.focus();
             }}
             className={`flex w-full bg-neutral-focus p-2 items-center gap-2`}
           >
@@ -101,9 +101,11 @@ const ModuleMenu = ({ theme, className, actually }: context) => {
                   <div
                     onClick={({ currentTarget }) => {
                       currentTarget.nextElementSibling?.classList.toggle(
-                        'max-h-[0px]',
-                      )
-                      currentTarget.nextElementSibling?.classList.toggle('pb-2')
+                        'max-h-[0px]'
+                      );
+                      currentTarget.nextElementSibling?.classList.toggle(
+                        'pb-2'
+                      );
                     }}
                     className={`text-lg lg:text-xl font-medium p-0 rounded-none btn btn-sm md:btn-md ${
                       element.gen == actually ? 'btn-primary' : 'btn-secondary'
@@ -131,17 +133,17 @@ const ModuleMenu = ({ theme, className, actually }: context) => {
                           </span>
                           <span>{content.name}</span>
                         </Link>
-                      )
+                      );
                     })}
                   </div>
                 </li>
-              )
+              );
             })}
           </menu>
         </div>
       </nav>
     </>
-  )
-}
+  );
+};
 
-export default ModuleMenu
+export default ModuleMenu;

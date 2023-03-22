@@ -1,91 +1,90 @@
 .ClickDown {
-    animation: down 1.5s ease-in-out !important;
+  animation: down 1.5s ease-in-out !important;
 }
 
 .ClickScale {
-    animation: scale .7s ease-in-out !important;
+  animation: scale 0.7s ease-in-out !important;
 }
 
 .Shake_a {
-    animation: shake 1.5s infinite ease-in-out;
+  animation: shake 1.5s infinite ease-in-out;
 }
 .Shake_b {
-    animation: shake 1.5s infinite ease-in-out reverse;
+  animation: shake 1.5s infinite ease-in-out reverse;
 }
 
 @keyframes down {
+  10% {
+    transform: translateY(-20%) rotate(var(--deg));
+  }
 
-    10% {
-        transform: translateY(-20%) rotate(var(--deg));
-    }
+  70% {
+    transform: translateY(100vh) rotate(180deg);
+    opacity: 0.2;
+  }
 
-    70% {
-        transform: translateY(100vh) rotate(180deg);
-        opacity: .2;
-    }
+  71% {
+    transform: translateY(100vh) rotate(180deg);
+    opacity: 0.2;
+  }
 
-    71% {
-        transform: translateY(100vh) rotate(180deg);
-        opacity: .2;
-    }
+  72% {
+    transform: translateY(0%) rotate(0deg) scale(0);
+    opacity: 0;
+  }
 
-    72% {
-        transform: translateY(0%) rotate(0deg) scale(0);
-        opacity: 0;
-    }
+  90% {
+    transform: translate(0%) rotate(0deg) scale(1.5);
+    opacity: 1;
+  }
 
-    90% {
-        transform: translate(0%) rotate(0deg) scale(1.5);
-        opacity: 1;
-    }
+  95% {
+    transform: translate(0%) rotate(0deg) scale(0.5);
+    opacity: 1;
+  }
 
-    95% {
-        transform: translate(0%) rotate(0deg) scale(0.5);
-        opacity: 1;
-    }
-
-    95% {
-        transform: translate(0%) rotate(0deg) scale(1);
-        opacity: 1;
-    }
+  95% {
+    transform: translate(0%) rotate(0deg) scale(1);
+    opacity: 1;
+  }
 }
 
 @keyframes scale {
-    20% {
-        transform: rotate(30deg) translate(5px, -5px) scale(.8);
-    }
+  20% {
+    transform: rotate(30deg) translate(5px, -5px) scale(0.8);
+  }
 
-    40% {
-        transform: rotate(-5deg) translate(-1px, -7px) scale(1.5);
-    }
+  40% {
+    transform: rotate(-5deg) translate(-1px, -7px) scale(1.5);
+  }
 
-    60% {
-        transform: rotate(-20deg) translate(-0px, -0px) scale(.6);
-    }
+  60% {
+    transform: rotate(-20deg) translate(-0px, -0px) scale(0.6);
+  }
 
-    80% {
-        transform: rotate(-0deg) translate(-0px, 1px) scale(1.2);
-    }
+  80% {
+    transform: rotate(-0deg) translate(-0px, 1px) scale(1.2);
+  }
 
-    100% {
-        transform: rotate(0deg) translate(0, 0) scale(1);
-    }
+  100% {
+    transform: rotate(0deg) translate(0, 0) scale(1);
+  }
 }
 
 @keyframes shake {
-    25% {
-        transform: translate(1px, 1px);
-    }
+  25% {
+    transform: translate(1px, 1px);
+  }
 
-    50% {
-        transform: translate(0px, -1px);
-    }
+  50% {
+    transform: translate(0px, -1px);
+  }
 
-    75% {
-        transform: translate(-1px, .5px);
-    }
+  75% {
+    transform: translate(-1px, 0.5px);
+  }
 
-    100% {
-        transform: translate(0px, 0px);
-    }
+  100% {
+    transform: translate(0px, 0px);
+  }
 }

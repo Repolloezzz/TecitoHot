@@ -18,6 +18,12 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "lib/mdx.ts", "components/MDXComponents.js",],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "lib/mdx.ts",
+    "components/MDXComponents.js"
+  ],
   "exclude": ["node_modules"]
 }

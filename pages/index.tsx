@@ -1,24 +1,24 @@
 // * Modulos, datos y tipos
-import Head from 'next/head'
-import type { Matter, Base } from '@/data/DataTypes'
-import { allMatters } from '@/lib/getParsedObjects'
-import { getAllMatterObject } from '@/lib/getObjects'
+import Head from 'next/head';
+import type { Matter, Base } from '@/data/DataTypes';
+import { allMatters } from '@/lib/getParsedObjects';
+import { getAllMatterObject } from '@/lib/getObjects';
 // * Componentes
-import HeadNav from '@/components/layout/HeadNav'
-import Footer from '@/components/layout/FooterTCH'
-import BackgroundTime from '@/components/home/BackgroundTime'
-import HeroSection from '@/components/global/HeroSection'
-import Present from '@/components/home/PresentSection'
-import { MatterCard } from '@/components/home/Card'
-import MCarousel from '@/components/home/MatterCaruser'
-import Ventage from '@/components/layout/AbsolutVentage'
+import HeadNav from '@/components/layout/HeadNav';
+import Footer from '@/components/layout/FooterTCH';
+import BackgroundTime from '@/components/home/BackgroundTime';
+import HeroSection from '@/components/global/HeroSection';
+import Present from '@/components/home/PresentSection';
+import { MatterCard } from '@/components/home/Card';
+import MCarousel from '@/components/home/MatterCaruser';
+import Ventage from '@/components/layout/AbsolutVentage';
 
 const Home = ({
   listMatter,
   dataLayout,
 }: {
-  listMatter: Matter[]
-  dataLayout: Base[]
+  listMatter: Matter[];
+  dataLayout: Base[];
 }) => {
   return (
     <>
@@ -67,7 +67,7 @@ const Home = ({
                   className="carousel-item w-52 h-72 lg:w-72 lg:h-[28rem]"
                   base={matter}
                 />
-              )
+              );
             })}
           </MCarousel>
         </div>
@@ -76,20 +76,20 @@ const Home = ({
       <Present title="Aplicaciones" className="bg-indigo-700"></Present>
       <Footer />
     </>
-  )
-}
+  );
+};
 
 // * Para toda pagina debe de estar getStaticProps, el dato dataNav para el menu
 export async function getStaticProps() {
-  const listMatter = allMatters()
+  const listMatter = allMatters();
   // Datos para el layout de las páginas
-  const dataLayout = getAllMatterObject()
+  const dataLayout = getAllMatterObject();
   return {
     props: {
       listMatter,
       dataLayout,
     },
-  }
+  };
 }
 
-export default Home
+export default Home;

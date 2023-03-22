@@ -1,7 +1,7 @@
 // Texto que hace referencia a un ID
 
 interface context extends React.HTMLAttributes<HTMLDivElement> {
-  id: string
+  id: string;
 }
 
 // Componente que se verá como: # TituloPersonalizadoID
@@ -10,7 +10,7 @@ export const ID_txt = ({ ...props }: context) => {
     <div
       {...props}
       className={`${
-        props.className ?? 'text-5xl font-vt323'
+        props.className ?? 'text-2xl md:text-3xl lg:text-5xl font-vt323'
       } flex items-center group link link-primary font-semibold no-underline`}
     >
       <a
@@ -21,5 +21,5 @@ export const ID_txt = ({ ...props }: context) => {
       </a>
       <span>{props.children}</span>
     </div>
-  )
-}
+  );
+};

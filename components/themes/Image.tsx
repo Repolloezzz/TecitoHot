@@ -1,21 +1,21 @@
-import { useAbsoluteContext } from "../../context/Absolute";
-import { FcGallery } from "react-icons/fc";
+import { useAbsoluteContext } from '../../context/Absolute';
+import { FcGallery } from 'react-icons/fc';
 
 interface ImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
   containStyle?: string;
   title: string;
-  content?: JSX.Element | JSX.Element[] | string | string[];
+  content?: JSX.Element | JSX.Element[] | any;
 }
 
-export const notFound = "/imgNotFound.webp";
+export const notFound = '/imgNotFound.webp';
 
 const ImgAbs: React.FC<ImageProps> = ({
-  containStyle = "",
-  title = "Yuru Camp - Capibaras kawais",
+  containStyle = '',
+  title = 'Yuru Camp - Capibaras kawais',
   content = (
     <>
       Una adorable imagen de las protagonistas en forma de capibaras después de
-      ver a estos animales, salido del capítulo 13 de la temporada 2.{" "}
+      ver a estos animales, salido del capítulo 13 de la temporada 2.{' '}
       <a
         className="link link-secondary"
         href="https://www.animenewsnetwork.com/thumbnails/crop1200x630gHP/cms/episode-review.3/171424/ss-2021-04-02-11_01_53.jpg"
@@ -28,10 +28,10 @@ const ImgAbs: React.FC<ImageProps> = ({
 }) => {
   props.src = props.src
     ? props.src
-    : "https://www.animenewsnetwork.com/thumbnails/crop1200x630gHP/cms/episode-review.3/171424/ss-2021-04-02-11_01_53.jpg";
+    : 'https://www.animenewsnetwork.com/thumbnails/crop1200x630gHP/cms/episode-review.3/171424/ss-2021-04-02-11_01_53.jpg';
   props.className = props.className
     ? `${props.className} object-cover block h-full`
-    : "object-cover block h-full max-w-[61%]";
+    : 'object-cover block h-full max-w-[61%]';
   const { change } = useAbsoluteContext();
   return (
     <div

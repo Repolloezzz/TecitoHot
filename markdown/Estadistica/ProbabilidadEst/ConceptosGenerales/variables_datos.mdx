@@ -1,0 +1,268 @@
+---
+name: Variables y datos
+index: 2
+description: 'Los conceptos de variables y datos son importantes porque permiten a los investigadores interpretar los resultados del análisis de datos. La comprensión de los conceptos de variables y datos les permite a los investigadores identificar patrones, relaciones y tendencias en los datos y sacar conclusiones precisas y confiables.'
+created: '25-02-2023'
+updated: '20-03-2023'
+---
+
+<SectionID id="Variables">Variables</SectionID>
+<BImp
+  title="Definición"
+  icon="flag"
+  color="orange"
+  comment="¿Qué es una variable?"
+>
+  Una variable es **una** características, atributo o propiedad de un objeto o
+  fenómeno que puede ser medido o contado. La misma variable **puede** cambiar
+  en el tiempo o en el espacio.
+</BImp>
+<BComment type="note">
+  Una variable se puede definir a partir de los elementos de una población o
+  muestra, siendo que como lo definimos es una característica de un objeto. Por
+  ejemplo, la variable **edad** se puede definir a partir de los individuos de
+  una población o muestra.
+</BComment>
+<BComment type="warn">
+  Una variable describe una característica de un objeto, y simplemente se limita
+  a describir, no a medir. Por ejemplo, la variable **edad** describe que se
+  estudia la edad de los individuos de una población o muestra. Entonces, no es
+  más que un campo de información que se puede medir.
+</BComment>
+<BComment type="warn">
+  Como se mencionó, una variable **puede** cambiar, pero tambíen puede
+  permanecer estático. Por lo tanto, no necesariamente una variable es dinámica
+  o que cambia siempre respecto a algo.
+</BComment>
+
+Basado en la toda la información disponible de una población o una muestra, se
+puede definir una o más variables respecto a una propiedad de interés. La misma
+nos indica cual es la información que se desea estudiar.
+
+<BChord title="Ejemplo de variable 🛒" color="yellow" className="mt-3" open>
+  Del supermercado Ketal se desea estudiar a sus clientes para hacer un ranking
+  de los productos más vendidos. Para ello, se toma una muestra de 100 clientes
+  donde definimos las siguientes variables:
+  <Balph>
+    + - **Nombre**: Nombre del cliente.
+    + - **Edad**: Edad del cliente.
+    + - **Sexo**: Sexo del cliente.
+    + - **Producto**: Producto más comprado.
+    + - **Cantidad**: Cantidad de productos comprados.
+    + - **Total**: Total gastado en la compras.
+  </Balph>
+  Entonces, unicamente de estos 100
+  clientes se estudiará las variables definidas y así sacar una conclusión
+
+</BChord>
+
+<BChord title="Película más vista 🎞🕶">
+  El cine Cinemex desea saber cuál es la película más vista en sus salas de en
+  el mes de febrero. Para ello, se toma una muestra de 100 personas que donde se
+  estudiaran las siguientes variables:
+  <Balph>
+    + - **Edad**: Edad de la persona.
+    + - **Visto**: Película vista.
+    + - **Cantidad**: Cantidad de veces que se vio la película.
+  </Balph>
+  Entonces, se estudiará la variable **Visto** para saber cuál es la película
+  más vista, las demás variables serán para obtener información adicional.
+
+</BChord>
+
+<BChord title="Perros de la ciudad 🦮🐾" color="green" className='mb-3'>
+  Un grupo de investigadores desea estudiar la cantidad de perros que hay en la
+  ciudad de México y estudiar lo siguiente:
+  <Balph>
+    + - **Raza**: Raza del perro.
+    + - **Edad**: Edad del perro.
+    + - **Sexo**: Sexo del perro.
+    + - **Color**: Color del perro.
+  </Balph>
+  Entonces, se estudiarán las variables definidas para reportar la cantidad de perros
+  y sus características.
+
+</BChord>
+
+<SectionID id="datos">Datos</SectionID>
+<BImp title="Definición" icon="flag" color="orange" comment="¿Qué es un dato?">
+  Un dato un conjunto de valores que se obtienen de una o más variables, la
+  misma puede ser un valor o una categoría.
+</BImp>
+
+<BComment type="note">
+  Al decir que un dato puede ser un valor o una categoría nos referimos a que
+  puede tomar un valor numérico o una categoría. Por ejemplo:
+  <Balph>
+    + - **Edad**: 20 años.
+    + - **Sexo**: Masculino.
+    + - **Color**: Rojo.
+  </Balph>
+  Donde edad es un valor numérico y sexo y color son categorías.
+
+</BComment>
+<BComment>
+  Una categoría es una etiqueta o un tipo de clasificador que se le da a un
+  dato. Por ejemplo, el sexo puede ser masculino o femenino, la misma se puede
+  usar para clasificar a los individuos por sexo.
+</BComment>
+<BComment type="warn">
+  Como tal, un dato no es una variable, pero si se puede definir un dato a
+  partir de una variable. Por ejemplo:
+  <Balph className="grid grid-cols-2">
+    <div>
+      **Altura**
+      <LComment>Variable</LComment>
+    </div>
+    <div>
+      **174 [cm]**
+      <LComment>Dato</LComment>
+    </div>
+  </Balph>
+</BComment>
+
+<BImp title="Tipos de datos" color="purple" icon="at">
+  Un dato es un conjunto de información, entonces un dato puede ser:
+  <Balph>
+    **Univariable**: Es un dato que se obtiene de una sola variable. Es decir
+    que únicamente toma un valor ó categoria. Tambíen conocido como dato simple.
+  </Balph>
+  <Balph>
+    **Multivariable**: Es un dato que se obtiene de más de una variable. Es
+    decir, puede asemejarse a una tabla de datos donde cada fila es un dato y
+    cada columna es una variable. Tambíen conocido como dato compuesto.
+  </Balph>
+</BImp>
+
+<BComment type="warn">
+  El dato univariable es el más simple, ya que únicamente se obtiene de una
+  variable. Además, solo es un caso particular del dato multivariable.
+</BComment>
+
+<BComment type='note'>
+  Es necesario recalcar que un dato es un conjunto de información, algo
+  asi como una tabla de donde una dato es una fila y las variables son las
+  columnas. Por ejemplo:
+  <table className='table table-normal w-full my-3'>
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Edad</th>
+        <th>Empleo</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Juan</td>
+        <td>19</td>
+        <td>Estudiante</td>
+      </tr>
+      <tr>
+        <td>Marcos</td>
+        <td>42</td>
+        <td>Profesor</td>
+      </tr>
+    </tbody>
+  </table>
+  De la tabla que se muestra, cada columna es una variable y cada fila es un
+  solo dato.
+
+</BComment>
+
+Los datos son la fuente de información recopilada de una población o muestra,
+que se utilizan para realizar un análisis estadístico. Los datos se obtienen
+a partir de las variables definidas.
+
+<BChord title='Ejemplo de dato 💌' className='mt-3' color='red' open>
+  Un colegio está realizando un evento de entrega de cartas por San Valentín.
+  Entonces, para realizar un ranking de los alumnos que más cartas recibieron,
+  se toma en cuenta las siguientes variables:
+  <Balph>
+    + - **Nombre**: Nombre del alumno.
+    + - **Edad**: Edad del alumno.
+    + - **Sexo**: Sexo del alumno.
+    + - **Cartas**: Cantidad de cartas recibidas.
+  </Balph>
+  Por lo tanto, de todos los estudiantes que recibieron cartas, se obtendrán
+  los datos de cada uno de ellos, es decir, cada dato será un alumno que recibió
+  cartas. Y así se podrá realizar el ranking.
+  <table className='table table-normal w-full my-3'>
+    <thead>
+      <tr>
+        <th/>
+        <th>Nombre</th>
+        <th>Edad</th>
+        <th>Sexo</th>
+        <th>Cartas</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>🥇</th>
+        <td>Sofia</td>
+        <td>17</td>
+        <td>Femenino</td>
+        <td>49</td>
+      </tr>
+      <tr>
+        <th>🥈</th>
+        <td>Marcos</td>
+        <td>15</td>
+        <td>Masculino</td>
+        <td>37</td>
+      </tr>
+      <tr>
+        <th>🥉</th>
+        <td>Daisy</td>
+        <td>16</td>
+        <td>Femenino</td>
+        <td>32</td>
+      </tr>
+    </tbody>
+  </table>
+  Entonces así se obtiene el ranking, donde nuevamente cada fila es un dato
+  de un alumno y cada columna es una variable.
+  <mark>Notar que este ejemplo es de un dato multivariable</mark>.
+
+</BChord>
+
+<BChord title="El tamaño promedio 🏀">
+  Un equipo de basquetbol está realizando un estudio para determinar el tamaño
+  promedio de los jugadores. Para ello, unicamente se toma en cuenta la altura
+  de los cinco jugadores que conforman el equipo. Entonces, se tiene:
+  <div className="flex justify-center">
+    <table className="table table-normal my-3">
+      <thead>
+        <tr>
+          <th>Nro</th>
+          <th>Altura [cm]</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>1</th>
+          <td>230</td>
+        </tr>
+        <tr>
+          <th>2</th>
+          <td>210</td>
+        </tr>
+        <tr>
+          <th>3</th>
+          <td>180</td>
+        </tr>
+        <tr>
+          <th>4</th>
+          <td>270</td>
+        </tr>
+        <tr>
+          <th>5</th>
+          <td>210</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  Por lo tanto, la altura promedio es de 220 [cm]. En este caso, el dato es
+  univariable, ya que únicamente se toma en cuenta la altura de los jugadores.
+  Además, no se tiene en cuenta el número de dato, pues es solo un referente.
+</BChord>

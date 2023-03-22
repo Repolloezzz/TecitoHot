@@ -1,19 +1,19 @@
-import fs from 'fs'
-import path from 'path'
-import { rootMarkdown } from '../data/routes'
+import fs from 'fs';
+import path from 'path';
+import { rootMarkdown } from '../data/routes';
 
 // Para filtrar carpetas con archivos index.json en un directorio dado
 const filtrerGen = (route: string) => {
-  const logs = fs.readdirSync(route, { withFileTypes: true })
+  const logs = fs.readdirSync(route, { withFileTypes: true });
   const gens = logs
     .filter((log) => log.isDirectory())
     .filter((carpet) => {
-      const archJSON = path.join(route, carpet.name, 'index.json')
-      return fs.existsSync(archJSON) && fs.statSync(archJSON).isFile()
+      const archJSON = path.join(route, carpet.name, 'index.json');
+      return fs.existsSync(archJSON) && fs.statSync(archJSON).isFile();
     })
-    .map((element) => element.name)
-  return gens
-}
+    .map((element) => element.name);
+  return gens;
+};
 
 /**
  * * Obtener Todos las materias a generar.
@@ -23,9 +23,9 @@ const filtrerGen = (route: string) => {
  * @returns : Lista de directorios que cumplen las condiciones para ser generados como MATTER
  */
 const genAllMatters = () => {
-  const route = rootMarkdown
-  return filtrerGen(route)
-}
+  const route = rootMarkdown;
+  return filtrerGen(route);
+};
 
 /**
  * * Obtener Todos los temas a generar.
@@ -36,9 +36,9 @@ const genAllMatters = () => {
  * @returns : Lista de directorios que cumplen las condiciones para ser generados como THEME
  */
 const genAllThemes = (matterGen: string) => {
-  const route = path.join(rootMarkdown, matterGen)
-  return filtrerGen(route)
-}
+  const route = path.join(rootMarkdown, matterGen);
+  return filtrerGen(route);
+};
 
 /**
  * * Obtener todos los subtemas a generar.
@@ -50,9 +50,9 @@ const genAllThemes = (matterGen: string) => {
  * @returns : Lista de directorios que cumplen las condiciones para ser generados como SUBTHEME
  */
 const genAllSubThemes = (matterGen: string, themeGen: string) => {
-  const route = path.join(rootMarkdown, matterGen, themeGen)
-  return filtrerGen(route)
-}
+  const route = path.join(rootMarkdown, matterGen, themeGen);
+  return filtrerGen(route);
+};
 
 /**
  * * Obtener todos los contenidos a generar.
@@ -67,13 +67,13 @@ const genAllSubThemes = (matterGen: string, themeGen: string) => {
 const genAllContents = (
   matterGen: string,
   themeGen: string,
-  subThemeGen: string,
+  subThemeGen: string
 ) => {
-  const route = path.join(rootMarkdown, matterGen, themeGen, subThemeGen)
-  const files = fs.readdirSync(route)
-  const gens = files.filter((file) => file.endsWith('.mdx'))
-  return gens.map((gen) => gen.replace('.mdx', ''))
-}
+  const route = path.join(rootMarkdown, matterGen, themeGen, subThemeGen);
+  const files = fs.readdirSync(route);
+  const gens = files.filter((file) => file.endsWith('.mdx'));
+  return gens.map((gen) => gen.replace('.mdx', ''));
+};
 
 /**
  * * Buscar si existe un generador de Matter
@@ -81,10 +81,10 @@ const genAllContents = (
  * @returns : Si existe, entonces devuelve el nombre del generador, de lo contrario devuelve undefined
  */
 const genMatter = (matterGen: string) => {
-  const gens = genAllMatters()
-  const data = gens.find((gen) => gen == matterGen)
-  return data
-}
+  const gens = genAllMatters();
+  const data = gens.find((gen) => gen == matterGen);
+  return data;
+};
 /**
  * * Buscar si existe un generador de Theme en un generador de Matter
  * @param matterGen : Nombre del generador de Matter en el que se busca
@@ -92,10 +92,10 @@ const genMatter = (matterGen: string) => {
  * @returns : Si existe, entonces devuelve el nombre del generador, de lo contrario devuelve undefined
  */
 const genTheme = (matterGen: string, themeGen: string) => {
-  const gens = genAllThemes(matterGen)
-  const data = gens.find((gen) => gen == themeGen)
-  return data
-}
+  const gens = genAllThemes(matterGen);
+  const data = gens.find((gen) => gen == themeGen);
+  return data;
+};
 
 /**
  * * Buscar si existe un generador de SubTheme en un generador de Theme y Matter
@@ -107,21 +107,21 @@ const genTheme = (matterGen: string, themeGen: string) => {
 const genSubTheme = (
   matterGen: string,
   themeGen: string,
-  subThemeGen: string,
+  subThemeGen: string
 ) => {
-  const gens = genAllSubThemes(matterGen, themeGen)
-  return gens.find((gen) => gen == subThemeGen)
-}
+  const gens = genAllSubThemes(matterGen, themeGen);
+  return gens.find((gen) => gen == subThemeGen);
+};
 
 const genContent = (
   matterGen: string,
   themeGen: string,
   subThemeGen: string,
-  contentGen: string,
+  contentGen: string
 ) => {
-  const gens = genAllContents(matterGen, themeGen, subThemeGen)
-  return gens.find((gen) => gen == contentGen)
-}
+  const gens = genAllContents(matterGen, themeGen, subThemeGen);
+  return gens.find((gen) => gen == contentGen);
+};
 
 // Exportando todos las funciones
 
@@ -134,4 +134,4 @@ export {
   genTheme,
   genSubTheme,
   genContent,
-}
+};

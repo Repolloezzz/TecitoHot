@@ -1,8 +1,8 @@
-import { useAbsoluteContext } from "../../context/Absolute";
-import { FcGallery } from "react-icons/fc";
+import { useAbsoluteContext } from '../../context/Absolute';
+import { FcGallery } from 'react-icons/fc';
 
-import ReactPlayer from "react-player";
-import type { BaseReactPlayerProps } from "react-player/base";
+import ReactPlayer from 'react-player';
+import type { BaseReactPlayerProps } from 'react-player/base';
 
 interface VideoProps extends BaseReactPlayerProps {
   containStyle: string;
@@ -11,12 +11,12 @@ interface VideoProps extends BaseReactPlayerProps {
   content: JSX.Element | JSX.Element[];
 }
 const VidAbs: React.FC<VideoProps> = ({
-  containStyle = "",
-  videoStyle = "",
-  title = "1 hour of Studio Ghibli | Relaxing Piano Music (relax, study, sleep) by Vagabond",
+  containStyle = '',
+  videoStyle = '',
+  title = '1 hour of Studio Ghibli | Relaxing Piano Music (relax, study, sleep) by Vagabond',
   content = (
     <>
-      Una playlist de canciones del estudio Ghibli, este video es de prueba{" "}
+      Una playlist de canciones del estudio Ghibli, este video es de prueba{' '}
       <a
         className="link link-secondary"
         href="https://www.youtube.com/watch?v=bHFKkCcUjW0"
@@ -29,7 +29,7 @@ const VidAbs: React.FC<VideoProps> = ({
 }) => {
   props.url = props.url
     ? props.url
-    : "https://www.youtube.com/watch?v=bHFKkCcUjW0";
+    : 'https://www.youtube.com/watch?v=bHFKkCcUjW0';
   const { change } = useAbsoluteContext();
   props.playing = props.playing ? props.playing : true;
 
@@ -51,10 +51,10 @@ const VidAbs: React.FC<VideoProps> = ({
                     controls={true}
                     url={props.url}
                     style={{
-                      display: "block",
-                      objectFit: "cover",
-                      height: "min",
-                      maxWidth: "80vw",
+                      display: 'block',
+                      objectFit: 'cover',
+                      height: 'min',
+                      maxWidth: '80vw',
                     }}
                   />
                 </div>
@@ -70,13 +70,13 @@ const VidAbs: React.FC<VideoProps> = ({
       </button>
       <div
         className={`${
-          videoStyle ? videoStyle : "w-full sm:w-[75%] md:w-[65%] lg:w-[60%]"
+          videoStyle ? videoStyle : 'w-full sm:w-[75%] md:w-[65%] lg:w-[60%]'
         } relative pt-[60%] sm:pt-[40%] md:pt-[38%] flex justify-center items-center`}
       >
         <ReactPlayer
           className="absolute top-0 left-0 w-1/2 h-1/2"
-          width={"100%"}
-          height={"100%"}
+          width={'100%'}
+          height={'100%'}
           {...props}
         />
       </div>

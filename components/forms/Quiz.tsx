@@ -1,6 +1,6 @@
-import { useState } from "react";
-import { useForm } from "react-hook-form";
-import { FcOk, FcRating } from "react-icons/fc";
+import { useState } from 'react';
+import { useForm } from 'react-hook-form';
+import { FcOk, FcRating } from 'react-icons/fc';
 
 interface FormContext {
   options: {
@@ -11,7 +11,7 @@ interface FormContext {
 export const Check = ({ options }: FormContext) => {
   const [state, setState] = useState<{ state: null | boolean; msg: string }>({
     state: null,
-    msg: "",
+    msg: '',
   });
   const { register, handleSubmit } = useForm();
   const onSubmit = (data: any) => {
@@ -26,10 +26,10 @@ export const Check = ({ options }: FormContext) => {
       state: count == formData.length ? true : false,
       msg:
         count == formData.length
-          ? "Todas las respuestas son Correctas"
+          ? 'Todas las respuestas son Correctas'
           : count > 0
-          ? "Estuvo cerca"
-          : "xd?",
+          ? 'Estuvo cerca'
+          : 'xd?',
     });
   };
 
@@ -45,9 +45,9 @@ export const Check = ({ options }: FormContext) => {
                   className={`checkbox rounded-none ${
                     state.state != null
                       ? element.value
-                        ? "checkbox-success"
-                        : "checkbox-error"
-                      : "checkbox-accent"
+                        ? 'checkbox-success'
+                        : 'checkbox-error'
+                      : 'checkbox-accent'
                   } `}
                   {...register(`check${index}`)}
                 />
@@ -68,8 +68,8 @@ export const Check = ({ options }: FormContext) => {
         <span
           className={`${
             state.state
-              ? "bg-success text-success-content shadow-lg"
-              : "bg-error text-error-content shadow-lg"
+              ? 'bg-success text-success-content shadow-lg'
+              : 'bg-error text-error-content shadow-lg'
           } rounded-none flex gap-2 items-center p-2`}
         >
           {state.msg}

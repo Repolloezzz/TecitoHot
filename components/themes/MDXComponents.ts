@@ -1,13 +1,14 @@
-import titles from "./Titles";
-import minComp from "./General";
-import comments from "./Comments";
-import boxes from "./Box";
-import VidAbs from "./Video";
-import ImgAbs from "./Image";
-import Quiziz from "../forms/Quiz";
+import titles from './Titles';
+import minComp from './General';
+import comments from './Comments';
+import boxes from './Box';
+import VidAbs from './Video';
+import ImgAbs from './Image';
+import Quiziz from '../forms/Quiz';
+import { ID_txt as SectionID } from '../global/Text';
 
-import { Ltx } from "./Text";
-const Global = { ...titles, ...minComp, ...comments, ...boxes };
+import { Ltx } from './Text';
+const Global = { ...titles, ...minComp, ...comments, ...boxes, SectionID };
 const Latex = { Ltx };
 const Media = { VidAbs, ImgAbs };
 const Forms = { ...Quiziz };

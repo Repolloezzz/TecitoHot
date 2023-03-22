@@ -1,5 +1,5 @@
-import { motion } from "framer-motion";
-import style from "../../styles/TitleMove.module.css";
+import { motion } from 'framer-motion';
+import style from '../../styles/TitleMove.module.css';
 
 interface props {
   content: string;
@@ -7,7 +7,7 @@ interface props {
   colors?: Array<string>;
 }
 export function TitleShake({ content, className, colors = [] }: props) {
-  const title: Array<string> = [...content.split("")];
+  const title: Array<string> = [...content.split('')];
 
   return (
     <>
@@ -20,7 +20,7 @@ export function TitleShake({ content, className, colors = [] }: props) {
               rotateZ: index % 2 === 0 ? [0, 3, 0, -3, 0] : [0, -3, 0, 3, 0],
             }}
             transition={{
-              ease: "easeInOut",
+              ease: 'easeInOut',
               duration: 4,
               repeat: Infinity,
               repeatDelay: 0.5,
@@ -33,9 +33,9 @@ export function TitleShake({ content, className, colors = [] }: props) {
               }, 1500);
             }}
             className={`${
-              className ? className : ""
+              className ? className : ''
             } cursor-pointer select-none inline-block ${
-              colors[index] != undefined ? colors[index] : ""
+              colors[index] != undefined ? colors[index] : ''
             }`}
             key={index}
           >
@@ -47,8 +47,8 @@ export function TitleShake({ content, className, colors = [] }: props) {
   );
 }
 
-export function TitleMove({ content, className = "", colors = [] }: props) {
-  const title: Array<string> = [...content.split("")];
+export function TitleMove({ content, className = '', colors = [] }: props) {
+  const title: Array<string> = [...content.split('')];
   return (
     <>
       {title.map((letter: string, index: number) => {
@@ -57,7 +57,7 @@ export function TitleMove({ content, className = "", colors = [] }: props) {
             initial={{ scale: 0 }}
             whileInView={{ scale: 1 }}
             className={`${className} ${
-              colors[index] != undefined ? colors[index] : ""
+              colors[index] != undefined ? colors[index] : ''
             } cursor-pointer select-none ${
               index % 2 === 0 ? style.Shake_a : style.Shake_b
             }`}

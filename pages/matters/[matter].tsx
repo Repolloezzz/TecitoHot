@@ -1,24 +1,23 @@
-import { GetStaticPaths, GetStaticProps } from 'next'
-import { genAllMatters } from '@/lib/getGenerators'
-import { getMatter } from '@/lib/getParsedObjects'
-import { getAllMatterObject } from '@/lib/getObjects'
-import type { Base, Matter, Theme } from '@/data/DataTypes'
-import Layout from '@/components/layout/Layout'
-import Present from '@/components/home/PresentSection'
-import ImgAbs from '@/components/themes/Image'
-import { search } from '@/lib/getDataWiki'
-import { ThemeCard } from '@/components/home/Card'
+import { GetStaticPaths, GetStaticProps } from 'next';
+import { genAllMatters } from '@/lib/getGenerators';
+import { getMatter } from '@/lib/getParsedObjects';
+import { getAllMatterObject } from '@/lib/getObjects';
+import type { Base, Matter, Theme } from '@/data/DataTypes';
+import Layout from '@/components/layout/Layout';
+import Present from '@/components/home/PresentSection';
+import ImgAbs from '@/components/themes/Image';
+import { search } from '@/lib/getDataWiki';
+import { ThemeCard } from '@/components/home/Card';
 
 export default function MatterHome({
   data,
   dataLayout,
   characterInfo,
 }: {
-  data: Matter
-  dataLayout: Base[]
-  characterInfo: any
+  data: Matter;
+  dataLayout: Base[];
+  characterInfo: any;
 }) {
-  console.log(data)
   return (
     <>
       <Layout listData={dataLayout}>
@@ -52,38 +51,38 @@ export default function MatterHome({
           </h1>
           <div className="bg-slate-100/20 grid grid-cols-2 lg:grid-cols-5 gap-2 p-2 md:p-4 lg:p-5 md:gap-4 lg:gap-5">
             {data.themes?.map((theme: Theme, index: number) => {
-              return <ThemeCard key={index} base={theme} className="bg-back" />
+              return <ThemeCard key={index} base={theme} className="bg-back" />;
             })}
           </div>
         </section>
       </Layout>
     </>
-  )
+  );
 }
 
 // Para obtener los datos de la materia (props)
 export const getStaticProps: GetStaticProps = async ({ params }: any) => {
-  const data = getMatter(params.matter)
+  const data = getMatter(params.matter);
   // Datos para el layout de las páginas
-  const dataLayout = getAllMatterObject()
+  const dataLayout = getAllMatterObject();
   // Para obtener los datos de los personajes caracteristicos de la materia de API de Wikipedia
-  const characterInfo = await search(data ? data.character : 'hola')
+  const characterInfo = await search(data ? data.character : 'hola');
   return {
     props: {
       data,
       dataLayout,
       characterInfo,
     },
-  }
-}
+  };
+};
 
 // Para obtener todos los Paths de las materias (generadores)
 export const getStaticPaths: GetStaticPaths = async () => {
-  const gens = genAllMatters()
+  const gens = genAllMatters();
   const paths = gens.map((gen: string) => ({
     params: {
       matter: gen,
     },
-  }))
-  return { paths, fallback: false }
-}
+  }));
+  return { paths, fallback: false };
+};

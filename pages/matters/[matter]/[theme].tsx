@@ -1,31 +1,31 @@
-import { GetStaticPaths, GetStaticProps } from 'next'
-import { genAllMatters, genAllThemes } from '@/lib/getGenerators'
-import { getTheme } from '@/lib/getParsedObjects'
-import { getAllMatterObject } from '@/lib/getObjects'
-import type { Theme, Base } from '@/data/DataTypes'
-import Layout from '@/components/layout/Layout'
-import ModuleMenu from '@/components/themes/ModuleMenu'
+import { GetStaticPaths, GetStaticProps } from 'next';
+import { genAllMatters, genAllThemes } from '@/lib/getGenerators';
+import { getTheme } from '@/lib/getParsedObjects';
+import { getAllMatterObject } from '@/lib/getObjects';
+import type { Theme, Base } from '@/data/DataTypes';
+import Layout from '@/components/layout/Layout';
+import ModuleMenu from '@/components/themes/ModuleMenu';
 import {
   useThemeContext,
   DarkOptions,
   LightOptions,
-} from '@/context/ThemeContent'
-import { TitleMove } from '@/components/global/TitleAnimation'
-import { PixelIcons } from '@/components/global/Icons'
-import ImgAbs from '@/components/themes/Image'
-import Link from 'next/link'
-import { ID_txt } from '@/components/global/Text'
+} from '@/context/ThemeContent';
+import { TitleMove } from '@/components/global/TitleAnimation';
+import { PixelIcons } from '@/components/global/Icons';
+import ImgAbs from '@/components/themes/Image';
+import Link from 'next/link';
+import { ID_txt } from '@/components/global/Text';
 
 export default function ThemeHome({
   data,
   dataLayout,
   slug,
 }: {
-  data: Theme
-  dataLayout: Base[]
-  slug: string
+  data: Theme;
+  dataLayout: Base[];
+  slug: string;
 }) {
-  const { themeContent } = useThemeContext()
+  const { themeContent } = useThemeContext();
   return (
     <>
       <Layout listData={dataLayout}>
@@ -87,7 +87,7 @@ export default function ThemeHome({
                         </a>
                       </td>
                     </tr>
-                  )
+                  );
                 })}
               </tbody>
             </table>
@@ -101,33 +101,33 @@ export default function ThemeHome({
         </section>
       </Layout>
     </>
-  )
+  );
 }
 
 export const getStaticProps: GetStaticProps = async ({ params }: any) => {
-  const data = getTheme(params.matter, params.theme)
+  const data = getTheme(params.matter, params.theme);
   // Datos para el layout de las páginas
-  const dataLayout = getAllMatterObject()
+  const dataLayout = getAllMatterObject();
   return {
     props: {
       data,
       dataLayout,
       slug: params.theme,
     },
-  }
-}
+  };
+};
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const paths: any = []
+  const paths: any = [];
   // Obtenemos todas las materias
-  const matterGens = genAllMatters()
+  const matterGens = genAllMatters();
   matterGens.forEach((matterGen) => {
     // Obtenemos todos los temas de cada materia
-    const themeGens = genAllThemes(matterGen)
+    const themeGens = genAllThemes(matterGen);
     themeGens.forEach((themeGen) => {
       // Agregamos los paths de cada tema respectivo a su materia
-      paths.push({ params: { matter: matterGen, theme: themeGen } })
-    })
-  })
-  return { paths, fallback: false }
-}
+      paths.push({ params: { matter: matterGen, theme: themeGen } });
+    });
+  });
+  return { paths, fallback: false };
+};

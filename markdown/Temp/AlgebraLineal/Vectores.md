@@ -1,1 +1,0 @@
-Vectores en markdown

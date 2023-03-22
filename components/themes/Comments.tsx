@@ -1,9 +1,9 @@
-import { PixelIcons } from "../global/Icons";
+import { PixelIcons } from '../global/Icons';
 import {
   useThemeContext,
   DarkOptions,
   LightOptions,
-} from "../../context/ThemeContent";
+} from '../../context/ThemeContent';
 export function LComment({
   children,
   className,
@@ -14,7 +14,7 @@ export function LComment({
   return (
     <span
       className={`${
-        className ? className : ""
+        className ? className : ''
       } text-start text-base-content/80 flex items-center gap-1`}
     >
       <PixelIcons
@@ -42,36 +42,36 @@ export function BComment({
     text: string;
   };
   switch (type) {
-    case "note":
+    case 'note':
       props = {
-        cube: "bg-success text-success-content",
-        text: "text-base-content/90",
-        border: "border-success",
-        icon: "invert",
+        cube: 'bg-success text-success-content',
+        text: 'text-base-content/90',
+        border: 'border-success',
+        icon: 'invert',
       };
       break;
-    case "warn":
+    case 'warn':
       props = {
-        cube: "bg-warning text-warning-content",
-        text: "text-base-content/90",
-        border: "border-warning",
-        icon: "bullseye-arrow",
+        cube: 'bg-warning text-warning-content',
+        text: 'text-base-content/90',
+        border: 'border-warning',
+        icon: 'bullseye-arrow',
       };
       break;
-    case "alert":
+    case 'alert':
       props = {
-        cube: "bg-error text-error-content",
-        text: "text-base-content/90",
-        border: "border-error",
-        icon: "alert",
+        cube: 'bg-error text-error-content',
+        text: 'text-base-content/90',
+        border: 'border-error',
+        icon: 'alert',
       };
       break;
     default:
       props = {
-        cube: "bg-neutral text-neutral-content",
-        text: "text-base-content/90",
-        border: "border-neutral",
-        icon: "article",
+        cube: 'bg-neutral text-neutral-content',
+        text: 'text-base-content/90',
+        border: 'border-neutral',
+        icon: 'article',
       };
       break;
   }
@@ -84,7 +84,7 @@ export function BComment({
       <span className={`w-5 h-full`}>
         <PixelIcons
           name={props.icon}
-          className={`${props.cube} group-hover:rotate-6 group-hover:scale-125 lg:w-8 h-5 w-5 lg:h-8 text-slate-700 transition-all`}
+          className={`${props.cube} block group-hover:rotate-6 group-hover:scale-125 lg:w-8 h-5 w-5 lg:h-8 text-slate-700 transition-all`}
         />
       </span>
       <span

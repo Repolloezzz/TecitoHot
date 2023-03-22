@@ -1,28 +1,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=DotGothic16&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 body {
-    @apply font-vt323;
-    @apply scrollbar-thin;
-    @apply scrollbar-thumb-stone-800;
-    @apply scrollbar-track-stone-400;
-    @apply scrollbar-w-0;
-    @apply md:scrollbar-w-2;
-    @apply lg:scrollbar-w-3;
-    @apply bg-base-100;
-    @apply text-base-content;
-    @apply overflow-x-hidden;
-    @apply overflow-y-auto;
-    @apply snap-y;
-    @apply snap-proximity;
-    @apply scroll-smooth
+  @apply font-vt323;
+  @apply scrollbar-thin;
+  @apply scrollbar-thumb-stone-800;
+  @apply scrollbar-track-stone-400;
+  @apply scrollbar-w-0;
+  @apply md:scrollbar-w-2;
+  @apply lg:scrollbar-w-3;
+  @apply bg-base-100;
+  @apply text-base-content;
+  @apply overflow-x-hidden;
+  @apply overflow-y-auto;
+  @apply snap-y;
+  @apply snap-proximity;
+  @apply scroll-smooth;
 }
 #__next {
-    @apply snap-y;
-    @apply snap-proximity;
-    @apply scroll-smooth
+  @apply snap-y;
+  @apply snap-proximity;
+  @apply scroll-smooth;
 }

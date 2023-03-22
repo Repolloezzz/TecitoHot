@@ -1,18 +1,18 @@
-import type { Content, Matter, SubTheme, Theme } from '@/data/DataTypes'
+import type { Content, Matter, SubTheme, Theme } from '@/data/DataTypes';
 import {
   genAllContents,
   genAllSubThemes,
   genAllThemes,
   genAllMatters,
-} from '@/lib/getGenerators'
+} from '@/lib/getGenerators';
 import {
   getContentObject,
   getSubThemeObject,
   getThemeObject,
   getMatterObject,
-} from '@/lib/getObjects'
+} from '@/lib/getObjects';
 
-const message = '⚠ Hubo un error al ejecutar la función'
+const message = '⚠ Hubo un error al ejecutar la función';
 
 /**
  * * Para obtener el objeto de cotenido parseado al tipo "Content"
@@ -26,10 +26,10 @@ export const getContent = (
   matterGen: string,
   themeGen: string,
   subThemeGen: string,
-  contentGen: string,
+  contentGen: string
 ): Content | null => {
-  return getContentObject(matterGen, themeGen, subThemeGen, contentGen)
-}
+  return getContentObject(matterGen, themeGen, subThemeGen, contentGen);
+};
 
 /**
  * * Para obtener todos los objetos de contenido parseados al tipo "Content" de un subtema
@@ -41,22 +41,22 @@ export const getContent = (
 export const allContents = (
   matterGen: string,
   themeGen: string,
-  subThemeGen: string,
+  subThemeGen: string
 ): Content[] => {
   try {
-    const res: Content[] = []
+    const res: Content[] = [];
     // Obteniendo los generadores de los contenidos
-    const allGens = genAllContents(matterGen, themeGen, subThemeGen)
+    const allGens = genAllContents(matterGen, themeGen, subThemeGen);
     for (const gen of allGens) {
-      const content = getContentObject(matterGen, themeGen, subThemeGen, gen)
-      if (content) res.push(content)
+      const content = getContentObject(matterGen, themeGen, subThemeGen, gen);
+      if (content) res.push(content);
     }
-    return res.sort((a, b) => a.index - b.index)
+    return res.sort((a, b) => a.index - b.index);
   } catch (error) {
-    console.log(`\n\x1b[1m${message} allContents:\x1b[0m\n${error}`)
-    return []
+    console.log(`\n\x1b[1m${message} allContents:\x1b[0m\n${error}`);
+    return [];
   }
-}
+};
 
 /**
  * * Para obtener el objeto de subtema parseado al tipo "SubTheme"
@@ -68,15 +68,15 @@ export const allContents = (
 export const getSubTheme = (
   matterGen: string,
   themeGen: string,
-  subThemeGen: string,
+  subThemeGen: string
 ): SubTheme | null => {
-  const obj = getSubThemeObject(matterGen, themeGen, subThemeGen)
+  const obj = getSubThemeObject(matterGen, themeGen, subThemeGen);
   if (obj) {
-    const contents = allContents(matterGen, themeGen, subThemeGen)
-    return { ...obj, contents }
+    const contents = allContents(matterGen, themeGen, subThemeGen);
+    return { ...obj, contents };
   }
-  return null
-}
+  return null;
+};
 
 /**
  * * Para obtener todos los objetos de subtemas parseados al tipo "SubTheme" de un tema
@@ -86,22 +86,22 @@ export const getSubTheme = (
  */
 export const allSubThemes = (
   matterGen: string,
-  themeGen: string,
+  themeGen: string
 ): SubTheme[] => {
   try {
-    const res: SubTheme[] = []
+    const res: SubTheme[] = [];
     // Obteniendo los generadores de los subtemas
-    const allGens = genAllSubThemes(matterGen, themeGen)
+    const allGens = genAllSubThemes(matterGen, themeGen);
     for (const gen of allGens) {
-      const subTheme = getSubTheme(matterGen, themeGen, gen)
-      if (subTheme) res.push(subTheme)
+      const subTheme = getSubTheme(matterGen, themeGen, gen);
+      if (subTheme) res.push(subTheme);
     }
-    return res.sort((a, b) => a.index - b.index)
+    return res.sort((a, b) => a.index - b.index);
   } catch (error) {
-    console.log(`\n\x1b[1m${message} allSubThemes:\x1b[0m\n${error}`)
-    return []
+    console.log(`\n\x1b[1m${message} allSubThemes:\x1b[0m\n${error}`);
+    return [];
   }
-}
+};
 
 /**
  * * Para obtener el objeto de tema parseado al tipo "Theme"
@@ -110,13 +110,13 @@ export const allSubThemes = (
  * @returns : Objeto del tema pero parseado al tipo "Theme" ó null si no existe
  */
 export const getTheme = (matterGen: string, themeGen: string): Theme | null => {
-  const obj = getThemeObject(matterGen, themeGen)
+  const obj = getThemeObject(matterGen, themeGen);
   if (obj) {
-    const subThemes = allSubThemes(matterGen, themeGen)
-    return { ...obj, subThemes }
+    const subThemes = allSubThemes(matterGen, themeGen);
+    return { ...obj, subThemes };
   }
-  return null
-}
+  return null;
+};
 
 /**
  * * Para obtener todos los objetos de temas parseados al tipo "Theme" de una materia
@@ -125,19 +125,19 @@ export const getTheme = (matterGen: string, themeGen: string): Theme | null => {
  */
 export const allThemes = (matterGen: string): Theme[] => {
   try {
-    const res: Theme[] = []
+    const res: Theme[] = [];
     // Obtener los generadores de los temas
-    const allGens = genAllThemes(matterGen)
+    const allGens = genAllThemes(matterGen);
     for (const gen of allGens) {
-      const theme = getTheme(matterGen, gen)
-      if (theme) res.push(theme)
+      const theme = getTheme(matterGen, gen);
+      if (theme) res.push(theme);
     }
-    return res.sort((a, b) => a.index - b.index)
+    return res.sort((a, b) => a.index - b.index);
   } catch (error) {
-    console.log(`\n\x1b[1m${message} allThemes:\x1b[0m\n${error}`)
-    return []
+    console.log(`\n\x1b[1m${message} allThemes:\x1b[0m\n${error}`);
+    return [];
   }
-}
+};
 
 /**
  * * Para obtener el objeto de materia parseado al tipo "Matter"
@@ -145,13 +145,13 @@ export const allThemes = (matterGen: string): Theme[] => {
  * @returns : Objeto de la materia pero parseado al tipo "Matter" ó null si no existe
  */
 export const getMatter = (matterGen: string): Matter | null => {
-  const obj = getMatterObject(matterGen)
+  const obj = getMatterObject(matterGen);
   if (obj) {
-    const themes = allThemes(matterGen)
-    return { ...obj, themes }
+    const themes = allThemes(matterGen);
+    return { ...obj, themes };
   }
-  return null
-}
+  return null;
+};
 
 /**
  * * Para obtener todos los objetos de materias parseados al tipo "Matter"
@@ -159,16 +159,16 @@ export const getMatter = (matterGen: string): Matter | null => {
  */
 export const allMatters = (): Matter[] => {
   try {
-    const res: Matter[] = []
+    const res: Matter[] = [];
     // Obtener los generadores de las materias
-    const allGens = genAllMatters()
+    const allGens = genAllMatters();
     for (const gen of allGens) {
-      const matter = getMatter(gen)
-      if (matter) res.push(matter)
+      const matter = getMatter(gen);
+      if (matter) res.push(matter);
     }
-    return res.sort((a, b) => a.index - b.index)
+    return res.sort((a, b) => a.index - b.index);
   } catch (error) {
-    console.log(`\n\x1b[1m${message} allMatters:\x1b[0m\n${error}`)
-    return []
+    console.log(`\n\x1b[1m${message} allMatters:\x1b[0m\n${error}`);
+    return [];
   }
-}
+};

@@ -1,12 +1,12 @@
-import Link from 'next/link'
-import { useState } from 'react'
-import { DiGithubBadge } from 'react-icons/di'
-import type { Base } from '@/data/DataTypes'
-import { PixelIcons } from '../global/Icons'
+import Link from 'next/link';
+import { useState } from 'react';
+import { DiGithubBadge } from 'react-icons/di';
+import type { Base } from '@/data/DataTypes';
+import { PixelIcons } from '../global/Icons';
 
 const HeadNav = ({ listData = [] }: { listData: Base[] }) => {
-  const [navSW, changeSW] = useState(false)
-  const navFormatData = listData
+  const [navSW, changeSW] = useState(false);
+  const navFormatData = listData;
   return (
     <header className={`navbar sticky top-0 transition-all bg-base-100 z-50`}>
       <div className="flex-1 z-10">
@@ -79,7 +79,7 @@ const HeadNav = ({ listData = [] }: { listData: Base[] }) => {
                       {item.name}
                     </Link>
                   </li>
-                )
+                );
               })}
             </ul>
           </li>
@@ -119,6 +119,6 @@ const HeadNav = ({ listData = [] }: { listData: Base[] }) => {
         </div>
       </div>
     </header>
-  )
-}
-export default HeadNav
+  );
+};
+export default HeadNav;

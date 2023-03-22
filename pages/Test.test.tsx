@@ -3,5 +3,5 @@ export default function Test() {
     <>
       <section>Hola mundo, esto es un test</section>
     </>
-  )
+  );
 }

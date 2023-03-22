@@ -1,25 +1,25 @@
-import type { SubTheme, Content } from '@/data/DataTypes'
-import { Sep } from './General'
-import Link from 'next/link'
-import { PixelIcons } from '../global/Icons'
+import type { SubTheme, Content } from '@/data/DataTypes';
+import { Sep } from './General';
+import Link from 'next/link';
+import { PixelIcons } from '../global/Icons';
 export const NextPage = ({
   options,
   gen,
   type = false,
   content = [],
 }: {
-  options: SubTheme[]
-  gen: string
-  type?: boolean
-  content: Content[]
+  options: SubTheme[];
+  gen: string;
+  type?: boolean;
+  content: Content[];
 }) => {
-  const index: number = options.findIndex((opt) => opt.gen === gen) || 0
-  const buttons = { left: false, right: false }
+  const index: number = options.findIndex((opt) => opt.gen === gen) || 0;
+  const buttons = { left: false, right: false };
   if (index < options.length - 1) {
-    buttons.right = true
+    buttons.right = true;
   }
   if (index > 0) {
-    buttons.left = true
+    buttons.left = true;
   }
 
   function buttonOpt(direction: boolean, text: string) {
@@ -28,13 +28,13 @@ export const NextPage = ({
         name="chevron-right"
         className="min-w-[1.2rem] min-h-[1.2rem] md:min-w-[2rem] md:min-h-[2rem] lg:min-w-[3rem] lg:min-h-[3rem]"
       />
-    ) : null
+    ) : null;
     const iconLeft = direction ? (
       <PixelIcons
         name="chevron-left"
         className="min-w-[1.2rem] min-h-[1.2rem] md:min-w-[2rem] md:min-h-[2rem] lg:min-w-[3rem] lg:min-h-[3rem]"
       />
-    ) : null
+    ) : null;
     return (
       <>
         {iconLeft}
@@ -46,7 +46,7 @@ export const NextPage = ({
         </span>
         {iconRight}
       </>
-    )
+    );
   }
 
   return (
@@ -89,5 +89,5 @@ export const NextPage = ({
         </div>
       </div>
     </>
-  )
-}
+  );
+};

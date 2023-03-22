@@ -1,4 +1,5 @@
 {
-    "name": "Probabilidad",
-    "index": 2
+  "name": "Probabilidad",
+  "description": "La teoría de la probabilidad se utiliza para describir la incertidumbre en los eventos aleatorios y calcular la probabilidad de que ocurran. Los eventos son una parte importante de esta teoría y se utilizan para describir los resultados posibles de los experimentos aleatorios, ya sea simples o compuestos, y pueden ser mutuamente excluyentes o independientes.",
+  "index": 2
 }

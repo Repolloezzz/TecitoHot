@@ -1,6 +1,6 @@
-import Image from "next/image";
-import { useState } from "react";
-import type { ImageProps } from "next/image";
+import Image from 'next/image';
+import { useState } from 'react';
+import type { ImageProps } from 'next/image';
 
 const ImageBetter = ({ ...props }: ImageProps) => {
   const [srcState, setSrc] = useState(props.src);
@@ -9,7 +9,7 @@ const ImageBetter = ({ ...props }: ImageProps) => {
       {...props}
       alt={`${props.alt}`}
       src={srcState}
-      onError={() => setSrc("/imgNotFound.webp")}
+      onError={() => setSrc('/imgNotFound.webp')}
     />
   );
 };

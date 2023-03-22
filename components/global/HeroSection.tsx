@@ -1,9 +1,9 @@
-import { TitleShake } from './TitleAnimation'
-import { PixelIcons } from './Icons'
-import { PixelButton } from './Buttons'
+import { TitleShake } from './TitleAnimation';
+import { PixelIcons } from './Icons';
+import { PixelButton } from './Buttons';
 
 interface props {
-  className?: string
+  className?: string;
 }
 export default function HeroSection({ className }: props) {
   return (
@@ -58,5 +58,5 @@ export default function HeroSection({ className }: props) {
         </PixelButton>
       </div>
     </section>
-  )
+  );
 }

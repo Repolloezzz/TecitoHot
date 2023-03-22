@@ -2,18 +2,18 @@ import moment from 'moment';
 const getStyle = () => {
   const time = moment().hour();
   if (time >= 5 && time <= 10) {
-    return "morning";
+    return 'morning';
   }
   if (time >= 10 && time <= 13) {
-    return "day";
+    return 'day';
   }
   if (time >= 13 && time <= 16) {
-    return "magic";
+    return 'magic';
   }
   if (time >= 16 && time <= 19) {
-    return "sunset";
+    return 'sunset';
   }
-  return "night";
+  return 'night';
 };
 
 export { getStyle };
