@@ -83,7 +83,7 @@ const ModuleMenu = ({ theme, className, actually }: context) => {
             </div>
           </div>
           <div className="divider"></div>
-          <menu className="w-full h-[18rem] lg:h-[60vh] gap-1 overflow-y-auto overflow-x-hidden scrollbar-thin scrollbar-w-1 scrollbar-thumb-stone-600 scrollbar-track-stone-800 md:scrollbar-w-2 box-content">
+          <menu className="w-full h-[18rem] lg:h-[60vh] gap-1 overflow-y-auto overflow-x-hidden scrollbar-thin scrollbar-w-3 scrollbar-thumb-stone-600 scrollbar-track-stone-800 md:scrollbar-w-2 box-content">
             <li className={`flex flex-col p-0 relative`}>
               <Link
                 href={theme.url}
