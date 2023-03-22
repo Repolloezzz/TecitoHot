@@ -27,6 +27,7 @@ import { Global, Latex, Media, Forms } from '@/components/themes/MDXComponents';
 import { HeadTitle } from '@/components/themes/Titles';
 import { Sep } from '@/components/themes/General';
 
+
 export default function ContentHome({
   data,
   dataLayout,
@@ -63,7 +64,7 @@ export default function ContentHome({
           />
           <section
             data-theme={themeContent.is ? LightOptions[0] : DarkOptions[0]}
-            className="lg:min-w-[60%] xl:min-w-[75%] p-2 lg:p-5 lg:pr-7 xl:p-10 xl:pr-12 text-justify font-patrick bg-base-200 min-h-screen break-words lg:text-xl"
+            className="lg:min-w-[60%] xl:min-w-[75%] p-3 lg:p-5 lg:pr-7 xl:p-10 xl:pr-12 text-justify font-patrick bg-base-200 min-h-screen break-words lg:text-xl"
           >
             <HeadTitle content={data} />
             <Sep />

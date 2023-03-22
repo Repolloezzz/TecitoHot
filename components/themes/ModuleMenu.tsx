@@ -20,7 +20,7 @@ const ModuleMenu = ({ theme, className, actually }: context) => {
   return (
     <>
       <nav
-        className={`bg-base-100 max-h-[60vh] md:max-h-[90vh] flex flex-col lg:min-w-[35%] lg:p-4 xl:p-7 sticky top-16 bottom-0 overflow-y-hidden z-30 ${className}`}
+        className={`bg-base-100 max-h-[60dvh] md:max-h-[90dvh] flex flex-col lg:min-w-[35%] lg:p-4 xl:p-7 sticky top-16 bottom-0 overflow-y-hidden z-30 ${className}`}
       >
         {/* Button for Small */}
         <button

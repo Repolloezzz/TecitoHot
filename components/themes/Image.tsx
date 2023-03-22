@@ -69,7 +69,7 @@ const ImgAbs: React.FC<ImageProps> = ({
       >
         <FcGallery className="min-w-[1.25rem] min-h-[1.25rem] md:min-w-[1.50rem] md:min-h-[1.50rem] lg:min-w-[1.75rem] lg:min-h-[1.75rem]" />
       </button>
-      <picture className="flex justify-center items-center w-full h-full p-2">
+      <picture className="flex justify-center items-center w-full max-h-[25rem] p-2">
         <img
           {...props}
           alt={props.alt}
