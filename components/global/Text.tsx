@@ -10,7 +10,7 @@ export const ID_txt = ({ ...props }: context) => {
     <div
       {...props}
       className={`${
-        props.className ?? 'text-2xl md:text-3xl lg:text-5xl font-vt323'
+        props.className ?? 'text-4xl md:text-5xl lg:text-6xl font-vt323'
       } flex items-center group link link-primary font-semibold no-underline`}
     >
       <a

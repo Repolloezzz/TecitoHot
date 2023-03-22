@@ -143,27 +143,29 @@ nos indica cual es la información que se desea estudiar.
   Es necesario recalcar que un dato es un conjunto de información, algo
   asi como una tabla de donde una dato es una fila y las variables son las
   columnas. Por ejemplo:
-  <table className='table table-normal w-full my-3'>
-    <thead>
-      <tr>
-        <th>Nombre</th>
-        <th>Edad</th>
-        <th>Empleo</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Juan</td>
-        <td>19</td>
-        <td>Estudiante</td>
-      </tr>
-      <tr>
-        <td>Marcos</td>
-        <td>42</td>
-        <td>Profesor</td>
-      </tr>
-    </tbody>
-  </table>
+  <div className='overflow-auto flex justify-center'>
+    <table className='table table-normal w-[90%] my-3'>
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Edad</th>
+          <th>Empleo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Juan</td>
+          <td>19</td>
+          <td>Estudiante</td>
+        </tr>
+        <tr>
+          <td>Marcos</td>
+          <td>42</td>
+          <td>Profesor</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
   De la tabla que se muestra, cada columna es una variable y cada fila es un
   solo dato.
 
@@ -186,40 +188,42 @@ a partir de las variables definidas.
   Por lo tanto, de todos los estudiantes que recibieron cartas, se obtendrán
   los datos de cada uno de ellos, es decir, cada dato será un alumno que recibió
   cartas. Y así se podrá realizar el ranking.
-  <table className='table table-normal w-full my-3'>
-    <thead>
-      <tr>
-        <th/>
-        <th>Nombre</th>
-        <th>Edad</th>
-        <th>Sexo</th>
-        <th>Cartas</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th>🥇</th>
-        <td>Sofia</td>
-        <td>17</td>
-        <td>Femenino</td>
-        <td>49</td>
-      </tr>
-      <tr>
-        <th>🥈</th>
-        <td>Marcos</td>
-        <td>15</td>
-        <td>Masculino</td>
-        <td>37</td>
-      </tr>
-      <tr>
-        <th>🥉</th>
-        <td>Daisy</td>
-        <td>16</td>
-        <td>Femenino</td>
-        <td>32</td>
-      </tr>
-    </tbody>
-  </table>
+  <div className='overflow-auto flex justify-center'>
+    <table className='table table-normal w-[90%] my-3'>
+      <thead>
+        <tr>
+          <th/>
+          <th>Nombre</th>
+          <th>Edad</th>
+          <th>Sexo</th>
+          <th>Cartas</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>🥇</th>
+          <td>Sofia</td>
+          <td>17</td>
+          <td>Femenino</td>
+          <td>49</td>
+        </tr>
+        <tr>
+          <th>🥈</th>
+          <td>Marcos</td>
+          <td>15</td>
+          <td>Masculino</td>
+          <td>37</td>
+        </tr>
+        <tr>
+          <th>🥉</th>
+          <td>Daisy</td>
+          <td>16</td>
+          <td>Femenino</td>
+          <td>32</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
   Entonces así se obtiene el ranking, donde nuevamente cada fila es un dato
   de un alumno y cada columna es una variable.
   <mark>Notar que este ejemplo es de un dato multivariable</mark>.
@@ -230,7 +234,7 @@ a partir de las variables definidas.
   Un equipo de basquetbol está realizando un estudio para determinar el tamaño
   promedio de los jugadores. Para ello, unicamente se toma en cuenta la altura
   de los cinco jugadores que conforman el equipo. Entonces, se tiene:
-  <div className="flex justify-center">
+  <div className="flex justify-center overflow-auto">
     <table className="table table-normal my-3">
       <thead>
         <tr>
