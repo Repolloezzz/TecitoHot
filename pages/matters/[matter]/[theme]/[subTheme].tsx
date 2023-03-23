@@ -54,7 +54,7 @@ export default function SubThemeHome({
             <p className="text-lg lg:text-2xl p-2">{data.description}</p>
             <ID_txt id="videos-relacionados">Videos Relacionados</ID_txt>
             <section
-              className={`w-full h-[50dvh] ${
+              className={`w-full h-[50vh] ${
                 themeContent.is ? 'bg-neutral/10' : 'bg-neutral-content/10'
               }`}
             ></section>

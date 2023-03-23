@@ -61,6 +61,7 @@ export default function ContentHome({
             className="xl:min-w-[25%]"
             theme={dataTheme}
             actually={slugSub}
+            contentslug={slugCon}
           />
           <section
             data-theme={themeContent.is ? LightOptions[0] : DarkOptions[0]}

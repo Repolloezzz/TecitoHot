@@ -129,6 +129,13 @@ export const getContentObject = (
   }
 };
 
+import remarkGfm from 'remark-gfm';
+import remarkSlug from 'remark-slug';
+import remarkParse from 'remark-parse/lib';
+import remarkStringify from 'remark-stringify/lib';
+import remarkAttr from 'remark-attr';
+import directive from 'remark-directive';
+
 export const getContentSource = async (
   matterGen: string,
   themeGen: string,
@@ -144,7 +151,11 @@ export const getContentSource = async (
       `${contentGen}.mdx`
     );
     const { content, data } = matter(file);
-    const source = await serialize(content, {});
+    const source = await serialize(content, {
+      mdxOptions: {
+        remarkPlugins: [remarkGfm, remarkSlug, remarkParse, remarkStringify],
+      },
+    });
     return {
       source,
       frontMatter: {

@@ -87,11 +87,11 @@ const PaginationSub = ({
         </Link>
         <Link
           href={right.exist ? right.url : '#'}
-          className={`btn btn-outline text-sm md:text-lg lg:text-xl ${
+          className={`btn text-sm md:text-lg lg:text-xl ${
             right.exist ? '' : 'btn-disabled'
           } ${right.type ? 'btn-primary' : 'btn-outline'}`}
         >
-          {!right.type ? 'Siguiente contenido' : 'Siguiente Subtema'}
+          {!right.type ? 'Siguiente Contenido' : 'Siguiente Subtema'}
           <PixelIcons name="chevron-right" className="w-3 h-3 md:w-6 md:h-6" />
         </Link>
       </div>

@@ -12,15 +12,16 @@ interface context {
   theme: Theme;
   className: string;
   actually: string;
+  contentslug?: string;
 }
-const ModuleMenu = ({ theme, className, actually }: context) => {
+const ModuleMenu = ({ theme, className, actually, contentslug }: context) => {
   const { changeTheme, themeContent } = useThemeContext();
   const focusSearch = useRef<HTMLInputElement>(null);
   const [open, setOpen] = useState(false);
   return (
     <>
       <nav
-        className={`bg-base-100 max-h-[60rem] md:max-h-[90dvh] flex flex-col lg:min-w-[35%] lg:p-4 xl:p-7 sticky top-16 bottom-0 overflow-y-hidden z-30 ${className}`}
+        className={`bg-base-100 max-h-[33rem] md:max-h-[90dvh] flex flex-col lg:min-w-[35%] lg:p-4 xl:p-7 sticky top-16 bottom-0 overflow-y-hidden z-30 ${className}`}
       >
         {/* Button for Small */}
         <button
@@ -126,7 +127,12 @@ const ModuleMenu = ({ theme, className, actually }: context) => {
                         <Link
                           key={index}
                           href={content.url}
-                          className="flex items-center border-l-4 pl-5 ml-2 text-lg lg:text-xl hover:bg-neutral-focus hover:translate-x-2 transition-all gap-2 group overflow-hidden"
+                          className={`${
+                            content.gen == contentslug &&
+                            contentslug != undefined
+                              ? 'bg-neutral/50'
+                              : ''
+                          } flex items-center border-l-4 pl-5 ml-2 text-lg lg:text-xl hover:bg-neutral-focus hover:translate-x-2 transition-all gap-2 group overflow-hidden`}
                         >
                           <span className="border-2 flex items-center justify-center group-hover:scale-125 w-4 h-4 lg:w-5 lg:h-5">
                             {index + 1}

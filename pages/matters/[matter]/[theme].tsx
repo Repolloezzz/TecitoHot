@@ -93,7 +93,7 @@ export default function ThemeHome({
             </table>
             <ID_txt id="recursos-relacionados">Recursos relacionados</ID_txt>
             <section
-              className={`w-full h-[50dvh] ${
+              className={`w-full h-[50vh] ${
                 themeContent.is ? 'bg-neutral/10' : 'bg-neutral-content/10'
               }`}
             ></section>
