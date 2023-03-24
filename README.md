@@ -1,34 +1,46 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## 🚀 Comenzar
 
-## Getting Started
+Para comenzar a utilizar este proyecto, primero debes clonar el repositorio:
 
-First, run the development server:
+```bash
+git clone https://github.com/Repolloezzz/tecitohot--ts.git
+```
+
+Posterior instalar las dependencias necesarias para el proyecto:
+
+```bash
+npm install
+```
+
+Finalmente ejecutar el proyecto:
 
 ```bash
 npm run dev
-# or
-yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+La misma despliega el sitio web en el puerto 3000, por lo que para acceder a el debes ir a la dirección `http://localhost:3000/` \
+También puedes ver el sitio web en la dirección `https://tecitohot-ts.vercel.app/`
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+## 🛠 Construcción
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+TeCitoHot utiliza las siguientes tecnologías:
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+- [Next JS](https://nextjs.org/) para el desarrollo del sitio web
+- [tailwindcss](https://tailwindcss.com/) para el diseño del sitio web
+- [daisyui](https://daisyui.com/) para el diseño del sitio web junto a tailwindcss
+- [mdx](https://mdxjs.com/) para la creación de los posts
+- [Vercel](https://vercel.com/) para el despliegue del sitio web
+- [Manim](https://www.manim.community/) para la creación de los videos de matemáticas
 
-## Learn More
+Entre otras librerias y tecnologías que se pueden ver en el archivo `package.json`
 
-To learn more about Next.js, take a look at the following resources:
+## 🤔 Sobre TeCitoHot
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Crear este proyecto fue una idea que tuve hace un tiempo,
+pero no contaba con el conocimiento necesario para llevarla a cabo. Entonces, decidí aprender y crear este proyecto. El mismo tenía como objetivo crear un repositorio donde almacenar mis notas de las materias que estudio en la universidad, pero con el tiempo vi que podía ser mucho más que eso. Por lo que decidí crear un sitio web donde se puedan encontrar notas de las materias de la universidad, pero también de otras materias que no se encuentran en la universidad. Además, se pueden encontrar videos de matemáticas, donde se explican conceptos de manera visual y sencilla. Por último, se pueden encontrar posts sobre temas de programación, matemáticas, estadística, etc. Esto esta en desarrollo y se irán agregando más cosas con el tiempo.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## 💬 Comentarios
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Dejo TeCitoHot abierto para cualquier comentario
+de mejoras, correcciones, etc. Ya que es un proyecto
+que se encuentra en temprana etapa de desarrollo 🤓🤙.
