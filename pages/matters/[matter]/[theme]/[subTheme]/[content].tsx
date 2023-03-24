@@ -27,6 +27,7 @@ import { Global, Latex, Media, Forms } from '@/components/themes/MDXComponents';
 import { HeadTitle } from '@/components/themes/Titles';
 import { Sep } from '@/components/themes/General';
 
+import style from '@/styles/Content.module.css';
 
 export default function ContentHome({
   data,
@@ -69,12 +70,14 @@ export default function ContentHome({
           >
             <HeadTitle content={data} />
             <Sep />
-            <MDXRemote
-              {...source}
-              lazy={true}
-              components={{ ...Global, ...Latex, ...Media, ...Forms }}
-              frontmatter={frontMatter}
-            />
+            <section className={`${style.content_mdx}`}>
+              <MDXRemote
+                {...source}
+                lazy={true}
+                components={{ ...Global, ...Latex, ...Media, ...Forms }}
+                frontmatter={frontMatter}
+              />
+            </section>
             <PaginationSub
               genContent={slugCon}
               genSubTheme={slugSub}

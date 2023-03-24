@@ -133,8 +133,6 @@ import remarkGfm from 'remark-gfm';
 import remarkSlug from 'remark-slug';
 import remarkParse from 'remark-parse/lib';
 import remarkStringify from 'remark-stringify/lib';
-import remarkAttr from 'remark-attr';
-import directive from 'remark-directive';
 
 export const getContentSource = async (
   matterGen: string,

@@ -1,5 +1,11 @@
 {
-  "extends": ["next/core-web-vitals", "eslint-config-prettier"],
+  "extends": [
+    "next/core-web-vitals",
+    "eslint-config-prettier",
+    "plugin:storybook/recommended"
+  ],
   "parser": "@typescript-eslint/parser",
-  "plugins": ["prettier"]
+  "plugins": [
+    "prettier"
+  ]
 }

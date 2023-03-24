@@ -32,7 +32,7 @@ export const HeadTitle = ({
         </span>
         {content.name}
       </h1>
-      <div className="flex flex-col xl:flex-row leading-4 xl:gap-10 text-lg lg:text-2xl bg-base-300 p-1 md:p-2">
+      <div className="flex flex-col xl:flex-row leading-4 gap-1 xl:gap-10 text-lg lg:text-2xl bg-base-300 p-2">
         <span className="flex items-center gap-2 font-bold">
           <span>Creación:</span>
           <span className="font-dotgot text-sm lg:text-xl">{msgCreated}</span>
@@ -51,7 +51,7 @@ export const HeadTitle = ({
           </a>
         </span>
       </div>
-      <p className="p-2">{content.description}</p>
+      <p className="p-2 leading-5">{content.description}</p>
     </div>
   );
 };
