@@ -34,6 +34,20 @@ TeCitoHot utiliza las siguientes tecnologías:
 
 Entre otras librerias y tecnologías que se pueden ver en el archivo `package.json`
 
+## 🎯 Funcionalidades
+
+Son varias las funcionalidades que se pueden encontrar en TeCitoHot o características que se pueden agregar. Como tal es un task list de cosas que se pueden crear, agregar o mejorar:
+
+- [x] Crear un sistema de creación de objetos a partir de rutas de archivos definidos.
+- [x] Crear un sistema de creación de objetos a partir de archivos mdx.
+- [x] Crear paginas dinámicas con a partir de objetos creados a partir de archivos markdown.
+- [ ] Agregar un buscador en general y por subtemas.
+- [ ] Crear aplicaciones interactivas para la visualización de conceptos teóricos.
+- [ ] Crear videos explicativos sobre todo el material de TeCitoHot.
+- [ ] Crear un sistema de recomendación de videos para cada tema.
+- [ ] Crear un sistema de categorización de los temas y subtemas.
+- [ ] Agregar un sistema de comentarios para cada post.
+
 ## 🤔 Sobre TeCitoHot
 
 Crear este proyecto fue una idea que tuve hace un tiempo,
