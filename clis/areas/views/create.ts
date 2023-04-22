@@ -12,7 +12,8 @@ import {
 } from "../functions/validate";
 
 const { Select, Toggle, Input } = require("enquirer");
-const clear = require("clear");
+const clearConsole = require("clear");
+
 const message =
   "Selecciones las opciones que desea definir para la creacion de un nuevo area.\n" +
   "Recuerde que todos los datos ingresados seran validados y si no cumplen con los requisitos\n" +
@@ -33,13 +34,13 @@ let dataProvider: BaseArea = {
 
 export default async function createAreaCli() {
   // Limpiar la consola y presentar la vista
-  clear();
-  let loop = false;
+  clearConsole();
+  let finish = false;
   // presentacion de la vista
-  while (!loop) {
+  while (!finish) {
     console.log(
       viewBox(
-        H1(" >>> Crear area <<<"),
+        H1(">>> Crear area <<<"),
         justify(message) + "\n" + p(optionsMessage)
       )
     );
@@ -69,80 +70,68 @@ export default async function createAreaCli() {
     switch (optionSelected) {
       case "🛑 Nombre del area":
         await editAttrArea("name", "Escriba el nombre del area:");
-        clear();
+        clearConsole();
         break;
       case "📌 Descripcion del area":
         await editAttrArea("description", "Escriba una descripcion del area:");
-        clear();
+        clearConsole();
         break;
       case "🛑 Personaje del area":
         await editAttrArea("character", "Escriba un personaje caracteristico:");
-        clear();
+        clearConsole();
         break;
       case "📌 Color del area":
         await editAttrArea("color", "Escriba un color referente a tailwind:");
-        clear();
+        clearConsole();
         break;
       case "🧰 Generador del area":
         await editAttrArea("generator", "Escriba un nombre para el archivo");
-        clear();
+        clearConsole();
         break;
       case "🧰 Indice del area":
         await editAttrArea("index", "Escriba la posición de orden del area:");
-        clear();
+        clearConsole();
         break;
       case ">> 🎴 Vista previa del area":
-        clear();
+        clearConsole();
         await printPreviewArea();
-        clear();
+        clearConsole();
         break;
       case ">> 🔨 Crear area":
         const isValid = validateData();
         console.log(p(isValid.msg));
         if (isValid.valid) {
-          clear();
-          console.log(viewAreaBox(dataProvider));
+          clearConsole();
+          console.log(viewAreaBox(getFinishObject()));
           const confirm = new Toggle({
             name: "Continue",
             message: "Esta seguro de crear el area?",
             enabled: "Si",
             disabled: "No",
           });
-          if (isValid.index) {
-            if (await confirm.run()) {
-              insertArea(getFinishObject());
-              console.log(successMSG("Area insertada con exito✅✅✅"));
-              loop = true;
-              await wait(() => {}, 2000);
-              clear();
-              break;
-            }
-          } else {
-            if (await confirm.run()) {
-              createArea(getFinishObject());
-              console.log(successMSG("Area creada con exito✅✅✅"));
-              loop = true;
-              await wait(() => {}, 2000);
-              clear();
-              break;
-            }
+          if (await confirm.run()) {
+            insertArea(getFinishObject());
+            console.log(successMSG("Area insertada con exito✅✅✅"));
+            finish = true;
+            await wait(() => {}, 2000);
+            break;
           }
         }
-        loop = await continueAction.run();
-        if (loop) {
+        finish = await continueAction.run();
+        if (finish) {
           console.log(errorMSG("Creacion de area cancelada"));
         }
         await wait(() => {}, 2000);
-        clear();
+        clearConsole();
         break;
 
       case ">> ❌ Cancelar":
-        loop = await continueAction.run();
-        if (loop) {
+        finish = await continueAction.run();
+        if (finish) {
           console.log(errorMSG("Creacion de area cancelada"));
         }
         await wait(() => {}, 2000);
-        clear();
+        clearConsole();
         break;
     }
   }
@@ -180,7 +169,7 @@ async function editAttrArea<K extends keyof BaseArea>(
  * que el color sea un color valido de tailwind
  */
 function validateData() {
-  let res = { valid: false, index: false, msg: "Esto son los registros:" };
+  let res = { valid: false, msg: "Esto son los registros:" };
   const { name, character, index, generator } = getFinishObject();
   let valid;
   // Validar que no exista un area con el mismo nombre
@@ -202,7 +191,6 @@ function validateData() {
   // Validar que no exista un area con el mismo indice
   if (index > 0) {
     valid = existAreaByIndex(index);
-    res.index = !valid;
     res.msg += valid
       ? "-💠 El indice ya existe\n"
       : "-✅ El indice no existe\n";

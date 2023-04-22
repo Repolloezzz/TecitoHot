@@ -26,3 +26,16 @@ export function createArea(area: BaseArea) {
     console.log(error);
   }
 }
+
+export function deleteArea(area: BaseArea) {
+  try {
+    const { generator } = area;
+    const areaPath = path.join(contentDir, generator);
+    const areaSourcePath = path.join(sourceDir, generator);
+    fs.rmSync(areaPath, { recursive: true });
+    fs.rmSync(areaSourcePath, { recursive: true });
+  } catch (error) {
+    console.log("Error al borrar el area");
+    console.log(error);
+  }
+}
