@@ -1,12 +1,15 @@
 import type Theme from "./Theme";
 
-export interface BaseArea {
+export interface FileArea {
   name: string;
   description: string;
   character: string;
+  color: string;
+}
+
+export interface BaseArea extends FileArea {
   index: number;
   generator: string;
-  color: string;
 }
 
 export interface Area extends BaseArea {

@@ -18,6 +18,7 @@ function validateDir(
 
 interface IndexGenerator {
   index: number | null;
+  genName: string | null;
   generator: string | null;
 }
 
@@ -26,12 +27,13 @@ function getIndexGenerator(dir: string): IndexGenerator {
   const index_generator = dir.split("_");
   return {
     index: parseInt(index_generator[0]) ? parseInt(index_generator[0]) : null,
+    genName: index_generator[1] ? index_generator[1] : null,
     generator: index_generator[1] ? dir : null,
   };
 }
 
 // Retorna los directorios Area que contienen un archivo .json
-export function getDirsAreas() : IndexGenerator[] {
+export function getDirsAreas(): IndexGenerator[] {
   const areasDir = fs.readdirSync(contentDir);
   const dirs = areasDir.filter((item) => {
     return fs.statSync(path.join(contentDir, item)).isDirectory();
@@ -42,6 +44,7 @@ export function getDirsAreas() : IndexGenerator[] {
     return getIndexGenerator(area);
   });
   return areasOrder.filter(
-    (area) => area.index != null && area.generator != null
+    (area) =>
+      area.index != null && area.genName != null && area.generator != null
   );
 }
