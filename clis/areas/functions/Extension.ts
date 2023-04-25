@@ -1,6 +1,12 @@
-import type { BaseArea, FileArea } from "../../../data/types/Area";
+import type { BaseArea } from "../../../data/types/Area";
+import open from "open";
 import { getDirsAreas } from "../../../lib/content/getGenerators";
-import { contentDir, sourceDir, content, resource } from "../../../data/routes";
+import {
+  contentDir,
+  resourceDir,
+  content,
+  resource,
+} from "../../../data/routes";
 import { createArea, deleteArea } from "./CRUD";
 import fs from "fs";
 import path from "path";
@@ -20,8 +26,8 @@ function renameArea(newDir: string, oldDir: string) {
     if (fs.existsSync(oldDirPath)) {
       fs.renameSync(oldDirPath, newDirPath);
     }
-    const oldDirSourcePath = path.join(sourceDir, oldDir);
-    const newDirSourcePath = path.join(sourceDir, newDir);
+    const oldDirSourcePath = path.join(resourceDir, oldDir);
+    const newDirSourcePath = path.join(resourceDir, newDir);
     if (fs.existsSync(oldDirSourcePath)) {
       fs.renameSync(oldDirSourcePath, newDirSourcePath);
     }
@@ -31,7 +37,7 @@ function renameArea(newDir: string, oldDir: string) {
   }
 }
 
-// Inserta un area en el indice indicado
+// Inserta un area en el indice indicado, reordenando los indices de las areas que estan despues
 export function insertArea(area: BaseArea) {
   const dirs = getDirsAreas();
   for (const dir of dirs) {
@@ -47,6 +53,7 @@ export function insertArea(area: BaseArea) {
   createArea(area);
 }
 
+// Elimina un area del indice indicado, reacomodando los indices de las areas restantes
 export function quitArea(area: BaseArea) {
   const dirs = getDirsAreas();
   for (const dir of dirs) {
@@ -60,4 +67,16 @@ export function quitArea(area: BaseArea) {
     }
   }
   deleteArea(area);
+}
+
+export function updateArea(area: BaseArea) {
+  
+}
+
+// Funcion para abrir archivos del directorio de recursos
+type Directory = "content" | "resource";
+export async function openArea(type: Directory, ...args: string[]) {
+  const dir = type === "content" ? contentDir : resourceDir;
+  const filePath = path.join(dir, ...args);
+  await open(filePath);
 }

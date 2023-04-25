@@ -1,6 +1,6 @@
 import type { BaseArea, FileArea } from "../../../data/types/Area";
 import { getDirsAreas } from "../../../lib/content/getGenerators";
-import { contentDir, sourceDir } from "../../../data/routes";
+import { contentDir, resourceDir } from "../../../data/routes";
 import fs from "fs";
 import path from "path";
 
@@ -15,7 +15,7 @@ export function createArea(area: BaseArea) {
   try {
     const { index, generator, ...rest } = area;
     const areaPath = path.join(contentDir, generator);
-    const areaSourcePath = path.join(sourceDir, generator);
+    const areaSourcePath = path.join(resourceDir, generator);
     fs.mkdirSync(areaPath, { recursive: true });
     fs.mkdirSync(areaSourcePath, { recursive: true });
     const areaJsonPath = path.join(areaPath, "area.json");
@@ -27,11 +27,12 @@ export function createArea(area: BaseArea) {
   }
 }
 
+// Borra un area
 export function deleteArea(area: BaseArea) {
   try {
     const { generator } = area;
     const areaPath = path.join(contentDir, generator);
-    const areaSourcePath = path.join(sourceDir, generator);
+    const areaSourcePath = path.join(resourceDir, generator);
     fs.rmSync(areaPath, { recursive: true });
     fs.rmSync(areaSourcePath, { recursive: true });
   } catch (error) {

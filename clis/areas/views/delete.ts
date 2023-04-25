@@ -1,31 +1,28 @@
-import { H1, justify, p, errorMSG, successMSG } from "./components/Text";
-import { viewBox, viewAreaBox } from "./components/Boxes";
+import { printT, printBoxSection } from "./components/Text";
+import { getAreasCount } from "../functions/CRUD";
 import { searchByAttr } from "./components/search";
-import { wait } from "./components/animations";
+import wait from "./components/wait";
 import { quitArea } from "../functions/Extension";
+import printPreviewArea from "./others/printArea";
+import { BaseArea } from "@/data/types/Area";
 const clearConsole = require("clear");
-const { Select, Toggle } = require("enquirer");
+const { Select } = require("enquirer");
 
+const title = "Eliminar - Area CLI";
 const message =
-  "Seleccione la opcion buscar para continuar con la eliminacion de un area, siempre y cuado\n" +
-  "existan areas registradas en el sistema y que cumplan con los requisitos de busqueda. Entonces" +
-  "se mostrara el area que desea eliminar y se le pedira que confirme la accion.\n" +
-  "🎯 Puede buscar el area por atributos unicos de cada area:";
-const optionsMessage = `
-    - 🔍 Tipo de busqueda
-    - ❌ Cancelar operacion
-`;
+  "Seleccione la opcion buscar para continuar con la eliminacion de un area, siempre y cuado existan areas registradas en el sistema y que cumplan con los requisitos de busqueda. Entonces, se mostrara el area que desea eliminar y se le pedira queconfirme la accion.\n🎯 Puede buscar el area por atributos unicos de cada area:";
+const optionsMessage = ["🔍 Tipo de busqueda", "❌ Cancelar operacion"];
 
 export default async function deleteAreaCli() {
-  clearConsole();
   let finish = false;
-  while (!finish) {
-    console.log(
-      viewBox(
-        H1(">>> Eliminar area <<<"),
-        justify(message) + "\n" + p(optionsMessage)
-      )
-    );
+  const numberAreasValid = getAreasCount() > 0;
+  if (!numberAreasValid) {
+    printT("error", "No hay areas registradas en el sistema!");
+    await wait(2000);
+    clearConsole();
+  }
+  while (!finish && numberAreasValid) {
+    printBoxSection(title, message, optionsMessage);
     const props = new Select({
       name: "Delete-Area-Options",
       message: "Seleccione una opcion",
@@ -33,33 +30,17 @@ export default async function deleteAreaCli() {
         "🔍🎫 Buscar por nombre",
         "🔍🏌️‍♂️ Buscar por personaje",
         "🔍📂 Buscar por generador",
-        "🔍🎲 Buscar por indice",
-        ">> ❌ Cancelar",
+        ">> ❌ Volver",
       ],
     });
     const optionSelected = await props.run();
-    const continueAction = new Toggle({
-      name: "Continue",
-      message: "Esta seguro que desea eliminar el area?",
-      enabled: "Estoy seguro",
-      disabled: "No, cancelar",
-    });
-    let data;
+    let data: BaseArea | undefined;
+    clearConsole();
     switch (optionSelected) {
       case "🔍🎫 Buscar por nombre":
         data = await searchByAttr("name", "Escriba el nombre del area:");
-        if (data) {
-          console.log(viewAreaBox(data));
-          finish = await continueAction.run();
-          if (finish) {
-            quitArea(data);
-            console.log(successMSG("Area eliminada con exito!"));
-            break;
-          }
-        } else {
-          console.log(errorMSG("No se encontro el area!"));
-        }
-        await wait(() => {}, 2000);
+        if (await deleteDataOrNot(data)) break;
+        await wait(2000);
         clearConsole();
         break;
       case "🔍🏌️‍♂️ Buscar por personaje":
@@ -67,18 +48,8 @@ export default async function deleteAreaCli() {
           "character",
           "Escriba el personaje del area:"
         );
-        if (data) {
-          console.log(viewAreaBox(data));
-          finish = await continueAction.run();
-          if (finish) {
-            quitArea(data);
-            console.log(successMSG("Area eliminada con exito!"));
-            break;
-          }
-        } else {
-          console.log(errorMSG("No se encontro el area!"));
-        }
-        await wait(() => {}, 2000);
+        if (await deleteDataOrNot(data)) break;
+        await wait(2000);
         clearConsole();
         break;
       case "🔍📂 Buscar por generador":
@@ -86,46 +57,34 @@ export default async function deleteAreaCli() {
           "generator",
           "Escriba el generador del area:"
         );
-        if (data) {
-          console.log(viewAreaBox(data));
-          finish = await continueAction.run();
-          if (finish) {
-            quitArea(data);
-            console.log(successMSG("Area eliminada con exito!"));
-            break;
-          }
-        } else {
-          console.log(errorMSG("No se encontro el area!"));
-        }
-        await wait(() => {}, 2000);
+        if (await deleteDataOrNot(data)) break;
+        await wait(2000);
         clearConsole();
         break;
-      case "🔍🎲 Buscar por indice":
-        data = await searchByAttr("index", "Escriba el indice del area:");
-        if (data) {
-          console.log(viewAreaBox(data));
-          finish = await continueAction.run();
-          if (finish) {
-            quitArea(data);
-            console.log(successMSG("Area eliminada con exito!"));
-            break;
-          }
-        } else {
-          console.log(errorMSG("No se encontro el area!"));
-        }
-        await wait(() => {}, 2000);
-        clearConsole();
-        break;
-      case ">> ❌ Cancelar":
-        const cancelAction = new Toggle({
-          name: "cancel",
-          message: "Desea cancelar la eliminacion del area?",
-          enabled: "Si",
-          disabled: "No",
-        });
-        finish = await cancelAction.run();
+      case ">> ❌ Volver":
+        finish = true;
         clearConsole();
         break;
     }
   }
+}
+
+async function deleteDataOrNot(data: BaseArea | undefined) {
+  let success = false;
+  if (data) {
+    success = await printPreviewArea(
+      data,
+      "Esta seguro que desea eliminar el area?",
+      "Estoy seguro",
+      "No, cancelar"
+    );
+    if (success) {
+      quitArea(data);
+      printT("success", "Area eliminada con exito!");
+      // break
+    }
+  } else {
+    printT("error", "No se encontro el area!");
+  }
+  return success;
 }

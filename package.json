@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
+    "start": "next sta°°rt",
     "lint": "next lint",
     "authors": "ts-node ./clis/contributors/main.ts",
     "categories": "ts-node ./clis/categories/Main.ts",
@@ -19,12 +19,6 @@
     "@types/react": "18.0.35",
     "@types/react-dom": "18.0.11",
     "autoprefixer": "10.4.14",
-    "boxen": "^5.1.2",
-    "chalk": "^4.1.2",
-    "chalk-animation": "^2.0.3",
-    "clear": "^0.1.0",
-    "cli-table": "^0.3.11",
-    "enquirer": "^2.3.6",
     "eslint": "8.38.0",
     "eslint-config-next": "13.3.0",
     "gray-matter": "^4.0.3",
@@ -39,6 +33,13 @@
     "ts-node": "^10.9.1"
   },
   "devDependencies": {
+    "boxen": "^5.1.2",
+    "chalk": "^4.1.2",
+    "chalk-animation": "^2.0.3",
+    "clear": "^0.1.0",
+    "cli-table": "^0.3.11",
+    "enquirer": "^2.3.6",
+    "open": "^8.4.2",
     "typescript": "^5.0.4"
   }
 }

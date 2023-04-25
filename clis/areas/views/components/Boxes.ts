@@ -27,7 +27,6 @@ export const viewBox = (title: string, message: string) => {
     title,
     titleAlignment: "center",
     borderStyle: "round",
-    padding: 1,
     borderColor: "yellowBright",
   });
   return view;

@@ -1,5 +1,6 @@
 import chalk from "chalk";
 const justified = require("justified");
+import { viewBox } from "./Boxes";
 // Dracula theme
 export const MyTheme = {
   primary: chalk.hex("#FF79C6"),
@@ -37,3 +38,30 @@ export const errorMSG = (text: string) => {
 export const successMSG = (text: string) => {
   return MyTheme.success.bold(text);
 };
+
+type ChalkOptions = Parameters<typeof chalk>[1];
+
+export function printBoxSection(
+  title: string,
+  description: string,
+  options?: string[]
+) {
+  const opt = options?.map((o) => `  - ${o}`).join("\n");
+  const header = viewBox(
+    H1(`>>> ${title} <<<`),
+    justify(description) + "\n" + p(opt ?? "")
+  );
+  console.log(header);
+}
+
+export function printT<K extends keyof typeof MyTheme>(
+  color: K,
+  text: string,
+  options?: ChalkOptions
+) {
+  let result = MyTheme[color](text);
+  if (options) {
+    result = MyTheme[color](text, options);
+  }
+  console.log(result);
+}
