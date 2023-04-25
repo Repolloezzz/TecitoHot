@@ -1,0 +1,209 @@
+---
+name: Eventos
+index: 1
+description: 'Conocer los conceptos de eventos también es útil para el modelado de situaciones complejas. Por ejemplo, en el análisis de riesgo financiero, es necesario considerar eventos que involucran múltiples variables aleatorias. En este caso, se pueden definir eventos compuestos que involucren la combinación de varios eventos simples.'
+created: '25-03-2023'
+updated: '26-03-2023'
+---
+
+<BImp
+  title="Definición"
+  icon="flag"
+  color="orange"
+  comment="¿Qué es un evento?"
+>
+  Un evento es un subconjunto de un [espacio
+  muestral](/matters/Estadistica/ProbabilidadEst/ConceptosGenerales/esp_muestral)
+  asociado a un
+  [experimento](/matters/Estadistica/ProbabilidadEst/ConceptosGenerales/experimento).
+  Por otro lado, un evento es una colección de resultados específicos de un
+  experimento, siendo que se lo define por medio de una condición.
+</BImp>
+
+<BComment type="note">
+  Un evento como su nombre indica, es un suceso que puede pasar o no pasar. Es
+  decir, son resultados que cumplan una condición dada, donde si cumplen la
+  condición, entonces son resultado del evento.
+</BComment>
+
+<BImp title="Tipos de eventos" icon="at" color="purple" id='tipos-de-eventos'>
+  Sea <Ltx txt="\mathcal{S}" /> un espacio muestral asociado a un experimento, y
+  sea <Ltx txt="\mathcal{A}" /> un evento de <Ltx txt="\mathcal{S}" />. Entonces
+  decimos que es:
+  <Balph>
+    **Evento simple**: Cuando <Ltx txt="A" /> es un subconjunto de
+    <Ltx txt="\mathcal{S}" />. Pero, solo contiene **un elemento**, es decir,
+    <Ltx txt="A" /> es un elemento de <Ltx txt="\mathcal{S}" />.
+  </Balph>
+  <Balph>
+    **Evento compuesto**: Cuando <Ltx txt="A" /> es un subconjunto de
+    <Ltx txt="\mathcal{S}" />. Pero, contiene **más de un elemento**, es decir,
+    <Ltx txt="A" /> es un subconjunto de <Ltx txt="\mathcal{S}" />.
+  </Balph>
+  <Balph>
+    **Evento seguro**: Cuando <Ltx txt="A" /> es un subconjunto **igual** a
+    <Ltx txt="\mathcal{S}" />.
+  </Balph>
+  <Balph>
+    **Evento imposible**: Cuando <Ltx txt="A" /> es un subconjunto **vacío** de
+    <Ltx txt="\mathcal{S}" />.
+  </Balph>
+</BImp>
+
+<BComment type="note">
+  Un evento simple, literalmente es un elemento de un espacio muestral. Por
+  ejemplo si tenemos lo siguiente:
+  <Balph>
+    <Ltx txt="\mathcal{S}=\{1,2,3,4\}" />
+  </Balph>
+  Si definimos <Ltx txt="A=\{1\}" />, entonces <Ltx txt="A" /> es un evento
+  simple. Pues, <Ltx txt="A" /> es un elemento de <Ltx txt="\mathcal{S}" />.
+  Esto por que tiene **un solo elemento**.
+</BComment>
+<BComment type="note">
+  Un evento compuesto, literalmente es un subconjunto de un espacio muestral.
+  Por ejemplo si tenemos lo siguiente:
+  <Balph>
+    <Ltx txt="\mathcal{S}=\{1,2,3,4\}" />
+  </Balph>
+  Si definimos <Ltx txt="A=\{1,2\}" />, entonces <Ltx txt="A" /> es un evento
+  compuesto. Pues, <Ltx txt="A" /> es un subconjunto de
+  <Ltx txt="\mathcal{S}" />. Esto por que tiene **más de un elemento**.
+</BComment>
+<BComment type="warn">
+  En notación de conjuntos podemos entender lo siguiente:
+  <Balph>
+    Si <Ltx txt="A" /> es un **evento simple**, cumple que:
+    <Ltx txt="A \subset \mathcal{S} \land  n(A) = 1" />
+  </Balph>
+  <Balph>
+    Si <Ltx txt="A" /> es un **evento compuesto**, cumple que:
+    <Ltx txt="A \subseteq \mathcal{S} \land  n(A) > 1" />
+  </Balph>
+  <Balph>
+    Si <Ltx txt="A" /> es un **evento seguro**, cumple que:
+    <Ltx txt="A = \mathcal{S}" />
+  </Balph>
+  <Balph>
+    Si <Ltx txt="A" /> es un **evento imposible**, cumple que:
+    <Ltx txt="A = \emptyset" />
+  </Balph>
+  Donde <Ltx txt="n(A)" /> es la cardinalidad de <Ltx txt="A" />, osea su cantidad
+  de elementos.
+</BComment>
+<BComment type="note">
+  La denominación de evento seguro e imposible, hace referencia a que el evento
+  es seguro de ocurrir o imposible de ocurrir, respectivamente. Pues como se
+  describió anteriormente, ambos eventos si bien son subconjuntos de un espacio
+  muestral, son subconjuntos iguales al espacio muestral o vacíos,
+  respectivamente.
+</BComment>
+
+Los eventos son necesarios para comenzar a trabajar con la probabilidad, siendo
+son parte fundamental estudiar los eventos y sus propiedades para poder
+entender la probabilidad.
+
+<BChord title="Ejemplo de evento 🃏" color="yellow" top open>
+ Supongamos que tenemos lo siguiente:
+  <Balph>
+    <Ltx txt="\mathcal{E}" />: Sacar una carta de una baraja de cartas de color
+    rojo y azul, donde cada color tiene cartas del 2 al 10.
+  </Balph>
+  En el caso este experimento tiene un espacio muestral compuesto, pues cada
+  resultado es un par ordenado, donde podemos definir su espacio muestral como:
+  <Balph>
+    <Ltx txt="\mathcal{S}" /> = <Ltx txt="\{((x,y):x\in[2,10] \land y\in \{🟦,🟥\})\}" />
+  </Balph>
+  Donde <Ltx txt="x" /> es el número de la carta y <Ltx txt="y" /> es el color de la carta.
+  Entonces podemos definir los siguientes eventos:
+  <Balph>
+    - <Ltx txt="A" />: El número de la carta es par.
+    - <Ltx txt="B" />: El número de la carta es primo.
+  </Balph>
+  De ahí tenemos que ambos eventos son eventos compuestos, contienen a más de un
+  resultado del espacio muestral.
+  <VidAbs
+    title="Ejemplo de evento con cartas"
+    url="/matters/Estadistica/ProbabilidadEst/Probabilidad/eventos1.mp4"
+    loop
+    muted
+    playing
+    content={
+      <>
+        Ejemplo de como se definen eventos a partir de un espacio muestral
+        asociado a un experimento, en este caso el experimento es sacar una
+        carta de una baraja de cartas.
+      </>
+    }
+  />
+
+</BChord>
+<BChord
+  title='Solo masitas 😋'
+  color='green'
+>
+  Supongamos que tenemos lo siguiente:
+  <Balph>
+    <Ltx txt='\mathcal{S}'/> = \{🍬,🍭,🍫,🍩,🍪\}
+  </Balph>
+  Entonces podemos definir los siguientes eventos:
+  <Balph>
+    - <Ltx txt='A'/> = El dulce es una masa.
+    - <Ltx txt='B'/> = El dulce es una galleta.
+  </Balph>
+  Entonces en base a <Ltx txt='\mathcal{S}'/>, los eventos
+  quedan como:
+  <Balph>
+    - <Ltx txt='A'/> = \{🍩,🍪\}
+    - <Ltx txt='B'/> = \{🍪\}
+  </Balph>
+  De ahí tenemos que <Ltx txt='A'/> es un evento compuesto, pues contiene a
+  más de un resultado del espacio muestral. Mientras que <Ltx txt='B'/> es un
+  evento simple, pues contiene a un solo resultado del espacio muestral.
+</BChord>
+<BChord title="Puedo ganar 😣🎯">
+  Supongamos que tenemos el siguiente experimento y espacio muestral.
+  <Balph>
+    - <Ltx txt='\mathcal{E}'/>: Tener 130 puntos un el juego de dardos y lanzar una sola vez.
+    - <Ltx txt='\mathcal{S}'/> = <Ltx txt='\{x: 0 \leq x \leq 50\}'/>
+  </Balph>
+  Para el juego, solo se tiene una jugada, es decir, solo se lanza una vez. Entonces,
+  si se llega a un total de 180 puntos gana. Entonces podemos definir los siguientes
+  eventos:
+  <Balph>
+    - <Ltx txt='A'/> = El jugador pierde.
+    - <Ltx txt='B'/> =  El jugador gana.
+  </Balph>
+  Entonces en base a las reglas del juego, si o si se necesita sacar 50 puntos
+  para llegar a 180 y ganar, de lo contrario si saca otro valor, entonces pierde.
+  <Balph>
+    - <Ltx txt='A'/> = <Ltx txt='\mathcal{S}-\{50\}'/>
+    - <Ltx txt='B'/> = <Ltx txt='\{50\}'/>
+  </Balph>
+  De ahí tenemos que <Ltx txt='A'/> es un evento compuesto, pues contiene a
+  a todos los resultados posibles para perder, excepto el 50 que es el valor
+  necesario para ganar. Por lo tanto, <Ltx txt='B'/> es el evento donde se gana
+  y es un evento simple, pues contiene a un solo resultado del espacio muestral.
+</BChord>
+<BChord title='Es chusa 🎳😳'>
+  Supongamos que tenemos el siguiente experimento y espacio muestral
+  <Balph>
+    - <Ltx txt='\mathcal{E}'/>: Jugar una jugada de Bolos.
+    - <Ltx txt='\mathcal{S}'/> = <Ltx txt='\{x: 0 \leq x \leq 300\}'/>
+  </Balph>
+  Donde definimos los siguientes eventos:
+  <Balph>
+    - <Ltx txt='A'/> = El jugador obtiene un puntaje mayor a 200.
+    - <Ltx txt='B'/> = El jugador gana.
+  </Balph>
+  Entonces en base a <Ltx txt='\mathcal{S}'/>, los eventos
+  quedan como:
+  <Balph>
+    - <Ltx txt='A'/> = <Ltx txt='\{x: 200 < x \leq 300\}'/>
+    - <Ltx txt='B'/> = <Ltx txt='\{300\}'/>
+  </Balph>
+  De ahí tenemos que <Ltx txt='A'/> es un evento compuesto, pues contiene a
+  más de un resultado del espacio muestral. Mientras que <Ltx txt='B'/> es un
+  evento simple, pues contiene a un solo resultado y es el resultado en
+  el que el jugador puede ganar si o si.
+</BChord>

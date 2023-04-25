@@ -35,3 +35,10 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 ani
+
+# Ignorar __pycache__ en todos los niveles de animations
+animations/**/__pycache__/
+animations/**/media/
+animations/**/.vscode/
+
+gitignore

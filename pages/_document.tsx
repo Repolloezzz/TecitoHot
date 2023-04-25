@@ -34,6 +34,7 @@ export default function Document() {
           content="Temas de matemáticas, Temas de física, Temas de programación"
         />
       </Head>
+      {/* Thema principal "Forest" */}
       <body data-theme="forest">
         <Main />
         <NextScript />

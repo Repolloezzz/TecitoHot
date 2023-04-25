@@ -12,3 +12,5 @@ const rootPublic = `${process.cwd()}/${Public}}`;
 const rootPage = `${process.cwd()}/${Pages}}`;
 
 export { rootMarkdown, rootPublic, rootPage, Markdown, Public, Pages };
+
+export const imgNotFound = '/imgNotFound.webp';

@@ -1,0 +1,282 @@
+---
+name: Espacios muestrales
+index: 7
+description: 'Comprender los espacios muestrales es importante porque nos permite calcular la probabilidad de que un evento determinado ocurra. La probabilidad se define como el número de resultados favorables dividido por el número total de posibles resultados en el espacio muestral. Por lo tanto, si conocemos el espacio muestral y los eventos de interés, podemos calcular la probabilidad de que ocurra cada evento.'
+created: '27-02-2023'
+updated: '22-03-2023'
+---
+
+<BImp
+  title="Definición"
+  icon="flag"
+  color="orange"
+  comment="¿Qué es un espacio muestral?"
+>
+  Un espacio muestral asociado a un
+  [experimento](/matters/Estadistica/ProbabilidadEst/ConceptosGenerales/6_experimentos),
+  es el conjunto de todos los resultados posibles de dicho experimento. Donde,
+  cada elemento de este conjunto es un resultado posible del experimento. <br />
+  Un espacio muestral se denota por <Ltx txt="\mathcal{S}" />.
+</BImp>
+
+<BComment type="note">
+  <Ltx txt="\mathcal{S}" /> es un conjunto asociado a <Ltx txt="\mathcal{E}" />.
+  Es decir, que un espacio muestral está asociado a un experimento, lo anterior
+  fue descrito de forma simbólica.
+</BComment>
+<BComment type="alert">
+  Un espacio muestral se puede deducir según el tipo de experimento que sea,
+  esto basado en [los tipos de
+  experimentos](/matters/Estadistica/ProbabilidadEst/ConceptosGenerales/6_experimentos#types_exp),
+  entonces se tiene que:
+</BComment>
+<BComment type="alert">
+  Los elementos de un espacio muestral son los resultados posibles de un
+  experimento. Por lo tanto, son
+  [datos](/matters/Estadistica/ProbabilidadEst/ConceptosGenerales/5_datos) cada
+  uno de sus elementos, es decir, que pueden ser simples o compuestos.
+</BComment>
+<BComment type="warn">
+  <Ltx txt="\mathcal{S}" /> es un conjunto, entonces se puede decir que cumple
+  con las propiedades de un conjunto. Por lo tanto, es posible realizar
+  operaciones de unión e intersección otros espacios muestrales. Es decir,
+  juntar dos experimentos.
+</BComment>
+
+<BImp title="Tipos de espacios muestrales" icon="at" color="purple" id='type-esp-muestral'>
+  Los espacios muestrales se pueden categorizar de acuerdo al tamaño o
+  propiedades de los elementos que lo componen. Por lo tanto, se tienen los
+  siguientes tipos de espacios muestrales:
+  <Balph>
+    **Discreto**: Un espacio muestral discreto es aquel en el que cada elemento
+    se puede contar, enlistar o enumerar. Es decir, que es discreto, valores
+    enteros o números naturales. Además este tipo de espacio muestral se puede
+    dividir en:
+    - 🔻 Finito: Un espacio muestral finito es aquel en el que el
+    número de elementos es finito. Es decir, que se puede contar.
+    - 🔻 Infinito:
+    Un espacio muestral infinito es aquel en el que el número de elementos es
+    infinito. Es decir, que no se puede contar.
+  </Balph>
+  <Balph>
+    **Continuo**: Un espacio muestral netamente con valores continuos. Es decir,
+    que no se puede contar, enlistar u ordenar. La misma es un espacio muestral
+    infinito. Pues la misma se define en un rango o un intervalo de valores no
+    discretos.
+  </Balph>
+
+</BImp>
+
+<BComment>
+  <Balph>
+    **Discreto**: Valor específico, generalmente si es un valor númerico, entonces es un
+    entero.
+  </Balph>
+  <Balph>
+    **Continuo**: Valor de un rango, generalmente si es un valor númerico, entonces es un
+    infinitesimal.
+  </Balph>
+</BComment>
+<BComment type="note">
+  Una espacio discreto es aquel que directamente son valores exactos, enteros o
+  específicos. Es decir, son valores que son "deducibles". Por ejemplo, los
+  números naturales, son valores que se específicos y que son deducibles. Pero,
+  los números reales son valores que no son específicos, pues son
+  infinitesimales. Por lo tanto, son valores que no son deducibles.
+</BComment>
+<BComment type="warn">
+  Un espacio muestral continuo si o si se define como un rango o intervalo de
+  valores, es decir que tiene la forma de
+  <Ltx txt="\mathcal{S}=\{x:a\leq x \leq b\}" />. Donde se considera a "todos"
+  los valores en ese rango, es decir, que no se puede contar, pues son infinitos
+  los valores que se pueden encontrar en ese rango.
+</BComment>
+<BComment type="alert">
+  Si se habla de valores númericos entonces es facil de entender la diferencia.
+  Donde, se tiene lo siguiente:
+  <Balph>
+    Discreto: Valor entero (<Ltx txt="\mathbb{Z}" />).
+  </Balph>
+  <Balph>
+    Continuo: Valor real (<Ltx txt="\mathbb{R}" />).
+  </Balph>
+  Pero, generalmente los espacio muestrales continuos son valores números reales.
+
+</BComment>
+
+Un espacio muestral en general es una conjunto de posibles resultados de un experimento
+cualquiera, también se dividen en espacioes finitos e infinitos. Conocer este concepto
+en especial la diferencia que hay entre un espacio muestral discreto y continuo es muy
+importante, pues nos permite ver claramente y entender los conceptos de probabilidad.
+
+<BChord title="Ejemplo de espacio muestral 🎲" top open>
+  Consideremos el siguiente experimento:
+  <Balph>
+    <Ltx txt="\mathcal{E}" />: Lanzar un dado y observar la cara superior.
+  </Balph>
+  Este experimento tiene como espacio muestral:
+  <Balph>
+    <Ltx txt="\mathcal{S}" />= <Ltx txt="\{1,2,3,4,5,6\}" />
+  </Balph>
+  Pues son todos los posibles resultados que podemos obtener al lanzar el dado.
+  Además, notar que el espacio muestral es un conjunto finito, y son valores
+  específicos, entonces concluimos que este es un espacio muestral discreto
+  finito.
+</BChord>
+<BChord title='Pieda, papel o tijeras ✊🖐✌' color='yellow'>
+  Consideremos el siguiente experimento:
+  <Balph>
+    <Ltx txt="\mathcal{E}" />: Jugar piedra, papel o tijeras con un amigo y ver su jugada.
+  </Balph>
+  Este experimento tiene como espacio muestral:
+  <Balph>
+    <Ltx txt="\mathcal{S}" />=  \{✊,🖐,✌\}
+  </Balph>
+  Pues al jugar con un amigo, este mismo puede jugar piedra, papel o tijeras, el resultados
+  es aleatorio, por lo que no se sabe que jugada va a realizar, entonces es un experimento
+  aleatorio. Además, notar que el espacio muestral es un conjunto finito, y son valores
+  específicos, entonces concluimos que este es un espacio muestral discreto finito.
+  <ImgAbs
+    title="Pidra papel o tijeras Z!!!"
+    src="https://www.sopitas.com/wp-content/uploads/2016/12/piedra-papel-tijera.gif"
+    content={
+      <>
+        Ejemplo de un espacio muestral discreto finito basado en el juego de
+        piedra, papel o tijeras. la misma es un gif que muestra el juego en Dragon
+        Ball Z. Esta imagen fue sacada de{' '}
+        <Lnk
+          url="https://www.sopitas.com/mientras-tanto/piedra-papel-tijeras-japon/"
+          txt="Sopitas"
+          style="link-primary"
+        />
+      </>
+    }
+  />
+</BChord>
+<BChord title='¿Dinero fácil? 🎰' color='yellow'>
+  Consideremos el siguiente experimento:
+  <Balph>
+    <Ltx txt="\mathcal{E}" />: Jugar una maquina tragamonedas y ver el resultado.
+  </Balph>
+  Este experimento tiene como espacio muestral:
+  <Balph>
+    <Ltx txt='\mathcal{S}'/> = \{(7️⃣,7️⃣,7️⃣), (7️⃣,🔔,🍒), ..., (🍒,🔔,🍊)\}
+  </Balph>
+  Considerando unicamente los resultados en cada una de las 3 lineas con: 🍒,🔔,🍊 y 7️⃣
+  Pues al jugar con una maquina tragamonedas, este mismo puede obtener cualquier combinación,
+  en total <Ltx txt='4^3=64'/> posbiles resultados (esto por que se repiten los resultados en cada linea).
+  Entonces, es un experimento aleatorio. Además, notar que el espacio muestral es un conjunto discreto finito,
+  pues son valores conocidos y específicos que se pueden ordenar. Además, notar que cada elemento del espacio
+  muestral es un dato compuesto, pues es una tupla de 3 elementos.
+  <ImgAbs
+    title="Conocido como el traga perras"
+    src="https://www.laguiadelvaron.com/wp-content/uploads/2022/11/marge-apuestas.gif"
+    content={
+      <>
+        Ejemplo de lo que es jugar al tragamonedas, siendo un juego de azar donde
+        el resultado que saques depende mucho de tu "suerte". Esta imagen fue sacada de{' '}
+        <Lnk
+          url="https://www.laguiadelvaron.com/mujeres/mujer-gano-loteria-dos-veces-perdio/"
+          txt="La guia del varon"
+          style="link-primary"
+        />
+      </>
+    }
+  />
+</BChord>
+<BChord title="Un número random 💫">
+  Consideremos el siguiente experimento:
+  <Balph>
+    <Ltx txt="\mathcal{E}" />: Obtener un número random del conjunto de los
+    naturales.
+  </Balph>
+  Este experimento tiene como espacio muestral:
+  <Balph>
+    <Ltx txt="\mathcal{S}" />= <Ltx txt="\mathbb{N}" /> = <Ltx txt="\{1,2,3,4,5,...\infty\}" />
+  </Balph>
+  Pues si consideramos a todos los números naturales, entonces es un espacio
+  muestral infinito. ya que cualquier número puede salir como resultado. Además,
+  notar que el espacio muestral es un conjunto infinito, y son valores
+  específicos, entonces concluimos que este es un espacio muestral discreto
+  infinito.
+</BChord>
+<BChord title="Toda la vida para esto ❤🟠" color='yellow'>
+  Consideremos el siguiente experimento:
+  <Balph>
+    <Ltx txt="\mathcal{E}" />: Lanzar una moneda infinitas veces y observar el
+    resultado.
+  </Balph>
+  Este experimento tiene como espacio muestral, considerando que cara es ⭕ y cruz es ❌:
+  <Balph>
+    <Ltx txt="\mathcal{S}" /> = \{⭕,❌,⭕❌,❌⭕,❌❌⭕,...\}
+  </Balph>
+  Si bien parece algo alocado el pensa que lanzar una moneda infinitas veces
+  es algo posible, teoricamente es posible, pero en la practica es imposible. Pero,
+  si consideramos que es posible, entonces el espacio muestral es infinito, ya que
+  no se puede contar la cantidad de resultados que puede tener. Además, notar que
+  sus elementos son específicos, entonces concluimos que este es un espacio
+  muestral discreto infinito.
+  <ImgAbs
+    title="Monedas infinitas"
+    src="https://usagif.com/wp-content/uploads/gifs/coin-flip-20.gif"
+    content={
+      <>
+        Ejemplo de lo que puede como se puede estar en un bucle infinito lanzando monedas
+        sin parar, generando así el experimento descrito. Este gif fue tomado de{' '}
+        <Lnk
+          url="https://usagif.com/es/gifs-de-una-moneda-lanzada/"
+          txt="UsaGif"
+          style="link-primary"
+        />
+      </>
+    }
+  />
+</BChord>
+<BChord title='¿Cuánto mides? 😏' color='red'>
+  Consideremos el siguiente experimento:
+  <Balph>
+    <Ltx txt="\mathcal{E}" />: Medir la altura de una persona en Latinoamérica.
+  </Balph>
+  Considerando que se va ha medir la altura de una población de personas en
+  Latinoamérica, entonces el espacio muestral es:
+  <Balph>
+    <Ltx txt="\mathcal{S}" /> = <Ltx txt='\{h: 1.50 \leq h \leq 1.82\}'/>
+  </Balph>
+  Pues una persona en general puede medir entre 1.50 y 1.82 metros, entonces el
+  espacio muestral es un conjunto de valores continuos, pues se toman literalmente
+  **todos** los valores entre 1.50 y 1.82, incluyendo los infinitesimales. Además,
+  notar que el espacio muestral es un conjunto infinito (por que se basan en los números reales),
+  entonces es un espacio muestral continuo infinito, aun que sobra decir que es
+  infinito.
+</BChord>
+<BChord title='¿Cuánto tiempo crees que viviras? 👴' color='yellow'>
+  Consideremos el siguiente experimento:
+  <Balph>
+    <Ltx txt="\mathcal{E}" />: Medir la edad de una persona en Perú.
+  </Balph>
+  Considerando que se va ha medir la edad de una población de personas en Perú,
+  entonces el espacio muestral es:
+  <Balph>
+    <Ltx txt="\mathcal{S}" /> = <Ltx txt='\{x: 60 \leq x \leq 80\}'/>
+  </Balph>
+  Pues una persona en general puede vivir entre 60 y 80 años, según estudios. Entonces,
+  el espacio muestral es un conjunto de valores continuos, si somos exactos son
+  valores infinitesimales, pues se toman literalmente **todos** los valores entre
+  60 y 80, incluyendo los infinitesimales. Además, notar que el espacio muestral
+  es continuo.
+  <ImgAbs
+    title="La vida transcurre en un instante"
+    src="https://gickr.com/results4/anim_c137ef30-3df6-6744-81b1-e0c6e4e45b9d.gif"
+    content={
+      <>
+        Ejemplo de como la vida transcurre y la edad avanza con respecto al tiempo,
+        siendo que en aquí se ve la vida de homero en un instante. Este gif fue tomado de{' '}
+        <Lnk
+          url="https://www.vayagif.com/194811/la-historia-de-homer-todavia-mas-resumida"
+          txt="VayaGif"
+          style="link-primary"
+        />
+      </>
+    }
+  />
+</BChord>

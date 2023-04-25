@@ -69,7 +69,7 @@ export function BComment({
     default:
       props = {
         cube: 'bg-neutral text-neutral-content',
-        text: 'text-base-content/90',
+        text: 'text-base-content',
         border: 'border-neutral',
         icon: 'article',
       };
@@ -84,7 +84,7 @@ export function BComment({
       <span className={`w-5 h-full`}>
         <PixelIcons
           name={props.icon}
-          className={`${props.cube} block group-hover:rotate-6 group-hover:scale-125 lg:w-8 h-5 w-5 lg:h-8 text-slate-700 transition-all`}
+          className={`${props.cube} block group-hover:rotate-6 group-hover:scale-125 lg:w-8 h-5 w-5 lg:h-8 transition-all`}
         />
       </span>
       <span

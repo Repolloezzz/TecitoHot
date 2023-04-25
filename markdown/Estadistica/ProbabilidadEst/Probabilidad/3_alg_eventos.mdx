@@ -1,0 +1,127 @@
+---
+name: Álgebra de eventos
+index: 3
+description: 'El álgebra de eventos se le denomina a un conjunto de todos los eventos posibles de un espacio muestra, donde la misma cumple con ciertas condiciones que hacer posible el hecho de hacer operaciones entre eventos.'
+created: '25-03-2023'
+updated: '25-03-2023'
+---
+
+<BImp
+  title="Definición"
+  color="orange"
+  icon="flag"
+  comment="¿Qué es un alebra de eventos?"
+>
+  Sea <Ltx txt="\mathcal{S}" /> un espacio muestral asociado a un experimento
+  aleatorio, entonces definimos a <Ltx txt="\mathcal{A}" /> como el conjunto de
+  todos los eventos posibles de <Ltx txt="\mathcal{S}" />. Donde, la misma lleva
+  el nombre de álgebra de eventos.
+  <Balph>
+    <Ltx txt="\mathcal{A} = \mathcal{P}(\mathcal{S}) = \{X: X \subseteq \mathcal{S}\}" />
+  </Balph>
+  Ahora, debe este conjunto debe de cumplir cirtas condiciones. Dado{' '}
+  <Ltx txt="A,B" /> dos eventos cuales quiera, entonces:
+  <Balph>
+    <Balph>
+      <Ltx txt="\mathcal{S} = A" />
+      <LComment>El evento seguro existe</LComment>
+    </Balph>
+    <Balph>
+      La operación complemento es cerrada en <Ltx txt="\mathcal{A}" />
+      <LComment>
+        Todo complemento está en <Ltx txt="\mathcal{S}" />
+      </LComment>
+    </Balph>
+    <Balph>
+      La operación unión es cerrada en <Ltx txt="\mathcal{A}" />
+      <LComment>
+        Toda unión está en <Ltx txt="\mathcal{S}" />
+      </LComment>
+    </Balph>
+  </Balph>
+</BImp>
+<BComment>
+  <Balph>
+    **Clase de un conjunto**: Una clase de un conjunto es una colección de
+    conjuntos que tienen propiedades en común. Algo parecido a la situación de
+    [población](/matters/Estadistica/ProbabilidadEst/ConceptosGenerales/1_poblacion).
+  </Balph>
+  <Balph>
+    **Conjunto potencia**: Denotado por <Ltx txt="\mathcal{P}" />, es el
+    conjunto de todos los subconjuntos de un conjunto dado.
+  </Balph>
+</BComment>
+<BComment type="note">
+  Como tal el álgebra de eventos es un conjunto de todos los eventos posibles,
+  osea todos los subconjuntos posibles que puede tener un espacio muestral.
+</BComment>
+<BComment type="warn">
+  El decir que una operación es cerrada en un conjunto quiere decir que al
+  realizar cualquier operación con los elementos del conjunto, el resultado de
+  la misma debe de pertenecer al conjunto.
+</BComment>
+
+Esta es la definición de álgebra de eventos, pero no es la única. Existen
+extensiones de esta definición que son más explicitas y que nos deja
+ver que se pueden realizar todas las operaciones conocidas de conjuntos.
+
+<BImp
+  title="Extención de definición"
+  color="pink"
+  icon="anchor"
+  comment="Todas las operaciones de eventos"
+>
+  Sea <Ltx txt="\mathcal{A}" /> un álgebra de eventos, entonces podemos asumir
+  correctas las siguientes definiciones:
+  <Balph>
+    <Balph>
+      <Ltx txt="\mathcal{S} = A \rightarrow \mathcal{S}^c = \emptyset" />
+      <LComment>Existencia del evento imposible</LComment>
+    </Balph>
+  </Balph>
+  <Balph>
+    <Ltx txt="\cup_{i=1}^nA_i \subseteq \mathcal{S}" />
+    <LComment>
+      La unión de los n eventos está en <Ltx txt="\mathcal{S}" />
+    </LComment>
+  </Balph>
+  <Balph>
+    <Ltx txt="(\cup_{i=1}^nA_i^c)^c = \cap_{i=1}^nA_i \subseteq \mathcal{S}" />
+    <LComment>
+      La intersección de los n eventos complementarios está en <Ltx txt="\mathcal{S}" />
+    </LComment>
+  </Balph>
+
+</BImp>
+<BComment type="warn">
+  Los operadores <Ltx txt="\cup" /> y <Ltx txt="\cap" /> son operadores que en
+  aquí se usan como la expresión de sumatoria, pero en este caso es la unión e
+  intersección de los n eventos.
+</BComment>
+<BComment type="note">
+  La demostración o la conclusión de estos resultados se los hace mediante
+  lógica matemática y teoría de conjuntos. Al igual que usar las condiciones de
+  la definición para hacerlo posible un extensión.
+</BComment>
+
+<BImp
+  title="Definición en espacios continuos"
+  color="green"
+  icon="label-sharp"
+  comment="¿Qué es un álgebra de eventos en espacios muestrales continuos?"
+>
+  Sea <Ltx txt="\mathcal{S}" /> un espacio muestral continuo asociado a un
+  experimento aleatorio, entonces definimos a <Ltx txt="\mathcal{A}" /> tenemos
+  que el algebra de eventos cumple con lo siguiente:
+  <Balph>
+    - <Ltx txt="\cup_{i=1}^{\infty}A_i \subset \mathcal{S}" />
+    - <Ltx txt="\cap_{i=1}^{\infty}A_i \subset \mathcal{S}" />
+  </Balph>
+  Siendo que no difiere demaciado de la definición anterior, solo que en este
+  caso se usa la notación de hasta infinito por que el espacio muestral es
+  continuo.
+</BImp>
+
+Estas definiciones si bien no se verán demasiado en esta sección, es bueno
+saber que existen y que son importantes para entender la teoría de probabilidad
+de eventos.

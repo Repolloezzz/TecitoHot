@@ -1,5 +1,5 @@
 import { PixelIcons } from '../global/Icons';
-import { TitleMove } from '../global/TitleAnimation';
+import { TextScale } from '../global/TextAnimation';
 
 interface context {
   id?: string;
@@ -18,7 +18,7 @@ const Present = ({ id, theme, className, title, children }: context) => {
       <div className="hero-content flex-col">
         <h1 className="text-5xl lg:text-9xl font-bold flex items-center w-full">
           <PixelIcons name="play" />
-          <TitleMove
+          <TextScale
             content={title}
             className="hover:bg-slate-100 hover:text-slate-800"
           />

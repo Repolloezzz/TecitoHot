@@ -12,7 +12,6 @@ export function BImp({
   title = 'hola mundo',
   comment,
   color,
-  className = '',
   icon = 'file',
   id,
   children = <></>,
@@ -21,7 +20,6 @@ export function BImp({
   comment?: string;
   children?: any;
   color?: string;
-  className: string;
   icon?: string;
   id?: string;
 }) {
@@ -84,8 +82,8 @@ export function BImp({
         className={`${style.bg} ${
           style.border
         } w-full group p-1 lg:p-3 border-l-4 list-none ${
-          className ? className : ''
-        } ${themeContent.is ? 'bg-opacity-50' : 'bg-opacity-100'} my-2`}
+          themeContent.is ? 'bg-opacity-50' : 'bg-opacity-100'
+        } my-2`}
       >
         <h1
           className={`${style.text} text-start text-2xl lg:text-3xl font-semibold flex gap-1 md:gap-2 items-center`}
@@ -108,65 +106,6 @@ export function BImp({
         </div>
       </div>
     </>
-  );
-}
-
-export function BSimp({
-  title,
-  style,
-  className = '',
-  children = <></>,
-  color,
-}: {
-  title?: string;
-  style?: { bg: string; border: string; bgContent: string };
-  children?: JSX.Element | JSX.Element[];
-  className?: string;
-  color?: string;
-}) {
-  function getColor(opt = 'default') {
-    return {
-      bg: {
-        blue: 'bg-info text-info-content',
-        green: 'bg-success text-success-content',
-        yellow: 'bg-warning text-warning-content',
-        red: 'bg-error text-error-content',
-        default: 'bg-neutral text-neutral-content',
-      }[opt],
-      border: {
-        blue: 'border-blue-600',
-        green: 'border-green-600',
-        yellow: 'border-yellow-600',
-        red: 'border-red-600',
-        default: 'border-neutral',
-      }[opt],
-      bgContent: {
-        blue: 'bg-blue-500/10',
-        green: 'bg-green-500/10',
-        yellow: 'bg-yellow-500/10',
-        red: 'bg-red-500/10',
-        default: 'bg-neutral/10',
-      }[opt],
-    };
-  }
-  const styleBox = style ? style : getColor(color);
-  return (
-    <div
-      className={`border-l-4 bg-opacity-70 overflow-hidden ${styleBox.border} ${className} my-2`}
-    >
-      {title ? (
-        <h1
-          className={`w-full p-1.5 md:p-2 md:py-1 justify-start items-center md:text-2xl`}
-        >
-          {title}
-        </h1>
-      ) : null}
-      <div
-        className={`overflow-hidden px-2 md:px-4 text-start text-sm md:text-lg`}
-      >
-        {children}
-      </div>
-    </div>
   );
 }
 
@@ -221,10 +160,11 @@ export function BSect({ data, className = '' }: any) {
 export function BChord({
   title = 'Hola mundo',
   style,
-  className = '',
   children = <></>,
   open = false,
   color,
+  top = false,
+  bottom = false,
 }: {
   title?: string;
   style?: { bg: string; border: string; bgContent: string };
@@ -232,6 +172,8 @@ export function BChord({
   open?: boolean;
   className?: string;
   color?: string;
+  top?: boolean;
+  bottom?: boolean;
 }) {
   function getColor(opt = 'default') {
     return {
@@ -264,7 +206,9 @@ export function BChord({
   return (
     <div
       data-theme={`${themeContent.is ? LightOptions[4] : DarkOptions[4]}`}
-      className={`border-l-4 group overflow-hidden ${styleBox.border} ${className}`}
+      className={`border-l-4 group overflow-hidden ${top ? 'mt-3' : ''} ${
+        bottom ? 'mb-3' : ''
+      } ${styleBox.border}`}
     >
       <h1
         onClick={() => {
@@ -295,7 +239,6 @@ export function BChord({
 
 export function Balph({
   children,
-  className = '',
   color,
 }: {
   children: JSX.Element | JSX.Element[];
@@ -315,16 +258,16 @@ export function Balph({
     case 'pink':
       bg = 'bg-pink-400/5';
     case 'purple':
-      bg = 'bg-purple-400/5';
+      bg = 'bg-purple-400/10';
     default:
       bg = 'bg-neutral/5';
   }
   return (
     <>
-      <span className={`my-1 ${bg} ${className} block p-1.5`}>{children}</span>
+      <span className={`my-1 ${bg} block p-1.5`}>{children}</span>
     </>
   );
 }
 
-const all = { BChord, BImp, BSect, BSimp, Balph };
+const all = { BChord, BImp, BSect, Balph };
 export default all;

@@ -1,0 +1,220 @@
+---
+name: Probabilidad condicional
+index: 5
+description: 'La probabilidad condicional es una herramienta esencial para el cálculo de probabilidades y la toma de decisiones en una amplia gama de disciplinas, incluyendo la estadística, la ingeniería, la ciencia y las finanzas. Permite ajustar nuestras predicciones en función de la información disponible, lo que puede mejorar la precisión de nuestras predicciones y la toma de decisiones informadas.'
+created: '25-03-2023'
+updated: '28-03-2023'
+---
+
+<BImp
+  title="Definición"
+  color="orange"
+  icon="flag"
+  comment="¿Qué es un probabilidad condicionada?"
+>
+  Sean <Ltx txt="A,B" /> dos eventos cuales quiera, con <Ltx txt="P(A)>0" />.
+  Entonces, se define la probabilidad condicionada de <Ltx txt="A" /> dado{' '}
+  <Ltx txt="B" /> como:
+  <Balph>
+    <Ltx txt="P(A|B) = \frac{P(A \cap B)}{P(B)}" block />
+    <LComment>
+      Se lee: La probabilidad de A dado B es igual a la probabilidad de A y B
+      sobre la probabilidad de B
+    </LComment>
+  </Balph>
+</BImp>
+<BComment type="note">
+  La probabilidad condicional es como dar con la probabilidad de un evento dado
+  otro evento, es como decir que si un evento sucedió, entonces la probabilidad
+  de que otro evento suceda es de <Ltx txt="P(A|B)" />.
+</BComment>
+<BComment type="note">
+  Agarramos un evento A, le sacamos eventos (subeventos) B, entonces la
+  probabilidad de que B suceda dado que A sucedió es la probabilidad En el
+  espacio muestral.
+</BComment>
+<BComment type="warn">
+  La probabilidad condicionada nos permite saber la probabilidad de un evento
+  que su probabilidad se ve afectada respecto a otro evento. Por ejemplo, si
+  decimos el evento de salir a jugar, pero si sucede el evento tormenta,
+  entonces las probabilidades del evento salir a jugar cambiar.
+</BComment>
+<BComment type="warn">
+  Aquí tenemos procesos de probabilidad que no son tan mecánicos, ahora debemos
+  recurrir a la intuición para poder interpretar y entender los resultados.
+</BComment>
+<BImp
+  title="Definición"
+  color="orange"
+  icon="flag"
+  comment="Eventos independientes"
+>
+  Se dice que dos eventos <Ltx txt="A,B" /> son independientes si y solo si: se
+  cumple las siguientes condiciones:
+  <Balph>
+    - 🔶 <Ltx txt="P(A|B) = P(A)" /> <br />
+    - 🔶 <Ltx txt="P(B|A) = P(B)" /> <br />
+    - 🔶 <Ltx txt="P(A \cap B) = P(A) \cdot P(B)" />
+  </Balph>
+  De otro modo, se dice que los eventos <Ltx txt="A,B" /> son dependientes.
+</BImp>
+<BComment type="warn">
+  Dos eventos son independientes si su probabilidad no se ve afectada por el
+  otro evento. Es decir, si sucedió un evento antes que otro, entonces nadie se
+  ve afecta. De lo contrario si son dependientes, entonces la probabilidad de un
+  evento se ve afectada por el otro evento.
+</BComment>
+<BComment type="note">
+  Esta definición es muy importante, ya que en muchos casos puede simplificar
+  mucho el proceso de dar con la probabilidad de eventos, pero hay que tener
+  cuidado, ya que el definir si dos eventos son independientes o no, es parte de
+  nuestro criterio.
+</BComment>
+<BImp title="Regla del producto" color="green" icon="label-sharp">
+  Sean <Ltx txt="A,B" /> dos eventos cuales quiera, con <Ltx txt="P(A)>0" />.
+  Entonces, se tiene que:
+  <Balph>
+    <Ltx txt="P(A \cap B) = P(B) \cdot P(A|B)" />
+  </Balph>
+</BImp>
+
+Con todo esto podemos saber la probabilidad de dos eventos que
+dependen uno del otro, o también como vimos, podemos saber la probabilidad de
+dos eventos que son independientes. Esto es muy importate, pues nos permite
+simplificar procesos extensos de probabilidad. Esto por que usando simplemente
+la definición de función de probabilidad y algunas propiedades llegar a estos
+resultados tiende a ser muy complejo.
+
+<BChord title="Daditos 🎲" open top>
+  Supongamos que tenemos lo siguiente:
+  <Balph>
+    - <Ltx txt="\mathcal{E}" />: Lanzar dos dados <br />
+    - <Ltx txt="\mathcal{S}=\{(x,y): x \in [1,6] \land y \in [1,6]\}" />
+  </Balph>
+  de donde queremos saber lo siguiente ¿cuál es la probabilidad de que el primer
+  dado salga par si salió primo? <br />
+  Entonces basado en esto primero definimos los siguientes eventos:
+  <Balph>
+    - <Ltx txt="A" /> = Primer dado es primo <br />
+    - <Ltx txt="B" /> = Primer dado es par <br />
+  </Balph>
+  Ahora, usando la definición y viendo el enunciado, primero sale primo (A) y queremos
+  saber si ese primo es par (B). Entonces es la probabilidad de B sabiendo que A
+  sucedió. <br />
+  <Balph>
+    <Ltx txt="P(B|A) = \frac{P(B \cap A)}{P(A)}" block />
+    <LComment>A tiene 3 elementos 2,3,5</LComment>
+    <Ltx txt="P(B|A) = \frac{1/6}{3/6}" block />
+    <LComment>B y A solo comparten el 2</LComment>
+    <Ltx txt="P(B|A) = \frac{1/6}{1/2}" block />
+    <Ltx txt="P(B|A) = \frac{1}{12}" block />
+  </Balph>
+  Para el caso de la probabilidad de sus intersecciones, notar que solo
+  comparten el 2, y de ahí por definición este experimento es equiprobable, por
+  lo que su probabilidad es de 1/6 y así concluimos con el resultado.
+</BChord>
+
+<BChord title="Dados cargados 😱" color="blue">
+  Supongamos que tenemos lo siguiente:
+  <Balph>
+    - <Ltx txt="\mathcal{E}" />: Lanzar un dado normal y un dado cargado a los
+    pares con 2/3 <br />
+    - <Ltx txt="\mathcal{S}=\{(x,y): x \in [1,6] \land y \in [1,6]\}" />
+  </Balph>
+  Con esto podemos definir los siguientes eventos:
+  <Balph>
+    - <Ltx txt="A" /> = Sale 1 en una cara <br />
+    - <Ltx txt="B" /> = Ambas caras son pares <br />
+    - <Ltx txt="C" /> = La suma de ambas caras es par <br />
+    - <Ltx txt="D" /> = La suma sea igual a 10 <br />
+    - <Ltx txt="E" /> = La primera cara es primo y la segunda es 5 <br />
+  </Balph>
+  Siendo que es prácticamente lo mismo que el caso anterior, solo que ahora el
+  hay un dado cargado. Ahora bien, qué significa que el dado está cargado?
+  <Balph>
+    Para el dado cargado a los pares tenemos que podemos considerar que: <br />
+    - Sale par = 2/3 <br />
+    - Sale impar = 1/3 <br />
+    Ahora bien, como se definió en las propiedades, la probabilidad de un evento
+    compuesto es la suma de los eventos simples. Entonces, si tenemos que que definir
+    la probabilidad de un evento simple.
+  </Balph>
+  <Balph>
+    <Balph>
+      **Para A**: Eso implica que la primera cara sale uno o la segunda cara
+      sale uno, entonces debemos de considerar los siguientes eventos: <br />
+      - <Ltx txt="A_1" /> = La primera cara sale uno <br />
+      - <Ltx txt="A_2" /> = La segunda cara sale uno <br />
+      - <Ltx txt="A_3" /> = La uno en ambas caras <br />
+      Ahora bien, damos con sus probabilidades individuales. <br />
+      - <Ltx txt="P(A_1) = \frac{1}{6}" />
+      <LComment>1 en la primera y cualquiera en la segunda</LComment>
+      - <Ltx txt="P(A_2) = \frac{1}{9}" />
+      <LComment>cualquiera en la primera y 1 en la segunda</LComment>
+      - <Ltx txt="P(A_3) = \frac{1}{6} \cdot \frac{1}{9} = \frac{1}{54}" />
+      <LComment>1 en la primera y 1 en la segunda</LComment>
+    </Balph>
+    Esto sale de de multiplicar las probabilidades de cada evento simple como si
+    fueran independientes. Esto es más notorio en la probabilidad del evento nro
+    3, pues la probabilidad de que salga uno en la primera cara es 1/6 y la probabilidad
+    de que salga uno en la segunda cara es 1/9, entonces la probabilidad de que salga
+    uno en ambas caras es 1/6 * 1/9 = 1/54. Esto por que **pares ordenados**.
+    <Ltx txt="P(A) = P(A_1) + P(A_2) - P(A_1 \cap A_2)" block />
+    <Ltx txt="P(A) = P(A_1) + P(A_2) - P(A_3)" block />
+    <Ltx txt="P(A) = \frac{1}{6} + \frac{1}{9} - \frac{1}{54}" block />
+    <Ltx txt="P(A) = \frac{9+6-1}{54}" block />
+    <Ltx txt="P(A) = \frac{14}{54}" block />
+    <Ltx txt="P(A) = \frac{7}{27}" block />
+  </Balph>
+  <Balph>
+    **Para B**: Eso implica que la primera cara sale par y la segunda cara sale
+    par, entonces debemos de considerar hacerlo por partes
+    <Ltx txt="P(B) = \frac{3}{6} \cdot \frac{2}{3} = \frac{1}{3}" />
+    Pues la probabilidad de que salga par en la primera cara es 3/6 y la
+    probabilidad de que salga par en la segunda cara es 2/3, entonces la
+    probabilidad de que salga par en ambas caras es 3/6 * 2/3 = 1/3.
+  </Balph>
+  <Balph>
+    **Para C**: Al igual que el anterior la unica forma de que la suma sea par
+    es que ambos sean pares o impares, entonces debemos de considerar los
+    siguientes eventos: <br />
+    - <Ltx txt="C_1" /> = Ambos salen pares <br />
+    - <Ltx txt="C_2" /> = Ambos salen impares <br />
+    De ahí podemos dar con sus probabilidades, recordar que el segundo dado está
+    cargado y que todo esto es largo solo por eso 😥 <br />
+    - <Ltx txt="P(C_1) = \frac{3}{6} \cdot \frac{2}{3} = \frac{1}{3}" /> <br />
+    - <Ltx txt="P(C_2) = \frac{3}{6} \cdot \frac{1}{3} = \frac{1}{6}" /> <br />
+    Notar que ambos eventos son independientes o excluyentes, entonces podemos
+    dar con la probabilidad de C: <br />
+    <Ltx txt="P(C) = P(C_1 \cup C_2)" block />
+    <Ltx txt="P(C) = P(C_1) + P(C_2) - P(C_1 \cap C_2)" block />
+    <Ltx txt="P(C) = \frac{1}{6} + \frac{1}{3} - 0" block />
+    <Ltx txt="P(C) = \frac{2+1}{6}" block />
+    <Ltx txt="P(C) = \frac{1}{2}" block />
+  </Balph>
+  <Balph>
+    **Para D**: Para que su suma sea igual a 10 debemos de considerar los
+    siguientes eventos: <br />
+    - <Ltx txt="D_1" /> = Sale (4,6) <br />
+    - <Ltx txt="D_2" /> = Sale (6,4) <br />
+    - <Ltx txt="D_3" /> = Sale (5,5) <br />
+    Entonces tenemos sus probabilidades y con la probabilidad de D: <br />
+    - <Ltx txt="P(D_1) = \frac{1}{6} \cdot \frac{2}{9} = \frac{2}{54}" /> <br />
+    - <Ltx txt="P(D_2) = \frac{1}{6} \cdot \frac{2}{9} = \frac{2}{54}" /> <br />
+    - <Ltx txt="P(D_3) = \frac{1}{6} \cdot \frac{1}{9} = \frac{1}{54}" /> <br />
+    Esto sale por que los eventos simples son eventos independientes, entonces
+    podemos sumar directamente sus probabilidades. <br />
+    <Ltx txt="P(D) = P(D_1 \cup D_2 \cup D_3)" block />
+    <Ltx txt="P(D) = P(D_1) + P(D_2) + P(D_3)" block />
+    <Ltx txt="P(D) = \frac{2+2+1}{54}" block />
+    <Ltx txt="P(D) = \frac{5}{54}" block />
+  </Balph>
+  <Balph>
+    **Para E**: Para que el primero sea un primo y el segundo sea 5 es muy fácil
+    considerandolos como eventos independientes, entonces: <br />
+    <Ltx txt="P(E) = \frac{3}{6} \cdot \frac{1}{9}" block />
+    <Ltx txt="P(E) = \frac{3}{54}" block />
+  </Balph>
+  En estos casos se usaron en gran parte la definición de eventos independientes
+  pues es algo que se usa mucho en probabilidad.
+</BChord>

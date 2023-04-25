@@ -4,12 +4,29 @@ import { motion } from 'framer-motion';
 import moment from 'moment';
 import { useEffect, useState } from 'react';
 
-const BackgroundTime = ({ className = '' }: { className?: string }) => {
-  const [backgroundType, setBackType] = useState('magic');
-  useEffect(() => {
-    setBackType(getStyle());
-  }, []);
+interface BackgroundContext {
+  type?: 'morning' | 'day' | 'magic' | 'sunset' | 'night';
+  className?: string;
+}
 
+/**
+ * Componente de fondo de pantalla
+ * Actualmente solomante se usa en la
+ * página de inicio y solo es de backgrounds
+ * del cielo
+ */
+export default function BackgroundTime({ type, className }: BackgroundContext) {
+  // Ruta de estilos de background
+  const [backgroundType, setBackType] = useState(type ?? 'magic');
+  useEffect(() => {
+    if (!type) {
+      setBackType(getStyle());
+    } else {
+      setBackType(type);
+    }
+  }, [type]);
+
+  // Obtención de fondos de pantalla
   const images = [1, 2, 3, 4];
   const [ref, { height }] = useMeasure();
   const style = images.map((e) => ({
@@ -19,8 +36,9 @@ const BackgroundTime = ({ className = '' }: { className?: string }) => {
     height: '100%',
   }));
   const scale = 576 * (height / 324);
-  const [time, setTime] = useState({ day: 0, hour: 0, minute: 0, second: 0 });
 
+  // Obtención de fecha y hora
+  const [time, setTime] = useState({ day: 0, hour: 0, minute: 0, second: 0 });
   useEffect(() => {
     setTimeout(() => {
       setTime({
@@ -31,12 +49,14 @@ const BackgroundTime = ({ className = '' }: { className?: string }) => {
       });
     }, 1000);
   }, [time]);
+
   return (
     <section
       ref={ref}
       style={{ ...style[0], backgroundSize: 'cover' }}
-      className={`${className} w-full h-full relative`}
+      className={`w-full h-full relative ${className ?? ''}`}
     >
+      {/* Reloj */}
       <div className="grid grid-flow-col text-center auto-cols-max absolute top-0 right-0">
         {Object.entries(time).map((element, index) => {
           return (
@@ -54,6 +74,7 @@ const BackgroundTime = ({ className = '' }: { className?: string }) => {
           );
         })}
       </div>
+      {}
       <motion.div
         animate={{ backgroundPositionX: ['0px', `${scale}px`] }}
         transition={{
@@ -89,6 +110,4 @@ const BackgroundTime = ({ className = '' }: { className?: string }) => {
       ></motion.div>
     </section>
   );
-};
-
-export default BackgroundTime;
+}

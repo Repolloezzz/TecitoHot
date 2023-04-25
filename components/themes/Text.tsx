@@ -13,11 +13,11 @@ export function Ltx({
   if (block) {
     return (
       <span className={`${containStyle} w-full p-0.5 bg-neutral/5 block`}>
-        <Latex strict>{`$${txt}$`}</Latex>
+        <Latex>{`$${txt}$`}</Latex>
       </span>
     );
   }
-  return <Latex strict>{`$${txt}$`}</Latex>;
+  return <Latex>{`$${txt}$`}</Latex>;
 }
 
 const all = { Ltx };

@@ -1,0 +1,369 @@
+---
+name: Función de probabilidad
+index: 4
+description: 'La función de probabilidad es importante porque nos permite hacer predicciones y tomar decisiones informadas en situaciones de incertidumbre. Por ejemplo, si queremos saber la probabilidad de que un jugador gane en un juego de azar, podemos utilizar la función de probabilidad para calcular la probabilidad de que el jugador gane, dado el espacio muestral y las probabilidades asignadas a cada evento. De esta manera, podemos tomar decisiones informadas sobre cuánto dinero invertir en el juego y cuál es la estrategia más adecuada para maximizar las ganancias.'
+created: '25-03-2023'
+updated: '27-03-2023'
+---
+
+<BImp
+  title="Definición"
+  color="orange"
+  icon="flag"
+  comment="¿Qué es la función de probabilidad?"
+>
+  Se denomina función probabilidad a la función que relaciona cada evento con su
+  probabilidad. es decir que le asigna un valor entre el rango de 0 y 1 a cada
+  evento.
+  <Balph>
+    - <Ltx txt="P: \mathcal{S} \to [0,1]" />
+    - <Ltx txt="A \subseteq \mathcal{S} \mapsto P(A)" />
+  </Balph>
+</BImp>
+
+<BComment type="note">
+  Como tal la función de probabilidad no es una función matemática que se define
+  en términos de unas ecuaciones, sino que es una función que se define en
+  términos de una asignación de probabilidades a cada evento. Es decir, debemos
+  definir nostros mismos la función de probabilidad. Pues, no existe unas
+  "función general" para cualquier espacio muestral.
+</BComment>
+<BComment type="warn">
+  La función de probabilidad al ser una función tiene un dominio el cual es el
+  espacio muestral y un rango que es el intervalo [0,1].
+  <div className="grid grid-cols-2 text-center my-3 gap-3">
+    <Ltx txt="D_p = \mathcal{S}" block />
+    <Ltx txt="R_p = [0,1]" block />
+  </div>
+</BComment>
+
+<BImp
+  title="Propiedades"
+  color="blue"
+  icon="label"
+  comment="¿Qué propiedades debe cumplir la función de probabilidad?"
+>
+  Sea <Ltx txt="A,B \subseteq \mathcal{S}" /> y
+  <Ltx txt="P: \mathcal{S} \to [0,1]" />. Entonces la función probabilidad cumple
+  las siguientes propiedades:
+  <Balph>
+    <Balph>
+      <Ltx txt="P(\emptyset) = 0" />
+      <LComment>Probabilidad del evento imposible</LComment>
+    </Balph>
+    <Balph>
+      <Ltx txt="P(\mathcal{S}) = 1" />
+      <LComment>Probabilidad del evento seguro</LComment>
+    </Balph>
+    <Balph>
+      <Ltx txt="P(\overline{A}) = 1 - P(A)" />
+      <LComment>Probabilidad del complemento de un evento</LComment>
+    </Balph>
+    <Balph>
+      <Ltx txt="A \subseteq B \rightarrow P(A) \leq P(B)" />
+      <LComment>Probabilidad de eventos menores</LComment>
+    </Balph>
+    <Balph>
+      <Ltx txt="P(A \cup B) = P(A) + P(B) - P(A \cap B)" />
+      <LComment>Probabilidad de unión de eventos</LComment>
+    </Balph>
+    <Balph>
+      <Ltx txt="A \cap B = \empty \rightarrow P(A \cup B) = P(A) + P(B)" />
+      <LComment>Probabilidad de unión de eventos excluyentes</LComment>
+    </Balph>
+  </Balph>
+</BImp>
+
+<BComment type="note">
+  Estas propiedades son las que nos serivarán para calcular la probabilidad de
+  de eventos, siendo que pueden acortar el proceso de cálculo de la probabilidad
+</BComment>
+<BComment type="note">
+  Las dos últimas propiedades son las que nos permiten calcular la probabilidad
+  de eventos más complejos, donde hay que saber diferenciar entre eventos, si
+  son excluyentes o no lo son, pues dependerá de ello la forma en la que se
+  calcula la probabilidad.
+</BComment>
+<BComment type="warn">
+  La propiedad de unión de eventos tiene una expresión para dar con más de dos
+  eventos, una forma general.
+  <Balph>
+    <Ltx txt="P(\cup_{i=1}^n A_i) = \sum_{i=1}^n P(A_i) - \sum_{i \neq j}^n P(A_i \cap A_j) + ... + (-1)^{n-1}P(\cap_{i=1}^cA_i)" />
+  </Balph>
+  Esta expresión es general para cualquier cantidad de eventos, donde tiene un
+  patros intercalado de sumas y restas, donde esto cambia cada vez que se cambia
+  el número de eventos.
+</BComment>
+
+<BImp title="Eventos Equiprobables" color="purple" icon="at">
+  Sea <Ltx txt="\mathcal{S}" /> un espacio muestral **finito**, entonces para
+  todo **evento simple** del misma, se define lo siguiente:
+  <Balph>
+    - <Ltx txt="\sum_{i=1}^nP(w_i)=1" />
+    - <Ltx txt="P(w_i) = \frac{1}{n}" />
+    <LComment>Probabilidad de eventos simple</LComment>
+  </Balph>
+  Donde <Ltx txt="w_i" /> es un evento del espacio muestral y <Ltx txt="n" /> es
+  el número de eventos que existen. Por otro lado, suponga que existe un evento{' '}
+  <Ltx txt="A" /> tal que sea un **evento compuesto**, se define
+  <Balph>
+    <Ltx txt="P(A) = \sum_{w_i \in A}P(w_i) = \sum_{w_i \in A} \frac{1}{n} = \frac{n(A)}{n}" />
+    <LComment>Probabilidad de un eventos compuesto</LComment>
+  </Balph>
+</BImp>
+<BComment type="note">
+  Los eventos equiprobables son aquellos eventos que tienen la misma
+  probabilidad de ocurrir, es decir, que su probabilidad es la misma para todos.
+  Solo si el espacio muestral es finito.
+</BComment>
+<BComment type="warn">
+  Notar que esto solo es aplicable a [espacios muestrales discretos
+  finitos](/matters/Estadistica/ProbabilidadEst/ConceptosGenerales/7_esp_muestral#type-esp-muestral)
+  pues es el único caso en el que se puede decir que todos los eventos tienen la
+  misma probabilidad.
+</BComment>
+<BComment type="note">
+  La probabilidad de un evento compuesto, se define como el número de elemntos
+  de A entre el número de elementos del espacio muestral. Pues esto, funciona
+  para eventos que tengas elementos que sean tuplas, de la forma (a,b) o más
+  grandes.
+</BComment>
+
+En probabilidad no es necesario conocer la probabilidad de todos los eventos,
+pues solo es necesario saber la probabilidad de los eventos que nos interesan. Además,
+en esta ocación solo serán números, pero también se pueden hacer cálculos visualizando
+los elementos del espacio muestral. Por otro lado, es muy importante conocer
+los conceptos de permutación, combinación y factoriales, pues estos son parte
+fundamental para hacer cálculos de probabilidad.
+
+<BChord title="Probabilidad simple 😎" open top>
+  Supongamos que tenemos lo siguiente:
+  <Balph>
+    - <Ltx txt="\mathcal{E}" />: Lanzar un dado y ver la cara superior. <br />
+    - <Ltx txt="\mathcal{S}" /> = \{1️⃣, 2️⃣, 3️⃣, 4️⃣, 5️⃣, 6️⃣\}
+  </Balph>
+  De una vez hay que notar que los eventos simples son equiprobables y que
+  tenemos en total seis elementos en el espacio muestral, entonces definimos los
+  siguientes eventos:
+  <Balph>
+    - <Ltx txt="A" /> = Sacar un número par <br />
+    - <Ltx txt="B" /> = Sacar un multiplo de 3 <br />
+    - <Ltx txt="C" /> = Sacar un número mayor a 4 <br />
+    - <Ltx txt="D" /> = Sacar un el número 1
+  </Balph>
+  Ahora bien, tenemos eventos simples y compuestos, entonces haciendo uso de las
+  definiciones y propiedades de la probabilidad, podemos calcular la la
+  probabilidad de cada uno de estos eventos.
+  <Balph>
+    <Balph>
+      <Ltx txt="P(A) = \frac{n(A)}{n} = \frac{3}{6}" />
+      <LComment>Definición para eventos compuestos</LComment>
+    </Balph>
+    <Balph>
+      <Ltx txt="P(B) = \frac{n(B)}{n} = \frac{2}{6}" />
+      <LComment>Definición para eventos compuestos</LComment>
+    </Balph>
+    <Balph>
+      <Ltx txt="P(C) = \frac{n(C)}{n} = \frac{2}{6}" />
+      <LComment>Definición para eventos compuestos</LComment>
+    </Balph>
+    <Balph>
+      <Ltx txt="P(D) = \frac{1}{n} = \frac{1}{6}" />
+      <LComment>Definición para eventos simples</LComment>
+    </Balph>
+  </Balph>
+  Por lo tanto, usando la definición para eventos simples o compuestos podemos
+  dar con su probabilidad. Por otro lado, recordar que <Ltx txt="n(A)" /> es el
+  número de elementos de un evento, pero no se lo muestra por que se asume que
+  ya se conoce en base al espacio muestral; y <Ltx txt="n" /> es el número de
+  elementos del espacio muestral.
+</BChord>
+
+<BChord title="Juego de probabilidades 🙃" color="green">
+  La probabilidad de que una persona coma chancho 🐷, es del 40%, de que coma
+  pollo 🐔, es del 60% y de que al menos coma uno de estos es del 80%.
+  <Balph>
+    - a) Probabilidad de que una persona aleatoria coma pollo **"y"** cerdo.{' '}
+    <br />- b) Probabilidad de que una persona al menos **"no"** consuma uno de
+    los dos. <br />
+  </Balph>
+  Entonces, tenemos que definir nuestros eventos para poder comenzar a calcular
+  las probabilidades.
+  <Balph>
+    - <Ltx txt="A" /> = Una persona come pollo. <br />
+    - <Ltx txt="B" /> = Una persona come chancho. <br />
+    - <Ltx txt="C" /> = <Ltx txt="A \cup B" /> = Una persona come pollo o
+    chancho.
+  </Balph>
+  Notar que <Ltx txt="C" /> se puede interpretar como la unión, esto viene por
+  definición de conjuntos pues el conecto **al menos** hace referencia a la
+  unión de conjuntos. Por otro lado, podemos comenzar a calcular las
+  probabilidades.
+  <Balph>
+    <Balph>
+      **Para el inciso a)**
+      <Ltx txt="P(A \cap B) = P(A) + P(B) - P(A \cup B) " block />
+      <Ltx
+        txt="P(A \cap B) = \frac{40}{100} + \frac{60}{100} - \frac{80}{100}"
+        block
+      />
+      <Ltx txt="P(A \cap B) = \frac{20}{100}" block />
+      <LComment>
+        <Ltx txt="P(A \cup B) = P(C)" /> y definición, sol: 20%
+      </LComment>
+    </Balph>
+    <Balph>
+      **Para el inciso b)**
+      <Ltx txt="P(\overline{C}) = 1 - P(C)" block />
+      <Ltx txt="P(\overline{C}) = 1 - \frac{80}{100}" block />
+      <Ltx txt="P(\overline{C}) = \frac{20}{100}" block />
+      <LComment>Negación de un evento, sol: 20%</LComment>
+    </Balph>
+  </Balph>
+  El como se llega a saber que es unión o complemento viene de analizar los
+  enunciados, pues fijandose en los conectores lógicos notamos inmediatamente
+  como interpretar el enunciado en términos de eventos y así poder definir y
+  calcular sus probabilidades.
+</BChord>
+
+<BChord title="Dentro de B 😏">
+  Demuestre que si un evento es subconjunto de otro, entonces la probabilidad de
+  que ocurra el primero es menor o igual a la probabilidad de que ocurra el
+  segundo.
+  <Ltx txt="P(A) \leq P(B)" block />
+  Ahora bien, esto practicamente es un demostración de una de las propiedades
+  que definimos, entonces haciendo uso de conceptos ya definidos podemos
+  demostrar esto. Supongamos que tenemos los siguientes:
+  <Balph>
+    <Ltx txt="A \subset \mathcal{S} \land B \subset \mathcal{S} \land A \subset B" />
+    <LComment>Un evento dentro de otro, osea A dentro de B</LComment>
+    - <Ltx txt="A \cap \overline{A} = \empty" />
+    - <Ltx txt="B = A \cup (B \setminus A)" />
+  </Balph>
+  Entonces basado en esta información y usando las definiciones y propiedades
+  podemos demostrarlo.
+  <Balph>
+    - <Ltx txt="P(B) = P(A \cup (B \setminus A))" /> <br />
+    - <Ltx txt="P(B) = P(A) + P(B \setminus A) - P(A \cap (B \setminus A))" /> <br />
+    - <Ltx txt="P(B) = P(A) + P(B \setminus A) - P(\emptyset)" /> <br />
+    - <Ltx txt="P(B) = P(A) + P(B \setminus A)" /> <br />
+    <LComment>propiedad de evento imposible</LComment>
+  </Balph>
+  <Ltx txt="B \setminus A" /> es como el complemento de A dentro de B, entonces
+  notar que la probabilidad de <Ltx txt="B" /> es la probabilidad de{' '}
+  <Ltx txt="A" /> más su complemento en <Ltx txt="B" />. Entonces concluimos que
+  la probabilidad de
+  <Ltx txt="B" /> es mayor o igual a la probabilidad de <Ltx txt="A" />.
+  <Ltx txt="5 = 3 + (5-3)" block />
+  <LComment>
+    Algo parecido a esto es la situación, entonces 5 es mayor a 3
+  </LComment>
+</BChord>
+<BChord title="Más dados ? 🎲" color="blue">
+  Supongamos que tenemos lo siguiente:
+  <Balph>
+    - <Ltx txt="\mathcal{E}" />: Lanzar dos dados <br />
+    - <Ltx txt="\mathcal{S}=\{(x,y): x \in [1,6] \land y \in [1,6]\}" />
+  </Balph>
+  Con esto podemos definir los siguientes eventos:
+  <Balph>
+    - <Ltx txt="A" /> = ambas caras son pares <br />
+    - <Ltx txt="B" /> = la suma de las caras es par <br />
+    - <Ltx txt="C" /> = la suma de las caras es 10 <br />
+    - <Ltx txt="D" /> = sale 1 en la primera cara <br />
+    - <Ltx txt="E" /> = la primera cara es primo y la sigunda es 5 <br />
+  </Balph>
+  Entonces, basado en estos eventos, si bien algunos son más complejos por que
+  parece que necesitamos describir el espacio muestral y verlo con nuestros
+  propios ojos para sacar un resultado, la verdad es que con lógica podemos dar
+  con sus probabilidades.
+  <Balph>
+    <Balph>
+      **Para A**: Solo existen 3 pares para cada dado, entonces tenemos que: la
+      cantidad resultados que tienen ambos pares es 3.
+      <Ltx txt="P(A) = \frac{n(A)}{n} = \frac{3}{36}" block />
+    </Balph>
+    <Balph>
+      **Para B**: si la suma de ambas caras es par, entonces la unica forma que
+      salga par es cuando ambas caras son pares o impares, entonces tenemos que
+      hay 3 que son todos pares y 3 que son todos impares. Por lo tanto, hay 6
+      resultados que al sumarlos dan un número par. Esto viene de teoría de
+      números.
+      <Ltx txt="P(B) = \frac{n(B)}{n} = \frac{6}{36}" block />
+    </Balph>
+    <Balph>
+      **Para C**: La suma de las caras es 10, entonces tenemos que la primera
+      cara puede ser 4 y la segunda 6, o la primera cara puede ser 5 y la
+      segunda 5, o la primera cara puede ser 6 y la segunda 4. Entonces tenemos
+      que hay 3 resultados que cumplen con la condición.
+      <Ltx txt="P(C) = \frac{n(C)}{n} = \frac{3}{18}" block />
+    </Balph>
+    <Balph>
+      **Para D**: La primera cara es 1, entonces son todas las combinaciones
+      donde la primera cara es 1, es decir existen un total de 6 resultados.
+      <Ltx txt="P(D) = \frac{n(D)}{n} = \frac{6}{36}" block />
+    </Balph>
+    <Balph>
+      **Para E**: La primera cara es primo y la segunda es 5, entonces solo
+      existen tres posibles para la primera cara, 2, 3 y 5, y de ahí para que
+      salga 5 en la segunda cara solo puede ser 5, entonces tenemos que hay 3
+      resultados que cumplen con la condición.
+      <Ltx txt="P(E) = \frac{n(E)}{n} = \frac{3}{36}" block />
+    </Balph>
+  </Balph>
+  Usando las propiedados definidas y un poco de lógica con teoría sobre números,
+  podemos calcular las probabilidades de los eventos.
+</BChord>
+
+<BChord title="Dinero ...">
+  Una bolsa contiene 5 veces monedas de 5 persos que de 1 peso, se saca una
+  moneda al azar, ¿Cuál es la probabilidad de que sea de 1 peso? <br />
+  Para este caso, tenemos que definir los siguientes eventos:
+  <Balph>
+    - <Ltx txt="A" /> = sale una moneda de 1 peso <br />
+    - <Ltx txt="B" /> = sale una moneda de 5 pesos <br />
+  </Balph>
+  Ahora, suponiendo que todas son monedas en una cantidad n, entonces podemos decir
+  que:
+  <Balph>
+    Considerando que el total de elementos es de 6n y que todos son
+    equiprobables: <br />
+    - <Ltx txt="n(A) = \frac{n}{6n} = \frac{1}{6}" />
+    - <Ltx txt="n(B) = \frac{5n}{6n} = \frac{5}{6}" />
+  </Balph>
+  Entonces, basado en esto, podemos decir que la probabilidad de que salga una moneda
+  de 1 peso es de 1/6, y la probabilidad de que salga una moneda de 5 pesos es de
+  5/6. <br />
+  Esto es muy parecido a ejemplo de decir que sale par o impar, son
+  equiprobables en este caso el número de elementos es 6n por que en total
+  tenemos 5 veces monedas de 5 pesos y 1 vez monedas de 1 peso.
+</BChord>
+
+<BChord title="Directo a la matanza 👾">
+  Jaimito se presenta a un examen de admisión para entrar a dos universidades A
+  y B, el estima que su probabilidad de entrar a la A es de 80%, a la B de 75% y
+  en al menos uno de ellos es de 95%. ¿Cuál es la probabilidad de que entre a
+  las dos? <br />
+  Para esto ya tenemos definidos algunos eventos:
+  <Balph>
+    - <Ltx txt="A" /> = entrar a la A <br />
+    - <Ltx txt="B" /> = entrar a la B <br />
+  </Balph>
+  Ahora definimos las probabilidades:
+  <Balph>
+    - <Ltx txt="P(A) = \frac{80}{100}" /> <br />
+    - <Ltx txt="P(B) = \frac{75}{100}" /> <br />
+    - <Ltx txt="P(A \cup B) = \frac{95}{100}" /> <br />
+  </Balph>
+  Entonces basado en esto es simple saber la probabilidad de que entre a las dos.
+  <Balph>
+    <Ltx txt="P(A \cap B) = P(A) + P(B) - P(A \cup B)" block />
+    <Ltx
+      txt="P(A \cap B) = \frac{80}{100} - \frac{75}{100} - \frac{95}{100}"
+      block
+    />
+    <Ltx txt="P(A \cap B) = \frac{155}{100} - \frac{95}{100}" block />
+    <Ltx txt="P(A \cap B) = \frac{60}{100}" block />
+  </Balph>
+  Entonces de que entre a las dos es de 60%.
+</BChord>

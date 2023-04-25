@@ -1,3 +1,6 @@
+// Conceptos -> fromatData.excalidraw
+// ? Explicación de como se definió el tipo de dato de la data
+// Matter -> Tema -> Subtema -> Contenido
 export interface Base {
   name: string;
   index: number;

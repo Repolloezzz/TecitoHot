@@ -1,13 +1,19 @@
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { FcOk, FcRating } from 'react-icons/fc';
 
+// Propiedades del formulario
 interface FormContext {
   options: {
     content: JSX.Element | JSX.Element[];
     value: boolean;
   }[];
 }
+
+/**
+ * Formulario de tipo Check
+ * @param options Opciones del formulario
+ * @returns Componente de formulario
+ */
 export const Check = ({ options }: FormContext) => {
   const [state, setState] = useState<{ state: null | boolean; msg: string }>({
     state: null,

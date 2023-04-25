@@ -1,0 +1,187 @@
+---
+name: Composición de experimentos
+index: 8
+description: 'Una forma de ver los experimentos, es como se construyen unos a partir de otros, es decir que partimos de experimentos simples o compuestos, definimos otros experimentos simples o compuestos, o en el camino contrario, partiendo de experimentos compuestos y descomponerlos en experimentos simples. Esto para ver los experimentos de un forma distinta.'
+created: '24-03-2023'
+updated: '25-03-2023'
+---
+
+<SectionID id="exp_disyuncion">Uno a la vez</SectionID>
+
+<BImp
+  title="Teoria"
+  icon="anchor"
+  color="pink"
+  comment="Disyunción de experimentos"
+>
+  Sean <Ltx txt="\mathcal{E_1,E_2}" /> dos experimentos cuales quiera, entonces
+  podemos definir el experimento <Ltx txt="\mathcal{E_3}" /> como la disyunción
+  de ambos experimentos.
+  <Balph>
+    <Ltx txt="\mathcal{E_3}" /> : <Ltx txt="\mathcal{E_1} \lor \mathcal{E_2}" />
+  </Balph>
+  Donde, el espacio muestral de <Ltx txt="\mathcal{E_3}" /> es la **unión** de
+  los espacios muestrales de <Ltx txt="\mathcal{E_1}" /> y{' '}
+  <Ltx txt="\mathcal{E_2}" />.
+  <Balph>
+    <Ltx txt="\mathcal{S_3} = \mathcal{S_1} \cup \mathcal{S_2}" />
+  </Balph>
+</BImp>
+
+<BComment>
+  La disyunción es un término utilizado en lógica y matemáticas que se refiere a
+  una operación lógica binaria que se aplica a dos proposiciones. La disyunción
+  se representa con el símbolo "o" y se lee como "o bien" o "o".
+</BComment>
+<BComment type="note">
+  La disyunción de experimentos no es más que decir, voy ha hacer dos
+  experimentos de forma aleatoria, y voy a tomar el resultado de uno de ellos.
+</BComment>
+<BComment type="warn">
+  El decir que el espacio muestral de <Ltx txt="\mathcal{E_3}" /> es la unión de
+  otros experimentos, quiere decir que al realizar el experimento
+  <Ltx txt="\mathcal{E_3}" /> podemos obtener resultados de los experimentos
+  <Ltx txt="\mathcal{E_1}" /> y <Ltx txt="\mathcal{E_2}" />, esto por que ambos
+  se toman en cuenta, y los consideramos uno solo.
+</BComment>
+<BComment type="note">
+  <Ltx txt="\mathcal{E_3}:\mathcal{E_1} \lor \mathcal{E_2} \longrightarrow \mathcal{S_3} = \mathcal{S_1} \cup \mathcal{S_2}" />
+</BComment>
+<BComment type="alert">
+  Debemos considerar la condición de que los experimentos
+  <Ltx txt="\mathcal{E_1}" /> y <Ltx txt="\mathcal{E_2}" /> sean independientes.
+  Es decir tener que:
+  <Balph>
+    <Ltx txt="\mathcal{S_1} \cap \mathcal{S_2} = \emptyset" />
+  </Balph>
+  Si cumple esto, entonces podemos crear un experimento compuesto, de lo contrario
+  no.
+</BComment>
+<BComment type="note">
+  De todos los experimentos juntados, se realiza uno aleatorioamente, y se toma
+  el resultado de ese experimento. Es como juntar todos los restaurantes
+  disponibles en un solo lugar, y elegir uno al azar, pero no es que vayas a
+  comer en todos los restaurantes a la vez, solo uno.
+</BComment>
+
+De cirta manera esto no es tan necesario y a veces no es tan facil
+notar la disyunción de experimentos, pero si es posible, y es una forma de
+ver los experimentos, es como se construyen unos a partir de otros, es decir
+que partimos de experimentos simples o compuestos y creamos otros experimentos.
+
+<BChord title="Junte de experimentos 💘" color="red" top open>
+  Supongamos que tenemos los siguientes experimentos:
+  <Balph>
+  - <Ltx txt="\mathcal{E_1}" /> : Lanzar una moneda
+  - <Ltx txt="\mathcal{E_2}" /> : Lanzar un dado
+  - <Ltx txt="\mathcal{E_3}" /> : Lanzar una moneda **o** un dado
+
+  </Balph>
+  Notar que el experimento <Ltx txt="\mathcal{E_3}" /> es la disyunción de los
+  experimentos <Ltx txt="\mathcal{E_1}" /> y <Ltx txt="\mathcal{E_2}" />. Pues,
+  toma en cuenta los resultados de ambos experimentos, pero solo uno a la vez.
+  Entonces tenemos que:
+  <Balph>
+  - <Ltx txt='\mathcal{S_1}'/> = \{⭕,❌\}
+  - <Ltx txt='\mathcal{S_2}'/> = \{1,2,3,4,5,6\}
+  - <Ltx txt='\mathcal{S_3}'/> = \{⭕,❌,1,2,3,4,5,6\}
+  </Balph>
+  Pues es la unión de los espacios muestrales de los experimentos, y como son
+  independientes, podemos tomar los resultados de ambos experimentos. Entonces,
+  si realizamos un experimento podemos lanzar un dado o una moneda y tendremos
+  como resultado un resultado de uno de los dos experimentos. Por ejemplo:
+  <Balph>
+    Si lanzamos una moneda o un dado, y me sale ⭕, entonces el resultado es el de hacer
+    el experimento <Ltx txt="\mathcal{E_1}" />. Si me sale ❌, entonces el resultado
+    es el de hacer el experimento <Ltx txt="\mathcal{E_1}" />. Si me sale 1, entonces el
+    resultado es el de hacer el experimento <Ltx txt="\mathcal{E_2}" />.
+  </Balph>
+</BChord>
+
+<SectionID id="exp_conjuncion">Al mismo tiempo</SectionID>
+
+<BImp
+  title="Teoría"
+  icon="anchor"
+  color="pink"
+  comment="Conjunción de experimentos"
+>
+  Sean <Ltx txt="\mathcal{E_1,E_2}" /> dos experimentos cuales quiera, entonces
+  podemos definir el experimento <Ltx txt="\mathcal{E_3}" /> como la conjunción
+  de ambos experimentos.
+  <Balph>
+    <Ltx txt="\mathcal{E_3}" /> : <Ltx txt="\mathcal{E_1} \land \mathcal{E_2}" />
+  </Balph>
+  Donde, el espacio muestral de <Ltx txt="\mathcal{E_3}" /> es el **producto
+  cartesiano** espacios muestrales de <Ltx txt="\mathcal{E_1}" /> y{' '}
+  <Ltx txt="\mathcal{E_2}" />.
+  <Balph>
+    <Ltx txt="\mathcal{S_3} = \mathcal{S_1} \times \mathcal{S_2}" />
+  </Balph>
+
+</BImp>
+
+<BComment>
+  La conjunción es un término utilizado en lógica y matemáticas que se refiere a
+  una operación lógica binaria que se aplica a dos proposiciones. La conjunción
+  se representa con el símbolo "&" y se lee como "y".
+</BComment>
+<BComment type="note">
+  La conjunción de experimentos no es más que decir, voy ha hacer dos
+  experimentos al mismo tiempo y juntar sus resultados en uno solo, es decir,
+  voy a tomar el resultado de ambos experimentos.
+</BComment>
+<BComment type="warn">
+  El decir que el espacio muestral de <Ltx txt="\mathcal{E_3}" /> es el producto
+  cartesiano de otros experimentos, quiere decir que al realizar el experimento
+  <Ltx txt="\mathcal{E_3}" /> podemos obtener resultados de los experimentos
+  <Ltx txt="\mathcal{E_1}" /> y <Ltx txt="\mathcal{E_2}" />, esto por que ambos
+  se toman en cuenta, y los consideramos uno solo.
+</BComment>
+<BComment type="note">
+  <Ltx txt="\mathcal{E_3}:\mathcal{E_1} \land \mathcal{E_2} \longrightarrow \mathcal{S_3} = \mathcal{S_1} \times \mathcal{S_2}" />
+</BComment>
+<BComment type="alert">
+  Los elementos del espacio muestral de <Ltx txt="\mathcal{E_3}" /> son pares
+  ordenados de elementos del espacio muestral de <Ltx txt="\mathcal{E_1}" /> y{' '}
+  <Ltx txt="\mathcal{E_2}" />. Pero esto se puede generalizar.
+</BComment>
+<BComment type="note">
+  De todos los experimentos juntados, se realizan todos a la vez y se toma el
+  resultado de todos los experimentos. Es como juntar todos los restaurantes
+  disponibles en un solo lugar, y comer en todos a la vez. Practicamente
+  compraste un plato de cada restaurante.
+</BComment>
+
+El notar la conjunción de experimentos, puede llegar a ser más facil de notar
+que la disyunción, ya que en la conjunción de experimentos, los resultados de
+un producto cartesiano, entonces cada elemento son tuplas ordenadas de los
+cuales cada elemento de la tupla se asocia a un experimento.
+
+<BChord title='Todo al mismo tiempo 🤑' color='red' open top>
+   Supongamos que tenemos los siguientes experimentos:
+  <Balph>
+  - <Ltx txt="\mathcal{E_1}" /> : Lanzar una moneda
+  - <Ltx txt="\mathcal{E_2}" /> : Lanzar un dado
+  - <Ltx txt="\mathcal{E_3}" /> : Lanzar una moneda **y** un dado
+  </Balph>
+  Notar que el experimento <Ltx txt="\mathcal{E_3}" /> es la conjunción de los
+  experimentos <Ltx txt="\mathcal{E_1}" /> y <Ltx txt="\mathcal{E_2}" />. Pues,
+  toma en cuenta los resultados de ambos experimentos, esto ambos al mismo tiempo.
+  Entonces tenemos que:
+  <Balph>
+  - <Ltx txt='\mathcal{S_1}'/> = \{⭕,❌\}
+  - <Ltx txt='\mathcal{S_2}'/> = \{1,2,3,4,5,6\}
+  - <Ltx txt='\mathcal{S_3}'/> = \{(⭕, 1), (⭕, 2), (⭕, 3), (⭕, 4), (⭕, 5), (⭕, 6), (❌, 1), (❌, 2), (❌, 3), (❌, 4), (❌, 5), (❌, 6)\}
+  </Balph>
+  Pues es el producto cartesiano de los espacios muestrales de los experimentos,
+  podemos tomar los resultados de ambos experimentos. Entonces,
+  si realizamos un experimento podemos lanzar un dado y una moneda, y tendremos
+  como resultado un resultado un par ordenado de los resultados de ambos.
+  Por ejemplo:
+  <Balph>
+    Lanzo una moneda y un dado, y obtengo (⭕, 1), entonces puedo decir que el
+    resultado del experimento <Ltx txt="\mathcal{E_1}" /> es ⭕ y el resultado del
+    experimento <Ltx txt="\mathcal{E_2}" /> es 1.
+  </Balph>
+</BChord>

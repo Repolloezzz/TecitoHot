@@ -1,4 +1,5 @@
 import moment from 'moment';
+// Obtener el estilo de la hora, para HeroSection
 const getStyle = () => {
   const time = moment().hour();
   if (time >= 5 && time <= 10) {

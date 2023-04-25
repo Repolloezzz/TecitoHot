@@ -1,0 +1,79 @@
+---
+name: Probabilidad total
+index: 6
+description: 'El concepto de probabilidad total es esencial en el campo de la estadística y la teoría de la probabilidad, ya que permite calcular la probabilidad de un evento dado, a partir de la información disponible sobre eventos relacionados o condicionados. En muchos casos, la probabilidad de un evento no se puede calcular directamente, ya que no se dispone de toda la información relevante. En estos casos, la probabilidad total se convierte en una herramienta fundamental para estimar la probabilidad de un evento, dado cierto conjunto de circunstancias.'
+created: '25-03-2023'
+updated: '28-03-2023'
+---
+
+<BImp
+  title="Definición"
+  color="orange"
+  icon="flag"
+  comment="Particion de un espacio muestral"
+>
+  Para algún entero positivo <Ltx txt="k" />, sean los eventos
+  <Ltx txt="B_1,B_2,...,B_k" /> tales que:
+  <Balph>
+    - <Ltx txt="\mathcal{S} = B_1 \cup B_2 \cup ... \cup B_k" /> <br />
+    - <Ltx txt="B_i \cap B_j = \emptyset" /> para todo <Ltx txt="i \neq j" /> <br />
+  </Balph>
+  Entonces consideramos a la colección de eventos <Ltx txt="B_1,B_2,...,B_k" /> como
+  una **partición de** <Ltx txt="\mathcal{S}" />
+</BImp>
+<BComment type="note">
+  Las particiones de un espacio muestral son eventos mutuamente excluyentes y
+  exhaustivos. Esto llega a ser útil cuando se tiene un contexto en el que se
+  puede calcular la probabilidad de cada uno de los eventos
+</BComment>
+<BComment type="warn">
+  Las particiones de un conjunto, son subconjuntos que no se intersectan entre
+  sí y que cubren todo el conjunto. Es decir, no tienen nada en común.
+</BComment>
+
+<BImp
+  title="Partición"
+  color="orange"
+  icon="flag"
+  comment="Probabilidad condicional y partición"
+>
+  Suponiendo que <Ltx txt="B_1,B_2,...,B_k" /> son particiones de{' '}
+  <Ltx txt="\mathcal{S}" />, tales quie <Ltx txt="P(B_i)>0" />, y que para
+  <Ltx txt="A" /> es un evento cualquiera, entonces:
+  <Balph>
+    <Ltx txt="P(A) = \sum_{i=1}^k P(B_i) \cdot P(A|B_i)" />
+  </Balph>
+</BImp>
+
+<BComment type="warn">
+  Esto sucede por que un evento cualquiera puede ser interpretado como la
+  intersección de ese mismo evento con el espacio muestral.
+  <Ltx txt="A = A \cap \mathcal{S}" block />
+  Ahora por definición, <Ltx txt="\mathcal{S}" /> es la unión de todas sus las
+  particiones, entonces tenemos que:
+  <Ltx txt="A = A \cap (B_1 \cup B_2 \cup ... \cup B_k)" block />
+  <Ltx
+    txt="A = (A \cap B_1) \cup (A \cap B_2) \cup ... \cup (A \cap B_k)"
+    block
+  />
+  Ahora bien, cada uno de los elementos en esta unión son eventos exluyentes ya que
+  si se hace sus interseciones el resultado será vacío. Por lo tanto, tenemos que
+  // Completar
+</BComment>
+
+<BImp
+  title="Teorema de bayes"
+  color="pink"
+  icon="anchor"
+  comment="Probabilidad total"
+>
+  Sea <Ltx txt="A" /> un evento cualquiera, y <Ltx txt="B_1,B_2,...,B_k" /> una
+  partición de <Ltx txt="\mathcal{S}" />, entonces:
+  <Balph>
+    <Ltx txt="P(A|B_i) = \frac{P(B_i) \cdot P(A|B_i)}{\sum_{i=1}^k P(B_i)}" />
+  </Balph>
+</BImp>
+<BComment type="warn">
+  Esta igualdad viene de la definición y de la mini demostración que se hizo en
+  el apartado anterior.
+</BComment>

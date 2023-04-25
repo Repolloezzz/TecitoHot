@@ -14,6 +14,9 @@ const nextConfig = {
   swcMinify: true,
   pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
   reactStrictMode: true,
+  experimental: {
+    appDir: true,
+  },
 };
 
 module.exports = withMDX(nextConfig);

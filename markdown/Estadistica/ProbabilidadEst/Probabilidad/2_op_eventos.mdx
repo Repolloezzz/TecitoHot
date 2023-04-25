@@ -1,0 +1,163 @@
+---
+name: Operaciones con eventos
+index: 2
+description: 'Las operaciones que existen para hacer operaciones con eventos, son utilizados para simplificar los proceso de probabilidad, siendo que como cada uno es un conjunto, entonces cumplen ciertas propiedades que resultan útiles para simplificar los cálculos.'
+created: '25-03-2023'
+updated: '26-03-2023'
+---
+
+<BImp
+  title="Unión de eventos"
+  color="green"
+  icon="label-sharp"
+  comment="Interpretación de su unión"
+>
+  Sean <Ltx txt="A,B \subset \mathcal{S}" />, la operación unión que se denoda
+  por <Ltx txt="\cup" /> y se define como:
+  <Balph>
+    <Ltx txt="A \cup B = \{w:w \in A \lor w\in B\}" />
+  </Balph>
+  Es decir, juntar todos los elementos de ambos eventos en uno solo
+</BImp>
+<BComment type="note">
+  La definición de unión de eventos no difiere de la definición de unión de
+  conjuntos, pues esto está orientado a eventos y prácticamente es lo mismo.
+</BComment>
+
+<BImp
+  title="Intersección de eventos"
+  color="green"
+  icon="label-sharp"
+  comment="Interpretación de su intersección"
+>
+  Sea <Ltx txt="A,B \subset \mathcal{S}" />, la operación intersección que se
+  denota por <Ltx txt="\cap" /> y se define como:
+  <Balph>
+    <Ltx txt="A \cap B = \{w:w \in A \land w\in B\}" />
+  </Balph>
+  Es decir, juntar unicamente los elementos que tienen en común ambos eventos.
+</BImp>
+<BComment type="note">
+  La definición de intersección de eventos no difiere de la definición de
+  intersección de conjuntos, pues esto está orientado a eventos y prácticamente
+  es lo mismo.
+</BComment>
+
+<BImp
+  title="Complemento de eventos"
+  color="green"
+  icon="label-sharp"
+  comment="Interpretación de su complemento"
+>
+  Sea <Ltx txt="\mathcal{S}" /> un espacio muestral, y{' '}
+  <Ltx txt="A \subset \mathcal{S}" />, el complemento de <Ltx txt="A" /> se
+  denota por <Ltx txt="\overline{A}" /> y se define como:
+  <Balph>
+    <Ltx txt="\overline{A} = \{w \in \mathcal{S}:w \notin A\}" />
+  </Balph>
+  Es decir, es el conjunto de todos los elementos que no pertenecen al evento{' '}
+  <Ltx txt="A" />. Pero, en general si o si deben de pertenecer al espacio
+  muestral <Ltx txt="\mathcal{S}" />.
+</BImp>
+<BComment type="warn">
+  Para denotar el complemento de un evento, se utiliza la barra sobre el evento.
+  Pero, también se puede denotar como:
+  <Balph>
+    <Ltx txt="\overline{A}=A^c=\mathcal{S} \setminus A" />
+  </Balph>
+  La última igualdad se refiere a la diferencia de conjuntos.
+
+</BComment>
+<BComment type='note'>
+    Al igual que los anteriores, la definición de complemento de ventos
+    es prácticamente la misma que de conjuntos.
+</BComment>
+
+<BImp
+  title="Tipos de eventos"
+  color="purple"
+  icon="at"
+  comment="Respecto a las operaciones realizadas"
+>
+  Sean <Ltx txt="A,B \subset \mathcal{S}" />, los eventos <Ltx txt="A" /> y
+  <Ltx txt="B" />, se pueden clasificar en eventos:
+  <Balph>
+    **Exhaustivos**: se los considera exhaustivo si cumplen la siguiente
+    condición.
+    <Ltx txt="A \cup B = \mathcal{S}" />
+  </Balph>
+  <Balph>
+    **Excluyentes**: se los considera excluyentes si cumplen la siguiente
+    condición.
+    <Ltx txt="A \cap B = \emptyset" />
+  </Balph>
+</BImp>
+<BComment type="warn">
+  Una interpretación para los eventos seguros e imposibles de los [tipos de
+  eventos](/matters/Estadistica/ProbabilidadEst/Probabilidad/1_eventos#tipos-de-eventos)
+  usando los tipos según las operaciones realizadas, tenemos que:
+  <Balph>
+    Sea <Ltx txt="A=\mathcal{S}" /> el evento seguro, y{' '}
+    <Ltx txt="B=\emptyset" /> el evento imposible. Entonces:
+    <div className="grid grid-cols-2 text-center my-2 gap-2">
+      <Ltx txt="\overline{A}=\emptyset \rightarrow \overline{A}=B" block />
+      <Ltx txt="\overline{B}=\mathcal{S} \rightarrow \overline{B}=A" block />
+    </div>
+  </Balph>
+  Pues cumple con las propiedades de los eventos que se definieron. Además, de
+  cumplir' con las definiciones de conjuntos.
+</BComment>
+
+La lógica matemática es una herramienta que nos permite expresar de manera formal y
+precisa las relaciones que existen, en este caso los eventos. Pues, facilita
+la interpretación de los eventos, y nos permite realizar operaciones con ellos.
+
+<BChord title="Ejemplos de operaciones" top open>
+  Supongamos que tenemos lo siguiente:
+  <Balph>
+    - <Ltx txt="\mathcal{E}" /> : Lanzar un dado <br />
+    - <Ltx txt="\mathcal{S}" /> = \{1️⃣, 2️⃣, 3️⃣, 4️⃣, 5️⃣, 6️⃣\}
+  </Balph>
+  Entonces definimos los eventos:
+  <Balph>
+    - <Ltx txt="A" /> = Sacar un número primo <br />
+    - <Ltx txt="B" /> = Sacar un número par <br />
+    - <Ltx txt="C" /> = Sacar el número uno <br />
+  </Balph>
+  Entonces, en base a al espacio muestral, podemos definir los eventos
+  <Balph>
+    - <Ltx txt="A" /> = \{2️⃣, 3️⃣, 5️⃣\} <br />
+    - <Ltx txt="B" /> = \{2️⃣, 4️⃣, 6️⃣\} <br />
+    - <Ltx txt="C" /> = \{1️⃣\}
+  </Balph>
+  Ahora bien en base a lo que se definió anteriormente, podemos realizar
+  operaciones con los eventos, y obtener nuevos eventos.
+  <Balph>
+    - <Ltx txt="A \cup B" /> = \{2️⃣, 3️⃣, 4️⃣, 5️⃣, 6️⃣\} <br />
+    - <Ltx txt="A \cap B" /> = \{2️⃣\} <br />
+    - <Ltx txt="\overline{C}" /> = <Ltx txt='\mathcal{S} \setminus C'/> <br />
+  </Balph>
+</BChord>
+
+<BChord title="Negando todo 🤫" color="green">
+  Supongamos que tenemos lo siguiente:
+  <Balph>
+    - <Ltx txt="\mathcal{E}" /> : Girar una ruleta de 3 colores <br />
+    - <Ltx txt="\mathcal{S}" /> = \{🔴, 🟡, 🟢\}
+  </Balph>
+  De ahí, decimos que el color amarillo es el ganador de 1 millón de dólares. Pero,
+  los demás son penitencias. Entonces, podemos definir lo siguiente:
+  <Balph>
+    - <Ltx txt="A" /> = Ganar 1 millon de dolares <br />
+    - <Ltx txt="\overline{A}" /> = **No** ganar 1 millon de dolares
+  </Balph>
+  Ahora bien, veamos basado en el espacio muestral los elementos de cada eventos son:
+  <Balph>
+    - <Ltx txt="A" /> = \{🟡\} <br />
+    - <Ltx txt="\overline{A}" /> = \{🔴, 🟢\}
+  </Balph>
+  Entonces, podemos ver que al negar la proposición <Ltx txt="A" />, obtenemos
+  el evento <Ltx txt="\overline{A}" />. Y, al negar la proposición <Ltx txt="\overline{A}" />,
+  obtenemos el evento <Ltx txt="A" />. Por lo tanto, es necesario saber que
+  la lógica matemática es importante para comprender esto.
+</BChord>

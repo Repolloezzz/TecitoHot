@@ -124,7 +124,6 @@ const genContent = (
 };
 
 // Exportando todos las funciones
-
 export {
   genAllMatters,
   genAllThemes,
