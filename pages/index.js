@@ -1,14 +1,20 @@
 import Head from "next/head";
+import { gql, useQuery } from "@apollo/client";
 import { HeroBackground } from "../components/Background";
 import { HeroNavV } from "../components/HeroNav";
-import { getElements } from "./../functions/mattersMethodsAPI";
 import { useEffect, useState } from "react";
 import { MatterSection } from "../components/MatterSection";
 
+const getMatters = gql`
+  query matters {
+    name
+  }
+`;
 export default function Test() {
-  // Obteniendo datos de MattersAPI
-  const [data, setData] = useState([]);
-  
+  const { data, loading, error } = useQuery(getMatters);
+  const [datas, setdatas] = useState([]);
+  if(error) return(<div>Error</div>)
+  if(loading) return(<div>Cargando</div>)
 
   // colores para las secciones
   const colors = ["bg-red-500", "bg-blue-500", "bg-slate-700", "bg-indigo-500"];
@@ -43,8 +49,8 @@ export default function Test() {
               containerId: "contentContainer",
               className: "hover:bg-tropical-100 hover:text-black",
               options:
-                data.length != 0
-                  ? data.map((matter) => {
+                datas.length != 0
+                  ? datas.map((matter) => {
                       return {
                         name: matter.name,
                         to: matter.id,
@@ -90,8 +96,8 @@ export default function Test() {
             ]}
           />
           <section id="materias">
-            {data.length != 0
-              ? data.map((element, index) => {
+            {datas.length != 0
+              ? datas.map((element, index) => {
                   return (
                     <MatterSection
                       key={index}

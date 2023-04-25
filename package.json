@@ -9,16 +9,20 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@apollo/client": "^3.7.3",
+    "@react-spring/web": "^9.6.1",
     "axios": "^1.2.1",
     "edit-json-file": "^1.7.0",
     "eslint": "8.28.0",
     "eslint-config-next": "13.0.5",
+    "graphql": "^16.6.0",
     "next": "13.0.5",
     "pixelarticons": "^1.7.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-scroll": "^1.8.8",
-    "react-svg": "^15.1.14"
+    "react-svg": "^15.1.14",
+    "react-use-measure": "^2.1.1"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.13",
